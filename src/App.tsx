@@ -15,6 +15,10 @@ import Updates from "./Components/Updates/Updates"
 import Privacy from "./Components/Privacy/Privacy"
 import Blog from "./Components/Blog/Blog"
 
+/*
+Testing push request
+*/
+
 class App extends React.Component {
   render() {
     return (
