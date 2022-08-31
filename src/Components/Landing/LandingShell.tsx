@@ -27,6 +27,7 @@ import Landing from "./Landing"
 import SocialButtons from "../Universal/SocialButtons/SocialButtons"
 import ActionsGrid from "./Components/ToolSelectorDemo"
 import FeaturesGrid from "./Components/Features/FeaturesDemo"
+import ThreeGrid from "./Components/Features/ThreeSteps"
 import LightDarkButton from "../LightDarkButton"
 import HeroBullets from "./Components/LandingBullets"
 import "./LandingShell.css"
@@ -39,6 +40,7 @@ import MNFLibrary from "../MNFLibrary/MNFLibrary"
 import MNFComponents from "../MNFComponents/MNFComponents"
 import Updates from "../Updates/Updates"
 import Blog from "../Blog/Blog"
+import CounselorGridX from "./Components/CounselorDemo"
 import {
   Notes,
   CalendarStats,
@@ -105,9 +107,21 @@ const mockdata = [
     initiallyOpened: false,
     links: [
       { label: 'Why MyNext4?', link: './WhyMyNext4' },
-      { label: 'About Us', link: '/AboutUs' },
-      { label: 'MyNext4: Library', link: '/MNFLibrary' },
+      { label: 'About Us', link: './WhyMyNext4' },
+      { label: "Resource Library", link: '/MNFLibrary' },
       { label: 'Pricing', link: './Pricing' },
+
+    ],
+  },
+  
+  {
+    label: 'Products',
+    icon: Notes,
+    initiallyOpened: false,
+    links: [
+      { label: 'MyNext4 U: Student Components', link: './WhyMyNext4' },
+      { label: 'MyNext4 X: Counselor Components', link: '/AboutUs' },
+ 
 
     ],
   },
@@ -116,32 +130,25 @@ const mockdata = [
     icon: Notes,
     initiallyOpened: false,
     links: [
-      { label: 'Using MyNext4+ ', link: '/SchoolSystems' },
-      { label: 'Component Library', link: '/MNFComponents' },
+      { label: 'Showcase', link: './WhyMyNext4' },
+      { label: 'Getting Started', link: '/SchoolSystems' },
+      { label: 'Privacy Policy', link: '/MNFComponents' },
 
     ],
   }, 
-  {
-    label: 'Further',
-    icon: Notes,
-    initiallyOpened: false,
-    links: [
-      { label: 'Updates', link: '/Updates' },
-      { label: 'Privacy', link: './Privacy' },
-      { label: "Blog", link: '/Blog' },
-      { label: "Support Us", link: '/' },
-    ],
-  },
+ 
+ 
   {
     label: 'Docs',
     icon: Notes,
     initiallyOpened: false,
     links: [
-      { label: 'MyNext4: Library', link: '/' },
-      { label: 'MyNext4+', link: '/' },
+      { label: 'MyNext4 U', link: '/' },
+      { label: 'MyNext4 X', link: '/' },
     ],
   },
-  { label: 'Settings', icon: Adjustments },
+
+
 
   
 ];
@@ -230,11 +237,12 @@ stepPlan: {
 },
 },
 
+subtitle: {
+  display: 'flex',
+  flexDirection: 'column',
+  
 
-
-
-
- 
+}, 
 }));
 
 
@@ -244,11 +252,12 @@ export default function AppShellExample() {
   const { classes } = useStyles();
   const links = mockdata.map((item) => <LinksGroup {...item} key={item.label} />);
  
+ 
   const courseBadges = [
     { "emoji": "🪪", "label": "MySchedule" },
-    { "emoji": "📒", "label": "MyNotebook" },
+    { "emoji": "📒", "label": "MyNotes" },
     { "emoji": "🎒", "label": "MyBackpack" },
-    { "emoji": "🎒", "label": "MyTutoring" },
+
 
 
   ]
@@ -340,6 +349,8 @@ export default function AppShellExample() {
             </div>
             <Code sx={{ fontWeight: 700 }}>v1.1.2</Code>
             <div className="search-lightdarkmode-container">
+              <Text> Administrators </Text>
+              <Text> Log In </Text> 
             <Autocomplete
             className={classes.search}
             style={{marginLeft: 'auto', marginRight: '20px'}}
@@ -355,23 +366,19 @@ export default function AppShellExample() {
         
       }
     >
-    
+      
     
         <HeroBullets  />
-        <Container className="products-text">
-            <Title mt={70} className={classes.title}> Revolutionizing the college counseling process  </Title>
-            <Text className="products-tag2"> Find open source resources for all academic inquiries through our public resource library. Upon school system's registery, students answer
-            questions regarding academic preferences, post-school desires, and overall life goals to generate their personalized path to their dream school.</Text>
-        </Container>
+        <ThreeGrid title="Students: Align your academic desires with a personalized path to get there" description="Access course, college, and career component tools to complement your academic story. We'll provide personalized recommendations, resources, and readily accessible tools in minutes upon account registery. " />
 
+     
    
        
 
-        <Container mt={110} className="products-text">
+        <Container  className="products-text">
             
-            <Title className={classes.title}> Academic tools for students and counselors alike  </Title>
-            <Text className="products-tag2"> Find personalized resources, an academic class schedule, and recommended colleges and careers for all students upon a school system's registery.
-           Our algorithm will build these personalized tools for each student based on individual preferences. Acessing and editing student information as a counselor has never been more convenient with our counselor made tools.
+            <Title sx={{marginBottom: '25px'}}className={classes.title}> School Systems: Complement the college counseling process with modern tools  </Title>
+            <Text className="products-tag2"> Find over 25+ tools for students and counselor in our component library. Tools range from school scheduling for students to a meetings manager for counselors. We'll provide every student a personalized path to academic success through their provided preferences, and so much more.
             </Text>
         </Container>
         <Container pl="120px" pt={70} className={classes.tools}>
@@ -379,22 +386,24 @@ export default function AppShellExample() {
             <Container  className="resourcebox"> </Container>
         
         </Container>
-
         <Container pl="120px" pt={70} className={classes.tools}>
-            <CounselorGrid  />
+            <CounselorGridX  />
             <Container  className="resourcebox"> </Container>
         
         </Container>
+
+        <Container mt={120} mb={20} className="resourcebox3"> FOI Container </Container>
+      
+
         <Container className="products-text">
-            <Title mt={80} className={classes.title}> MyNext4+: Accessible academic tools personalized for school systems  </Title>
-            <Text className="products-tag2"> Increase counselor convenience by having your student's academic information pre-generated on one platform. We'll take care of finding the individual student's academic path, while counselors monitor and handle their students.
-            Now with enhanced convenience.
+            <Title mt={80} className={classes.title}> Introducing MyNext4 U: Accessible academic tools personalized for students   </Title>
+           
           
-          </Text>
+
         </Container>
         <Container mb={30} className="products-text">
-        <Text className="products-tag2">  We'll provide students unique class schedules, 
-            college recommendations, and custom career maps to visualize the next step upon a school system's registry. All customized information is collected and handled by our library of core <b> student components </b> below.
+        <Text mt={20}sx={{fontSize: '16px'}}>  We'll provide students unique class schedules, 
+            college recommendations, and custom career maps to visualize the next steps for their academic journey. All personalized information is collected and handled by our library of core <b> student components</b>.
 
           
           </Text>
@@ -407,7 +416,7 @@ export default function AppShellExample() {
             }
             image="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
             title="MyCourses"
-            country="MNF+ Component " 
+            country="MNF U Component " 
             description="Prepare students effectivley with a personalized class scheduler, class base-resource compiler, and progress based achievment marks to gamify the process along the way."/>
            
         <BadgeCard 
@@ -416,7 +425,7 @@ export default function AppShellExample() {
             }
             image="https://images.unsplash.com/photo-1525921429624-479b6a26d84d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
             title="MyColleges"
-            country="MNF+ Component" 
+            country="MNF U Component" 
             description="Make it easy for student's to find their Next4 with our personalized college tools. Student's can receieve recommended colleges from both MyNext4 and the school counselor.
           "/>
         <BadgeCard 
@@ -425,7 +434,7 @@ export default function AppShellExample() {
             }
             image="https://images.unsplash.com/photo-1459180129673-eefb56f79b45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
             title="MyCareers"
-            country="MNF+ Component" 
+            country="MNF U Component" 
             description="Accessing student information taken to new levels of convenience. Organize, filter, and customize the counselor dashboard to find desired information in seconds.
               " />
 
@@ -440,47 +449,34 @@ export default function AppShellExample() {
           </Text>
           </Container>
 
-          <Container  className={classes.cards}>
-          <BadgeCard
-      
-      badges = {counselorBadges
-      }
-      image="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1532&q=80"
-      title="MyStudents"
-      country="Counselor Component " 
-      description="Our counselor tools allow counselors to filter, compare, and inspect student profiles with full customization control. Send academic resources, recommended colleges or career paths, or request students to schedule a meeting with you all fast through our platform. "/>
-
-<BadgeCard
-      
-      badges = { achieveBadges
-      }
-      image="https://images.unsplash.com/photo-1569705460033-cfaa4bf9f822?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1337&q=80"
-      title="MyAchievments"
-      country="Student Component " 
-      description="Complement academic growth with a students personal growth with extracurricular and personal project generators based on individual preferences. Student's creating a personal project 
-       helps progress academic and personal growth, and we're here to help. "
-      />
-
-
-    </Container>
-      <Container mt={110} className="products-text">
+      <Container mt={80} className="products-text">
             
-            <Title className={classes.title}> Open-sourced resources for every high school student </Title>
-            <Text className="products-tag2">  Accessing MyNext4's library of academic resources is just one search away. Find detailed information on any class, college, or career path through our search feature. 
+            <Title mb={30} className={classes.title}> Open-sourced academic resources for every student  </Title>
+            <Text className="products-tag2">  Accessing MyNext4's library of academic resources is just one search away. Find detailed information on any class, college, or career path through our search feature. We're here for you!
             </Text>
         </Container>
-        <FeaturesGrid title="A complement to everyone's work." description="" />
+        <Container mt={40} sx={{display: 'flex', justifyContent: 'center'}}>
+        <Container mr={30} sx={{ borderRadius: '5px', backgroundColor: 'dodgerblue', width: '400px'}}> </Container>
+        <Image src="https://media3.giphy.com/media/KDYB0cH4HW8xc3VIAx/giphy.gif?cid=ecf05e47o3mmw4i0e0tp8cc2g3xb1xc88rwu7pkwihrotl6m&rid=giphy.gif&ct=g" width={600}/>
        
-        <Container mt={110} className="products-text">
+        
+
+        </Container> 
+        
+        <FeaturesGrid title="A complement to everyone's work" description="" />
+       
+        <Container mt={70} className="products-text">
             
-            <Title className={classes.title}> Our mission </Title>
-            <Text className="products-tag2"> Being recent high school student's from two seperate backgrounds, founders Drake Griffith and Wesley Brooks noticed the true disparity in resources throughout different school systems. Allowing student's to have access to the resources
-            they need throughout their academic career provides equity for all, and also complements academic counselors work too.
+            <Title mb={25}className={classes.title}> Our mission </Title>
+            <Text className="products-tag2"> MyNext4 wants to maximize student oppourtunity for all by ensuring every student has access to the academic resoures they need to succeed. We're here to revolutionize the college counseling process,
+            providing accessible resources to improve equity for all students nationwide.
             </Text>
         </Container>
+        
+        <Container mt={25} className="resourcebox3"> Roadmap Editor </Container>
 
         <Container mt={80}>
-            <FooterGrid  />
+           
             </Container>
             
       
