@@ -1,30 +1,30 @@
-import { Gauge, Cookie, User, Message2, Lock } from 'tabler-icons-react';
+import { Gauge, FileText, User, Message2, ArrowBigUpLine, Package } from 'tabler-icons-react';
 
 export const MOCKDATA = [
   {
-    icon: Gauge,
+    icon: Package,
     title: 'Elevated convenience',
     description:
-      'Have all your academic information stored digitally, all on a single platform. Find resources and components easily using our search feature.',
+      'Have all your academic information stored digitally, all on a single platform. Find academic resources, component documentation, and course, college, and career information easily using our search feature with or without an account.',
   },
   {
     icon: User,
-    title: 'Privacy focused',
+    title: `Individualized student resources`,
     description:
-      'We take your privacy seriously. MyNext4 uses securiy software with effective privacy measures to ensure that your data never gets leaked. ',
+      "Every student using MyNext4 answers questions to determine the most suitable path for them based on their preferences and desires. We'll generate a unique course schedule, college and career recommendations, and more.",
   },
   {
-    icon: Cookie,
-    title: "Navigate students effectivley.",
+    icon: ArrowBigUpLine,
+    title: "Monthly updates based on user feedback",
     description:
-      "Complement your counseling with MyNext4. Track your student's progress and future college and career desires all using our tools. See more counselor tools here."
+      "Don't be afraid to contact us with any comments, concerns or questions about MyNext4 and our products. We're a small organization and take your opinion seriously, and we consider every comment carefully when adding updates."
         ,
   },
   {
-    icon: Lock,
-    title: 'Open sourced academic resources',
+    icon: FileText,
+    title: 'Open sourced resources for every high school student',
     description:
-      "Find resources on classes, colleges, or careers all on one platform. Student's add elements to their liked list based on personal choice. It's never been easier. ",
+      "Find resources on classes, colleges, or careers all on one platform with or without an account through our search feature. Student's add academic elements to their liked list based on personal choice. It's never been easier. ",
   },
 
 ];

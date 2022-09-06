@@ -1,28 +1,29 @@
 import React from 'react';
 import {  Container,createStyles, Card, Text, SimpleGrid, UnstyledButton, Anchor, Group } from '@mantine/core';
 import {
-  CreditCard,
-  BuildingBank,
-  Repeat,
-  ReceiptRefund,
-  Receipt,
-  ReceiptTax,
-  Report,
-  CashBanknote,
+  CalendarEvent,
+  Notebook,
+  Backpack,
+  School,
+  Package,
+  User,
+  ChefHat,
+  Map,
+  AddressBook,
 
   Coin,
 } from 'tabler-icons-react';
 
 const mockdata = [
-  { title: 'Classes', icon: CreditCard, color: 'violet' },
-  { title: 'Notebook', icon: BuildingBank, color: 'indigo' },
-  { title: 'Backpack', icon: Repeat, color: 'blue' },
-  { title: 'Education', icon: ReceiptRefund, color: 'green' },
-  { title: 'Predictions', icon: Receipt, color: 'teal' },
-  { title: 'Credit Transfer', icon: ReceiptTax, color: 'cyan' },
-  { title: 'Extracurriculars', icon: Report, color: 'pink' },
-  { title: 'Personal Projects', icon: Coin, color: 'red' },
-  { title: 'Career Explorer', icon: CashBanknote, color: 'orange' },
+  { title: 'MySchedule', icon: CalendarEvent, color: 'red' },
+  { title: 'MyNotebook', icon: Notebook, color: 'orange' },
+  { title: 'MyBackpack', icon: Backpack, color: 'yellow' },
+  { title: 'NextEducation', icon: School, color: 'green' },
+  { title: 'MyCredits', icon: Package, color: 'teal' },
+  { title: 'MyAdmissions', icon: User, color: 'blue' },
+  { title: 'MyCareers', icon: ChefHat, color: 'indigo' },
+  { title: 'MyPath', icon: Map, color: 'violet' },
+  { title: 'MyCommunity', icon: AddressBook, color: 'pink' },
 ];
 
 const useStyles = createStyles((theme) => ({
@@ -70,7 +71,7 @@ export default function ActionsGrid() {
     <Card withBorder ml="xl" radius="md" 
     className={classes.card}>
       <Group position="apart">
-        <Text className={classes.title}>MyNext4+ Student Tools</Text>
+        <Text className={classes.title}>MyNext4 U Component Tools</Text>
         <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}>
           + 5 other tools
         </Anchor>

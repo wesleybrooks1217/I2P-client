@@ -82,10 +82,10 @@ export default function HeroBullets() {
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title mb="lg" sx={{alignSelf: 'center', marginTop: '30px'}}className={classes.title}>
-                <span className={classes.highlight}>Pricing</span> <br /> 
+                Start using MyNext4 <span className={classes.highlight}> today</span> <br /> 
             </Title>
             <Text color="dimmed" mt="md">
-              Complement your academic counseling with MyNext4's school system plan.
+              Student's can switch to a commercial plan to access advanced tools and personalized resources always accessible on our platform. 
             
             </Text>
              </div>
