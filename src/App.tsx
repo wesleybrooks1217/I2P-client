@@ -13,8 +13,7 @@ import MNFLibrary from "./Components/MNFLibrary/MNFLibrary"
 import MNFComponents from "./Components/MNFComponents/MNFComponents"
 import Updates from "./Components/Updates/Updates"
 import Privacy from "./Components/Privacy/Privacy"
-import Blog from "./Components/Blog/Blog"
-
+import MyCourses from "./Components/MyCourses/Courses"
 /*
 Testing push request
 */
@@ -27,7 +26,7 @@ class App extends React.Component {
       
         <Routes>
           <Route path='/' element={<Landing />} />
-          <Route path='/Blog' element={<Blog />} />
+          <Route path='/MyCourses' element={<MyCourses />} />
           <Route path='/SchoolSystems' element={<SchoolSystems />} />
           <Route path='/WhyMyNext4' element={<WhyMyNext4 />} />
           <Route path='/Pricing' element={<Pricing />} />

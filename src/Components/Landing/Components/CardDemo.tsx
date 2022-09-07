@@ -38,6 +38,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface BadgeCardProps {
+  link?: string;
   image: string;
   title: string;
   country: string;
@@ -48,7 +49,7 @@ interface BadgeCardProps {
   }[];
 }
 
-export default function BadgeCard({ image, title, description, country, badges}: BadgeCardProps) {
+export default function BadgeCard({ link, image, title, description, country, badges}: BadgeCardProps) {
   const { classes } = useStyles();
   const theme = useMantineTheme();
 

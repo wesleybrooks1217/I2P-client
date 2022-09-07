@@ -1,7 +1,7 @@
-import "./Blog.css"
+import "./MyCourses.css"
 import {ColorScheme, ColorSchemeProvider, MantineProvider, Paper} from "@mantine/core"
 import {useHotkeys, useLocalStorageValue} from "@mantine/hooks"
-import AppShellExample from "./BlogShell";
+import AppShellExample from "./MyCourses";
 
 function Updates() {
   const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({

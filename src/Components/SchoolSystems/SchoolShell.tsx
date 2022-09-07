@@ -56,7 +56,7 @@ const mockdata2 = [
   title: "Resources",
   links: [
     { label: 'MyNext4 Library', link: '/Updates' },
-    { label: "Blog", link: '/Blog' },
+    { label: "MyCourses", link: '/MyCourses' },
     { label: "Docs", link: '/' },
     { label: 'Podcast', link: '/Privacy' },
     { label: 'FAQ', link: '/Updates' },
@@ -104,7 +104,7 @@ const mockdata = [
     links: [
       { label: 'Updates', link: '/Updates' },
       { label: 'Privacy', link: './Privacy' },
-      { label: "Blog", link: '/Blog' },
+      { label: "MyCourses", link: '/MyCourses' },
       { label: "Support Us", link: '/' },
     ],
   },

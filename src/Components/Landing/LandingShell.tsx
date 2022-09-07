@@ -38,7 +38,8 @@ import BottomText from "../Universal/BottomFooter/BottomFooter"
 import MNFLibrary from "../MNFLibrary/MNFLibrary"
 import MNFComponents from "../MNFComponents/MNFComponents"
 import Updates from "../Updates/Updates"
-import Blog from "../Blog/Blog"
+import MyCourses from "../MyCourses/Courses"
+
 import {
   Notes,
   CalendarStats,
@@ -73,7 +74,7 @@ const mockdata2 = [
   title: "Resources",
   links: [
     { label: 'MyNext4 Library', link: '/Updates' },
-    { label: "Blog", link: '/Blog' },
+    { label: "MyCourses", link: '/MyCourses' },
     { label: "Docs", link: '/' },
     { label: 'Podcast', link: './Privacy' },
     { label: 'FAQ', link: '/Updates' },
@@ -128,7 +129,7 @@ const mockdata = [
     links: [
       { label: 'Updates', link: '/Updates' },
       { label: 'Privacy', link: './Privacy' },
-      { label: "Blog", link: '/Blog' },
+      { label: "MyCourses", link: '/MyCourses' },
       { label: "Support Us", link: '/' },
     ],
   },
@@ -408,8 +409,9 @@ export default function AppShellExample() {
             image="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
             title="MyCourses"
             country="MNF+ Component " 
+            link="./MyCourses"
             description="Prepare students effectivley with a personalized class scheduler, class base-resource compiler, and progress based achievment marks to gamify the process along the way."/>
-           
+
         <BadgeCard 
                
             badges = { collegeBadges
