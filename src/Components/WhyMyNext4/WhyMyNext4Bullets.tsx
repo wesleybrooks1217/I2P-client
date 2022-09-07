@@ -17,14 +17,14 @@ import image from './studentsuccess.png';
 const useStyles = createStyles((theme) => ({
   inner: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     paddingTop: theme.spacing.xl * 4,
     paddingBottom: theme.spacing.xl * 4,
   },
 
   content: {
-    maxWidth: 480,
-    marginRight: theme.spacing.xl * 3,
+    maxWidth: 620,
+
 
     [theme.fn.smallerThan('md')]: {
       maxWidth: '100%',
@@ -78,19 +78,20 @@ export default function HeroBullets() {
   const { classes } = useStyles();
   return (
     <div>
-      <Container sx={{alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
+      <Container sx={{ display: 'flex', justifyContent: 'center'}}>
         <div className={classes.inner}>
           <div className={classes.content}>
-            <Title mb="lg" sx={{alignSelf: 'center', marginTop: '30px'}}className={classes.title}>
-              Revamp your school's academic counseling <span className={classes.highlight}>digitally</span>  <br /> 
+            <Title mb="lg" sx={{ marginTop: '30px'}}className={classes.title}>
+              Have the right resources readily accessible with  <span className={classes.highlight}> MyNext4 </span>  <br /> 
             </Title>
             <Text color="dimmed" mt="md">
-              We have a mission to provide every student with the accessible resources they need to reach their highest potential.
-              Access resources, tools, and our documentation all through one search. 
+              We're here to make sure all students are supplemented with the right resources. Create an account and have access to all of our personalized tools that ensure student success.
+
+       
             
             </Text>
              </div>
-          <Image src={image} width={270} className={classes.image} />
+       
         </div>
   
       </Container>

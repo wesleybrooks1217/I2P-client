@@ -182,6 +182,25 @@ const useStyles = createStyles((theme) => ({
       flexDirection: 'column'
   },
   },
+  teambox: {
+    alignItems: 'center',
+    display: 'grid',
+    marginTop: '15px',
+    gridTemplateRows: '140px 140px 140px 140px',
+    gridTemplateColumns: '320px 320px 320px',
+    justifyContent: 'center',
+    paddingLeft: '100px',
+    [theme.fn.smallerThan('lg')]: {
+      paddingLeft: '0px',
+      marginLeft: '80px',
+      gridTemplateColumns: '320px 320px',
+    },
+    [theme.fn.smallerThan('md')]: {
+        display: 'none',
+
+      
+    },
+  },
 
   container: {
     padding: '0',
@@ -334,40 +353,43 @@ export default function AppShellExample() {
 
 
        <Container className="products-text">
-            <Title mt={70} className={classes.title}> Remodeling academic counseling with individualized customization </Title>
-            <Text className="products-tag2"> Upon registry, students, counselors, and administrators will have full access to customize their dashboard. 
-            Students complete surveys upon sign in to determine their unique path and what's displyed on their student dashboard, while counselors can make edits and suggestions to these particular colleges, careers, and other classes contained within the student path. </Text>
+            <Title mt={70} className={classes.title}> A personalized path for every student story </Title>
+            <Text className="products-tag2"> We believe that every student should be set up for academic success. We'll provide a personalized path that aligns with your
+            future vision after answering a few questions upon registery. It only takes five minutes.   </Text>
         </Container>
-
+        <Container mt={25} sx={{backgroundColor: 'lightblue', width: '800px', height: '200px', borderRadius: '5px'}}> Filled with Image of Individual Path Example </Container>
         <Container className="products-text">
-            <Title mt={70} className={classes.title}> An effective liason between school's counselors and students </Title>
-            <Text className="products-tag2"> MyNext4 links counselors to their students without the inconvenience of counseling every student individually. Find students
-            academic progress with our accessible counselor tools. If they fall off track, the counselor will be the first to get notified.
+            <Title mt={70} className={classes.title}> Access academic information with convenience   </Title>
+            <Text className="products-tag2"> We have a variety of academic resource ready for use with or without an account. Search simply using keywords, phrases, or a course, college, and career title and find desired information freely.
                  </Text>
         </Container>
-
-      <Container>
-            <Title mt={70} className={classes.title}> Open-source college prep library   </Title>
-            <Text className="products-tag2"> Search through 300+ career paths, colleges, universities, and more through our search feature. Add items
-            to your library, and find the best path that suits your unique vision. </Text>
-        </Container>
+        <Container mt={25} sx={{backgroundColor: 'lightblue', width: '800px', height: '350px', borderRadius: '5px'}}> 3 Cards: Course, College, and Career </Container>
 
         <Container className="products-text">
             <Title mt={70} className={classes.title}> Boost school-wide productivity with modern academic tools   </Title>
-            <Text className="products-tag2"> Our library includes 15+ student tools, 5 counselor tools, and 
-            open source course, college, and career resources. Tools are customized based on counselor and student input upon registering.</Text>
+            <Text className="products-tag2"> Our library currently contains X student tools, Y counselor tools, and 
+            any course, college, and career information. Tools are customized based on counselor and student preference upon registering.</Text>
         </Container>
+
+        <Container mt={25}  sx={{backgroundColor: 'lightblue', width: '1000px', height: '350px', borderRadius: '5px'}}> FULL PAGE WIDTH / Title, description of every student component all placed in the same sized box. Use the flip icon in the upper right to flip sides to counselor components.   </Container>
         
         
 
         <Container className="products-text">
-            <Title mt={70} className={classes.title}> Bring community to your work  </Title>
+            <Title mt={70} className={classes.title}> Bringing community to the college counseling process </Title>
             <Text className="products-tag2"> Students can find like-minded individuals through our student community. Discuss, ask for help, gain insight, and brainstorm with like minded individuals
             and find your next big passion. Counselors can discuss with other registered counselors similarly through our counselor component.
           </Text>
         </Container>
       
+        <Container sx={{display: 'flex', justifyContent:'center'}} >
+                  <Container mt={25}  sx={{backgroundColor: 'lightblue', width: '300px', height: '350px', borderRadius: '5px'}}>Discord 3D Image  </Container>
+        <Container ml={30} mt={25}  sx={{backgroundColor: 'lightblue', width: '600px', height: '350px', borderRadius: '5px'}}>  Sign In link to Discord. Light purple background with white box surrounding sign in box.</Container>
+    </Container>
 
+      
+
+      
     
 
             

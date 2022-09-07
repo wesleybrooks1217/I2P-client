@@ -79,15 +79,15 @@ export default function HeroBullets() {
         zIndex={0}
       />
       <Container className={classes.container}>
-        <Title className={classes.title}> Academic resources to supplement student growth
+        <Title className={classes.title}> Academic resources to supplement student success
          </Title>
         <Text className={classes.description} size="xl" mt="xl">
-       Search for classes, colleges, or careers and find accessible information with no account needed. Add resources to your personal collection with an individual or school account.
+       Explore a vast library of resources accessible for all to enjoy and use. Purchase a premium account and gain access to personalized components made for you.
 
         </Text>
 
         <Button variant="gradient" size="xl" radius="xl" className={classes.control}>
-          Sign up free 
+          Create an account
         </Button>
       </Container>
     </div>

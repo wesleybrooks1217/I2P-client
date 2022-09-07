@@ -2,6 +2,7 @@ import React from 'react';
 import { createStyles, Avatar, Text, Group, Button } from '@mantine/core';
 import { BrandGithub, BrandLinkedin } from 'tabler-icons-react';
 
+
 const useStyles = createStyles((theme) => ({
   icon: {
     color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],

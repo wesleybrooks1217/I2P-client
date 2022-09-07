@@ -14,6 +14,7 @@ import {
 import { Check } from 'tabler-icons-react';
 import image from './studentsuccess.png';
 
+
 const useStyles = createStyles((theme) => ({
   inner: {
     display: 'flex',
@@ -23,7 +24,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   content: {
-    maxWidth: 580,
+    maxWidth: 620,
    
 
     [theme.fn.smallerThan('md')]: {
@@ -82,11 +83,10 @@ export default function HeroBullets() {
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title mb="lg" sx={{alignSelf: 'center', marginTop: '30px'}}className={classes.title}>
-              Making college-prep resources accessible to <span className={classes.highlight}> every student </span> <br /> 
+            Revolutionizing the college process for  <span className={classes.highlight}> all students </span> <br /> 
             </Title>
             <Text color="dimmed" mt="md">
-              We're on a mission to provide every student with the class, college, or career resources they need to find their niche. Every student has unique gifts,
-              and we're here to ensure it comes to life.
+            We have a mission to maximize student oppourtunity for all by providing accessible resources to improve equity for all students nationwide.
             
             </Text>
              </div>
