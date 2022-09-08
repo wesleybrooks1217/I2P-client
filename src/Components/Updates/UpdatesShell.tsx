@@ -55,19 +55,6 @@ const mockdata2 = [
       { label: "FAQ", link: "/Updates" },
     ],
   },
-<<<<<<< Updated upstream
-  {
-  title: "Resources",
-  links: [
-    { label: 'MyNext4 Library', link: '/Updates' },
-    { label: "MyCourses", link: '/MyCourses' },
-    { label: "Docs", link: '/' },
-    { label: 'Podcast', link: './Privacy' },
-    { label: 'FAQ', link: '/Updates' },
-  ],
-},
-=======
->>>>>>> Stashed changes
 
   {
     title: "Company",
