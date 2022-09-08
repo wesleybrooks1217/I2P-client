@@ -23,13 +23,13 @@ import FooterLinks from "./Universal/FullFooter";
 import LightDarkButton from "./LightDarkButton"
 import footerLinkTree from "./FooterLinktree";
 import navbarLinkTree from "./NavbarLinkTree";
-import useStyles from './StyleSheet';
+import styleSheet from './StyleSheet';
 
 
 function Next4Shell(props) {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
-  const { classes } = useStyles();
+  const { classes } = styleSheet();
   const links = navbarLinkTree.map((item) => <LinksGroup {...item} key={item.label} />);
  
   return (

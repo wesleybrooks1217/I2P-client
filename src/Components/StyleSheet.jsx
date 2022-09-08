@@ -13,7 +13,8 @@ import {
     useMantineTheme,
     Autocomplete
   } from '@mantine/core';
-const useStyles = createStyles((theme) => ({
+
+const styleSheet = createStyles((theme) => ({
     navbar: {
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
       paddingBottom: 0,
@@ -31,16 +32,16 @@ const useStyles = createStyles((theme) => ({
     },
   
     title: {
-      fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-      fontWeight: 900,
-      marginBottom: theme.spacing.md,
-      textAlign: 'center',
-  
-      [theme.fn.smallerThan('sm')]: {
-        fontSize: 28,
-        textAlign: 'left',
+        fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+        fontWeight: 900,
+        marginBottom: theme.spacing.md,
+        textAlign: 'center',
+    
+        [theme.fn.smallerThan('sm')]: {
+          fontSize: 28,
+          textAlign: 'left',
+        },
       },
-    },
   
     links: {
       marginLeft: -theme.spacing.md,
@@ -57,6 +58,13 @@ const useStyles = createStyles((theme) => ({
       paddingTop: theme.spacing.xl,
       paddingBottom: theme.spacing.xl,
     },
+    footer: {
+        marginLeft: -theme.spacing.md,
+        marginRight: -theme.spacing.md,
+        borderTop: `1px solid ${
+          theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
+        }`,
+      },
   }));
 
-  export default useStyles;
+  export default styleSheet;

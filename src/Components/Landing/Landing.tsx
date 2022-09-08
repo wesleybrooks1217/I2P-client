@@ -1,65 +1,36 @@
-import "./LandingShell.css"
-import React, { useState } from 'react';
-import Cards from "./Components/CardDemo"
+import "./Landing.css"
 import {
-  Navbar,
-  Header,
-  Footer,
-  Aside,
   Text,
-  Group,
-  SimpleGrid,
-  Code,
-  ScrollArea,
-  Button,
   Image,
   Container,
   createStyles,
   Title,
-  MediaQuery,
-  Burger,
   useMantineTheme,
-  Autocomplete
 } from '@mantine/core';
 import {ColorScheme, ColorSchemeProvider, MantineProvider, Paper} from "@mantine/core"
 import {useHotkeys, useLocalStorageValue} from "@mantine/hooks"
-import AppShellExample from "./LandingShell"
 import Next4Shell from "../Next4Shell";
-import navbarLinkTree from "../NavbarLinkTree";
-import footerLinkTree from '../FooterLinktree';
-import { LinksGroup } from '../Universal/NavbarLinksGroup';
-import SocialButtons from "../Universal/SocialButtons/SocialButtons"
 import ActionsGrid from "./Components/ToolSelectorDemo"
 import FeaturesGrid from "./Components/Features/FeaturesDemo"
 import ThreeGrid from "./Components/Features/ThreeSteps"
-import LightDarkButton from "../LightDarkButton"
 import HeroBullets from "./Components/LandingBullets"
-import "./LandingShell.css"
 import BadgeCard from "./Components/CardDemo"
-import FeaturesAsymmetrical from "./Components/ThreeStepDemo"
-import FooterCentered from "../Universal/Footer"
-import EmailBanner from "../Universal/EmailBanner/EmailBanner"
-import BottomText from "../Universal/BottomFooter/BottomFooter"
-import MNFLibrary from "../MNFLibrary/MNFLibrary"
-import MNFComponents from "../MNFComponents/MNFComponents"
-import Updates from "../Updates/Updates"
 import CounselorGridX from "./Components/CounselorDemo";
+import styleSheet from "../StyleSheet";
 
 const useStyles = createStyles((theme) => ({
-  navbar: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
-    paddingBottom: 0,
+  ...styleSheet,
+  tools: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    [theme.fn.smallerThan('lg')]: {
+      marginLeft: 0,
+      paddingLeft: 0,
+      justifyContent: 'space-around',
+      flexDirection: 'column'
   },
-
-  header: {
-    padding: theme.spacing.md,
-    paddingTop: 0,
-    marginLeft: -theme.spacing.md,
-    marginRight: -theme.spacing.md,
-    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
-    borderBottom: `1px solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
-    }`,
   },
 
   title: {
@@ -72,43 +43,6 @@ const useStyles = createStyles((theme) => ({
       fontSize: 28,
       textAlign: 'left',
     },
-  },
-
-  links: {
-    marginLeft: -theme.spacing.md,
-    marginRight: -theme.spacing.md,
-  },
-
-  search: {
-    [theme.fn.smallerThan('xs')]: {
-      display: 'none',
-    },
-  },
-
-  linksInner: {
-    paddingTop: theme.spacing.xl,
-    paddingBottom: theme.spacing.xl,
-  },
-
-  footer: {
-    marginLeft: -theme.spacing.md,
-    marginRight: -theme.spacing.md,
-    borderTop: `1px solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
-    }`,
-  },
-
-  tools: {
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    [theme.fn.smallerThan('lg')]: {
-      marginLeft: 0,
-      paddingLeft: 0,
-      justifyContent: 'space-around',
-      flexDirection: 'column'
-  },
   },
 
   cards: {
@@ -138,28 +72,20 @@ subtitle: {
 }));
 
 
-  
-
-
 function Landing() {
   const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
     key: 'mantine-color-scheme',
     defaultValue: 'light',
     getInitialValueInEffect: true,
   });
-  const theme = useMantineTheme();
-  const [opened, setOpened] = useState(false);
-  const { classes } = useStyles();
-  const links = navbarLinkTree.map((item) => <LinksGroup {...item} key={item.label} />);
  
+  const { classes } = useStyles();
+  
  
   const courseBadges = [
     { "emoji": "🪪", "label": "MySchedule" },
     { "emoji": "📒", "label": "MyNotes" },
-    { "emoji": "🎒", "label": "MyBackpack" },
-
-
-
+    { "emoji": "🎒", "label": "MyBackpack" }, 
   ]
   
   const collegeBadges = [
@@ -167,16 +93,12 @@ function Landing() {
     {"emoji": "📍", "label": "MyPins" },
     { "emoji": "🎓", "label": "MyCredits" },
     { "emoji": "🔮", "label": "MyAdmissions" },
-    
- 
   ]
 
   const careerBadges = [
     { "emoji": "📆 ", "label": "MyCareers" },
     { "emoji": "🍎", "label": "MyPath" },
     { "emoji": "👔", "label": "MyCommunity" },
-
-
   ]
 
   const counselorBadges = [
@@ -270,12 +192,7 @@ function Landing() {
                 country="MNF U Component" 
                 description="Accessing student information taken to new levels of convenience. Organize, filter, and customize the counselor dashboard to find desired information in seconds.
                   " />
-          
-          
-            
-          
-          
-          </Container>
+            </Container>
           <Container mt={30} mb={30} className="products-text">
             <Text className="products-tag2">  Find information on our individualized components and component tools through MyNext4's documentation or with a search. Find more information on our other components below.
               
