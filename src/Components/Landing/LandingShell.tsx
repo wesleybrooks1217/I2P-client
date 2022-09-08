@@ -39,7 +39,6 @@ import BottomText from "../Universal/BottomFooter/BottomFooter"
 import MNFLibrary from "../MNFLibrary/MNFLibrary"
 import MNFComponents from "../MNFComponents/MNFComponents"
 import Updates from "../Updates/Updates"
-import Blog from "../Blog/Blog"
 import CounselorGridX from "./Components/CounselorDemo"
 import {
   Notes,
