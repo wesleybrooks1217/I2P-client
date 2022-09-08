@@ -55,7 +55,6 @@ const mockdata2 = [
       { label: "FAQ", link: "/Updates" },
     ],
   },
-<<<<<<< HEAD
   {
   title: "Resources",
   links: [
@@ -66,8 +65,6 @@ const mockdata2 = [
     { label: 'FAQ', link: '/Updates' },
   ],
 },
-=======
->>>>>>> d4d712a8b8c962f31eb292a94cff7bbff9490f70
 
   {
     title: "Company",
@@ -106,17 +103,10 @@ const mockdata = [
     icon: Notes,
     initiallyOpened: false,
     links: [
-<<<<<<< HEAD
       { label: 'Updates', link: '/Updates' },
       { label: 'Privacy', link: './Privacy' },
       { label: "MyCourses", link: '/MyCourses' },
       { label: "Support Us", link: '/' },
-=======
-      { label: "Updates", link: "/Updates" },
-      { label: "Privacy", link: "./Privacy" },
-      { label: "Blog", link: "/Blog" },
-      { label: "Support Us", link: "/" },
->>>>>>> d4d712a8b8c962f31eb292a94cff7bbff9490f70
     ],
   },
   {

@@ -22,6 +22,7 @@ import {
 } from "@mantine/core";
 
 import FooterLinks from "../Universal/FullFooter";
+import { TableReviews } from "./SVGs/CoursesTable";
 
 import {
   Notes,
@@ -109,6 +110,63 @@ const mockdata2 = [
       { label: "Contact us", link: "/Updates" },
     ],
   },
+];
+
+const tableData = [
+  {
+    "courseName": "AP Computer Science A",
+    "teacher": "Isaac Asimov",
+    "difficulty": "4/5",
+    "reviews": {
+      "positive": 2223,
+      "negative": 259
+    }
+  },
+  {
+    "courseName": "Honors Biology",
+    "teacher": "Mary Beans",
+    "difficulty": "3.2/5",
+    "reviews": {
+      "positive": 5677,
+      "negative": 1265
+    }
+  },
+  {
+    "courseName": "Honors English",
+    "teacher": "Stanislaw Lem",
+    "difficulty": "2.5/5",
+    "reviews": {
+      "positive": 3487,
+      "negative": 1845
+    }
+  },
+  {
+    "courseName": "AP Calculus",
+    "teacher": "Frank Herbert",
+    "difficulty": "4.5/5",
+    "reviews": {
+      "positive": 8576,
+      "negative": 663
+    }
+  },
+  {
+    "courseName": "Weight Training",
+    "teacher": "Ursula K. Le Guin",
+    "difficulty": "1.2/5",
+    "reviews": {
+      "positive": 6631,
+      "negative": 993
+    }
+  },
+  {
+    "courseName": "Physics",
+    "teacher": "Philip K Dick",
+    "difficulty": "3.9/5",
+    "reviews": {
+      "positive": 8124,
+      "negative": 1847
+    }
+  }
 ];
 
 const useStyles = createStyles((theme) => ({
@@ -304,6 +362,7 @@ export default function AppShellExample() {
           {" "}
           Welcome to the MyCourses Page!
         </Text>
+        <TableReviews data={tableData}/>
       </Container>
     </AppShell>
   );
