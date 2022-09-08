@@ -55,6 +55,7 @@ const mockdata2 = [
       { label: "FAQ", link: "/Updates" },
     ],
   },
+<<<<<<< Updated upstream
   {
   title: "Resources",
   links: [
@@ -65,6 +66,8 @@ const mockdata2 = [
     { label: 'FAQ', link: '/Updates' },
   ],
 },
+=======
+>>>>>>> Stashed changes
 
   {
     title: "Company",
@@ -103,10 +106,10 @@ const mockdata = [
     icon: Notes,
     initiallyOpened: false,
     links: [
-      { label: 'Updates', link: '/Updates' },
-      { label: 'Privacy', link: './Privacy' },
-      { label: "MyCourses", link: '/MyCourses' },
-      { label: "Support Us", link: '/' },
+      { label: "Updates", link: "/Updates" },
+      { label: "Privacy", link: "./Privacy" },
+      { label: "Blog", link: "/Blog" },
+      { label: "Support Us", link: "/" },
     ],
   },
   {
