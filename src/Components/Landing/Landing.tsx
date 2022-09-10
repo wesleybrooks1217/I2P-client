@@ -15,8 +15,9 @@ import FeaturesGrid from "./Components/Features/FeaturesDemo"
 import ThreeGrid from "./Components/Features/ThreeSteps"
 import HeroBullets from "./Components/LandingBullets"
 import BadgeCard from "./Components/CardDemo"
-import CounselorGridX from "./Components/CounselorDemo";
+
 import styleSheet from "../StyleSheet";
+import ComponentShowcase from "./Components/ComponentShowcase";
 
 const useStyles = createStyles((theme) => ({
   ...styleSheet,
@@ -136,16 +137,7 @@ function Landing() {
                 <Text className="products-tag2"> Find over 25+ tools for students and counselor in our component library. Tools range from school scheduling for students to a meetings manager for counselors. We'll provide every student a personalized path to academic success through their provided preferences, and so much more.
                 </Text>
             </Container>
-            <Container pl="120px" pt={70} className={classes.tools}>
-                <ActionsGrid  />
-                <Container  className="resourcebox"> </Container>
-            
-            </Container>
-            <Container pl="120px" pt={70} className={classes.tools}>
-                <CounselorGridX  />
-                <Container  className="resourcebox"> </Container>
-            
-            </Container>
+            <ComponentShowcase />
           
             <Container mt={120} mb={20} className="resourcebox3"> FOI Container </Container>
           

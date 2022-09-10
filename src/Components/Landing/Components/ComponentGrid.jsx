@@ -13,19 +13,24 @@ import {
 
   Coin,
 } from 'tabler-icons-react';
-
-const mockdata = [
-  { title: 'MyMessages', icon: CalendarEvent, color: 'red' },
-  { title: 'MyCalender', icon: Notebook, color: 'orange' },
-  { title: 'MyMeetings', icon: Backpack, color: 'yellow' },
-  { title: 'MyStudents', icon: School, color: 'green' },
-  { title: 'MyNews', icon: Package, color: 'teal' },
-  { title: 'MyStyle', icon: User, color: 'blue' },
-];
+import '../Landing.css'
 
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+  },
+
+  tools: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    [theme.fn.smallerThan('lg')]: {
+      marginLeft: 0,
+      paddingLeft: 0,
+      justifyContent: 'space-around',
+      flexDirection: 'column'
+  },
   },
 
   title: {
@@ -51,10 +56,10 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function CounselorGridX() {
+export default function ComponentGrid(props) {
   const { classes, theme } = useStyles();
 
-  const items = mockdata.map((item) => (
+  const items = props.data.map((item) => (
     <UnstyledButton key={item.title} className={classes.item}>
       <item.icon color={theme.colors[item.color][6]} size={32} />
       <Text size="xs" mt={7}>
@@ -64,19 +69,21 @@ export default function CounselorGridX() {
   ));
 
   return (
-
-    <Card withBorder ml="xl" radius="md" 
-    className={classes.card}>
-      <Group position="apart">
-        <Text className={classes.title}>MyNext4 X Component Tools</Text>
-        <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}>
-          + 5 other tools
-        </Anchor>
-      </Group>
-      <SimpleGrid cols={3} mt="md">
-        {items}
-      </SimpleGrid>
-    </Card>
+    <Container pl="120px" pt={70} className={classes.tools}>
+      <Card withBorder ml="xl" radius="md" 
+      className={classes.card}>
+        <Group position="apart">
+          <Text className={classes.title}>{props.title}</Text>
+          <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}>
+            + 5 other tools
+          </Anchor>
+        </Group>
+        <SimpleGrid cols={3} mt="md">
+          {items}
+        </SimpleGrid>
+      </Card>
+      <Container  className="resourcebox"> </Container>
+    </Container>
 
     
   );
