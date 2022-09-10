@@ -120,7 +120,25 @@ const styleSheet = createStyles((theme) => ({
           flexDirection: 'column',
     },
     },
-    
+    teambox: {
+      alignItems: 'center',
+      display: 'grid',
+      marginTop: '15px',
+      gridTemplateRows: '160px 160px ',
+      gridTemplateColumns: '320px 320px 320px',
+      justifyContent: 'center',
+      paddingLeft: '100px',
+      [theme.fn.smallerThan('lg')]: {
+        paddingLeft: '0px',
+        marginLeft: '80px',
+        gridTemplateColumns: '320px 320px',
+      },
+      [theme.fn.smallerThan('md')]: {
+          display: 'none',
+  
+        
+      },
+    },
     subtitle: {
       display: 'flex',
       flexDirection: 'column',

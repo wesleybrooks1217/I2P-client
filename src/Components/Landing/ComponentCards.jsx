@@ -1,6 +1,6 @@
 import React from 'react';
 import styleSheet from "../StyleSheet";
-import BadgeCard from "./Components/ComponentCardTemplate"
+import BadgeCard from "../ComponentCardTemplate"
 import {
     Container,
   } from '@mantine/core';

@@ -11,12 +11,12 @@ import {ColorScheme, ColorSchemeProvider, MantineProvider, Paper} from "@mantine
 import {useHotkeys, useLocalStorageValue} from "@mantine/hooks"
 import Next4Shell from "../Components/Next4Shell";
 import FeaturesTemplate from "../Components/FeaturesTemplate"
-import HeroBullets from "../Components/Landing/Components/LandingBullets"
+import HeroBullets from "../Components/Landing/LandingBullets"
 import styleSheet from "../Components/StyleSheet";
 import ComponentCards from "../Components/Landing/ComponentCards";
-import ComponentShowcase from "../Components/Landing/Components/ComponentShowcase";
-import { next4Steps } from '../Components/Landing/Components/Constants/next4Steps';
-import { next4Benefits } from "../Components/Landing/Components/Constants/next4Benefits";
+import ComponentShowcase from "../Components/Landing/ComponentShowcase";
+import { next4Steps } from '../Components/Landing/Constants/next4Steps';
+import { next4Benefits } from "../Components/Landing/Constants/next4Benefits";
 
 function Landing() {
   const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
