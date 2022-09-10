@@ -13,22 +13,24 @@ import {
 
   Coin,
 } from 'tabler-icons-react';
-
-const mockdata = [
-  { title: 'MySchedule', icon: CalendarEvent, color: 'red' },
-  { title: 'MyNotebook', icon: Notebook, color: 'orange' },
-  { title: 'MyBackpack', icon: Backpack, color: 'yellow' },
-  { title: 'NextEducation', icon: School, color: 'green' },
-  { title: 'MyCredits', icon: Package, color: 'teal' },
-  { title: 'MyAdmissions', icon: User, color: 'blue' },
-  { title: 'MyCareers', icon: ChefHat, color: 'indigo' },
-  { title: 'MyPath', icon: Map, color: 'violet' },
-  { title: 'MyCommunity', icon: AddressBook, color: 'pink' },
-];
+import '../Landing.css'
 
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+  },
+
+  tools: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    [theme.fn.smallerThan('lg')]: {
+      marginLeft: 0,
+      paddingLeft: 0,
+      justifyContent: 'space-around',
+      flexDirection: 'column'
+  },
   },
 
   title: {
@@ -54,10 +56,10 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function ActionsGrid() {
+export default function ColorGridTemplate(props) {
   const { classes, theme } = useStyles();
 
-  const items = mockdata.map((item) => (
+  const items = props.data.map((item) => (
     <UnstyledButton key={item.title} className={classes.item}>
       <item.icon color={theme.colors[item.color][6]} size={32} />
       <Text size="xs" mt={7}>
@@ -67,19 +69,21 @@ export default function ActionsGrid() {
   ));
 
   return (
-
-    <Card withBorder ml="xl" radius="md" 
-    className={classes.card}>
-      <Group position="apart">
-        <Text className={classes.title}>MyNext4 U Component Tools</Text>
-        <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}>
-          + 5 other tools
-        </Anchor>
-      </Group>
-      <SimpleGrid cols={3} mt="md">
-        {items}
-      </SimpleGrid>
-    </Card>
+    <Container pl="120px" pt={70} className={classes.tools}>
+      <Card withBorder ml="xl" radius="md" 
+      className={classes.card}>
+        <Group position="apart">
+          <Text className={classes.title}>{props.title}</Text>
+          <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}>
+            + 5 other tools
+          </Anchor>
+        </Group>
+        <SimpleGrid cols={3} mt="md">
+          {items}
+        </SimpleGrid>
+      </Card>
+      <Container  className="resourcebox"> </Container>
+    </Container>
 
     
   );

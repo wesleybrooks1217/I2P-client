@@ -9,7 +9,8 @@ import {
   createStyles,
 } from '@mantine/core';
 import { Icon as TablerIcon } from 'tabler-icons-react';
-import { MOCKDATA } from './featureData';
+
+import styleSheet from './StyleSheet'
 
 interface FeatureProps {
   icon: TablerIcon;
@@ -21,55 +22,26 @@ interface FeatureProps {
 export function Feature({ icon: Icon, title, description }: FeatureProps) {
   const theme = useMantineTheme();
   return (
-    <div>
-      <ThemeIcon variant="light" size={40} radius={40}>
+    <Container mb={20} >
+      <ThemeIcon variant="light" mb={7} size={50} radius={40}>
         <Icon style={{ width: 20, height: 20 }} />
       </ThemeIcon>
-      <Text style={{ marginTop: theme.spacing.sm, marginBottom: 7 }}>{title}</Text>
+      <Text style={{ marginTop: theme.spacing.sm, marginBottom: 10 }}>{title}</Text>
       <Text size="sm" color="dimmed" style={{ lineHeight: 1.6 }}>
         {description}
       </Text>
-    </div>
+    </Container>
   );
 }
-
-const useStyles = createStyles((theme) => ({
-  wrapper: {
-    paddingTop: theme.spacing.xl * 4,
-    paddingBottom: theme.spacing.xl * 4,
-    
-  },
-
-  title: {
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontWeight: 900,
-    marginBottom: theme.spacing.md,
-    textAlign: 'center',
-
-    [theme.fn.smallerThan('sm')]: {
-      fontSize: 28,
-      textAlign: 'center'
-      
-    },
-  },
-
-  description: {
-    textAlign: 'center',
-
-    [theme.fn.smallerThan('sm')]: {
-      textAlign: 'center',
-    },
-  },
-}));
 
 interface FeaturesGridProps {
   title: React.ReactNode;
   description: React.ReactNode;
-  data?: FeatureProps[];
+  data: FeatureProps[];
 }
 
-export default function FeaturesGrid({ title, description, data = MOCKDATA }: FeaturesGridProps) {
-  const { classes } = useStyles();
+export default function FeaturesTemplate({ title, description, data }: FeaturesGridProps) {
+  const { classes } = styleSheet();
   const theme = useMantineTheme();
   const features = data.map((feature, index) => <Feature {...feature} key={index} />);
 
@@ -82,7 +54,7 @@ export default function FeaturesGrid({ title, description, data = MOCKDATA }: Fe
     
       <SimpleGrid
         mt={60}
-        cols={4}
+        cols={3}
         spacing={theme.spacing.xl * 2}
         breakpoints={[
           { maxWidth: 980, cols: 2, spacing: 'xl' },

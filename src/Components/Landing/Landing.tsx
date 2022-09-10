@@ -10,15 +10,13 @@ import {
 import {ColorScheme, ColorSchemeProvider, MantineProvider, Paper} from "@mantine/core"
 import {useHotkeys, useLocalStorageValue} from "@mantine/hooks"
 import Next4Shell from "../Next4Shell";
-import ActionsGrid from "./Components/ToolSelectorDemo"
-import FeaturesGrid from "./Components/Features/FeaturesDemo"
-import ThreeGrid from "./Components/Features/ThreeSteps"
+import FeaturesTemplate from "../FeaturesTemplate"
 import HeroBullets from "./Components/LandingBullets"
 import BadgeCard from "./Components/CardDemo"
-
 import styleSheet from "../StyleSheet";
 import ComponentShowcase from "./Components/ComponentShowcase";
-
+import { next4Steps } from './Components/Features/next4Steps';
+import { next4Benefits } from "./Components/Features/next4Benefits";
 const useStyles = createStyles((theme) => ({
   ...styleSheet,
   tools: {
@@ -130,7 +128,8 @@ function Landing() {
         <Next4Shell
           page= { <div>
             <HeroBullets  />
-            <ThreeGrid title="Students: Align your academic desires with a personalized path to get there" description="Access course, college, and career component tools to complement your academic story. We'll provide personalized recommendations, resources, and readily accessible tools in minutes upon account registery. " />
+            <FeaturesTemplate title="Students: Align your academic desires with a personalized path to get there" description="Access course, college, and career component tools to complement your academic story. We'll provide personalized recommendations, resources, and readily accessible tools in minutes upon account registery. " 
+                       data={next4Steps} />
             <Container  className="products-text">
                 
                 <Title sx={{marginBottom: '25px'}}className={classes.title}> School Systems: Complement the college counseling process with modern tools  </Title>
@@ -205,7 +204,7 @@ function Landing() {
           
             </Container> 
             
-            <FeaturesGrid title="A complement to everyone's work" description="" />
+            <FeaturesTemplate title="A complement to everyone's work" description="" data={next4Benefits} />
            
             <Container mt={70} className="products-text">
                 

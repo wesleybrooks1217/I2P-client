@@ -15,6 +15,19 @@ import {
   } from '@mantine/core';
 
 const styleSheet = createStyles((theme) => ({
+  wrapper: {
+    paddingTop: theme.spacing.xl * 4,
+    paddingBottom: theme.spacing.xl * 4,
+    
+  },
+
+  description: {
+    textAlign: 'center',
+
+    [theme.fn.smallerThan('sm')]: {
+      textAlign: 'center',
+    },
+  },
     navbar: {
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
       paddingBottom: 0,

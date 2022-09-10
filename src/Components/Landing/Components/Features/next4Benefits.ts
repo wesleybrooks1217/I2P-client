@@ -1,6 +1,6 @@
 import { Gauge, FileText, User, Message2, ArrowBigUpLine, Package } from 'tabler-icons-react';
 
-export const MOCKDATA = [
+export const next4Benefits = [
   {
     icon: Package,
     title: 'Elevated convenience',

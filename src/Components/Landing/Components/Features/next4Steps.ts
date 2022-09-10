@@ -1,6 +1,6 @@
 import { Certificate, Circle1, Circle2, Circle3, Gauge, Cookie, User, Message2, Checklist, Book2 } from 'tabler-icons-react';
 
-export const MOCKDATA = [
+export const next4Steps = [
   {
     icon: Circle1,
     title: "Find your preferred field of interest.",

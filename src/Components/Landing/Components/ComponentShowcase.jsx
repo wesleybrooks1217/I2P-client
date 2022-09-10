@@ -1,5 +1,5 @@
 import React from 'react';
-import ComponentGrid from './ComponentGrid';
+import ColorGridTemplate from './ColorGridTemplate';
 import {
     CreditCard,
     BuildingBank,
@@ -47,12 +47,12 @@ const studentComponents = [
 function ComponentShowcase() {
     return (
         <div>
-         <ComponentGrid
+         <ColorGridTemplate
                 data={counselorComponents}
                 title="MyNext4 X Component Tools"
             />
        
-        <ComponentGrid
+        <ColorGridTemplate
                 data={studentComponents}
                 title="MyNext4 U Component Tools"
                 />
