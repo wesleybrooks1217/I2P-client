@@ -13,7 +13,7 @@ import {
 
   Coin,
 } from 'tabler-icons-react';
-import '../Landing.css'
+import '../Styles/Landing.css'
 
 const useStyles = createStyles((theme) => ({
   card: {

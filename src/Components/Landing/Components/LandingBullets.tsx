@@ -11,8 +11,6 @@ import {
   List,
   ThemeIcon,
 } from '@mantine/core';
-import { Check } from 'tabler-icons-react';
-import image from '../SVGs/image.svg';
 import image2 from "./mynext42.gif";
 
 const useStyles = createStyles((theme) => ({
@@ -124,9 +122,6 @@ export default function HeroBullets() {
             to boost all around productivity.
             
             </Text>
-
-           
-
             <Group sx={{display: 'flex', justifyContent: 'center' }} mt={40}>
               <Button radius="xl" size="md" className={classes.control}>
                 School Systems
@@ -135,12 +130,7 @@ export default function HeroBullets() {
                 Individual
               </Button>
 </Group>
-          
-
-          
-          
-         
-      </div>
+</div>
       <Image className={classes.image} sx={{alignItems: 'center'}} src={image2} width={600} />
       
     

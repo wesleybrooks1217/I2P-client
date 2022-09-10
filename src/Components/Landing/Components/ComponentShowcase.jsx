@@ -1,5 +1,5 @@
 import React from 'react';
-import ColorGridTemplate from './ColorGridTemplate';
+import ColorGridTemplate from '../../ColorGridTemplate';
 import {
     CreditCard,
     BuildingBank,

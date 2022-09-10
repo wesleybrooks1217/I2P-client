@@ -16,7 +16,7 @@ import {
 } from '@mantine/core';
 
 import { Search } from 'tabler-icons-react';
-import { UserButton } from './Landing/Helpers/UserButton';
+import { UserButton } from './UserButton';
 import { LinksGroup } from './Universal/NavbarLinksGroup';
 import LogoNoText from "./Universal/Images/MyNext4Icon.png"
 import FooterLinks from "./Universal/FullFooter";

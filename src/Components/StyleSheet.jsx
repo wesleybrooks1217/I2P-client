@@ -78,6 +78,55 @@ const styleSheet = createStyles((theme) => ({
           theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
         }`,
       },
+      tools: {
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        [theme.fn.smallerThan('lg')]: {
+          marginLeft: 0,
+          paddingLeft: 0,
+          justifyContent: 'space-around',
+          flexDirection: 'column'
+      },
+      },
+    
+      title: {
+        fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+        fontWeight: 900,
+        marginBottom: theme.spacing.md,
+        textAlign: 'center',
+    
+        [theme.fn.smallerThan('sm')]: {
+          fontSize: 28,
+          textAlign: 'left',
+        },
+      },
+    
+      cards: {
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        [theme.fn.smallerThan('md')]: {
+            flexDirection: 'column',
+      }
+    },
+    
+    stepPlan: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      [theme.fn.smallerThan('sm')]: {
+          flexDirection: 'column',
+    },
+    },
+    
+    subtitle: {
+      display: 'flex',
+      flexDirection: 'column',
+      
+    
+    }, 
   }));
 
   export default styleSheet;

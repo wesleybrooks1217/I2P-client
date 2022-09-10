@@ -1,19 +1,19 @@
-import './App.css';
+import '../Styles/App.css';
 
 import {ColorScheme, ColorSchemeProvider, MantineProvider, Paper} from "@mantine/core"
 import {useHotkeys, useLocalStorageValue} from "@mantine/hooks"
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Landing from "./Landing/Landing"
-import SchoolSystems from "./SchoolSystems/SchoolSystems"
-import WhyMyNext4 from "./WhyMyNext4/WhyMyNext4";
-import Pricing from "./Pricing/Pricing";
-import AboutUs from "./AboutUs/AboutUs";
-import MNFLibrary from "./MNFLibrary/MNFLibrary"
-import MNFComponents from "./MNFComponents/MNFComponents"
-import Updates from "./Updates/Updates"
-import Privacy from "./Privacy/Privacy"
-import MyCourses from "./MyCourses/Courses"
+import Landing from "./Landing"
+import SchoolSystems from "../Components/SchoolSystems/SchoolSystems"
+import WhyMyNext4 from "../Components/WhyMyNext4/WhyMyNext4";
+import Pricing from "../Components/Pricing/Pricing";
+import AboutUs from "../Components/AboutUs/AboutUs";
+import MNFLibrary from "../Components/MNFLibrary/MNFLibrary"
+import MNFComponents from "../Components/MNFComponents/MNFComponents"
+import Updates from "../Components/Updates/Updates"
+import Privacy from "../Components/Privacy/Privacy"
+import MyCourses from "../Components/MyCourses/Courses"
 /*
 Testing push request
 */
