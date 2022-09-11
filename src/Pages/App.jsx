@@ -9,7 +9,7 @@ import SchoolSystems from "../Components/SchoolSystems/SchoolSystems"
 import WhyMyNext4 from "./WhyMyNext4";
 import Pricing from "../Components/Pricing/Pricing";
 import AboutUs from "./AboutUs";
-import MNFLibrary from "../Components/MNFLibrary/MNFLibrary"
+import MNFLibrary from "./MNFLibrary"
 import MNFComponents from "../Components/MNFComponents/MNFComponents"
 import Updates from "../Components/Updates/Updates"
 import Privacy from "../Components/Privacy/Privacy"
