@@ -163,6 +163,13 @@ const useStyles = createStyles((theme) => ({
     },
   },
 
+  likedList: {
+    [theme.fn.smallerThan('md')]: {
+      display: 'none',
+    },
+  },
+
+
   linksInner: {
     paddingTop: theme.spacing.xl,
     paddingBottom: theme.spacing.xl,
@@ -352,7 +359,7 @@ export default function AppShellExample() {
         
       }
     >
-      <Container mt={50} mb={0} sx={{justifyContent: 'center', width: '320px', height: '200px'}}>
+      <Container mt={80} mb={0} sx={{justifyContent: 'center', width: '620px', height: '200px'}}>
       <StatsCard />
       </Container>
       <Container mt={0} sx={{justifyContent: 'center', display: 'flex'}}>

@@ -14,6 +14,7 @@ import MNFComponents from "../Components/MNFComponents/MNFComponents"
 import Updates from "../Components/Updates/Updates"
 import Privacy from "../Components/Privacy/Privacy"
 import MyCourses from "../Components/MyCourses/Courses"
+import Dashboard from "../Components/Dashboard/Dashboard"
 /*
 Testing push request
 */
@@ -35,6 +36,7 @@ class App extends React.Component {
           <Route path='/MNFComponents' element={<MNFComponents />} />
           <Route path='/Updates' element={<Updates />} />
           <Route path='/Privacy' element={<Privacy />} />
+          <Route path='/Dashboard' element={<Dashboard />} />
         </Routes>
       
       </React.Fragment>
