@@ -8,6 +8,13 @@ function MyColleges(props) {
             return [...prevColleges, newColleges];
         })
     }
+    function deleteCollege(id) {
+        setColleges((prevColleges) => {
+            return prevColleges.filter((college, index) => {
+                return id !== index;
+            });
+        });
+    }
     return (
         <div>
             <h1> My Colleges </h1>
@@ -15,8 +22,11 @@ function MyColleges(props) {
                 <CollegeCard 
                     name={college.name}
                     acceptanceRate={college.acceptanceRate}
-                    addItem={addItem} />
+                    addCollege={addItem} 
+                    />
             })};
+            <p> Delete an Item </p>
+            
         </div> 
     )
 }

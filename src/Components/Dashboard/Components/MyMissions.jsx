@@ -7,10 +7,7 @@ import {Book2, School, BuildingCommunity } from 'tabler-icons-react';
 import Mission from "./Mission"
 
 function MyMissions(props) {
-    const [missions, setMissions] = useState({
-        title: "",
-        description: "",
-    });
+    const [missions, setMissions] = useState([]);
     const { classes } = styleSheet();
     const [screenWidth, setScreenWidth] = useState(true);
     const [windowDimension, detectHW] = useState({
@@ -52,7 +49,9 @@ function MyMissions(props) {
             {missions.map((mission, index) => {
                 return <Mission 
                             title={mission.title}
-                            description={mission.description} />
+                            description={mission.description}
+                            icon={mission.icon}
+                            missionColor={mission.missionColor} />
             })}
         </Stack>
         </Container>

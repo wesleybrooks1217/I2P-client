@@ -1,0 +1,14 @@
+
+.map-container > button {
+    height: 50px;
+    margin: 20px;
+    background-color:aquamarine;
+    border: none;
+    width: 50px;
+}
+
+
+.map-container {
+    height: 500px;
+    margin-bottom: 100px;
+}

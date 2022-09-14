@@ -43,6 +43,8 @@ import FooterCentered from "../Universal/Footer"
 import LightDarkButton from "../LightDarkButton"
 import MyMissions from "./Components/MyMissions"
 import MyList from "./Components/CourseCollege"
+import MyMap from "./Components/MyMap";
+
 const mockdata2 = [
 
   {
@@ -366,6 +368,7 @@ export default function AppShellExample() {
         <MyMissions />
         <MyList />
         </Container>
+      <MyMap />
 
      
 

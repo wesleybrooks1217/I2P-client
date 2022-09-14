@@ -7,7 +7,6 @@ import {
     ShieldX}
     from 'tabler-icons-react';
 
-import { Carousel } from '@mantine/carousel';
 import {List} from '@mantine/core';
 import {Progress} from '@mantine/core';
 import RefreshCardSection from '../GlobalComponents/RefreshCardSection';

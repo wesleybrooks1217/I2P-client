@@ -1,4 +1,4 @@
-import {Carousel} from '@mantine/carousel';
+
 
 /*
 Will be built later

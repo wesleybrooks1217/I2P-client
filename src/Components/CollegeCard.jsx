@@ -4,6 +4,9 @@ function CollegeCard(props) {
     function addCard() {
         props.addItem();
     }
+    function deleteNote() {
+        props.deleteCollege(props.id)
+    }
     return (
         <div> 
             <h1> {props.name} </h1>
