@@ -1624,6 +1624,13 @@
   resolved "https://registry.npmjs.org/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
+"@mantine/carousel@^5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@mantine/carousel/-/carousel-5.3.1.tgz#353145ca90dd5618eb6130aeed21357f87b9e496"
+  integrity sha512-XTbhMsCc/rREFQTAdKthhO9wleZOHU96Swi5YOYzIu4EM437DvUt9Kz8eJD78E57znFwD5sRmbQjpz6Y9hMQnA==
+  dependencies:
+    "@mantine/utils" "5.3.1"
+
 "@mantine/core@^4.2.12":
   version "4.2.12"
   resolved "https://registry.npmjs.org/@mantine/core/-/core-4.2.12.tgz"
@@ -1675,6 +1682,11 @@
     "@emotion/utils" "1.0.0"
     clsx "^1.1.1"
     csstype "3.0.9"
+
+"@mantine/utils@5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@mantine/utils/-/utils-5.3.1.tgz#4bf772535f47a1cdc1e6c007df517ccf191ab68c"
+  integrity sha512-2LnmoiPn+0Wp7B0FpWZxf3V4N5kp8+ISAJg+prQQCBtE0hSiDDuoFoGw621epDp7WkA5bYNeyjEnH3+fnveFgw==
 
 "@modulz/radix-icons@^4.0.0":
   version "4.0.0"
@@ -7666,7 +7678,7 @@ react-transition-group@^4.4.2:
 
 react@^18.2.0:
   version "18.2.0"
-  resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
+  resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
   dependencies:
     loose-envify "^1.1.0"
