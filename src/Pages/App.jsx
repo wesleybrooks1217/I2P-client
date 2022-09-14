@@ -15,6 +15,7 @@ import Updates from "../Components/Updates/Updates"
 import Privacy from "../Components/Privacy/Privacy"
 import MyCourses from "../Components/MyCourses/Courses"
 import Dashboard from "../Components/Dashboard/Dashboard"
+import MyCareer from '../MyCareer/MyCareer';
 /*
 Testing push request
 */
@@ -37,6 +38,7 @@ class App extends React.Component {
           <Route path='/Updates' element={<Updates />} />
           <Route path='/Privacy' element={<Privacy />} />
           <Route path='/Dashboard' element={<Dashboard />} />
+          <Route path = '/MyCareer' element={ <MyCareer />} /> 
         </Routes>
       
       </React.Fragment>
