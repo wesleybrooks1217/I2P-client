@@ -396,7 +396,15 @@ export default function AppShellExample() {
           {" "}
           Welcome to the MyCourses Page!
         </Text>
+        <Title mb={20} sx={{ textAlign: "center" }} className={classes.title}>
+          {" "}
+          Our Recommeded Schedule - Spring 2023!
+        </Title>
         <TableSelection data={scheduleData}/>
+        <Title mt={70} mb={20} sx={{ textAlign: "center" }} className={classes.title}>
+          {" "}
+          Additional Course Reccomendations!
+        </Title>
         <TableReviews data={tableData}/>
       </Container>
     </AppShell>

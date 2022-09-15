@@ -30,7 +30,7 @@ import ActionsGrid from '../MNFComponents/ToolSelectorDemo'
 // import ActionsGrid from "./Components/ToolSelectorDemo"
 import FeaturesGrid from '../Pricing/Features/FeaturesDemo'
 // import FeaturesGrid from "./Components/Features/FeaturesDemo"
-// import ThreeGrid from "../Components/Features/ThreeSteps" -- need to fix this
+import ThreeGrid from "../../../Landing/Components/Features/ThreeSteps"
 import LightDarkButton from "../LightDarkButton"
 import HeroBullets from '../MNFComponents/MNFComponentsBullets'
 // import HeroBullets from "./Components/LandingBullets"
@@ -46,7 +46,7 @@ import MNFLibrary from '../../Pages/MNFLibrary'
 // import MNFLibrary from "../MNFLibrary/MNFLibrary"
 import MNFComponents from "../MNFComponents/MNFComponents"
 import Updates from "../Updates/Updates"
-//import CounselorGridX from "../Components/Features/CounselorDemo" - need to fix this
+import CounselorGridX from "../../../Landing/Components/CounselorDemo"
 import {
   Notes,
   CalendarStats,
@@ -378,7 +378,7 @@ export default function AppShellExample() {
       
     
         <HeroBullets  />
-        {/* <ThreeGrid title="Students: Align your academic desires with a personalized path to get there" description="Access course, college, and career component tools to complement your academic story. We'll provide personalized recommendations, resources, and readily accessible tools in minutes upon account registery. " /> */}
+        <ThreeGrid title="Students: Align your academic desires with a personalized path to get there" description="Access course, college, and career component tools to complement your academic story. We'll provide personalized recommendations, resources, and readily accessible tools in minutes upon account registery. " />
 
      
    
@@ -396,7 +396,7 @@ export default function AppShellExample() {
         
         </Container>
         <Container pl="120px" pt={70} className={classes.tools}>
-            {/* <CounselorGridX  /> */}
+            <CounselorGridX  />
             <Container  className="resourcebox"> </Container>
         
         </Container>
