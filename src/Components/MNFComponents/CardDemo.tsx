@@ -54,7 +54,7 @@ interface BadgeCardProps {
     emoji: string;
     label: string;
   }[];
-  extended: string;
+  extended?: string;
 }
 
 export default function BadgeCard({ image, title, description, country, badges, extended }: BadgeCardProps) {
