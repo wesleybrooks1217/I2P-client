@@ -1,73 +1,37 @@
-.App {
-    text-align: center;
-  }
-  
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  .products-text {
-    display: flex;
-    flex-direction: column;
-   
+
+
+.products-container {
+  justify-content: center;
+  display: flex;
+  margin: 10px;
 }
 
-.products-text > * {
-    text-align: center;
-
+.products-container > * {
+  margin: 4px;
+}
+.products-showcase {
+  width: 580px;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid black;
 }
 
-.products-tag {
-    margin-bottom: 10px;
-    text-align: right;
+.products-grid {
+  display: flex;
+  justify-content: space-around;
+  width: 970px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: .3px .3px 4px;
 }
 
-.products-tag2 {
-    margin-bottom: 30px;
-    font-size: 14px;
-    text-align: center;
-}
-
-.grid-container {
-  
-  text-align: center;
-  align-items: center;
-  display: grid;
-  grid-template-rows: 20px 40px 40px 40px 40px 40px;
-  grid-template-columns: 240px 150px 150px 150px;
-
-}
-
-.border {
+.products-grid > * {
+  border-radius: 2px;
   border: 1px solid black;
-  border-radius: 10px;
-  margin: 5px;
-}
-
-border:hover {
-  border: 10px solid black;
-  color: 'blue';
-  cursor: pointer;
+  background-color: aquamarine;
 }

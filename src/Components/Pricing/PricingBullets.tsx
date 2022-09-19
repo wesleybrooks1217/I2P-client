@@ -82,10 +82,10 @@ export default function HeroBullets() {
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title mb="lg" sx={{alignSelf: 'center', marginTop: '30px'}}className={classes.title}>
-                Start using MyNext4 <span className={classes.highlight}> today</span> <br /> 
+                Start your journey with us <span className={classes.highlight}> today</span> <br /> 
             </Title>
             <Text color="dimmed" mt="md">
-              Student's can switch to a commercial plan to access advanced tools and personalized resources always accessible on our platform. 
+              We have plans that fit everyones pursuit, including school systems or students. Pick your plan, and start right away. Our student plans begin as low as $6 per month.
             
             </Text>
              </div>
