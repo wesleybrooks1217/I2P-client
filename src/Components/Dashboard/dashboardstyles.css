@@ -12,3 +12,84 @@
     height: 500px;
     margin-bottom: 100px;
 }
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.carousel-container > button {
+    width: 90px;
+    height: 80px;
+    margin: 0 12px;
+    background-color: sienna;
+    border: 1px solid ghostwhite;
+    border-radius: 5px;
+    color: ghostwhite;
+    cursor: pointer;
+
+}
+
+.box-container {
+    width: 400px;
+    border: 1px solid black;
+}
+
+.box-container > * {
+    font-size: 16px;
+    color: black;
+}
+.top-shelf-container {
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.top-shelf-container > button {
+    width: 125px;
+    height: 110px;
+    margin: 12px 12px;
+    background-color: sienna;
+    border: 1px solid ghostwhite;
+    border-radius: 3px;
+    color: ghostwhite;
+    cursor: pointer;
+}
+
+.cardboard-container {
+    position: relative;
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 3px;
+    
+
+   
+}
+
+.top-title-container {
+    width: auto;
+    max-width: 800px;
+    border: 1px solid ghostwhite;
+    border-radius: 5px;
+    background-color:white;
+    padding: 16px 24px;
+
+}
+
+.top-title-profile {
+    display: flex;
+    align-items: center;
+}
+
+.top-title-profile > h3 {
+    margin-right: 10px;
+    margin-bottom: 14px;
+}
+
+.top-title-information {
+    width: auto;
+    display: flex;
+    align-items: center;
+
+}
+
