@@ -23,6 +23,7 @@ import {
 
 import FooterLinks from "../Universal/FullFooter";
 import { TableReviews } from "./SVGs/CoursesTable";
+import { TableSelection } from "./SVGs/CourseSchedule";
 
 import {
   Notes,
@@ -110,6 +111,39 @@ const mockdata2 = [
       { label: "Contact us", link: "/Updates" },
     ],
   },
+];
+
+const scheduleData = [
+  {
+    "id": "1",
+    "course": "Health 2",
+    "classPeriod": "First: 9:05-10:20",
+    "teacher": "Rob Wolf"
+  },
+  {
+    "id": "2",
+    "course": "AP Chemistry",
+    "classPeriod": "Second: 10:30-11:45",
+    "teacher": "Jerry Walters"
+  },
+  {
+    "id": "3",
+    "course": "Algebra 1",
+    "classPeriod": "Third: 12:00-1:15",
+    "teacher": "Henry Smith"
+  },
+  {
+    "id": "4",
+    "course": "Geometry",
+    "classPeriod": "Fourth: 1:30-2:45",
+    "teacher": "Susan Jones"
+  },
+  {
+    "id": "5",
+    "course": "Physical Education",
+    "classPeriod": "Fifth: 3:00-4:15",
+    "teacher": "Drake Griffith"
+  }
 ];
 
 const tableData = [
@@ -362,6 +396,15 @@ export default function AppShellExample() {
           {" "}
           Welcome to the MyCourses Page!
         </Text>
+        <Title mb={20} sx={{ textAlign: "center" }} className={classes.title}>
+          {" "}
+          Our Recommeded Schedule - Spring 2023!
+        </Title>
+        <TableSelection data={scheduleData}/>
+        <Title mt={70} mb={20} sx={{ textAlign: "center" }} className={classes.title}>
+          {" "}
+          Additional Course Reccomendations!
+        </Title>
         <TableReviews data={tableData}/>
       </Container>
     </AppShell>
