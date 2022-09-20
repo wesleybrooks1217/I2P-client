@@ -1,3 +1,16 @@
 .container {
     background-color: blue;
 }
+
+.carousel-elements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.carousel-container {
+    background-color: yellow;
+    height: 500px;
+}

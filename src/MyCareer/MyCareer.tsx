@@ -1,7 +1,6 @@
 import CollegeCard from "../GlobalComponents/CollegeCard";
 import CareerDynamicBox from "./CareerDynamicBox";
 import './MyCareer.css';
-import CarouselCustom from "../GlobalComponents/CarouselCustom";
 import RefreshCardSection from "../GlobalComponents/RefreshCardSection";
 import CareerList from "./CareerList";
 import CareerRecommendations from "./CareerRecommendations";
@@ -25,6 +24,8 @@ function MyCareer () {
             <div className="careerRecs">
                 <CareerRecommendations />
             </div>
+
+            
             
             
             
