@@ -4,35 +4,30 @@ import './MyCareer.css';
 import RefreshCardSection from "../GlobalComponents/RefreshCardSection";
 import CareerList from "./CareerList";
 import CareerRecommendations from "./CareerRecommendations";
+import ColorShell from "../Components/ColorShell";
+import { Paper } from "@mantine/core";
+import Next4Shell from "../Components/Next4Shell";
 
 
 function MyCareer () {
     return (
-        <div> 
-            <div className="wrapper1MC">
-                <div className="box1"> 
+        <ColorShell innerContent = {
+            <Paper>
+            <Next4Shell
+            page = {
+                <div>
                     <CareerDynamicBox />
                 </div>
+            }>
 
-                
-                <div className="box2">
-                    <CareerList />
-                </div>
-
-            </div>
-
-            <div className="careerRecs">
-                <CareerRecommendations />
-            </div>
-
-            
-            
-            
-            
-            
-            
-        </div>
-    )
-}
+            </Next4Shell>
+            </Paper>
+        } />
+        
+        
+        
+        
+    );
+};
 
 export default MyCareer;
