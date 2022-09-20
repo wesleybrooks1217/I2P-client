@@ -5,9 +5,14 @@ import { Card, Container, Avatar, Image, Text, Badge, Button, Group } from '@man
 
 
 import ClassCardDemo from './ClassCardDemo';
+import CollegeCard from '../../GlobalComponents/CollegeCard';
+import CollegeCardDemo from './CollegeCardDemo';
 function ThreeCsCards() {
   return (
+    <div>
     <ClassCardDemo />
+    <CollegeCardDemo />
+    </div>
   )
 
 }

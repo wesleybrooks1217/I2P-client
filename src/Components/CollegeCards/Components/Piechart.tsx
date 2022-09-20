@@ -1,4 +1,4 @@
-import { PieChart, Pie, LabelList } from "recharts";
+
 import React from "react";
 import "../CollegeCard.css";
 function Piechart() {
