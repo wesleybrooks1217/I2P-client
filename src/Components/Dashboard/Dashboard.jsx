@@ -19,6 +19,7 @@ import {
   Title,
   MediaQuery,
   Burger,
+  Progress,
   useMantineTheme,
   Autocomplete
 } from '@mantine/core';
@@ -32,7 +33,9 @@ import MyList from "./Components/CourseCollege"
 import MyMap from "./Components/MyMap";
 import TopTitle from './TopTitle';
 import Box from './Components/Box';
-
+import ColorShell from '../ColorShell';
+import UserProfile from '../UserProfile';
+import Notifications from './Components/Notifications';
 function Dashboard() {
   const [boxState, setBoxState] = useState({
     myCs: false,
@@ -154,12 +157,20 @@ function Dashboard() {
 
   return (
     <div className="App">
+       <ColorShell innerContent={
+        <Paper>
+        <Next4Shell
+          page= { 
 
       
-          <div>
-            <Container mt={80} mb={0} sx={{justifyContent: 'center', width: '620px', height: '200px'}}>
-          <TopTitle />
-    
+          <div >
+           
+          <Container sx={{width: 800, display: 'flex', justifyContent: 'center', alignItems: 'center'}} >
+          <UserProfile />
+          <Notifications />
+          </Container>
+          <Container sx={{width: 760}}>
+          <Progress value={65} label="65%" size="xl" radius="xl" />
           </Container>
           <Container mt={0} sx={{justifyContent: 'center', display: 'flex'}}>
             <MyMissions handleChange={setBox} />
@@ -169,17 +180,12 @@ function Dashboard() {
           <MyMap />
 
           </div>
-          
-          
-         
-    
-       
-      
-      
-    
-   
+         }
+         />
+       </Paper>
+       } />
      
-    </div>
+   </div>
   );
 }
 
