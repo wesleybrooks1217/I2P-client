@@ -1,15 +1,22 @@
 import './CareerRecommendations.css';
-import CarouselCustom from '../GlobalComponents/CarouselCustom';
+import { Carousel } from 'react-responsive-carousel';
+import CollegeCard from '../Components/CollegeCard';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 
 function CareerRecommendations () {
+
+    let test = () => {
+        return (
+            <CollegeCard />
+        )
+    }
+
     return (
-        <div className='container'>
-            <h1> Careers Picked For You </h1>
-            
-            <CarouselCustom />
-        </div>
+        <CollegeCard />
+
+       
     );
 };
 

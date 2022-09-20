@@ -1,4 +1,3 @@
-import CarouselCustom from "./CarouselCustom";
 import CollegeCard from "./CollegeCard";
 import './RefreshCardSection.css';
 import {Refresh} from 'tabler-icons-react';

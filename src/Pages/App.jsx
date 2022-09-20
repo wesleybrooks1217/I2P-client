@@ -32,6 +32,20 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/MyCourses' element={<MyCourses />} />
+          <Route path='/SchoolSystems' element={<SchoolSystems />} />
+          <Route path='/WhyMyNext4' element={<WhyMyNext4 />} />
+          <Route path='/Pricing' element={<Pricing />} />
+          <Route path='/AboutUs' element={<AboutUs />} />
+          <Route path='/MNFLibrary' element={<MNFLibrary />} />
+          <Route path='/MNFComponents' element={<MNFComponents />} />
+          <Route path='/Updates' element={<Updates />} />
+          <Route path='/Privacy' element={<Privacy />} />
+          <Route path = '/MyCareer' element={ <MyCareer />} /> 
+          <Route path='/Dashboard' element={<Dashboard />} />
+          <Route path = '/MyCareer' element={ <MyCareer />} /> 
+          <Route path = '/MyColleges' element={ <MyColleges />} /> 
           <Route path="/" element={<Landing />} />
           <Route path="/MyCourses" element={<MyCourses />} />
           <Route path="/SchoolSystems" element={<SchoolSystems />} />
