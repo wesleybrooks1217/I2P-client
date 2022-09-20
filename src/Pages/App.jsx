@@ -36,7 +36,7 @@ class App extends React.Component {
           <Route path='/MNFComponents' element={<MNFComponents />} />
           <Route path='/Updates' element={<Updates />} />
           <Route path='/Privacy' element={<Privacy />} />
-          <Route path = '/MyCareer' element={ <MyCareer />} /> 
+          <Route path = '/MyCareer' element={ <MyCareer />} /> yar
         </Routes>
       
       </React.Fragment>

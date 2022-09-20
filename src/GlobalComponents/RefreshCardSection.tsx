@@ -16,7 +16,7 @@ function RefreshCardSection () {
             <Refresh 
             size = {48}
             strokeWidth = {2}
-            color = {'black'}
+            color = {'black'}     
             /> 
         </div>
 

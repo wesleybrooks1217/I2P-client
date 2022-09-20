@@ -1,4 +1,5 @@
 import {Carousel} from '@mantine/carousel';
+import CollegeCard from './CollegeCard';
 
 /*
 Will be built later
@@ -6,7 +7,11 @@ Will be built later
 
 function CarouselCustom () {
     return (
-        <h1> Hi </h1>
+        <div className='container'>
+            <CollegeCard />
+            <CollegeCard />
+            <CollegeCard />
+        </div>
     );
 };
 
