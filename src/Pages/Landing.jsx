@@ -17,24 +17,16 @@ import ComponentCards from "../Components/Landing/ComponentCards";
 import ComponentShowcase from "../Components/Landing/ComponentShowcase";
 import { next4Steps } from '../Components/Landing/Constants/next4Steps';
 import { next4Benefits } from "../Components/Landing/Constants/next4Benefits";
-
+import ColorShell from "../Components/ColorShell";
 function Landing() {
-  const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
-    key: 'mantine-color-scheme',
-    defaultValue: 'light',
-    getInitialValueInEffect: true,
-  });
+ 
  
   const { classes } = styleSheet();
-  const toggleColorScheme = (value?: ColorScheme) =>
-    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
-
-  useHotkeys([['mod+J', () => toggleColorScheme()]]);
+  
 
   return (
     <div className="App">
-      <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-      <MantineProvider theme={{colorScheme}}>
+        <ColorShell innerContent={
         <Paper>
         <Next4Shell
           page= { <div>
@@ -102,8 +94,8 @@ function Landing() {
           }
           />
         </Paper>
-      </MantineProvider >
-      </ColorSchemeProvider>
+        } />
+      
     </div>
   );
 }
