@@ -23,6 +23,8 @@ import {
 
 import FooterLinks from "../Universal/FullFooter";
 import { TableReviews } from "./SVGs/CoursesTable";
+import { TableSelection } from "./SVGs/CourseSchedule";
+import { CurrentCourseCard } from "./SVGs/CurrentCourseCard";
 
 import {
   Notes,
@@ -112,61 +114,102 @@ const mockdata2 = [
   },
 ];
 
+const scheduleData = [
+  {
+    id: "1",
+    course: "Health 2",
+    classPeriod: "First: 9:05-10:20",
+    teacher: "Rob Wolf",
+  },
+  {
+    id: "2",
+    course: "AP Chemistry",
+    classPeriod: "Second: 10:30-11:45",
+    teacher: "Jerry Walters",
+  },
+  {
+    id: "3",
+    course: "Algebra 1",
+    classPeriod: "Third: 12:00-1:15",
+    teacher: "Henry Smith",
+  },
+  {
+    id: "4",
+    course: "Geometry",
+    classPeriod: "Fourth: 1:30-2:45",
+    teacher: "Susan Jones",
+  },
+  {
+    id: "5",
+    course: "Physical Education",
+    classPeriod: "Fifth: 3:00-4:15",
+    teacher: "Drake Griffith",
+  },
+];
+
 const tableData = [
   {
-    "courseName": "AP Computer Science A",
-    "teacher": "Isaac Asimov",
-    "difficulty": "4/5",
-    "reviews": {
-      "positive": 2223,
-      "negative": 259
-    }
+    courseName: "AP Computer Science A",
+    teacher: "Isaac Asimov",
+    difficulty: "4/5",
+    reviews: {
+      positive: 2223,
+      negative: 259,
+    },
   },
   {
-    "courseName": "Honors Biology",
-    "teacher": "Mary Beans",
-    "difficulty": "3.2/5",
-    "reviews": {
-      "positive": 5677,
-      "negative": 1265
-    }
+    courseName: "Honors Biology",
+    teacher: "Mary Beans",
+    difficulty: "3.2/5",
+    reviews: {
+      positive: 5677,
+      negative: 1265,
+    },
   },
   {
-    "courseName": "Honors English",
-    "teacher": "Stanislaw Lem",
-    "difficulty": "2.5/5",
-    "reviews": {
-      "positive": 3487,
-      "negative": 1845
-    }
+    courseName: "Honors English",
+    teacher: "Stanislaw Lem",
+    difficulty: "2.5/5",
+    reviews: {
+      positive: 3487,
+      negative: 1845,
+    },
   },
   {
-    "courseName": "AP Calculus",
-    "teacher": "Frank Herbert",
-    "difficulty": "4.5/5",
-    "reviews": {
-      "positive": 8576,
-      "negative": 663
-    }
+    courseName: "AP Calculus",
+    teacher: "Frank Herbert",
+    difficulty: "4.5/5",
+    reviews: {
+      positive: 8576,
+      negative: 663,
+    },
   },
   {
-    "courseName": "Weight Training",
-    "teacher": "Ursula K. Le Guin",
-    "difficulty": "1.2/5",
-    "reviews": {
-      "positive": 6631,
-      "negative": 993
-    }
+    courseName: "Weight Training",
+    teacher: "Ursula K. Le Guin",
+    difficulty: "1.2/5",
+    reviews: {
+      positive: 6631,
+      negative: 993,
+    },
   },
   {
-    "courseName": "Physics",
-    "teacher": "Philip K Dick",
-    "difficulty": "3.9/5",
-    "reviews": {
-      "positive": 8124,
-      "negative": 1847
-    }
-  }
+    courseName: "Physics",
+    teacher: "Philip K Dick",
+    difficulty: "3.9/5",
+    reviews: {
+      positive: 8124,
+      negative: 1847,
+    },
+  },
+];
+
+const currentCourseData = [
+  {
+    title: "AP Human Geography",
+    description:
+      "Class description goes here. Not enough time to implement everything I want to implement but I would divide page into 6 spots where all of the classes would be split up",
+  },
 ];
 
 const useStyles = createStyles((theme) => ({
@@ -362,7 +405,26 @@ export default function AppShellExample() {
           {" "}
           Welcome to the MyCourses Page!
         </Text>
-        <TableReviews data={tableData}/>
+        <Title mb={20} sx={{ textAlign: "center" }} className={classes.title}>
+          {" "}
+          Your Current Schedule - Fall 2022!
+        </Title>
+        <CurrentCourseCard title={currentCourseData[0].title} description={currentCourseData[0].description}/>
+        <Title mt={70} mb={20} sx={{ textAlign: "center" }} className={classes.title}>
+          {" "}
+          Our Recommeded Schedule - Spring 2023!
+        </Title>
+        <TableSelection data={scheduleData} />
+        <Title
+          mt={70}
+          mb={20}
+          sx={{ textAlign: "center" }}
+          className={classes.title}
+        >
+          {" "}
+          Additional Course Reccomendations!
+        </Title>
+        <TableReviews data={tableData} />
       </Container>
     </AppShell>
   );

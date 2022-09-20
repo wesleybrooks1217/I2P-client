@@ -1,0 +1,50 @@
+.card-container {
+    padding: 24px;
+    width: 600px;
+    height: 380px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: 45px;
+}
+
+.colleges-container {
+    margin: 10px 45px 30px 45px;
+    height: 380px;
+}
+
+.dropdown-selector {
+    width: 580px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 10px;
+
+}
+
+.username-container {
+    align-items: center;
+    display: flex;
+    padding: 20px;
+    justify-content: left;
+    margin-bottom: 150px;
+    margin-left: 35px;
+}
+
+.username-container > * {
+    margin: 10px;
+}
+.top-colleges-container {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0px;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.header {
+    font-size: 32px;
+    margin-left: 64px;
+    margin-bottom: 0px;
+    margin-top: 40px;
+}

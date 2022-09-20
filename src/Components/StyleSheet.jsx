@@ -120,6 +120,16 @@ const styleSheet = createStyles((theme) => ({
           flexDirection: 'column',
     },
     },
+    likedList: {
+      width: '115px;',
+      [theme.fn.smallerThan('lg')]: {
+        width: '105px',
+      },
+      [theme.fn.smallerThan('md')]: {
+        width: '70px',
+      
+  },
+    },
     teambox: {
       alignItems: 'center',
       display: 'grid',

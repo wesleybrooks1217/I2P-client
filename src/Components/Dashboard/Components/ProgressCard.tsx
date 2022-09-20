@@ -27,15 +27,22 @@ export function StatsCard() {
   const { classes } = useStyles();
 
   return (
-    <Paper radius="md" withBorder className={classes.card} mt={ICON_SIZE / 3}>
+    <Paper radius="md"  className={classes.card} mt={ICON_SIZE / 3}>
+       <Container sx={{position: 'absolute'}}> 
+      <Group >
+        <Text size="sm">Achievments</Text>
+        <Badge size="sm">Freshman</Badge>
+      </Group>
+      </Container>
       <ThemeIcon className={classes.icon} size={ICON_SIZE} radius={ICON_SIZE}>
         <Swimming size={34} />
       </ThemeIcon>
+     
     
-      <Text align="center" weight={700} className={classes.title}>
+      <Text mb={5} align="center" weight={700} className={classes.title}>
         Name
       </Text>
-      <Text color="dimmed" align="center" size="sm">
+      <Text mb={0} color="dimmed" align="center" size="sm">
         Rank
       </Text>
 
@@ -50,10 +57,7 @@ export function StatsCard() {
 
       <Progress value={62} mt={5} />
 
-      <Group position="apart" mt="md">
-        <Text size="sm">20 / 36 km</Text>
-        <Badge size="sm">Freshman</Badge>
-      </Group>
+      
     </Paper>
   );
 }
