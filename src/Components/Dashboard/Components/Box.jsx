@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import React, {useEffect} from 'react';
+import {Container, Paper, Card } from '@mantine/core'
 import "../dashboardstyles.css"
 import MyNext4UClick from './MyNext4UClick';
 function Box(props) {
@@ -16,10 +17,14 @@ function Box(props) {
  
    
     return (
-        <div className='box-container'>
+        <Container sx={{width: '340px'}}>
+        <Paper shadow="xs" p="md">
+         Search Renderer
          {renderComponent}
-         
-        </div>
+       
+        </Paper>
+        </Container>
+
     )
 }
 

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Container, Text, Stack, Title, Grid, Button } from '@mantine/core';
+import { Paper, Card, Container, Text, Stack, Title, Grid, Button } from '@mantine/core';
 
 import { nanoid } from 'nanoid';
 import styleSheet from '../../StyleSheet';
@@ -45,24 +45,25 @@ function MyMissions(props) {
 
 
     return (
-        <div className='cardboard-container'> 
+        <Container sx={{marginRight: '30px',width: '800px', height: '360px'}}> 
+            <Paper shadow="xs" p="md">
             <div className='top-shelf-container'>
-                <button  onClick={handleChange}name='myCs'> MyC's </button>
-                <button  onClick={handleChange} name='myNext4U'> MyNext4 U </button>
+                <Button onClick={handleChange}name='myCs'> MyC's </Button>
+                <Button  onClick={handleChange} name='myNext4U'> MyNext4 U </Button>
             </div>
           <Carousel showThumbs={false} infiniteLoop='true' className="carousel">
             <div className="carousel-container">
-                <button name='myMissions' onClick={handleChange}>
+                <Button name='myMissions' onClick={handleChange}>
                     MyMissions
-                </button>
-                <button name='myBackpack' onClick={handleChange}>
+                </Button>
+                <Button name='myBackpack' onClick={handleChange}>
                     MyBackpack
-                </button>
-                <button name='myNotebook' onClick={handleChange}>
+                </Button>
+                <Button name='myNotebook' onClick={handleChange}>
                     MyNotebook
-                </button>
+                </Button>
             </div>
-            <div className='carousel-container'> 
+            <div style={{marginBottom: '10px'}} className='carousel-container'> 
             <button name='myCourse' onClick={handleChange}>
                     MyCourse Box
                 </button>
@@ -74,6 +75,7 @@ function MyMissions(props) {
                 </button>
             </div>
         </Carousel>
+        </Paper>
        
  
          
@@ -82,7 +84,7 @@ function MyMissions(props) {
        
 
        
-        </div>
+        </Container>
         
 
     )

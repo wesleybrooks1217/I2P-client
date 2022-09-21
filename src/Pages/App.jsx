@@ -22,7 +22,7 @@ import MyCourses from "../Components/MyCourses/Courses";
 import Dashboard from "../Components/Dashboard/Dashboard";
 import MyCareer from "../MyCareer/MyCareer";
 import MyColleges from "../Components/MyColleges/MyColleges";
-import CollegeCards from "../Components/CollegeCards/CollegeCard";
+
 /*
 Testing push request
 */
@@ -60,7 +60,7 @@ class App extends React.Component {
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/MyCareer" element={<MyCareer />} />
           <Route path="/MyColleges" element={<MyColleges />} />
-          <Route path="/CollegeCard" element={<CollegeCards />} />
+        
         </Routes>
       </React.Fragment>
     );

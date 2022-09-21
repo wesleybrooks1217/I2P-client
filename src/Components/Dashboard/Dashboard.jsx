@@ -15,6 +15,7 @@ import {
   Button,
   Image,
   Container,
+  Avatar,
   createStyles,
   Title,
   MediaQuery,
@@ -23,6 +24,9 @@ import {
   useMantineTheme,
   Autocomplete
 } from '@mantine/core';
+import ControlState from "./Components/ControlState";
+import AvatarBox from "./Components/AvatarBox"
+import { Star} from 'tabler-icons-react';
 import {  ColorSchemeProvider, MantineProvider, Paper} from "@mantine/core"
 import {useHotkeys, useLocalStorageValue} from "@mantine/hooks"
 import Next4Shell from "../Next4Shell";
@@ -164,15 +168,27 @@ function Dashboard() {
 
       
           <div >
-           
-          <Container sx={{width: 800, display: 'flex', justifyContent: 'center', alignItems: 'center'}} >
-          <UserProfile />
-          <Notifications />
+
+          <Container sx={{padding: '20px',backgroundColor: '#FFFFFF', borderRadius: '5px', padding: 10, marginTop: '150px', width: 800, display: 'flex', justifyContent: 'left', alignItems: 'center'}} >
+            
+                <AvatarBox
+                name="Herman" 
+                title="Software Analyse"
+                phone="99999999"/>
+                <div style={{marginLeft: '70px'}}>
+                <ControlState  />
+                </div>
+              
           </Container>
-          <Container sx={{width: 760}}>
-          <Progress value={65} label="65%" size="xl" radius="xl" />
+      
+          <Container sx={{width: 1000, marginBottom: 0, display: 'flex', justifyContent: 'left', alignItems: 'center'}}>
+            <h1> MyDashboard </h1>
+           <Progress sx={{marginLeft: '15px',width: '300px', height: '20px'}}value={65} label="65%" size="xl" radius="xl" />
+           <Avatar sx={{marginLeft: '10px'}}color="blue" radius="xl">
+        <Star size={24} />
+      </Avatar>
           </Container>
-          <Container mt={0} sx={{justifyContent: 'center', display: 'flex'}}>
+          <Container mt={0} sx={{maxWidth: '100%',justifyContent: 'center', display: 'flex'}}>
             <MyMissions handleChange={setBox} />
             <Box item={renderedState}
                  stateUpdate={boxState} />

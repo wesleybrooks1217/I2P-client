@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {FileX, Search, Star} from 'tabler-icons-react'
-import { Card, Container, Avatar, Image, Text, Badge, Button, Group } from '@mantine/core';
+import { Progress, Card, Container, Avatar, Image, Text, Badge, Button, Group } from '@mantine/core';
 
 import CourseComponentStepper from './CourseCardStepper';
 function CollegeCardDemo() {
@@ -31,17 +31,18 @@ function CollegeCardDemo() {
   </Avatar>
   <Avatar src={null} alt="Vitaly Rtishchev" color="orange">%</Avatar>
 </Container>
-      <CourseComponentStepper />
+<Progress value={65} label="75%" size="xl" radius="xl" />
+   
       <Text size="sm" color="dimmed">
         Students also search for:
       </Text>
-      <Badge variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>AP Calculus BC</Badge>
-      <Badge variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }}>Calculus I</Badge>
-      <Badge variant="gradient" gradient={{ from: 'teal', to: 'blue', deg: 60 }}>Calculus II</Badge>
-      <Badge variant="gradient" gradient={{ from: 'orange', to: 'red' }}>Algebra II</Badge>
+      <Badge variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>Georgetown</Badge>
+      <Badge variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }}>MIT </Badge>
+      <Badge variant="gradient" gradient={{ from: 'teal', to: 'blue', deg: 60 }}>Cal Tech</Badge>
+      <Badge variant="gradient" gradient={{ from: 'orange', to: 'red' }}>Virginia Tech</Badge>
 
       <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-        View Course Page
+        View College Page
       </Button>
     </Card>
   );
