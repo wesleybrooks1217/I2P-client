@@ -19,18 +19,13 @@
     align-items: center;
     margin-top: 20px;
     margin-bottom: 10px;
-
+    padding: 5px 80px;
 }
 .carousel-container > button {
-    width: 90px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     margin: 0 12px;
-    background-color: sienna;
-    border: 1px solid ghostwhite;
-    border-radius: 5px;
-    color: ghostwhite;
-    cursor: pointer;
-
+    
 }
 
 .box-container {
@@ -44,6 +39,51 @@
 
 }
 
+.avatar {
+    align-self: center;
+    width: 200px;
+    margin: 0;
+
+}
+
+.myCards-btn {
+    width: 50px;
+    border-radius: 3px;
+    background: white;
+    background-image: url('./Components/images/MyCards.png');
+}
+
+.myComponents-btn {
+    width: 50px;
+    border-radius: 3px;
+    background: white;
+    background-image: url('./Components/images/MyComponents.png');
+
+}
+
+.myMissions-btn {
+    width: 50px;
+    border-radius: 3px;
+    background: white;
+    background-image: url('./Components/images/MyMissions.png');
+}
+
+.myMaterials-btn {
+    width: 50px;
+    border-radius: 3px;
+    background: white;
+    background-image: url('./Components/images/MyMaterials.png');
+}
+
+.myMerits-btn {
+    width: 50px;
+    border-radius: 3px;
+    background: white;
+    background-image: url('./Components/images/MyMerits.png');
+}
+
+
+
 .box-container > * {
     font-size: 16px;
     color: black;
@@ -53,14 +93,10 @@
     margin-top: 20px;
 }
 .top-shelf-container > button {
-    width: 125px;
-    height: 110px;
+    width: 150px;
+    height: 140px;
     margin: 12px 12px;
-    background-color: sienna;
-    border: 1px solid ghostwhite;
-    border-radius: 3px;
-    color: ghostwhite;
-    cursor: pointer;
+  
 }
 
 .cardboard-container {

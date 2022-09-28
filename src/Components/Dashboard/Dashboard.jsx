@@ -38,125 +38,23 @@ import MyMap from "./Components/MyMap";
 import TopTitle from './TopTitle';
 import Box from './Components/Box';
 import ColorShell from '../ColorShell';
-import UserProfile from '../UserProfile';
+import UserProfile from './Components/UserProfile';
 import Notifications from './Components/Notifications';
-function Dashboard() {
-  const [boxState, setBoxState] = useState({
-    myCs: false,
-    myNext4U: false,
-    myMissions: false,
-    myBackpack: false,
-    myNotebook: false,
-    myCollege: false,
-    myCareer: false,
-    myCourse: false,
+import { render } from '@testing-library/react';
 
-  })
-  const [renderedState, setRenderedState] = useState('myNext4U');
-  
- 
-  
-  
- 
-  function setBox(name) {
+function Dashboard() {
+  const [renderedState, setRenderedState] = useState('');
+  useEffect(() => {
+    
+  }, [renderedState])
+
+  function handleChange(name) {
    
-   
-    setBoxState((prevBoxes) => {
-      return {
-        ...prevBoxes,
-        [name]: true,
-      };
-    });
-   
-    if (name !== 'myCs') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myCs: false,
-      };
-    })};
-    if (name !== 'myBackpack') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myBackpack: false,
-      };
-    })};
-    if (name !== 'myCareer') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myCareer: false,
-      };
-    })};
-    if (name !== 'myCourse') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myCourse: false,
-      };
-    })};
-    if (name !== 'myCollege') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myCollege: false,
-      };
-    })};
-    if (name !== 'myMissions') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myMissions: false,
-      };
-    })};
-    if (name !== 'myNext4U') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myNext4U: false,
-      };
-    })};
-    if (name !== 'myNotebook') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myNotebook: false,
-      };
-    })};
-    searchState()
-    console.log(name)
-    console.log(boxState)
+    setRenderedState(name)
+    console.log(renderedState)
   
   };
 
-
-  
-  function searchState() {
-    console.log("OK")
-    console.log(boxState.myNext4U);
-    if (boxState.myNext4U === true) {
-      setRenderedState('myNext4U');
-      console.log(renderedState)
-
-    } else if (boxState.myBackpack === true) {
-      setRenderedState('myBackpack');
-    } else if (boxState.myCareer === true) {
-      setRenderedState('myCareer');
-    } else if (boxState.myCollege === true) {
-      setRenderedState('myCollege');
-    } else if (boxState.myCourse === true) {
-      setRenderedState('myCourse')
-    } else if (boxState.myCs === true) {
-      setRenderedState('myCs')
-    } else if (boxState.myMissions === true) {
-      setRenderedState('myMissions')
-    } else if (boxState.myNotebook === true) {
-      setRenderedState('myNotebook')
-    }
-    console.log(renderedState)
-    
-  }
 
 
   return (
@@ -168,31 +66,35 @@ function Dashboard() {
 
       
           <div >
-
-          <Container sx={{padding: '20px',backgroundColor: '#FFFFFF', borderRadius: '5px', padding: 10, marginTop: '150px', width: 800, display: 'flex', justifyContent: 'left', alignItems: 'center'}} >
+                <Container sx={{marginTop: '150px', width: 900, marginBottom: 0, display: 'flex', justifyContent: 'left', alignItems: 'baseline'}}>
+            <h1> John Calvert </h1>
+            <p style={{marginLeft: 10}}> Cannon Cougars </p> 
+          
+          </Container>
+           
             
-                <AvatarBox
-                name="Herman" 
-                title="Software Analyse"
-                phone="99999999"/>
-                <div style={{marginLeft: '70px'}}>
-                <ControlState  />
-                </div>
+          
+            <Container sx={{width: 900, marginLeft: 'auto', marginRight: 'auto',  marginBottom: 20, display: 'flex', alignItems: 'center'}}>
+            <UserProfile />
+               
+                </Container>
+             
+                
               
-          </Container>
+  
       
-          <Container sx={{width: 1000, marginBottom: 0, display: 'flex', justifyContent: 'left', alignItems: 'center'}}>
+          <Container sx={{width: 900, marginBottom: 0, display: 'flex', justifyContent: 'left', alignItems: 'center'}}>
             <h1> MyDashboard </h1>
-           <Progress sx={{marginLeft: '15px',width: '300px', height: '20px'}}value={65} label="65%" size="xl" radius="xl" />
-           <Avatar sx={{marginLeft: '10px'}}color="blue" radius="xl">
-        <Star size={24} />
-      </Avatar>
+          
           </Container>
-          <Container mt={0} sx={{maxWidth: '100%',justifyContent: 'center', display: 'flex'}}>
-            <MyMissions handleChange={setBox} />
-            <Box item={renderedState}
-                 stateUpdate={boxState} />
+         
+          <Container mt={0} sx={{width: '500px' ,justifyContent: 'center', display: 'flex'}}>
+            <MyMissions handleChange={handleChange} />
+  
+            <Box nameBox={renderedState}
+                  />
             </Container>
+           
           <MyMap />
 
           </div>
