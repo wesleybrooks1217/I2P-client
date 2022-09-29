@@ -7815,11 +7815,7 @@ recharts-scale@^0.4.4:
 
 recharts@^2.1.14:
   version "2.1.14"
-<<<<<<< HEAD
-  resolved "https://registry.npmjs.org/recharts/-/recharts-2.1.14.tgz"
-=======
   resolved "https://registry.yarnpkg.com/recharts/-/recharts-2.1.14.tgz#177259b4d423a287a9284420fe2208bdb45311e7"
->>>>>>> 52d498c2039a4fee80631ab6a55a738d5c54396b
   integrity sha512-GDmDDPEmRhGb6O41OfJUKh/RFYh3QMtEdaNuXOnVtJN8wiifo41MvIHHzrjf7Vp7/yJYFsGaXnCElzM5H7SPmQ==
   dependencies:
     "@types/d3-interpolate" "^3.0.1"
