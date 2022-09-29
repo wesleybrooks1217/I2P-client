@@ -19,48 +19,95 @@
     align-items: center;
     margin-top: 20px;
     margin-bottom: 10px;
+    padding: 5px 80px;
 }
 .carousel-container > button {
-    width: 90px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     margin: 0 12px;
-    background-color: sienna;
-    border: 1px solid ghostwhite;
-    border-radius: 5px;
-    color: ghostwhite;
-    cursor: pointer;
-
+    
 }
 
 .box-container {
-    width: 400px;
+    width: 450px;
     border: 1px solid black;
+    box-shadow: 1px 1px 3px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+    margin-top: 0;
+
 }
+
+.avatar {
+    align-self: center;
+    width: 200px;
+    margin: 0;
+
+}
+
+.myCards-btn {
+    width: 50px;
+    border-radius: 3px;
+    background: white;
+    background-image: url('./Components/images/MyCards.png');
+}
+
+.myComponents-btn {
+    width: 50px;
+    border-radius: 3px;
+    background: white;
+    background-image: url('./Components/images/MyComponents.png');
+
+}
+
+.myMissions-btn {
+    width: 50px;
+    border-radius: 3px;
+    background: white;
+    background-image: url('./Components/images/MyMissions.png');
+}
+
+.myMaterials-btn {
+    width: 50px;
+    border-radius: 3px;
+    background: white;
+    background-image: url('./Components/images/MyMaterials.png');
+}
+
+.myMerits-btn {
+    width: 50px;
+    border-radius: 3px;
+    background: white;
+    background-image: url('./Components/images/MyMerits.png');
+}
+
+
 
 .box-container > * {
     font-size: 16px;
     color: black;
 }
 .top-shelf-container {
-    margin-bottom: 20px;
-    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 .top-shelf-container > button {
-    width: 125px;
-    height: 110px;
+    width: 150px;
+    height: 140px;
     margin: 12px 12px;
-    background-color: sienna;
-    border: 1px solid ghostwhite;
-    border-radius: 3px;
-    color: ghostwhite;
-    cursor: pointer;
+  
 }
 
 .cardboard-container {
-    position: relative;
-    width: 400px;
+   
+    width: 450px;
     border: 1px solid black;
     border-radius: 3px;
+    background-color: white;
+    margin: 10px;
+    margin-top: 0;
+    box-shadow: 1px 1px 3px;
     
 
    
@@ -73,6 +120,7 @@
     border-radius: 5px;
     background-color:white;
     padding: 16px 24px;
+    
 
 }
 
@@ -93,3 +141,20 @@
 
 }
 
+.notification-container {
+    width: 460px;
+ 
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+
+.top-dash-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-top: 80px;
+}

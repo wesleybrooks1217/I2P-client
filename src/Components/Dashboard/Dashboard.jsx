@@ -15,13 +15,18 @@ import {
   Button,
   Image,
   Container,
+  Avatar,
   createStyles,
   Title,
   MediaQuery,
   Burger,
+  Progress,
   useMantineTheme,
   Autocomplete
 } from '@mantine/core';
+import ControlState from "./Components/ControlState";
+import AvatarBox from "./Components/AvatarBox"
+import { Star} from 'tabler-icons-react';
 import {  ColorSchemeProvider, MantineProvider, Paper} from "@mantine/core"
 import {useHotkeys, useLocalStorageValue} from "@mantine/hooks"
 import Next4Shell from "../Next4Shell";
@@ -32,154 +37,73 @@ import MyList from "./Components/CourseCollege"
 import MyMap from "./Components/MyMap";
 import TopTitle from './TopTitle';
 import Box from './Components/Box';
+import ColorShell from '../ColorShell';
+import UserProfile from './Components/UserProfile';
+import Notifications from './Components/Notifications';
+import { render } from '@testing-library/react';
 
 function Dashboard() {
-  const [boxState, setBoxState] = useState({
-    myCs: false,
-    myNext4U: false,
-    myMissions: false,
-    myBackpack: false,
-    myNotebook: false,
-    myCollege: false,
-    myCareer: false,
-    myCourse: false,
+  const [renderedState, setRenderedState] = useState('');
+  useEffect(() => {
+    
+  }, [renderedState])
 
-  })
-  const [renderedState, setRenderedState] = useState('myNext4U');
-  
- 
-  
-  
- 
-  function setBox(name) {
+  function handleChange(name) {
    
-   
-    setBoxState((prevBoxes) => {
-      return {
-        ...prevBoxes,
-        [name]: true,
-      };
-    });
-   
-    if (name !== 'myCs') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myCs: false,
-      };
-    })};
-    if (name !== 'myBackpack') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myBackpack: false,
-      };
-    })};
-    if (name !== 'myCareer') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myCareer: false,
-      };
-    })};
-    if (name !== 'myCourse') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myCourse: false,
-      };
-    })};
-    if (name !== 'myCollege') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myCollege: false,
-      };
-    })};
-    if (name !== 'myMissions') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myMissions: false,
-      };
-    })};
-    if (name !== 'myNext4U') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myNext4U: false,
-      };
-    })};
-    if (name !== 'myNotebook') {
-      setBoxState((prevState) => {
-        return {
-        ...prevState,
-        myNotebook: false,
-      };
-    })};
-    searchState()
-    console.log(name)
-    console.log(boxState)
+    setRenderedState(name)
+    console.log(renderedState)
   
   };
 
 
-  
-  function searchState() {
-    console.log("OK")
-    console.log(boxState.myNext4U);
-    if (boxState.myNext4U === true) {
-      setRenderedState('myNext4U');
-      console.log(renderedState)
-
-    } else if (boxState.myBackpack === true) {
-      setRenderedState('myBackpack');
-    } else if (boxState.myCareer === true) {
-      setRenderedState('myCareer');
-    } else if (boxState.myCollege === true) {
-      setRenderedState('myCollege');
-    } else if (boxState.myCourse === true) {
-      setRenderedState('myCourse')
-    } else if (boxState.myCs === true) {
-      setRenderedState('myCs')
-    } else if (boxState.myMissions === true) {
-      setRenderedState('myMissions')
-    } else if (boxState.myNotebook === true) {
-      setRenderedState('myNotebook')
-    }
-    console.log(renderedState)
-    
-  }
-
 
   return (
     <div className="App">
+       <ColorShell innerContent={
+        <Paper>
+        <Next4Shell
+          page= { 
 
       
-          <div>
-            <Container mt={80} mb={0} sx={{justifyContent: 'center', width: '620px', height: '200px'}}>
-          <TopTitle />
-    
+          <div >
+                <Container sx={{marginTop: '150px', width: 900, marginBottom: 0, display: 'flex', justifyContent: 'left', alignItems: 'baseline'}}>
+            <h1> John Calvert </h1>
+            <p style={{marginLeft: 10}}> Cannon Cougars </p> 
+          
           </Container>
-          <Container mt={0} sx={{justifyContent: 'center', display: 'flex'}}>
-            <MyMissions handleChange={setBox} />
-            <Box item={renderedState}
-                 stateUpdate={boxState} />
+           
+            
+          
+            <Container sx={{width: 900, marginLeft: 'auto', marginRight: 'auto',  marginBottom: 20, display: 'flex', alignItems: 'center'}}>
+            <UserProfile />
+               
+                </Container>
+             
+                
+              
+  
+      
+          <Container sx={{width: 900, marginBottom: 0, display: 'flex', justifyContent: 'left', alignItems: 'center'}}>
+            <h1> MyDashboard </h1>
+          
+          </Container>
+         
+          <Container mt={0} sx={{width: '500px' ,justifyContent: 'center', display: 'flex'}}>
+            <MyMissions handleChange={handleChange} />
+  
+            <Box nameBox={renderedState}
+                  />
             </Container>
+           
           <MyMap />
 
           </div>
-          
-          
-         
-    
-       
-      
-      
-    
-   
+         }
+         />
+       </Paper>
+       } />
      
-    </div>
+   </div>
   );
 }
 

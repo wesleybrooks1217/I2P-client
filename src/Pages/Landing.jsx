@@ -18,6 +18,8 @@ import ComponentShowcase from "../Components/Landing/ComponentShowcase";
 import { next4Steps } from '../Components/Landing/Constants/next4Steps';
 import { next4Benefits } from "../Components/Landing/Constants/next4Benefits";
 import ColorShell from "../Components/ColorShell";
+
+import ThreeCsCards from "../Components/Landing/ThreeCsCards";
 function Landing() {
  
  
@@ -72,7 +74,7 @@ function Landing() {
             </Container>
             <Container mt={40} sx={{display: 'flex', justifyContent: 'center'}}>
             <Container mr={30} sx={{ borderRadius: '5px', backgroundColor: 'dodgerblue', width: '400px'}}> </Container>
-            <Image src="https://media3.giphy.com/media/KDYB0cH4HW8xc3VIAx/giphy.gif?cid=ecf05e47o3mmw4i0e0tp8cc2g3xb1xc88rwu7pkwihrotl6m&rid=giphy.gif&ct=g" width={600}/>
+            <ThreeCsCards />
            </Container> 
             
             <FeaturesTemplate title="A complement to everyone's work" description="" data={next4Benefits} />
@@ -84,7 +86,7 @@ function Landing() {
                 providing accessible resources to improve equity for all students nationwide.
                 </Text>
             </Container>
-            
+         
             <Container mt={25} className="resourcebox3"> Roadmap Editor </Container>
           
             <Container mt={80}>
