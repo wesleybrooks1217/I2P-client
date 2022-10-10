@@ -8,3 +8,5 @@ function Homeroom() {
         </div>
     )
 }
+
+export default Homeroom;
