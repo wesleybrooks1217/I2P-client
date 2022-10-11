@@ -44,7 +44,7 @@ import { render } from '@testing-library/react';
 import Homeroom from "./Components/Homeroom/Homeroom"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader  
 import { Carousel } from 'react-responsive-carousel';  
-import AcademicAdvising from './Components/AcademicAdvising/AcademicAdvising'
+import AcademicAdd from './Components/AcademicAdvising/AcademicAdd'
 import Encyclopedia from './Components/Homeroom/BottomArea/Encyclopedia';
 import Scrapbook from './Components/Homeroom/BottomArea/Scrapbook';
 import Missions from './Components/Homeroom/BottomArea/Missions';
@@ -79,7 +79,7 @@ function Dashboard() {
             <div>
           <Carousel>
             <Homeroom setArea={setAreaOpened} />
-            <AcademicAdvising setArea={setAreaOpened} />
+            <AcademicAdd setArea={setAreaOpened} />
           </Carousel>
           </div>
             

@@ -26,10 +26,11 @@ function Homeroom(props) {
         
         <div className='container'>
               
-              
+              <h2 style={{position: 'absolute', marginRight: 'auto'}}> Homeroom</h2>
               
            
             <div className='top-container'>
+            
             <PersonalPage />
             <PageNavigation />
             </div>
