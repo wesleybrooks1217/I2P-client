@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect,useRef, useState } from 'react';
 import {
   AppShell,
   Navbar,
@@ -41,21 +41,32 @@ import ColorShell from '../ColorShell';
 import UserProfile from './Components/UserProfile';
 import Notifications from './Components/Notifications';
 import { render } from '@testing-library/react';
+import Homeroom from "./Components/Homeroom/Homeroom"
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader  
+import { Carousel } from 'react-responsive-carousel';  
+import AcademicAdvising from './Components/AcademicAdvising/AcademicAdvising'
+import Encyclopedia from './Components/Homeroom/BottomArea/Encyclopedia';
+import Scrapbook from './Components/Homeroom/BottomArea/Scrapbook';
+import Missions from './Components/Homeroom/BottomArea/Missions';
+import Notebook from './Components/Homeroom/BottomArea/Notebook';
+import Backpack from './Components/Homeroom/BottomArea/Backpack';
+import Classes from './Components/AcademicAdvising/BottomArea/Classes'
+import Colleges from './Components/AcademicAdvising/BottomArea/Colleges'
+import Careers from './Components/AcademicAdvising/BottomArea/Careers'
+
 
 function Dashboard() {
-  const [renderedState, setRenderedState] = useState('');
+  const [areaOpened, setAreaOpened] = useState('')
+  const ref = useRef(null)
+
   useEffect(() => {
-    
-  }, [renderedState])
-
-  function handleChange(name) {
-   
-    setRenderedState(name)
-    console.log(renderedState)
+    ref.current?.scrollIntoView({behavior: 'smooth',
+    block: 'start',
+    alignToTop: true})
+    console.log(areaOpened)
   
-  };
-
-
+  
+}, [areaOpened])
 
   return (
     <div className="App">
@@ -63,41 +74,19 @@ function Dashboard() {
         <Paper>
         <Next4Shell
           page= { 
-
-      
-          <div >
-                <Container sx={{marginTop: '150px', width: 900, marginBottom: 0, display: 'flex', justifyContent: 'left', alignItems: 'baseline'}}>
-            <h1> John Calvert </h1>
-            <p style={{marginLeft: 10}}> Cannon Cougars </p> 
-          
-          </Container>
-           
-            
-          
-            <Container sx={{width: 900, marginLeft: 'auto', marginRight: 'auto',  marginBottom: 20, display: 'flex', alignItems: 'center'}}>
-            <UserProfile />
-               
-                </Container>
+            <div className='outer-container'>
              
-                
-              
-  
-      
-          <Container sx={{width: 900, marginBottom: 0, display: 'flex', justifyContent: 'left', alignItems: 'center'}}>
-            <h1> MyDashboard </h1>
-          
-          </Container>
-         
-          <Container mt={0} sx={{width: '500px' ,justifyContent: 'center', display: 'flex'}}>
-            <MyMissions handleChange={handleChange} />
-  
-            <Box nameBox={renderedState}
-                  />
-            </Container>
-           
-          <MyMap />
-
+            <div>
+          <Carousel>
+            <Homeroom setArea={setAreaOpened} />
+            <AcademicAdvising setArea={setAreaOpened} />
+          </Carousel>
           </div>
+            
+      </div>
+     
+
+        
          }
          />
        </Paper>

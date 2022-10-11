@@ -1,0 +1,203 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.outer-container {
+    width: 100%;
+    height: 1800px;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    border: 1px solid black;
+    background-color:white;
+    margin: 100 0;
+    margin-bottom: 200px;
+}
+
+.top-container {
+    margin-top: 0px;
+   
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+.bottom-container {
+    position: relative;
+    margin-bottom: 250px;
+    border: 1px solid black;
+    width: 100%;
+    height: 500px;
+    
+}
+
+.academic-search {
+    background-color: #09f;
+    width: 270px;
+    height: 740px;
+}
+
+.academic-advisor-container {
+    margin-top: 80px;
+    position: absolute;
+    width: 52.5vw;
+    height: 32.5vw;
+   
+    left: 19%;
+    translate: translate(-50%, -50%);
+    border: 1px solid black;
+    background-image: url("../AcademicAdvising/img/academicadvising.png");
+    background-size: cover;
+   
+}
+
+.advisor-container {
+    position: absolute;
+    width: 270px;
+    height: 520px;
+    background-image: url("../AcademicAdvising/img/teacher.png");
+    background-size: cover;
+    top: calc(100% - 460px);
+    left: calc(100% - 300px);
+}
+
+.bookshelf-container {
+    position: absolute;
+    width: 280px;
+    height: 300px;
+    background-image: url("../AcademicAdvising/img/bookshelf.png");
+    background-size: cover;
+    top: calc(100% - 230px);
+    right: calc(100% - 220px);
+}
+
+.bookshelf-side {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10%;
+    left: 0.5%;
+}
+
+.bookshelf-side > * {
+    margin-top: 10px;
+}
+
+.bookshelf-classes {
+    background-color: #09f;
+    width: 220px;
+    height: 200px;
+    background-size: cover;
+    border: none;
+}
+
+.bookshelf-colleges {
+    background-color: #09f;
+    width: 220px;
+    height: 200px;
+    background-size: cover;
+    border: none;
+}
+
+.bookshelf-careers {
+    background-color: #09f;
+    width: 220px;
+    height: 200px;
+    background-size: cover;
+    border: none;
+}
+
+
+
+.slide_in {
+    animation: cabinetSlide .8s ease-out;
+    animation-fill-mode: forwards;
+    
+}
+
+.personal_slide_in {
+    animation: personalSlide .8s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.advisor-side {
+    background-color: #09f;
+    width: 300px;
+    height: 630px;
+    position: absolute;
+   
+    top: 10%;
+    left: 81.5%;
+}
+
+.advising-container {
+    position: absolute;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 80px;
+    border: 1px 1px black;
+    background-color: antiquewhite;
+}
+
+.pagenav-container {
+    position: absolute;
+    left: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 80px;
+    border: 1px 1px black;
+    background-color: antiquewhite;
+}
+.personal-container > * {
+    margin: 5px;
+}
+
+.personal-img {
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: lightblue;
+}
+.personal-side > * {
+    margin-top: 10px;
+}
+
+@keyframes cabinetSlide {
+    0%{
+        max-height: 0px;
+        opacity: 0.1;
+        transform: translateX(500px);
+    }
+    100%{
+        max-width: 300px;
+        opacity: 1;
+        transform: skew(0deg);
+    }
+}
+
+@keyframes personalSlide {
+    0%{
+        max-height: 0px;
+        opacity: 0.1;
+        transform: translateX(0px);
+    }
+    100%{
+        max-width: 300px;
+        opacity: 1;
+        transform: translateX(500px);
+    }
+}
