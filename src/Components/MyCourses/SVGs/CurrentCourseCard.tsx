@@ -35,6 +35,7 @@ const useStyles = createStyles((theme) => ({
 interface CurrentCourseCardProps {
   title: string;
   description: string;
+  size?: string;
 }
 
 export function CurrentCourseCard({

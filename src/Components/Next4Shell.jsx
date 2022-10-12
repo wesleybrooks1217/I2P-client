@@ -86,8 +86,8 @@ function Next4Shell(props) {
             </div>
             <Code sx={{ fontWeight: 700 }}>v1.1.2</Code>
             <div className="search-lightdarkmode-container">
-              <Text> Administrators </Text>
-              <Text> Log In </Text> 
+              {/* <Text> strators </Text>
+              <Text> Log In </Text>  */}
             <Autocomplete
             className={classes.search}
             style={{marginLeft: 'auto', marginRight: '20px'}}

@@ -3,7 +3,7 @@ import CollegeCard from "../CollegeCard";
 import TopTab from './TopTab'
 import FillerSection from "./FillerSection";
 import DropSelector from "./DropSelector";
-import UserProfile from "../UserProfile";
+import UserProfile from "../Dashboard/Components/UserProfile";
 
 function MyColleges(props) {
     const [colleges, setColleges] = useState([]);

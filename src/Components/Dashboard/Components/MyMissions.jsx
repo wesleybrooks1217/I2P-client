@@ -8,6 +8,8 @@ import Mission from "./Mission"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import "../dashboardstyles.css";
+import MyCardBox from "./images/MyCards.png";
+
 
 function MyMissions(props) {
     const [missions, setMissions] = useState([]);
@@ -42,39 +44,28 @@ function MyMissions(props) {
         const { name } = event.target;
         props.handleChange(name);
     }
-
+    const myCardsIMG = require('./images/MyCards.png');
 
     return (
-        <Container sx={{marginRight: '30px',width: '800px', height: '360px'}}> 
+        <Container sx={{marginRight: '0px',width: '600px', height: '360px'}}> 
             <Paper shadow="xs" p="md">
             <div className='top-shelf-container'>
-                <Button onClick={handleChange}name='myCs'> MyC's </Button>
-                <Button  onClick={handleChange} name='myNext4U'> MyNext4 U </Button>
+                <button className="myCards-btn" style={{ backgroundColor: 'none', backgroundSize: 'cover', border: 'none'}} onClick={handleChange} name='myCards'>  </button>
+                <button className="myComponents-btn" style={{ backgroundColor: 'none', backgroundSize: 'cover', border: 'none'}}onClick={handleChange} name='myComponents'></button>
             </div>
-          <Carousel showThumbs={false} infiniteLoop='true' className="carousel">
+       
             <div className="carousel-container">
-                <Button name='myMissions' onClick={handleChange}>
-                    MyMissions
-                </Button>
-                <Button name='myBackpack' onClick={handleChange}>
-                    MyBackpack
-                </Button>
-                <Button name='myNotebook' onClick={handleChange}>
-                    MyNotebook
-                </Button>
-            </div>
-            <div style={{marginBottom: '10px'}} className='carousel-container'> 
-            <button name='myCourse' onClick={handleChange}>
-                    MyCourse Box
+                <button style={{ backgroundColor: 'none', backgroundSize: 'cover', border: 'none'}} className="myMissions-btn" name='myMissions' onClick={handleChange}>
+                  
                 </button>
-                <button name='myCollege' onClick={handleChange}>
-                    MyCollege Box
+                <button style={{ backgroundColor: 'none', backgroundSize: 'cover', border: 'none'}} className="myMaterials-btn" name='myMaterials' onClick={handleChange}>
+                
                 </button>
-                <button name='myCareer' onClick={handleChange}>
-                    MyCareer Box
+                <button style={{ backgroundColor: 'none', backgroundSize: 'cover', border: 'none'}} className="myMerits-btn" name='myMerits' onClick={handleChange}>
+                
                 </button>
             </div>
-        </Carousel>
+         
         </Paper>
        
  

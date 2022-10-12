@@ -8,6 +8,7 @@ const useStyles = createStyles((theme) => ({
     backgroundImage: `linear-gradient(-60deg, ${theme.colors[theme.primaryColor][4]} 0%, ${
       theme.colors[theme.primaryColor][7]
     } 100%)`,
+    width: '520px',
     padding: theme.spacing.xl,
     borderRadius: theme.radius.md,
     display: 'flex',
@@ -120,9 +121,9 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const data = [
-  { icon: Run, label: 'Running' },
-  { icon: Swimming, label: 'Swimming' },
-  { icon: Bike, label: 'Bike' },
+  { icon: Run, label: 'Courses' },
+  { icon: Swimming, label: 'Colleges' },
+  { icon: Bike, label: 'Careers' },
 ];
 
 function ControlState() {
