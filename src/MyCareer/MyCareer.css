@@ -1,43 +1,24 @@
-.box1 {
-    width: 850px;
-    background-color: blue;
+.box1-my-career {
+    width: 775px;
 }
 
-.box2 {
-    background-color: yellow;
-    justify-content: center;
-    margin-left: 150px;
-    margin-bottom: 300px;
-    width: 450px;
-    height: 550px;
-    
-
-}
-
-.wrapper1MC {
-    align-items: center;
+.container1-my-career {
     display: flex;
-    position: relative;
+    justify-content: center;
+    align-items: center;
 }
 
-.careerRecs {
-    background-color: orange;
-    width: 80%;
-    height: 450px;
-    margin: auto;
-    margin-top: 500px;
+.box2-my-career {
+    margin-left: 200px;
+    margin-bottom: 365px;
 }
 
-/*
-
-.box > CareerList {
-    margin-left: 300px;
-    margin-bottom: 800px;
-}
-*/
-
-.card {
-    background-color: yellow;
-    width: 100%;
+.box3-my-career {
+    height: 500px;
+    margin-top: 250px;
 }
 
+.box4-my-career {
+    margin-top: 250px;
+    height: 500px;
+}
