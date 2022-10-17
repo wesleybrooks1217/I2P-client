@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AppShell,
   Navbar,
@@ -27,6 +27,7 @@ import { Grid } from "@mantine/core";
 import { TableReviews } from "./SVGs/CoursesTable";
 import { TableSelection } from "./SVGs/CourseSchedule";
 import { CurrentCourseCard } from "./SVGs/CurrentCourseCard";
+import CoursesCurrent from "./SVGs/CoursesCurrent";
 
 import {
   Notes,
@@ -342,6 +343,20 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function AppShellExample() {
+  // const [realData, setRealData] = useState();
+  // useEffect(() => {
+  //   fetch("http://127.0.0.1:8000/api")
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       console.log(data);
+  //       return data;
+  //     })
+  //     .then(data => setRealData(data.highSchoolCourses))
+  //     .catch((error) => console.log(error));
+  // }, []);
+
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
   const { classes } = useStyles();
@@ -442,46 +457,7 @@ export default function AppShellExample() {
           {" "}
           Your Current Schedule - Fall 2022!
         </Title>
-        <Grid justify="center" align="stretch">
-          <Grid.Col span={4} lg={4} md={6} sm={8} xs={8}>
-            <CurrentCourseCard
-              title={currentCourseData[0].title}
-              description={currentCourseData[0].description}
-            />
-          </Grid.Col>
-          <Grid.Col span={4} lg={4} md={6} sm={8} xs={8}>
-            <CurrentCourseCard
-              title={currentCourseData[1].title}
-              description={currentCourseData[1].description}
-            />
-          </Grid.Col>
-          <Grid.Col span={4} lg={4} md={6} sm={8} xs={8}>
-            <CurrentCourseCard
-              title={currentCourseData[2].title}
-              description={currentCourseData[2].description}
-            />
-          </Grid.Col>
-        </Grid>
-        <Grid justify="center" align="stretch">
-          <Grid.Col span={4} lg={4} md={6} sm={8} xs={8}>
-            <CurrentCourseCard
-              title={currentCourseData[3].title}
-              description={currentCourseData[3].description}
-            />
-          </Grid.Col>
-          <Grid.Col span={4} lg={4} md={6} sm={8} xs={8}>
-            <CurrentCourseCard
-              title={currentCourseData[4].title}
-              description={currentCourseData[4].description}
-            />
-          </Grid.Col>
-          <Grid.Col span={4} lg={4} md={6} sm={8} xs={8}>
-            <CurrentCourseCard
-              title={currentCourseData[5].title}
-              description={currentCourseData[5].description}
-            />
-          </Grid.Col>
-        </Grid>
+        <CoursesCurrent></CoursesCurrent>
         <Title
           mt={70}
           mb={20}
@@ -491,6 +467,7 @@ export default function AppShellExample() {
           {" "}
           Our Recommeded Schedule - Spring 2023!
         </Title>
+        {/* <TableSelection data={realData} /> */}
         <TableSelection data={scheduleData} />
         <Title
           mt={70}

@@ -1,4 +1,4 @@
-import { PieChart, Pie, LabelList } from "recharts";
+//import { PieChart, Pie, LabelList } from "recharts";
 import React from "react";
 import "../CollegeCard.css";
 function Piechart() {
@@ -48,14 +48,14 @@ function Piechart() {
   return (
     <div className="college-card_applicants">
       <h1 className="college-card_title">Our Applicants</h1>
-      <PieChart width={700} height={750}>
+      {/* <PieChart width={700} height={750}>
         <Pie
           data={data}
           dataKey="students"
           outerRadius={250}
           label={renderCustomizedLabel}
         ></Pie>
-      </PieChart>
+      </PieChart> */}
     </div>
   );
 }

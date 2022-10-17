@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import collegepic from "./gtpic.png";
 import "./CollegeCard.css";
-import Piechart from "./Components/Piechart";
+// import Piechart from "./Components/Piechart";
 import TuitionCost from "./Components/TuitionCost";
 import Summary from "./Components/Summary";
 import Recommendations from "./Components/Recommendations";
@@ -23,7 +23,7 @@ function CollegeCard() {
                   <img src={collegepic}></img>
                 </div>
                 <div className="college-card_applicants">
-                  <Piechart></Piechart>
+                  {/* <Piechart></Piechart> */}
                 </div>
                 <div>
                   <Summary></Summary>

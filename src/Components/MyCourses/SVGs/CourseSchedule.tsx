@@ -8,6 +8,7 @@ import {
   Avatar,
   Text,
 } from "@mantine/core";
+import Loading from "./Loading";
 
 const useStyles = createStyles((theme) => ({
   rowSelected: {
@@ -19,7 +20,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface TableSelectionProps {
-  data: { course: string; teacher: string; classPeriod: string; id: string }[];
+  data?: { course: string; teacher: string; classPeriod: string; id: string }[];
 }
 //avatar: string; - if you want to add url to add picture
 
@@ -32,11 +33,14 @@ export function TableSelection({ data }: TableSelectionProps) {
         ? current.filter((item) => item !== id)
         : [...current, id]
     );
+    if (!data) {
+      return <Loading />;
+    }
+
   const toggleAll = () =>
     setSelection((current) =>
       current.length === data.length ? [] : data.map((item) => item.id)
     );
-
   const rows = data.map((item) => {
     const selected = selection.includes(item.id);
     return (
