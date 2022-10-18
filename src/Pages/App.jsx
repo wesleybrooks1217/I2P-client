@@ -22,6 +22,8 @@ import MyCourses from "../Components/MyCourses/Courses";
 import Dashboard from "../Components/Dashboard/Dashboard";
 import MyCareer from "../MyCareer/MyCareer";
 import MyColleges from "../Components/MyColleges/MyColleges";
+import { Provider } from 'react-redux'
+import store from './redux/store'
 import Test from './Test';
 /*
 Testing push request
@@ -30,6 +32,7 @@ Testing push request
 class App extends React.Component {
   render() {
     return (
+      <Provider store={store}>
       <React.Fragment>
         <Routes>
           <Route path='/' element={<Landing />} />
@@ -64,6 +67,7 @@ class App extends React.Component {
         
         </Routes>
       </React.Fragment>
+      </Provider>
     );
   }
 }
