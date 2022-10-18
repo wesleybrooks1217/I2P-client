@@ -1,4 +1,4 @@
-import {ADD_COURSE } from './careerTypes'
+import {ADD_CAREER, FETCH_CAREER_FAILURE, FETCH_CAREER_REQUEST, FETCH_CAREER_SUCCESS} from './careerTypes'
 
 const initialState = {
     careerList: []
