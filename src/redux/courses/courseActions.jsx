@@ -1,4 +1,4 @@
-import {ADD_COURSE, FETCH_COURSE_FAILURE, FETCH_COURSE_REQUEST, FETCH_CAREER_SUCCESS} from './courses/courseTypes'
+import {ADD_COURSE, FETCH_COURSE_FAILURE, FETCH_COURSE_REQUEST, FETCH_COURSE_SUCCESS} from './courses/courseTypes'
 
 export const addCourse = () => {
     return {
