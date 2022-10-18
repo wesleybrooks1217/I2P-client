@@ -20,7 +20,7 @@ const fetchUsersFailure = error => {
 }
 
 
-const fetchUsers = () => {
+export const fetchUsers = () => {
     return function(dispatch) {
         dispatch(fetchUsersRequest())
         axios.get("http://127.0.0.1:8000/api/User/")
