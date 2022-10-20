@@ -29,9 +29,8 @@ const userReducer = (state = initialState, action) => {
                 users: [],
                 error: action.payload
             }
-        default: return state
+        default: return store
     }
-   
 }
 
 export default userReducer
