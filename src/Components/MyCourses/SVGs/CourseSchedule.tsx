@@ -33,9 +33,6 @@ export function TableSelection({ data }: TableSelectionProps) {
         ? current.filter((item) => item !== id)
         : [...current, id]
     );
-
-    console.log('i have this data', data);
-
     if (!data) {
       return <Loading />;
     }

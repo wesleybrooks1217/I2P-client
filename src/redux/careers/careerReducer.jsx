@@ -1,10 +1,10 @@
-import {ADD_CAREER, FETCH_CAREER_FAILURE, FETCH_CAREER_REQUEST, FETCH_CAREER_SUCCESS} from './careerTypes'
+import {ADD_CAREER } from './careerTypes'
 
-const initialState = {
+export const initialState = {
     careerList: []
 }
 
-const careerReducer = (state = initialState, action) => {
+export const careerReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_CAREER: return {
             ...state,

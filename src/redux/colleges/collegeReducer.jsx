@@ -4,7 +4,7 @@ const initialState = {
     collegeList: []
 }
 
-const collegeReducer = (state = initialState, action) => {
+export const collegeReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_COLLEGE: return {
             ...state,
