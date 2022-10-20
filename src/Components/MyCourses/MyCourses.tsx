@@ -21,6 +21,8 @@ import {
   Autocomplete,
 } from "@mantine/core";
 
+import * as API from '../../API/api';
+
 import FooterLinks from "../Universal/FullFooter";
 import { Stack } from "@mantine/core";
 import { Grid } from "@mantine/core";
@@ -343,19 +345,21 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function AppShellExample() {
-  // const [realData, setRealData] = useState();
-  // useEffect(() => {
-  //   fetch("http://127.0.0.1:8000/api")
-  //     .then((response) => {
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //       return data;
-  //     })
-  //     .then(data => setRealData(data.highSchoolCourses))
-  //     .catch((error) => console.log(error));
-  // }, []);
+  const [realData, setRealData] = useState();
+  useEffect(() => {
+    API.getCourses()
+      .then((data) => {
+        console.log(data);
+        return data;
+      })
+      .then(setRealData)
+      .catch((error) => console.log(error));
+  }, []);
+
+
+  // React.useEffect(()=>{
+  //   API.getCourses().then(console.log)
+  // }, [])
 
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
@@ -467,8 +471,8 @@ export default function AppShellExample() {
           {" "}
           Our Recommeded Schedule - Spring 2023!
         </Title>
-        {/* <TableSelection data={realData} /> */}
-        <TableSelection data={scheduleData} />
+        <TableSelection data={realData} />
+        {/* <TableSelection data={scheduleData} /> */}
         <Title
           mt={70}
           mb={20}
