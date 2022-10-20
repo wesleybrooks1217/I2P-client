@@ -24,7 +24,7 @@ function Homeroom(props) {
        
         
         
-        <div className='container'>
+        <div className='homeroom-container'>
               
               <h2 style={{position: 'absolute', marginRight: 'auto'}}> Homeroom</h2>
               

@@ -18,7 +18,8 @@ function AcademicAdvising(props) {
     })
     return (
    
-        <div className='container'>
+        <div className='adviser-container'>
+                <h2 style={{position: 'absolute', marginRight: 'auto'}}> Academic Advising</h2>
             <div className='top-container'>
             <PersonalPage />
             <PageNavigation />

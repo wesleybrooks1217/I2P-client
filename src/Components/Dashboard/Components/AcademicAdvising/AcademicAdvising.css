@@ -9,15 +9,19 @@
     width: 100%;
     height: 1800px;
 }
-.container {
+
+
+.adviser-container {
+  
     position: relative;
     width: 100%;
-    height: 800px;
+    height: 80vh;
     border: 1px solid black;
     background-color:white;
     margin: 100 0;
     margin-bottom: 200px;
 }
+
 
 .top-container {
     margin-top: 0px;
