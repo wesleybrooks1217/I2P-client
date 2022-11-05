@@ -28,6 +28,7 @@ import { TableReviews } from "./SVGs/CoursesTable";
 import { TableSelection } from "./SVGs/CourseSchedule";
 import { CurrentCourseCard } from "./SVGs/CurrentCourseCard";
 import CoursesCurrent from "./SVGs/CoursesCurrent";
+import { ClassNavBar } from "./SVGs/ClassNavBar";
 
 import {
   Notes,
@@ -444,6 +445,7 @@ export default function AppShellExample() {
         </Header>
       }
     >
+      <ClassNavBar></ClassNavBar>
       <Container>
         <Title mt={70} className={classes.title}>
           {" "}
