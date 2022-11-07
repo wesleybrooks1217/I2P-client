@@ -110,7 +110,7 @@ const useStyles = createStyles((theme) => ({
 
 interface HSCoursesProps {
   title: string;
-  courseName: string;
+  courseName?: string;
   description: string;
 }
 

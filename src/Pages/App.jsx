@@ -23,6 +23,20 @@ import Dashboard from "../Components/Dashboard/Dashboard";
 import MyCareer from "../MyCareer/MyCareer";
 import MyColleges from "../Components/MyColleges/MyColleges";
 import HSCourses from "../Components/MyCourses/CourseCards/HSCourses";
+import GeneralHealth from "../Components/MyCourses/CourseCards/GeneralHealth";
+import APChemistry from "../Components/MyCourses/CourseCards/APChemistry";
+import AlgebraI from "../Components/MyCourses/CourseCards/AlgebraI";
+import Geometry from "../Components/MyCourses/CourseCards/Geometry";
+import PhysicalEducation from "../Components/MyCourses/CourseCards/PhysicalEducation";
+import APBiology from "../Components/MyCourses/CourseCards/APBiology";
+import HonorsBiology from "../Components/MyCourses/CourseCards/HonorsBiology";
+import HonorsEnglish from "../Components/MyCourses/CourseCards/HonorsEnglish";
+import APComputerScienceA from "../Components/MyCourses/CourseCards/APComputerScienceA";
+import HonorsWorldHistory from "../Components/MyCourses/CourseCards/HonorsWorldHistory";
+import WeightTraining from "../Components/MyCourses/CourseCards/WeightTraining";
+import Physics from "../Components/MyCourses/CourseCards/Physics";
+import AlgebraII from "../Components/MyCourses/CourseCards/AlgebraII";
+import ForensicScience from "../Components/MyCourses/CourseCards/ForensicScience";
 import { Provider } from "react-redux";
 import store from "../redux/store";
 import Test from "./Test";
@@ -65,23 +79,25 @@ class App extends React.Component {
             <Route path="/MyCareer" element={<MyCareer />} />
             <Route path="/MyColleges" element={<MyColleges />} />
             <Route path="/GeneralHealth" element={<GeneralHealth />} />
+            <Route path="/APChemistry" element={<APChemistry />} />
+            <Route path="/AlgebraI" element={<AlgebraI />} />
+            <Route path="/Geometry" element={<Geometry />} />
+            <Route path="/PhysicalEducation" element={<PhysicalEducation />} />
+            <Route path="/APBiology" element={<APBiology />} />
+            <Route path="/HonorsBiology" element={<HonorsBiology />} />
+            <Route path="/HonorsEnglish" element={<HonorsEnglish />} />
+            <Route path="/APComputerScienceA" element={<APComputerScienceA />} />
+            <Route path="/HonorsWorldHistory" element={<HonorsWorldHistory />} />
+            <Route path="/WeightTraining" element={<WeightTraining />} />
+            <Route path="/Physics" element={<Physics />} />
+            <Route path="/AlgebraII" element={<AlgebraII />} />
+            <Route path="/ForensicScience" element={<ForensicScience />} />
             <Route path="/test" element={<Test />} />
           </Routes>
         </React.Fragment>
       </Provider>
     );
   }
-}
-
-function GeneralHealth() {
-  return (
-    <HSCourses
-      title={"Welcome to General Health"}
-      description={
-        "Here is the course description for general health. We have plans that fit everyones pursuit, including school systems or students. Pick your plan, and start right away."
-      }
-    />
-  );
 }
 
 export default App;

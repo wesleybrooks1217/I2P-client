@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Navbar, SegmentedControl, Text, createStyles } from '@mantine/core';
 import {
   IconShoppingCart,
+  IconCalendarStats,
   IconLicense,
   IconMessage2,
   IconBellRinging,
@@ -83,21 +84,21 @@ const useStyles = createStyles((theme, _params, getRef) => {
 const tabs = {
   Current: [
     { link: '/GeneralHealth', label: 'General Health', icon: IconLicense },
-    { link: '', label: 'AP Chemistry', icon: IconReceipt2 },
-    { link: '', label: 'Algebra 1', icon: IconFingerprint },
-    { link: '', label: 'Geometry', icon: IconKey },
-    { link: '', label: 'Physical Education', icon: IconDatabaseImport },
-    { link: '', label: 'AP Biology', icon: Icon2fa },
-    { link: '', label: 'Honors English', icon: IconSettings },
+    { link: '/APChemistry', label: 'AP Chemistry', icon: IconReceipt2 },
+    { link: '/AlgebraI', label: 'Algebra 1', icon: IconFingerprint },
+    { link: '/Geometry', label: 'Geometry', icon: IconKey },
+    { link: '/PhysicalEducation', label: 'Physical Education', icon: IconDatabaseImport },
+    { link: '/APBiology', label: 'AP Biology', icon: Icon2fa },
+    { link: '/HonorsEnglish', label: 'Honors English', icon: IconSettings },
   ],
   Future: [
-    { link: '', label: 'AP Computer Science A', icon: IconLicense },
-    { link: '', label: 'Honors Biology', icon: IconKey },
-    { link: '', label: 'Honors World History', icon: IconMessage2 },
-    { link: '', label: 'Weight Training', icon: IconMessages },
-    { link: '', label: 'Physics', icon: IconBellRinging },
-    { link: '', label: 'Algebra II', icon: IconReceiptRefund },
-    { link: '', label: 'Forensic Science', icon: IconFileAnalytics },
+    { link: '/APComputerScienceA', label: 'AP Computer Science A', icon: IconLicense },
+    { link: '/HonorsBiology', label: 'Honors Biology', icon: IconKey },
+    { link: '/HonorsWorldHistory', label: 'Honors World History', icon: IconMessage2 },
+    { link: '/WeightTraining', label: 'Weight Training', icon: IconMessages },
+    { link: '/Physics', label: 'Physics', icon: IconBellRinging },
+    { link: '/AlgebraII', label: 'Algebra II', icon: IconReceiptRefund },
+    { link: '/ForensicScience', label: 'Forensic Science', icon: IconFileAnalytics },
   ],
 };
 
@@ -125,8 +126,8 @@ export function ClassNavBar() {
       <Navbar.Section>
         <Text weight={500} size="sm" className={classes.title} color="dimmed" mb="xs">
           Course Schedule
+          <IconCalendarStats />
         </Text>
-
         <SegmentedControl
           value={section}
           onChange={(value: 'Current' | 'Future') => setSection(value)}
