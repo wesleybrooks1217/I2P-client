@@ -82,22 +82,22 @@ const useStyles = createStyles((theme, _params, getRef) => {
 
 const tabs = {
   Current: [
-    { link: '', label: 'Notifications', icon: IconBellRinging },
-    { link: '', label: 'Billing', icon: IconReceipt2 },
-    { link: '', label: 'Security', icon: IconFingerprint },
-    { link: '', label: 'SSH Keys', icon: IconKey },
-    { link: '', label: 'Databases', icon: IconDatabaseImport },
-    { link: '', label: 'Authentication', icon: Icon2fa },
-    { link: '', label: 'Other Settings', icon: IconSettings },
+    { link: '/GeneralHealth', label: 'General Health', icon: IconLicense },
+    { link: '', label: 'AP Chemistry', icon: IconReceipt2 },
+    { link: '', label: 'Algebra 1', icon: IconFingerprint },
+    { link: '', label: 'Geometry', icon: IconKey },
+    { link: '', label: 'Physical Education', icon: IconDatabaseImport },
+    { link: '', label: 'AP Biology', icon: Icon2fa },
+    { link: '', label: 'Honors English', icon: IconSettings },
   ],
   Future: [
-    { link: '', label: 'Orders', icon: IconShoppingCart },
-    { link: '', label: 'Receipts', icon: IconLicense },
-    { link: '', label: 'Reviews', icon: IconMessage2 },
-    { link: '', label: 'Messages', icon: IconMessages },
-    { link: '', label: 'Customers', icon: IconUsers },
-    { link: '', label: 'Refunds', icon: IconReceiptRefund },
-    { link: '', label: 'Files', icon: IconFileAnalytics },
+    { link: '', label: 'AP Computer Science A', icon: IconLicense },
+    { link: '', label: 'Honors Biology', icon: IconKey },
+    { link: '', label: 'Honors World History', icon: IconMessage2 },
+    { link: '', label: 'Weight Training', icon: IconMessages },
+    { link: '', label: 'Physics', icon: IconBellRinging },
+    { link: '', label: 'Algebra II', icon: IconReceiptRefund },
+    { link: '', label: 'Forensic Science', icon: IconFileAnalytics },
   ],
 };
 
@@ -111,8 +111,7 @@ export function ClassNavBar() {
       className={cx(classes.link, { [classes.linkActive]: item.label === active })}
       href={item.link}
       key={item.label}
-      onClick={(event) => {
-        event.preventDefault();
+      onClick={() => {
         setActive(item.label);
       }}
     >

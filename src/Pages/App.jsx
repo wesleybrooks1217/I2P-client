@@ -22,9 +22,10 @@ import MyCourses from "../Components/MyCourses/Courses";
 import Dashboard from "../Components/Dashboard/Dashboard";
 import MyCareer from "../MyCareer/MyCareer";
 import MyColleges from "../Components/MyColleges/MyColleges";
-import { Provider } from 'react-redux'
-import store from '../redux/store'
-import Test from './Test';
+import HSCourses from "../Components/MyCourses/CourseCards/HSCourses";
+import { Provider } from "react-redux";
+import store from "../redux/store";
+import Test from "./Test";
 /*
 Testing push request
 */
@@ -33,43 +34,54 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-      <React.Fragment>
-        <Routes>
-          <Route path='/' element={<Landing />} />
-          <Route path='/MyCourses' element={<MyCourses />} />
-          <Route path='/SchoolSystems' element={<SchoolSystems />} />
-          <Route path='/WhyMyNext4' element={<WhyMyNext4 />} />
-          <Route path='/Pricing' element={<Pricing />} />
-          <Route path='/AboutUs' element={<AboutUs />} />
-          <Route path='/MNFLibrary' element={<MNFLibrary />} />
-          <Route path='/MNFComponents' element={<MNFComponents />} />
-          <Route path='/Updates' element={<Updates />} />
-          <Route path='/Privacy' element={<Privacy />} />
-          <Route path = '/MyCareer' element={ <MyCareer />} /> 
-          <Route path='/Dashboard' element={<Dashboard />} />
-          <Route path = '/MyCareer' element={ <MyCareer />} /> 
-          <Route path = '/MyColleges' element={ <MyColleges />} /> 
-          <Route path="/" element={<Landing />} />
-          <Route path="/MyCourses" element={<MyCourses />} />
-          <Route path="/SchoolSystems" element={<SchoolSystems />} />
-          <Route path="/WhyMyNext4" element={<WhyMyNext4 />} />
-          <Route path="/Pricing" element={<Pricing />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/MNFLibrary" element={<MNFLibrary />} />
-          <Route path="/MNFComponents" element={<MNFComponents />} />
-          <Route path="/Updates" element={<Updates />} />
-          <Route path="/Privacy" element={<Privacy />} />
-          <Route path="/MyCareer" element={<MyCareer />} /> yar
-          <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="/MyCareer" element={<MyCareer />} />
-          <Route path="/MyColleges" element={<MyColleges />} />
-          <Route path="/test" element = {<Test />} />
-        
-        </Routes>
-      </React.Fragment>
+        <React.Fragment>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/MyCourses" element={<MyCourses />} />
+            <Route path="/SchoolSystems" element={<SchoolSystems />} />
+            <Route path="/WhyMyNext4" element={<WhyMyNext4 />} />
+            <Route path="/Pricing" element={<Pricing />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
+            <Route path="/MNFLibrary" element={<MNFLibrary />} />
+            <Route path="/MNFComponents" element={<MNFComponents />} />
+            <Route path="/Updates" element={<Updates />} />
+            <Route path="/Privacy" element={<Privacy />} />
+            <Route path="/MyCareer" element={<MyCareer />} />
+            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/MyCareer" element={<MyCareer />} />
+            <Route path="/MyColleges" element={<MyColleges />} />
+            <Route path="/" element={<Landing />} />
+            <Route path="/MyCourses" element={<MyCourses />} />
+            <Route path="/SchoolSystems" element={<SchoolSystems />} />
+            <Route path="/WhyMyNext4" element={<WhyMyNext4 />} />
+            <Route path="/Pricing" element={<Pricing />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
+            <Route path="/MNFLibrary" element={<MNFLibrary />} />
+            <Route path="/MNFComponents" element={<MNFComponents />} />
+            <Route path="/Updates" element={<Updates />} />
+            <Route path="/Privacy" element={<Privacy />} />
+            <Route path="/MyCareer" element={<MyCareer />} />
+            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/MyCareer" element={<MyCareer />} />
+            <Route path="/MyColleges" element={<MyColleges />} />
+            <Route path="/GeneralHealth" element={<GeneralHealth />} />
+            <Route path="/test" element={<Test />} />
+          </Routes>
+        </React.Fragment>
       </Provider>
     );
   }
+}
+
+function GeneralHealth() {
+  return (
+    <HSCourses
+      title={"Welcome to General Health"}
+      description={
+        "Here is the course description for general health. We have plans that fit everyones pursuit, including school systems or students. Pick your plan, and start right away."
+      }
+    />
+  );
 }
 
 export default App;
