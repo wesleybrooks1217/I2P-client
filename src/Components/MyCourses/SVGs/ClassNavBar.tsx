@@ -19,7 +19,7 @@ import {
   IconLogout,
   IconSwitchHorizontal,
 } from "../../../tabler-icons-react/icons-react";
-//'@tabler/icons';
+import ScheduleButton from '../Helpers/ScheduleButton';
 
 const useStyles = createStyles((theme, _params, getRef) => {
   const icon = getRef('icon');
@@ -102,6 +102,7 @@ const tabs = {
   ],
 };
 
+
 export function ClassNavBar() {
   const { classes, cx } = useStyles();
   const [section, setSection] = useState<'Current' | 'Future'>('Current');
@@ -126,7 +127,6 @@ export function ClassNavBar() {
       <Navbar.Section>
         <Text weight={500} size="sm" className={classes.title} color="dimmed" mb="xs">
           Course Schedule
-          <IconCalendarStats />
         </Text>
         <SegmentedControl
           value={section}

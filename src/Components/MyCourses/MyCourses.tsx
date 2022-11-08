@@ -29,6 +29,7 @@ import { TableSelection } from "./SVGs/CourseSchedule";
 import { CurrentCourseCard } from "./SVGs/CurrentCourseCard";
 import CoursesCurrent from "./SVGs/CoursesCurrent";
 import { ClassNavBar } from "./SVGs/ClassNavBar";
+import ScheduleButton from "./Helpers/ScheduleButton";
 
 import {
   Notes,
@@ -360,6 +361,7 @@ export default function AppShellExample() {
 
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
   const { classes } = useStyles();
   const links2 = mockdata.map((item) => (
     <LinksGroup {...item} key={item.label} />
@@ -391,7 +393,7 @@ export default function AppShellExample() {
             <Group position="apart">
               <UserButton
                 image="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80"
-                name="An Nullpointer"
+                name="Ann Nullpointer"
                 email="anullpointer@yahoo.com"
               />
             </Group>
@@ -445,7 +447,10 @@ export default function AppShellExample() {
         </Header>
       }
     >
-      <ClassNavBar></ClassNavBar>
+      <ScheduleButton 
+          clickHandler={() => setShowSidebar(!showSidebar)}
+        />
+      { showSidebar && <ClassNavBar />}
       <Container>
         <Title mt={70} className={classes.title}>
           {" "}
