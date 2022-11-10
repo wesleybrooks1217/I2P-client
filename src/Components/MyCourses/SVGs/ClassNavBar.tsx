@@ -20,6 +20,44 @@ import {
   IconSwitchHorizontal,
 } from "../../../tabler-icons-react/icons-react";
 import ScheduleButton from '../Helpers/ScheduleButton';
+import { UserButton } from '../../Universal/UserButton';
+
+import {
+  AppShell,
+  Header,
+  Footer,
+  Aside,
+  Group,
+  SimpleGrid,
+  Code,
+  ScrollArea,
+  Button,
+  Image,
+  Container,
+  Title,
+  MediaQuery,
+  Burger,
+  useMantineTheme,
+  Autocomplete,
+} from "@mantine/core";
+
+import { Stack } from "@mantine/core";
+import { Grid } from "@mantine/core";
+
+import {
+  Notes,
+  CalendarStats,
+  Gauge,
+  PresentationAnalytics,
+  FileAnalytics,
+  Adjustments,
+  Lock,
+  Search,
+} from "tabler-icons-react";
+import Logo from "../Universal/Images/MyNext4Logo.png";
+import LogoNoText from "../Universal/Images/MyNext4Icon.png";
+
+
 
 const useStyles = createStyles((theme, _params, getRef) => {
   const icon = getRef('icon');
@@ -32,6 +70,17 @@ const useStyles = createStyles((theme, _params, getRef) => {
     title: {
       textTransform: 'uppercase',
       letterSpacing: -0.25,
+    },
+
+    header: {
+      padding: theme.spacing.md,
+      paddingTop: 0,
+      marginLeft: -theme.spacing.md,
+      marginRight: -theme.spacing.md,
+      color: theme.colorScheme === "dark" ? theme.white : theme.black,
+      borderBottom: `1px solid ${
+        theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
+      }`,
     },
 
     link: {
@@ -123,9 +172,18 @@ export function ClassNavBar() {
   ));
 
   return (
-    <Navbar position={{ top: 0, right: 0 }} height={840} width={{ sm: 300 }} p="md" className={classes.navbar}>
+    <Navbar position={{ top: 0, left: 0 }} height={840} width={{ sm: 400 }} p="md" className={classes.navbar}>
+      <Navbar.Section className={classes.header}>
+            <Group position="apart">
+              <UserButton
+                image="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80"
+                name="Ann Nullpointer"
+                email="anullpointer@yahoo.com"
+              />
+            </Group>
+          </Navbar.Section>
       <Navbar.Section>
-        <Text weight={500} size="sm" className={classes.title} color="dimmed" mb="xs">
+        <Text weight={500} size="sm" mt={15} className={classes.title} color="dimmed" mb="xs">
           Course Schedule
         </Text>
         <SegmentedControl

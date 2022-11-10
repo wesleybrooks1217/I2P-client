@@ -452,15 +452,15 @@ export default function AppShellExample() {
         />
       { showSidebar && <ClassNavBar />}
       <Container>
-        <Title mt={70} className={classes.title}>
+        <Title sx={{ textAlign: "center" }} mt={60} mb={30} className={classes.title}>
           {" "}
-          MyCourses Page{" "}
+          MyCourses{" "}
         </Title>
-        <Text mb={70} sx={{ textAlign: "left" }}>
+        {/* <Text mb={70} sx={{ textAlign: "left" }}>
           {" "}
           Welcome to the MyCourses Page!
-        </Text>
-        <Title mb={20} sx={{ textAlign: "center" }} className={classes.title}>
+        </Text> */}
+        <Title mb={20} sx={{ textAlign: "center" }} className={classes.header}>
           {" "}
           Your Current Schedule - Fall 2022!
         </Title>
@@ -469,7 +469,7 @@ export default function AppShellExample() {
           mt={70}
           mb={20}
           sx={{ textAlign: "center" }}
-          className={classes.title}
+          className={classes.header}
         >
           {" "}
           Our Recommeded Schedule - Spring 2023!
@@ -480,7 +480,7 @@ export default function AppShellExample() {
           mt={70}
           mb={20}
           sx={{ textAlign: "center" }}
-          className={classes.title}
+          className={classes.header}
         >
           {" "}
           Additional Course Reccomendations!
