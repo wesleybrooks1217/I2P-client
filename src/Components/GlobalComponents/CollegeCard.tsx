@@ -1,18 +1,9 @@
-import {
-    Card,
-    Image,
-    Text,
-    Badge,
-    Button,
-    Group 
-        } from '@mantine/core';
+import { Card, Image, Text, Badge, Button, Group } from "@mantine/core";
+import React from "react";
 
 function CollegeCard() {
-    return(
-        
-            <Card
-     
-    >
+  return (
+    <Card>
       <Card.Section>
         <Image
           src="https://images.unsplash.com/photo-1579227114347-15d08fc37cae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
@@ -26,14 +17,11 @@ function CollegeCard() {
       </Text>
 
       <Text mt="xs" color="dimmed" size="sm">
-        Please click anywhere on this card to claim your reward, this is not a fraud, trust us
+        Please click anywhere on this card to claim your reward, this is not a
+        fraud, trust us
       </Text>
     </Card>
-
-    
-        
-       
-    );
-};
+  );
+}
 
 export default CollegeCard;

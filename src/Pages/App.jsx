@@ -21,7 +21,7 @@ import Privacy from "../Components/Privacy/Privacy";
 import MyCourses from "../Components/MyCourses/Courses";
 import Dashboard from "../Components/Dashboard/Dashboard";
 import MyCareer from "../MyCareer/MyCareer";
-import MyColleges from "../Components/MyColleges/MyColleges";
+import MyColleges2 from "../Components/MyCollege/MyColleges2";
 import HSCourses from "../Components/MyCourses/CourseCards/HSCourses";
 import GeneralHealth from "../Components/MyCourses/CourseCards/GeneralHealth";
 import APChemistry from "../Components/MyCourses/CourseCards/APChemistry";
@@ -40,6 +40,8 @@ import ForensicScience from "../Components/MyCourses/CourseCards/ForensicScience
 import { Provider } from "react-redux";
 import store from "../redux/store";
 import Test from "./Test";
+import CollegeCard from "../Components/CollegeCards/CollegeCard";
+
 /*
 Testing push request
 */
@@ -58,12 +60,13 @@ class App extends React.Component {
             <Route path="/AboutUs" element={<AboutUs />} />
             <Route path="/MNFLibrary" element={<MNFLibrary />} />
             <Route path="/MNFComponents" element={<MNFComponents />} />
+            <Route path="/CollegeCard" element={<CollegeCard />} />
             <Route path="/Updates" element={<Updates />} />
             <Route path="/Privacy" element={<Privacy />} />
             <Route path="/MyCareer" element={<MyCareer />} />
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/MyCareer" element={<MyCareer />} />
-            <Route path="/MyColleges" element={<MyColleges />} />
+
             <Route path="/" element={<Landing />} />
             <Route path="/MyCourses" element={<MyCourses />} />
             <Route path="/SchoolSystems" element={<SchoolSystems />} />
@@ -77,7 +80,7 @@ class App extends React.Component {
             <Route path="/MyCareer" element={<MyCareer />} />
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/MyCareer" element={<MyCareer />} />
-            <Route path="/MyColleges" element={<MyColleges />} />
+            <Route path="/MyColleges2" element={<MyColleges2 />} />
             <Route path="/GeneralHealth" element={<GeneralHealth />} />
             <Route path="/APChemistry" element={<APChemistry />} />
             <Route path="/AlgebraI" element={<AlgebraI />} />
@@ -86,8 +89,14 @@ class App extends React.Component {
             <Route path="/APBiology" element={<APBiology />} />
             <Route path="/HonorsBiology" element={<HonorsBiology />} />
             <Route path="/HonorsEnglish" element={<HonorsEnglish />} />
-            <Route path="/APComputerScienceA" element={<APComputerScienceA />} />
-            <Route path="/HonorsWorldHistory" element={<HonorsWorldHistory />} />
+            <Route
+              path="/APComputerScienceA"
+              element={<APComputerScienceA />}
+            />
+            <Route
+              path="/HonorsWorldHistory"
+              element={<HonorsWorldHistory />}
+            />
             <Route path="/WeightTraining" element={<WeightTraining />} />
             <Route path="/Physics" element={<Physics />} />
             <Route path="/AlgebraII" element={<AlgebraII />} />
