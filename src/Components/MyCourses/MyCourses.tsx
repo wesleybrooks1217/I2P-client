@@ -47,6 +47,7 @@ import Logo from "../Universal/Images/MyNext4Logo.png";
 import LogoNoText from "../Universal/Images/MyNext4Icon.png";
 import FooterCentered from "../Universal/Footer";
 import LightDarkButton from "../LightDarkButton";
+import CourseStatsCombined from "./SVGs/CourseStatsCombined";
 
 const mockdata = [
   {
@@ -447,24 +448,24 @@ export default function AppShellExample() {
         </Header>
       }
     >
-      <ScheduleButton 
-          clickHandler={() => setShowSidebar(!showSidebar)}
-        />
-      { showSidebar && <ClassNavBar />}
+      <ScheduleButton clickHandler={() => setShowSidebar(!showSidebar)} />
+      {showSidebar && <ClassNavBar />}
       <Container>
-        <Title sx={{ textAlign: "center" }} mt={60} mb={30} className={classes.title}>
+        <Title
+          sx={{ textAlign: "center" }}
+          mt={60}
+          mb={30}
+          className={classes.title}
+        >
           {" "}
           MyCourses{" "}
         </Title>
-        {/* <Text mb={70} sx={{ textAlign: "left" }}>
-          {" "}
-          Welcome to the MyCourses Page!
-        </Text> */}
         <Title mb={20} sx={{ textAlign: "center" }} className={classes.header}>
           {" "}
           Your Current Schedule - Fall 2022!
         </Title>
-        <CoursesCurrent></CoursesCurrent>
+        <CourseStatsCombined />
+        {/* <CoursesCurrent/> */}
         <Title
           mt={70}
           mb={20}

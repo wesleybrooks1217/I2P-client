@@ -32,7 +32,17 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function StatsCard(props) {
+interface StatsCardProps {
+  title: string;
+  population: string;
+  progress: number;
+  cost: string;
+  color?: string;
+  href: string;
+  pic?: string;
+}
+
+export function StatsCard(props: StatsCardProps) {
   const { classes } = useStyles();
 
   return (
