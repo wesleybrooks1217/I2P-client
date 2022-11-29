@@ -48,6 +48,7 @@ import LogoNoText from "../Universal/Images/MyNext4Icon.png";
 import FooterCentered from "../Universal/Footer";
 import LightDarkButton from "../LightDarkButton";
 import CourseStatsCombined from "./CourseStatsCombined";
+import { PollingWatchKind } from "typescript";
 
 const mockdata = [
   {
@@ -158,43 +159,43 @@ const futureCourseData = [
     id: 0,
     course: "AP Computer Science A",
     courseType: "Computer Science",
-    difficulty: 89
+    difficulty: 8.9
   },  
   {
     id: 1,
     course: "Honors Biology",
     courseType: "Science",
-    difficulty: 80
+    difficulty: 8
   },
   {
     id: 2,
     course: "Honors World History",
     courseType: "Social Studies",
-    difficulty: 75
+    difficulty: 7.5
   },
   {
     id: 3,
     course: "Weight Training",
     courseType: "Wellness",
-    difficulty: 49
+    difficulty: 4.9
   },
   {
     id: 4,
     course: "Physics",
     courseType: "Science",
-    difficulty: 85
+    difficulty: 8.5
   },
   {
     id: 5,
     course: "Algebra II",
     courseType: "Math",
-    difficulty: 90
+    difficulty: 9
   },
   {
     id: 6,
     course: "Forensic Science",
     courseType: "Science",
-    difficulty: 67
+    difficulty: 6.7
   },
 ];
 
@@ -203,43 +204,43 @@ const currentCourseData = [
     id: 0,
     course: "General Health",
     courseType: "Wellness",
-    difficulty: 45
+    difficulty: 4.5
   },  
   {
     id: 1,
     course: "AP Chemistry",
     courseType: "Science",
-    difficulty: 85
+    difficulty: 8.5
   },
   {
     id: 2,
     course: "Algebra 1",
     courseType: "Math",
-    difficulty: 75
+    difficulty: 7.5
   },
   {
     id: 3,
     course: "Geometry",
     courseType: "Math",
-    difficulty: 73
+    difficulty: 7.3
   },
   {
     id: 4,
     course: "Physical Education",
     courseType: "Wellness",
-    difficulty: 55
+    difficulty: 5.5
   },
   {
     id: 5,
     course: "AP Biology",
     courseType: "Science",
-    difficulty: 87
+    difficulty: 8.7
   },
   {
     id: 6,
     course: "Honors English",
     courseType: "English",
-    difficulty: 68
+    difficulty: 6.8
   },
 ];
 

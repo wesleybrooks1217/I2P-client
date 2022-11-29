@@ -48,7 +48,7 @@ import {
     return (
       <Paper radius="md" withBorder className={classes.card} mt={ICON_SIZE / 3}>
         <ThemeIcon className={classes.icon} size={ICON_SIZE} radius={ICON_SIZE} mt={3}>
-          <Swimming></Swimming>
+          {/* <Swimming></Swimming> */}
           {/* {props.pic} */}
         </ThemeIcon>
   
@@ -60,14 +60,14 @@ import {
         </Text>
         <Group position="apart" mt="xs">
           <Text size="sm" color="dimmed">
-            Difficulty (Determined by Previous Students)
+            Average Difficulty (Determined by Previous Students)
           </Text>
           <Text size="sm" color={props.color}>
-            {props.difficulty} / 100
+            {props.difficulty} / 10
           </Text>
         </Group>
   
-        <Progress value={props.difficulty} mt={5} color={`#${props.color}`} />
+        <Progress value={props.difficulty * 10} mt={5} color={'green'} />
   
         <Group position="apart" mt="md">
           <Text size="sm"></Text>
