@@ -47,7 +47,7 @@ import Logo from "../Universal/Images/MyNext4Logo.png";
 import LogoNoText from "../Universal/Images/MyNext4Icon.png";
 import FooterCentered from "../Universal/Footer";
 import LightDarkButton from "../LightDarkButton";
-import CourseStatsCombined from "./SVGs/CourseStatsCombined";
+import CourseStatsCombined from "./CourseStatsCombined";
 
 const mockdata = [
   {

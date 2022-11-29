@@ -1,5 +1,5 @@
 import React from "react";
-import CourseStats from "../Helpers/CourseStats";
+import CourseStats from "./Helpers/CourseStats";
 import { ScrollArea, createStyles } from "@mantine/core";
 
 const followedColleges = [
@@ -44,33 +44,21 @@ const followedColleges = [
     //pic: getCollegepic(4),
   },
 ];
+
 const useStyles = createStyles((theme) => ({
-  track: {
-    backgroundColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[3]
-        : theme.colors.blue[1],
-  },
-  mark: {
-    width: 6,
-    height: 6,
-    borderRadius: 6,
-    transform: "translateX(-3px) translateY(-2px)",
-    borderColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[3]
-        : theme.colors.blue[1],
-  },
-  markFilled: {
-    borderColor: theme.colors.blue[6],
-  },
-  markLabel: { fontSize: theme.fontSizes.xs, marginBottom: 5, marginTop: 0 },
   thumb: {
     height: 16,
     width: 16,
-    backgroundColor: theme.white,
+    backgroundColor: "transparent",
     borderWidth: 1,
     boxShadow: theme.shadows.sm,
+  },
+  root: {
+    height: 42,
+    padding: "20px 30px",
+    backgroundColor:  theme.colorScheme === 'dark' ? "#404042" : "#fefefe",
+    boxShadow: theme.shadows.sm,
+    borderRadius: 5,
   },
 }));
 
@@ -83,13 +71,10 @@ const CourseStatsCombined = () => {
         style={{ height: 500 }}
         offsetScrollbars
         scrollbarSize={2}
-        // classNames={{
-        //   track: classes.track,
-        //   mark: classes.mark,
-        //   markFilled: classes.markFilled,
-        //   markLabel: classes.markLabel,
-        //   thumb: classes.thumb,
-        // }}
+        classNames={{
+          thumb: classes.thumb,
+          root: classes.root,
+        }}
       >
         <CourseStats
           title={followedColleges[0].college}

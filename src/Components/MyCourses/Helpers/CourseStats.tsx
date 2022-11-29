@@ -47,18 +47,17 @@ import {
 
     return (
       <Paper radius="md" withBorder className={classes.card} mt={ICON_SIZE / 3}>
-        <ThemeIcon className={classes.icon} size={ICON_SIZE} radius={ICON_SIZE}>
+        <ThemeIcon className={classes.icon} size={ICON_SIZE} radius={ICON_SIZE} mt={3}>
           <Swimming></Swimming>
           {/* {props.pic} */}
         </ThemeIcon>
   
-        <Text align="center" weight={700} className={classes.title}>
+        <Text align="center" weight={700} className={classes.title} mt={5}>
           {props.title}
         </Text>
         <Text color="dimmed" align="center" size="sm">
           {props.population}
         </Text>
-  
         <Group position="apart" mt="xs">
           <Text size="sm" color="dimmed">
             Acceptance Percentage
