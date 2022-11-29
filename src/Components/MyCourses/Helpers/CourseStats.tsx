@@ -33,12 +33,12 @@ import {
   }));
   
   interface StatsCardProps {
-    title: string;
-    population: string;
-    progress: number;
-    cost: string;
+    id: number;
+    course: string;
+    courseType: string;
+    difficulty: number;
     color?: string;
-    href: string;
+    href?: string;
     pic?: string;
   };
   
@@ -53,24 +53,24 @@ import {
         </ThemeIcon>
   
         <Text align="center" weight={700} className={classes.title} mt={5}>
-          {props.title}
+          {props.course}
         </Text>
         <Text color="dimmed" align="center" size="sm">
-          {props.population}
+          Course Type: {props.courseType}
         </Text>
         <Group position="apart" mt="xs">
           <Text size="sm" color="dimmed">
-            Acceptance Percentage
+            Difficulty (Determined by Previous Students)
           </Text>
           <Text size="sm" color={props.color}>
-            {props.progress}
+            {props.difficulty} / 100
           </Text>
         </Group>
   
-        <Progress value={props.progress} mt={5} color={`#${props.color}`} />
+        <Progress value={props.difficulty} mt={5} color={`#${props.color}`} />
   
         <Group position="apart" mt="md">
-          <Text size="sm">{props.cost}</Text>
+          <Text size="sm"></Text>
           <Button size="sm" component="a" href={props.href} variant="outline">
             More
           </Button>

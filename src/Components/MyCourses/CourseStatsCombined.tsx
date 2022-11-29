@@ -1,6 +1,7 @@
 import React from "react";
 import CourseStats from "./Helpers/CourseStats";
 import { ScrollArea, createStyles } from "@mantine/core";
+import Loading from "./SVGs/Loading";
 
 const followedColleges = [
   {
@@ -56,14 +57,44 @@ const useStyles = createStyles((theme) => ({
   root: {
     height: 42,
     padding: "20px 30px",
-    backgroundColor:  theme.colorScheme === 'dark' ? "#404042" : "#fefefe",
+    backgroundColor: theme.colorScheme === "dark" ? "#404042" : "#fefefe",
     boxShadow: theme.shadows.sm,
     borderRadius: 5,
   },
 }));
 
-const CourseStatsCombined = () => {
+interface CourseStatsCombinedProps {
+  data?: {
+    id: number;
+    course: string;
+    courseType: string;
+    difficulty: number;
+    color?: string;
+    href?: string;
+    pic?: string;
+  }[];
+}
+
+const CourseStatsCombined = ({ data }: CourseStatsCombinedProps) => {
   const { classes } = useStyles();
+
+  if (!data) {
+    return <Loading />;
+  }
+
+  const rows = data.map((item) => {
+    return (
+      <CourseStats
+        id={item.id}
+        course={item.course}
+        courseType={item.courseType}
+        difficulty={item.difficulty}
+        color={item.color}
+        href={item.href}
+        pic={item.pic}
+      ></CourseStats>
+    );
+  });
 
   return (
     <div>
@@ -76,45 +107,61 @@ const CourseStatsCombined = () => {
           root: classes.root,
         }}
       >
-        <CourseStats
-          title={followedColleges[0].college}
-          population={followedColleges[0].population}
-          progress={followedColleges[0].progress}
-          cost={followedColleges[0].cost}
-          //color={followedColleges[0].color}
-          href={followedColleges[0].href}
-          //pic={followedColleges[0].pic}
-        ></CourseStats>
-        <CourseStats
-          title={followedColleges[1].college}
-          population={followedColleges[1].population}
-          progress={followedColleges[1].progress}
-          cost={followedColleges[1].cost}
-          //color={followedColleges[0].color}
-          href={followedColleges[1].href}
-          //pic={followedColleges[0].pic}
-        ></CourseStats>
-        <CourseStats
-          title={followedColleges[2].college}
-          population={followedColleges[2].population}
-          progress={followedColleges[2].progress}
-          cost={followedColleges[2].cost}
-          //color={followedColleges[0].color}
-          href={followedColleges[2].href}
-          //pic={followedColleges[0].pic}
-        ></CourseStats>
-        <CourseStats
-          title={followedColleges[3].college}
-          population={followedColleges[3].population}
-          progress={followedColleges[3].progress}
-          cost={followedColleges[3].cost}
-          //color={followedColleges[0].color}
-          href={followedColleges[3].href}
-          //pic={followedColleges[0].pic}
-        ></CourseStats>
+        {rows}
       </ScrollArea>
     </div>
   );
 };
 
 export default CourseStatsCombined;
+
+// return (
+//   <div>
+//     <ScrollArea
+//       style={{ height: 500 }}
+//       offsetScrollbars
+//       scrollbarSize={2}
+//       classNames={{
+//         thumb: classes.thumb,
+//         root: classes.root,
+//       }}
+//     >
+//       <CourseStats
+//         title={followedColleges[0].college}
+//         population={followedColleges[0].population}
+//         progress={followedColleges[0].progress}
+//         cost={followedColleges[0].cost}
+//         //color={followedColleges[0].color}
+//         href={followedColleges[0].href}
+//         //pic={followedColleges[0].pic}
+//       ></CourseStats>
+//       <CourseStats
+//         title={followedColleges[1].college}
+//         population={followedColleges[1].population}
+//         progress={followedColleges[1].progress}
+//         cost={followedColleges[1].cost}
+//         //color={followedColleges[0].color}
+//         href={followedColleges[1].href}
+//         //pic={followedColleges[0].pic}
+//       ></CourseStats>
+//       <CourseStats
+//         title={followedColleges[2].college}
+//         population={followedColleges[2].population}
+//         progress={followedColleges[2].progress}
+//         cost={followedColleges[2].cost}
+//         //color={followedColleges[0].color}
+//         href={followedColleges[2].href}
+//         //pic={followedColleges[0].pic}
+//       ></CourseStats>
+//       <CourseStats
+//         title={followedColleges[3].college}
+//         population={followedColleges[3].population}
+//         progress={followedColleges[3].progress}
+//         cost={followedColleges[3].cost}
+//         //color={followedColleges[0].color}
+//         href={followedColleges[3].href}
+//         //pic={followedColleges[0].pic}
+//       ></CourseStats>
+//     </ScrollArea>
+//   </div>
+// );
