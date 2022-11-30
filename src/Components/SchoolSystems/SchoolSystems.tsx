@@ -1,10 +1,10 @@
 import "./SchoolShell.css"
 import {ColorScheme, ColorSchemeProvider, MantineProvider, Paper} from "@mantine/core"
-import {useHotkeys, useLocalStorageValue} from "@mantine/hooks"
+import {useHotkeys, useLocalStorage} from "@mantine/hooks"
 import AppShellExample from "./SchoolShell"
 
 function SchoolSystems() {
-  const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: 'mantine-color-scheme',
     defaultValue: 'light',
     getInitialValueInEffect: true,

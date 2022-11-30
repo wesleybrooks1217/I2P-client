@@ -4,7 +4,7 @@ import {
   MantineProvider,
   Paper,
 } from "@mantine/core";
-import { useHotkeys, useLocalStorageValue } from "@mantine/hooks";
+import { useHotkeys, useLocalStorage } from "@mantine/hooks";
 import React, { useState } from "react";
 import Next4Shell from "../../Next4Shell";
 import {
@@ -116,7 +116,7 @@ interface HSCoursesProps {
 
 export default function HSCourses({title, courseName, description}: HSCoursesProps){
   const theme = useMantineTheme();
-  const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
     defaultValue: "light",
     getInitialValueInEffect: true,

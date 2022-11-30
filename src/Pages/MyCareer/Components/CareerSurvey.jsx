@@ -44,7 +44,8 @@ function CareerSurvey () {
                             <ShieldCheck
                             size={16}/>
                         </ThemeIcon>
-                    }>
+                    }
+                    data-testid = "CS-List">
                         <List.Item> Survey 1</List.Item>
                         <List.Item> Survey 2</List.Item>
                         <List.Item> Survey 3</List.Item>

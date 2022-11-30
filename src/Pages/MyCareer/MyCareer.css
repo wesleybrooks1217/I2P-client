@@ -22,3 +22,8 @@
     margin-top: 250px;
     height: 500px;
 }
+
+.container {
+    text-align: center;
+    height: 100%;
+}

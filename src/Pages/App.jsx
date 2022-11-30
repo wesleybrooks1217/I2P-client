@@ -20,7 +20,7 @@ import Updates from "../Components/Updates/Updates";
 import Privacy from "../Components/Privacy/Privacy";
 import MyCourses from "../Components/MyCourses/Courses";
 import Dashboard from "../Components/Dashboard/Dashboard";
-import MyCareer from "../MyCareer/MyCareer";
+import MyCareer from "../Pages/MyCareer/MyCareer";
 import MyColleges2 from "../Components/MyCollege/MyColleges2";
 import HSCourses from "../Components/MyCourses/CourseCards/HSCourses";
 import GeneralHealth from "../Components/MyCourses/CourseCards/GeneralHealth";
@@ -41,6 +41,8 @@ import { Provider } from "react-redux";
 import store from "../redux/store";
 import Test from "./Test";
 import CollegeCard from "../Components/CollegeCards/CollegeCard";
+import Login from "../Pages/LogIn/Login";
+import Careers from "../Pages/Careers/Careers";
 
 /*
 Testing push request
@@ -102,6 +104,8 @@ class App extends React.Component {
             <Route path="/AlgebraII" element={<AlgebraII />} />
             <Route path="/ForensicScience" element={<ForensicScience />} />
             <Route path="/test" element={<Test />} />
+            <Route path = "/login" element={<Login />} />
+            <Route path = "/Careers" element = {<Careers />} />
           </Routes>
         </React.Fragment>
       </Provider>
