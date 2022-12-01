@@ -6,7 +6,7 @@ function HonorsWorldHistory() {
       <HSCourses
         title={"Honors World History"}
         description={
-          "Here is the course description for Honors World History. We have plans that fit everyones pursuit, including school systems or students. Pick your plan, and start right away."
+          "Here is the course description for Honors World History. We have plans that fit everyones pursuit, including school systems or students. Pick your plan, and start right away. The MyNext4 Team is excited to have you on board!"
         }
       />
     );

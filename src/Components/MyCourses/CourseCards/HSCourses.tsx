@@ -5,6 +5,7 @@ import {
   Paper,
 } from "@mantine/core";
 import { useHotkeys, useLocalStorage } from "@mantine/hooks";
+import ColorShell from "../../ColorShell";
 import React, { useState } from "react";
 import Next4Shell from "../../Next4Shell";
 import {
@@ -52,6 +53,8 @@ import LightDarkButton from "../../LightDarkButton";
 import PricingBullets from "../../Pricing/PricingBullets";
 import styleSheet from "../../StyleSheet";
 import ProductCards from "../../Pricing/ProductCards";
+import DescriptionPop from "../../../Pages/Careers/Components/DescriptionPop";
+import CourseDescriptionPop from "../Helpers/CourseDescriptionPop";
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -114,7 +117,11 @@ interface HSCoursesProps {
   description: string;
 }
 
-export default function HSCourses({title, courseName, description}: HSCoursesProps){
+export default function HSCourses({
+  title,
+  courseName,
+  description,
+}: HSCoursesProps) {
   const theme = useMantineTheme();
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
@@ -128,69 +135,33 @@ export default function HSCourses({title, courseName, description}: HSCoursesPro
   useHotkeys([["mod+J", () => toggleColorScheme()]]);
 
   return (
-    <div className="App">
-      <ColorSchemeProvider
-        colorScheme={colorScheme}
-        toggleColorScheme={toggleColorScheme}
-      >
-        <MantineProvider theme={{ colorScheme }}>
-          <Paper>
-            <Next4Shell
-              page={
-                <div>
-                  <div>
-                    <Container
-                      sx={{
-                        alignItems: "center",
-                        display: "flex",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <div className={classes.inner}>
-                        <div className={classes.content}>
-                          <Title
-                            mb="lg"
-                            sx={{ alignSelf: "center", marginTop: "30px" }}
-                            className={classes.title}
-                          >
-                            Welcome to {title}
-                            <br />
-                          </Title>
-                          <Text color="dimmed" mt="md">
-                            {description}
-                          </Text>
-                        </div>
-                      </div>
-                    </Container>
-                  </div>
-                  <div className="products-container">
-                    <ProductCards
-                      src="https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
-                      title="Starter Plan "
-                      price="Free For All"
-                      description="Have all your academic resources compiled onto one platform, for free, forever. 
-        Access any academic resource and store your input onto an account after registry. "
-                    />
-                    <ProductCards
-                      src="https://images.unsplash.com/photo-1628160634750-a81a2a780805?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60"
-                      title="Individual Plan "
-                      price="6$ per Month"
-                      description="Access personalized academic resources all made for you. MyNext4 U provides students with the proper resources
-        they need through recommended resources and accessible tools.  "
-                    />
-                    <ProductCards
-                      src="https://images.unsplash.com/flagged/photo-1579268351234-073f85929562?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTExfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=400&q=60"
-                      title="School Systems "
-                      price="Contact Us"
-                      description="Effectivley pinpoint your students progression with our counselor-created tools. MyNext4 X works to add accessibly to the academic counselor and student lives."
-                    />
-                  </div>
+    <ColorShell
+      innerContent={
+        <Paper>
+          <Next4Shell
+            page={
+              <div>
+                <div className="title-box">
+                  <Title sx={{ textAlign: "center" }} className={classes.title}>
+                    {title}
+                  </Title>
+
+                  <img className="logo-img" src="logo192.png" />
                 </div>
-              }
-            />
-          </Paper>
-        </MantineProvider>
-      </ColorSchemeProvider>
-    </div>
+
+                <Paper>
+                  <div className="main-container-Careers">
+                    <CourseDescriptionPop
+                      courseTitle={title}
+                      description={description}
+                    />
+                  </div>
+                </Paper>
+              </div>
+            }
+          ></Next4Shell>
+        </Paper>
+      }
+    />
   );
 }
