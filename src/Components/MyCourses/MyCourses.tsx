@@ -28,6 +28,8 @@ import { TableReviews } from "./SVGs/CoursesTable";
 import { TableSelection } from "./SVGs/CourseSchedule";
 import { CurrentCourseCard } from "./SVGs/CurrentCourseCard";
 import CoursesCurrent from "./SVGs/CoursesCurrent";
+import { ClassNavBar } from "./SVGs/ClassNavBar";
+import ScheduleButton from "./Helpers/ScheduleButton";
 
 import {
   Notes,
@@ -45,6 +47,8 @@ import Logo from "../Universal/Images/MyNext4Logo.png";
 import LogoNoText from "../Universal/Images/MyNext4Icon.png";
 import FooterCentered from "../Universal/Footer";
 import LightDarkButton from "../LightDarkButton";
+import CourseStatsCombined from "./CourseStatsCombined";
+import { PollingWatchKind } from "typescript";
 
 const mockdata = [
   {
@@ -150,99 +154,93 @@ const scheduleData = [
   },
 ];
 
-const tableData = [
+const futureCourseData = [
   {
-    courseName: "AP Computer Science A",
-    teacher: "Isaac Asimov",
-    difficulty: "4/5",
-    reviews: {
-      positive: 2223,
-      negative: 259,
-    },
+    id: 0,
+    course: "AP Computer Science A",
+    courseType: "Computer Science",
+    difficulty: 8.9
+  },  
+  {
+    id: 1,
+    course: "Honors Biology",
+    courseType: "Science",
+    difficulty: 8
   },
   {
-    courseName: "Honors Biology",
-    teacher: "Mary Beans",
-    difficulty: "3.2/5",
-    reviews: {
-      positive: 5677,
-      negative: 1265,
-    },
+    id: 2,
+    course: "Honors World History",
+    courseType: "Social Studies",
+    difficulty: 7.5
   },
   {
-    courseName: "Honors English",
-    teacher: "Stanislaw Lem",
-    difficulty: "2.5/5",
-    reviews: {
-      positive: 3487,
-      negative: 1845,
-    },
+    id: 3,
+    course: "Weight Training",
+    courseType: "Wellness",
+    difficulty: 4.9
   },
   {
-    courseName: "AP Calculus",
-    teacher: "Frank Herbert",
-    difficulty: "4.5/5",
-    reviews: {
-      positive: 8576,
-      negative: 663,
-    },
+    id: 4,
+    course: "Physics",
+    courseType: "Science",
+    difficulty: 8.5
   },
   {
-    courseName: "Weight Training",
-    teacher: "Ursula K. Le Guin",
-    difficulty: "1.2/5",
-    reviews: {
-      positive: 6631,
-      negative: 993,
-    },
+    id: 5,
+    course: "Algebra II",
+    courseType: "Math",
+    difficulty: 9
   },
   {
-    courseName: "Physics",
-    teacher: "Philip K Dick",
-    difficulty: "3.9/5",
-    reviews: {
-      positive: 8124,
-      negative: 1847,
-    },
+    id: 6,
+    course: "Forensic Science",
+    courseType: "Science",
+    difficulty: 6.7
   },
 ];
 
 const currentCourseData = [
   {
     id: 0,
-    title: "AP Human Geography",
-    description:
-      "Class description goes here. Not enough time to implement everything I want to implement but I would divide page into 6 spots where all of the classes would be split up",
-  },
+    course: "General Health",
+    courseType: "Wellness",
+    difficulty: 4.5
+  },  
   {
     id: 1,
-    title: "AP World History",
-    description:
-      "Class description goes here. Not enough time to implement everything I want to implement but I would divide page into 6 spots where all of the classes would be split up",
+    course: "AP Chemistry",
+    courseType: "Science",
+    difficulty: 8.5
   },
   {
     id: 2,
-    title: "General Health",
-    description:
-      "Class description goes here. Not enough time to implement everything I want to implement but I would divide page into 6 spots where all of the classes would be split up",
+    course: "Algebra 1",
+    courseType: "Math",
+    difficulty: 7.5
   },
   {
     id: 3,
-    title: "Introduction to Business Technology",
-    description:
-      "Class description goes here. Not enough time to implement everything I want to implement but I would divide page into 6 spots where all of the classes would be split up",
+    course: "Geometry",
+    courseType: "Math",
+    difficulty: 7.3
   },
   {
     id: 4,
-    title: "Introduction to Digital Technology",
-    description:
-      "Class description goes here. Not enough time to implement everything I want to implement but I would divide page into 6 spots where all of the classes would be split up",
+    course: "Physical Education",
+    courseType: "Wellness",
+    difficulty: 5.5
   },
   {
     id: 5,
-    title: "AP French",
-    description:
-      "Class description goes here. Not enough time to implement everything I want to implement but I would divide page into 6 spots where all of the classes would be split up",
+    course: "AP Biology",
+    courseType: "Science",
+    difficulty: 8.7
+  },
+  {
+    id: 6,
+    course: "Honors English",
+    courseType: "English",
+    difficulty: 6.8
   },
 ];
 
@@ -359,6 +357,7 @@ export default function AppShellExample() {
 
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
   const { classes } = useStyles();
   const links2 = mockdata.map((item) => (
     <LinksGroup {...item} key={item.label} />
@@ -444,41 +443,45 @@ export default function AppShellExample() {
         </Header>
       }
     >
+      <ScheduleButton clickHandler={() => setShowSidebar(!showSidebar)} />
+      {showSidebar && <ClassNavBar />}
       <Container>
-        <Title mt={70} className={classes.title}>
+        <Title
+          sx={{ textAlign: "center" }}
+          mt={60}
+          mb={30}
+          className={classes.title}
+        >
           {" "}
-          MyCourses Page{" "}
+          MyCourses{" "}
         </Title>
-        <Text mb={70} sx={{ textAlign: "left" }}>
-          {" "}
-          Welcome to the MyCourses Page!
-        </Text>
-        <Title mb={20} sx={{ textAlign: "center" }} className={classes.title}>
+        <Title mb={20} sx={{ textAlign: "center" }} className={classes.header}>
           {" "}
           Your Current Schedule - Fall 2022!
         </Title>
-        <CoursesCurrent></CoursesCurrent>
+        <CourseStatsCombined data={currentCourseData}/>
+        {/* <CoursesCurrent/> */}
         <Title
           mt={70}
           mb={20}
           sx={{ textAlign: "center" }}
-          className={classes.title}
+          className={classes.header}
         >
           {" "}
           Our Recommeded Schedule - Spring 2023!
         </Title>
-        {/* <TableSelection data={realData} /> */}
-        <TableSelection data={scheduleData} />
+        <CourseStatsCombined data={futureCourseData}/>
         <Title
           mt={70}
           mb={20}
           sx={{ textAlign: "center" }}
-          className={classes.title}
+          className={classes.header}
         >
           {" "}
-          Additional Course Reccomendations!
+          Additional Course Recommendations!
         </Title>
-        <TableReviews data={tableData} />
+        {/* <TableSelection data={realData} /> */}
+        <TableSelection data={scheduleData} />
       </Container>
     </AppShell>
   );

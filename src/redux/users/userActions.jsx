@@ -1,40 +1,54 @@
 
-import { FETCH_USERS_FAILURE, FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS} from './userTypes'
+import { LOGIN_SUCCESS, LOGIN_FAIL, USER_LOADED_SUCCESS, USER_LOADED_FAIL } from "./userTypes";
+import { API, init_api } from "../../API";
+import { fetchUserCareerInfo } from "../careers/careerActions";
+import { userActions } from "./userSlice";
 
-const fetchUsersRequest = () => {
-    return {
-        type: FETCH_USERS_REQUEST
-    }
-    
-}
+export const load_user = () => async dispatch => {
 
-const fetchUsersSuccess = users => {
-    return {
-        type: FETCH_USERS_SUCCESS,
-        payload: users
-    }
-}
-
-const fetchUsersFailure = error => {
-    return {
-        type: FETCH_USERS_FAILURE,
-        payload: error
-    }
-}
+    if (localStorage.getItem('access')) {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `JWT ${localStorage.getItem('access')}`,
+                'Accept': 'application/json'
+            }
+        };
 
 
-const fetchUsers = () => {
-    return function(dispatch) {
-        dispatch(fetchUsersRequest())
-        axios.get("/")
-            .then(response => {
-                // response.data is the array of users
-                const users = response.data.map(user => user.id )
-                dispatch(fetchUsersSuccess(users))
-            })
-            .catch(error => {
-                dispatch(fetchUsersFailure(error.message))
-                // error.message is the error description
-            })
+        try {
+            init_api();
+            const res = await API.get('/auth/users/me/', config);
+            
+            
+            
+
+            dispatch(fetchUserCareerInfo(res.data.id));
+            dispatch(userActions.USER_LOADED_SUCCESS(res.data));
+        } catch (err) {
+            dispatch(userActions.USER_LOADED_FAIL());
+        }
+
+    } else {
+        dispatch(userActions.USER_LOADED_FAIL());
     }
 }
+
+
+export const login = (email, password) => async dispatch => {
+
+    try {
+        init_api();
+        const res = await API.post("/auth/jwt/create", {
+            email: email,
+            password: password
+        });
+
+        dispatch(userActions.LOGIN_SUCCESS(res.data));
+
+        dispatch(load_user());
+        
+    } catch (err) {
+        dispatch(userActions.LOGIN_FAIL());
+    }
+};

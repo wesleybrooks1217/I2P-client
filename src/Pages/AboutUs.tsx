@@ -1,6 +1,6 @@
 import "../Styles/AboutUs.css"
 import {ColorScheme, ColorSchemeProvider, MantineProvider, Paper} from "@mantine/core"
-import {useHotkeys, useLocalStorageValue} from "@mantine/hooks"
+import {useHotkeys, useLocalStorage} from "@mantine/hooks"
 import Next4Shell from "../Components/Next4Shell";
 import React, { useState } from 'react';
 import {
@@ -52,7 +52,7 @@ function AboutUs() {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
   const { classes } = styleSheet();
-  const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: 'mantine-color-scheme',
     defaultValue: 'light',
     getInitialValueInEffect: true,

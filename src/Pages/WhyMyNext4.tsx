@@ -25,7 +25,7 @@ import {
 import WhyMyNext4Bullets from "../Components/WhyMyNext4/WhyMyNext4Bullets"
 
 import {ColorScheme, ColorSchemeProvider, MantineProvider, Paper} from "@mantine/core"
-import {useHotkeys, useLocalStorageValue} from "@mantine/hooks"
+import {useHotkeys, useLocalStorage} from "@mantine/hooks"
 import Next4Shell from "../Components/Next4Shell";
 import styleSheet from "../Components/StyleSheet";
 
@@ -85,7 +85,7 @@ function WhyMyNext4() {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
   const { classes } = styleSheet();
-  const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: 'mantine-color-scheme',
     defaultValue: 'light',
     getInitialValueInEffect: true,

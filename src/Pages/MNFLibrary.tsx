@@ -23,7 +23,7 @@ import {
   Autocomplete
 } from '@mantine/core';
 import {ColorScheme, ColorSchemeProvider, MantineProvider, Paper} from "@mantine/core"
-import {useHotkeys, useLocalStorageValue} from "@mantine/hooks"
+import {useHotkeys, useLocalStorage} from "@mantine/hooks"
 
 import {
   Notes,
@@ -49,7 +49,7 @@ import styleSheet from "../Components/StyleSheet";
 
 
 function MNFLibrary() {
-  const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: 'mantine-color-scheme',
     defaultValue: 'light',
     getInitialValueInEffect: true,

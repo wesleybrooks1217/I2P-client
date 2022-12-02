@@ -1,17 +1,26 @@
-import {ADD_CAREER } from './careerTypes'
+import {FETCH_CAREER_SUCCESS,
+        FETCH_CAREER_FAILURE } from './careerTypes'
 
 export const initialState = {
-    careerList: []
+    mainCareer: null,
+    careerList: null
 }
 
 export const careerReducer = (state = initialState, action) => {
     switch(action.type) {
-        case ADD_CAREER: return {
-            ...state,
-            careerList: state.careerList.append(action.payload)
+        case FETCH_CAREER_SUCCESS: 
+            return {
+                ...state,
+                mainCareer: action.payload.mainCareer,
+                careerList: action.payload.careerList
         }
+        case FETCH_CAREER_FAILURE:
+            return {
+                ...state,
+                initialState
+            }
         default: return state
     }
-}
+};
 
 export default careerReducer

@@ -1,47 +1,53 @@
-import {ADD_CAREER, FETCH_CAREER_FAILURE, FETCH_CAREER_REQUEST, FETCH_CAREER_SUCCESS} from './careerTypes'
+import { API, init_api } from '../../API'
+import store from '../store'
+import { FETCH_CAREER_FAILURE, FETCH_CAREER_SUCCESS, GET_CAREER_LIST_FAILURE,
+     GET_CAREER_LIST_SUCCESS } from './careerTypes';
+import { careersActions } from './careersSlice';
+/*
+export const fetchCareerList = () => {
+    
+    try {
 
-export const addCareer = () => {
-    return {
-        type: ADD_CAREER,
-        payload: career_object
+    
+        init_api();
+        const user = store.getState().user.user.id;
+        const res = API.get(`/api/User/${user}/`);
+        const careerList = res.likedCareers;
+
+        dispatch({
+            type: GET_CAREER_LIST_SUCCESS,
+            payload: careerList
+        });
+
+    } catch (err) {
+        dispatch({
+            type: GET_CAREER_LIST_FAILURE
+        });
     }
+
 }
+*/
 
+export const fetchUserCareerInfo = (id) => async dispatch => {
 
-export const fetchCareerRequest = () => {
-    return {
-        type: FETCH_CAREER_REQUEST
+    try {
+        init_api();
+        //const user = store.getState().user.user.id;
+        const res = await API.get(`/api/User/${id}/`);
+        const info = {
+            mainCareer: res.data.favCareer,
+            careerList: res.data.likedCareers
+        }
+
+        dispatch(careersActions.FETCH_CAREER_SUCCESS(info));
+    } catch (err) {
+        dispatch(careersActions.FETCH_CAREER_FAILURE());
     }
-}
+};
 
-export const fetchCareerSuccess = users => {
-    return {
-        type: FETCH_CAREER_SUCCESS,
-        payload: career_object
-    }
-}
+export const changeMainCareer = (careerID) => dispatch => {
+    console.log("Enters stack");
+    dispatch(careersActions.CHANGE_MAIN_CAREER(careerID));
+};
 
-export const fetchCareerFailure = error => {
-    return {
-        type: FETCH_CAREER_FAILURE,
-        payload: error
-    }
-}
-
-
-export const fetchCareer = () => {
-    return function(dispatch) {
-        dispatch(fetchCareerRequest())
-        axios.get("http://127.0.0.1:8000/api/career/")
-            .then(response => {
-                // response.data is the array of users
-                const career = response.data.map(career => career.id )
-                dispatch(fetchCareerSuccess(career))
-            })
-            .catch(error => {
-                dispatch(fetchCareerFailure(error.message))
-                // error.message is the error description
-            })
-    }
-}
 

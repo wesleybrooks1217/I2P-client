@@ -1,6 +1,18 @@
-//import { PieChart, Pie, LabelList } from "recharts";
+import { PieChart, Pie, LabelList } from "recharts";
 import React from "react";
 import "../CollegeCard.css";
+const RADIAN = Math.PI / 180;
+const array = ["DEFFERED", "ACCEPTED", "DENIED", "WAITLISTED"];
+function helper() {
+  var IneedNUM = 4;
+  while (IneedNUM != -1) {
+    if (IneedNUM == 0) {
+      IneedNUM += 4;
+    }
+    IneedNUM -= 1;
+    return array[IneedNUM];
+  }
+}
 function Piechart() {
   const data = [
     { name: 1, students: 2000 },
@@ -8,18 +20,6 @@ function Piechart() {
     { name: 3, students: 20000 },
     { name: 4, students: 10000 },
   ];
-  var IneedNUM = 4;
-  const RADIAN = Math.PI / 180;
-  const array = ["DEFFERED", "ACCEPTED", "DENIED", "WAITLISTED"];
-  function helper() {
-    while (IneedNUM != -1) {
-      if (IneedNUM == 0) {
-        IneedNUM += 4;
-      }
-      IneedNUM -= 1;
-      return array[IneedNUM];
-    }
-  }
   const renderCustomizedLabel = ({
     cx,
     cy,
@@ -40,6 +40,7 @@ function Piechart() {
         fill="white"
         textAnchor={x > cx ? "start" : "end"}
         dominantBaseline="central"
+        fontSize="13"
       >
         {helper() + " " + `${(percent * 100).toFixed(0)}%`}
       </text>
@@ -48,14 +49,14 @@ function Piechart() {
   return (
     <div className="college-card_applicants">
       <h1 className="college-card_title">Our Applicants</h1>
-      {/* <PieChart width={700} height={750}>
+      <PieChart width={400} height={650}>
         <Pie
           data={data}
           dataKey="students"
-          outerRadius={250}
+          outerRadius={200}
           label={renderCustomizedLabel}
         ></Pie>
-      </PieChart> */}
+      </PieChart>
     </div>
   );
 }

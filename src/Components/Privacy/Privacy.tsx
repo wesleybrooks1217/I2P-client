@@ -1,10 +1,10 @@
 import "./Privacy.css"
 import {ColorScheme, ColorSchemeProvider, MantineProvider, Paper} from "@mantine/core"
-import {useHotkeys, useLocalStorageValue} from "@mantine/hooks"
+import {useHotkeys, useLocalStorage} from "@mantine/hooks"
 import AppShellExample from "./PrivacyShell";
 
 function Updates() {
-  const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: 'mantine-color-scheme',
     defaultValue: 'light',
     getInitialValueInEffect: true,

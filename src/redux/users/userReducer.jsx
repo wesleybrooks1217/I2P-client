@@ -1,33 +1,49 @@
 import {
-    FETCH_USERS_REQUEST,
-    FETCH_USERS_SUCCESS,
-    FETCH_USERS_FAILURE
+    LOGIN_SUCCESS,
+    LOGIN_FAIL,
+    USER_LOADED_SUCCESS,
+    USER_LOADED_FAIL
 } from './userTypes'
 
 const initialState = {
     loading: false,
-    users: [],
+    access: localStorage.getItem('access'),
+    refresh: localStorage.getItem('refresh'),
+    isAuthenticated: null,
+    user: null,
     error: ''
 }
 
 const userReducer = (state = initialState, action) => {
     switch(action.type) {
-        case FETCH_USERS_REQUEST:
+        case LOGIN_SUCCESS:
+            localStorage.setItem('access', action.payload.access);
             return {
                 ...state,
-                loading: true
+                isAuthenticated: true,
+                access: action.payload.access,
+                refresh: action.payload.refresh
             }
-        case FETCH_USERS_SUCCESS:
+        case LOGIN_FAIL:
+            localStorage.removeItem('access');
+            localStorage.removeItem('refresh');
             return {
-                loading: false,
-                users: action.payload,
-                error: ''
+                ...state,
+                access: null,
+                refresh: null,
+                isAuthenticated: false,
+                user: null
             }
-        case FETCH_USERS_FAILURE:
+        case USER_LOADED_SUCCESS:
             return {
-                loading: false,
-                users: [],
-                error: action.payload
+                ...state,
+                user: action.payload
+            }
+        
+        case USER_LOADED_FAIL:
+            return {
+                ...state,
+                user: null
             }
         default: return state
     }

@@ -39,30 +39,40 @@ export default function FaqWithImage() {
               Frequently Asked Questions
             </Title>
 
-            <Accordion iconPosition="right" initialItem={0}>
-              <Accordion.Item label="What data will MyNext4 take from my school?" className={classes.item}>
-                {placeholder}
+            <Accordion>
+              
+              <Accordion.Item value="What data will MyNext4 take from my school?" className={classes.item}>
+                <Accordion.Control>What data will MyNext4 take from my school?</Accordion.Control>
+                <Accordion.Panel>{placeholder}</Accordion.Panel>
               </Accordion.Item>
-              <Accordion.Item label="How does MyNext4 ensure privacy?" className={classes.item}>
-                {placeholder}
-              </Accordion.Item>
-              <Accordion.Item
-                label="Is MyNext4 "
-                className={classes.item}
-              >
-                {placeholder}
+              <Accordion.Item value="How does MyNext4 ensure privacy?" className={classes.item}>
+                <Accordion.Control>How does MyNext4 ensure privacy?</Accordion.Control>
+                <Accordion.Panel>{placeholder}</Accordion.Panel>
               </Accordion.Item>
               <Accordion.Item
-                label="Do you store credit card information securely?"
+                value="Is MyNext4 "
                 className={classes.item}
               >
-                {placeholder}
+                <Accordion.Control>Is MyNext4</Accordion.Control>
+                <Accordion.Panel>{placeholder}</Accordion.Panel>
+                
               </Accordion.Item>
+
               <Accordion.Item
-                label="What payment systems to you work with?"
+                value="Do you store credit card information securely?"
                 className={classes.item}
               >
-                {placeholder}
+                <Accordion.Control>Do you store credit card information securely?</Accordion.Control>
+                <Accordion.Panel>{placeholder}</Accordion.Panel>
+                
+              </Accordion.Item>
+
+              <Accordion.Item
+                value="What payment systems to you work with?"
+                className={classes.item}
+              >
+                <Accordion.Control>What payment systems to you work with?</Accordion.Control>
+                <Accordion.Panel>{placeholder}</Accordion.Panel>
               </Accordion.Item>
             </Accordion>
           </Col>
