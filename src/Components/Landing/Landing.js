@@ -33,6 +33,8 @@ export default function Landing() {
     let tl = new TimelineLite()
   
     const { scrollYProgress } = useScroll();
+
+    
     
     
     let block1 = document.getElementById('block-1');

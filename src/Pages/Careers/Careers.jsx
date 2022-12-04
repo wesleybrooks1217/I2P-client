@@ -1,7 +1,7 @@
 import ColorShell from "../../Components/ColorShell";
 import {Paper} from '@mantine/core';
 import Next4Shell from "../../Components/Next4Shell";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./Careers.css";
 import { Spoiler, Modal, Button, Avatar } from '@mantine/core';
 import ListItem from "./Components/ListItems";
@@ -20,12 +20,17 @@ import {API} from "../../API";
 import { useSelector } from "react-redux";
 import { setAutoFreeze } from "immer";
 import { useParams } from "react-router-dom";
+import TopNav from "../../Components/Nav/components/TopNav";
+import SideBar from "../../Components/Nav/components/SideBar";
 
 function Careers() {
 
     const [data, setData] = useState("");
     const [stateNames, setStateNames] = useState([]);
-    
+    let sideNav = useRef(null)
+    let topNav = useRef(null)
+    const [lightMode, setLightMode] = useState([true])
+
 
     const id = useParams();
 
@@ -197,11 +202,29 @@ function Careers() {
         console.log(data);
     }
 
+    function switchModes() {
+        setLightMode((prevState) => !prevState)
+      }
+
     return (
-        <ColorShell innerContent = {
-            <Paper>
-                <Next4Shell page = {
-                    <div>
+        
+                    <div style={{marginTop: 250, marginLeft: 125}}>
+
+<section style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh' }}>
+    
+    <div style={{position: 'absolute', top: '30%', left: '1%'}} ref={el => sideNav = el}>
+    
+        <SideBar switchStates={switchModes} lightMode={lightMode} />
+    </div>
+
+    <div style={{position: 'absolute', width: '100%'}} ref={el => topNav = el}>
+        <TopNav />
+    </div>
+
+
+
+</section>
+
                         
                         <div className="title-box">
                             <h1> {data.name} </h1>
@@ -348,11 +371,12 @@ function Careers() {
 
                         
                         
+
+                        
+                        
                     </div>
-                }>
-                </Next4Shell>
-            </Paper>
-        } />
+               
+        
     );
 };
 

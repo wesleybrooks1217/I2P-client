@@ -1,52 +1,54 @@
-import React, { Component } from "react";
-import collegepic from "./gtpic.png";
-import "./CollegeCard.css";
-import Piechart from "./Components/Piechart";
-import TuitionCost from "./Components/TuitionCost";
-import Summary from "./Components/Summary";
-import Recommendations from "./Components/Recommendations";
-import AvgEarnings from "./Components/AvgEarnings";
-import ColorShell from "../ColorShell";
-import { Paper } from "@mantine/core";
-import Next4Shell from "../Next4Shell";
-import { Salary } from "./Components/Salary.js";
+import TopNav from "../Nav/components/TopNav";
+import SideBar from "../Nav/components/SideBar";
+import {useState, useRef, useEffect} from 'react';
+import {init_API_College_AI, API_College_AI} from '../../API_College_AI';
+import {Button} from '@mantine/core';
+import Nav from "../Nav/Nav";
 
 //https://ui.mantine.dev/category/stats
 function CollegeCard() {
-  // const correctNumber = 0;
-  // const piechartData = [
-  //   {
-  //     title: "Accepted",
-  //     population: 24000,
+  let sideNav = useRef(null);
+  let topNav = useRef(null);
+  const [lightMode, setLightMode] = useState([true]);
+  const [data, setData] = useState({});
 
-  //   },
-  // ];
+  useEffect(() => {
+    
+    const fetchCollegeData = async () => {
+      init_API_College_AI(139755);
+      await API_College_AI.get()
+      .then((response) => {
+        setData(response.data);
+      });
+
+    };
+
+    fetchCollegeData();
+
+  }, [])
+
+  function switchModes() {
+    setLightMode((prevState) => !prevState)
+  };
+
+  function test() {
+    console.log(data);
+  }
+
+
   return (
-    <ColorShell
-      innerContent={
-        <Paper>
-          <Next4Shell
-            page={
-              <div className="college-card">
-                <div class="college-card_image">
-                  <img src={collegepic}></img>
-                </div>
-                <div className="college-card_applicants">
-                  {/* <Piechart></Piechart> */}
-                </div>
-                <container className="college-card_tuition">
-                  <h1>Tuition Cost</h1>
-                  {/* <TuitionCost></TuitionCost> */}
-                </container>
-                <div>{/* <Summary></Summary> */}</div>
-                <div>{/* <AvgEarnings></AvgEarnings> */}</div>
-                <div>{/* <Recommendations></Recommendations> */}</div>
-              </div>
-            }
-          ></Next4Shell>
-        </Paper>
-      }
-    ></ColorShell>
+    <div style = {{marginTop: 200, marginLeft: 200}}>
+        
+      <Nav />
+
+      <Button onClick={test}>Test</Button>
+
+
+
+
+
+        
+    </div>
   );
 }
 

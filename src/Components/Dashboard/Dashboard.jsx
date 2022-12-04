@@ -52,11 +52,15 @@ import Backpack from './Components/Homeroom/BottomArea/Backpack';
 import Classes from './Components/AcademicAdvising/BottomArea/Classes'
 import Colleges from './Components/AcademicAdvising/BottomArea/Colleges'
 import Careers from './Components/AcademicAdvising/BottomArea/Careers'
-
+import TopNav from '../Nav/components/TopNav';
+import SideBar from '../Nav/components/SideBar';
 
 function Dashboard() {
   const [areaOpened, setAreaOpened] = useState('')
   const ref = useRef(null)
+  let sideNav = useRef(null)
+  let topNav = useRef(null)
+  const [lightMode, setLightMode] = useState([true])
 
   useEffect(() => {
     ref.current?.scrollIntoView({behavior: 'smooth',
@@ -67,12 +71,13 @@ function Dashboard() {
   
 }, [areaOpened])
 
+function switchModes() {
+  setLightMode((prevState) => !prevState)
+}
+
   return (
-    <div className="App">
-       <ColorShell innerContent={
-        <Paper>
-        <Next4Shell
-          page= { 
+    <div style={{marginTop: 250}}>
+       
             <div className='outer-container'>
              
             <div>
@@ -85,11 +90,29 @@ function Dashboard() {
       </div>
      
 
+      <section style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh' }}>
+    
+    <div style={{position: 'absolute', top: '30%', left: '1%'}} ref={el => sideNav = el}>
+    
+        <SideBar switchStates={switchModes} lightMode={lightMode} />
+    </div>
+
+    <div style={{position: 'absolute', width: '100%'}} ref={el => topNav = el}>
+        <TopNav />
+    </div>
+
+    
+
+    
+
+
+
+</section>
+
+
+
         
-         }
-         />
-       </Paper>
-       } />
+        
      
    </div>
   );

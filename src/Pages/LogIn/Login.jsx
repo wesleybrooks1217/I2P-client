@@ -34,7 +34,7 @@ function Login({login}) {
                 page = {
                     <div className="root-login">
                         {auth &&
-                        <Navigate to = "/MyCareer" />}
+                        <Navigate to = "/Dashboard" />}
                         <h1>
                             Log in
                         </h1>
