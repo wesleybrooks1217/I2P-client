@@ -26,7 +26,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function SidePicker() {
+function SidePicker() {
   const { classes } = useStyles();
   const [value, setValue] = useState('Favorite');
   return (

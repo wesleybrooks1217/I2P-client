@@ -9,11 +9,11 @@ function CourseCardList(props) {
 
     useEffect(() => {
         if (props.type === "course") {
-            setImage("Stem.jpeg");
+            setImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9bPqfc7gOK3JrndzlAc-i9AYCkJ6to65sVQ&usqp=CAU");
         } else if (props.type === "college") {
-            setImage("CollegePic.jpeg");
+            setImage("https://research.collegeboard.org/media/2022-02/iStock_000021255451_Large-780x585.jpg");
         } else if (props.type === "career") {
-            setImage("Workers.jpeg")
+            setImage("https://www.incimages.com/uploaded_files/image/1920x1080/getty_160945425_970647970450083_44809.jpg")
         }
     }, [props.type]);
 

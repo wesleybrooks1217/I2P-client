@@ -33,14 +33,7 @@ export default function Landing() {
     let tl = new TimelineLite()
   
     const { scrollYProgress } = useScroll();
-    useEffect(() => {
-      TweenMax.to(app, 3.0, {css: {visibility: 'visible'}})
-      tl.from(sideNav, 2.0, {opacity: 0, y: 200, ease: Power3.easeOut})
-        .from(topNav, 2.0, {opacity: 0, y: 200, ease: Power3.easeOut}, "<")
-      
-      tl.from(mainPage, 1.2, {opacity: 0, y: 200, ease: Power3.easeOut}, "<2")
-        .from(iLabel, 1.2, {opacity: 0, y: 200, ease: Power3.easeOut}, "<")
-    }, [tl])
+    
     
     let block1 = document.getElementById('block-1');
     let block2 = document.getElementById('block-2');

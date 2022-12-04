@@ -105,7 +105,7 @@ class App extends React.Component {
             <Route path="/ForensicScience" element={<ForensicScience />} />
             <Route path="/test" element={<Test />} />
             <Route path = "/login" element={<Login />} />
-            <Route path = "/Careers" element = {<Careers />} />
+            <Route path = "/Careers/:id" element = {<Careers />} />
           </Routes>
         </React.Fragment>
       </Provider>
