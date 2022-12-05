@@ -7,7 +7,7 @@ import ClassNavBar from "./SVGs/ClassNavBar";
 import ScheduleButton from "./Helpers/ScheduleButton";
 import { CourseStatsCombined } from "./CourseStatsCombined";
 import TopNav from "../Nav/components/TopNav";
-import {API, init_api} from "../../API";
+import { API, init_api } from "../../API";
 
 const scheduleData = [
   {
@@ -230,60 +230,102 @@ export default function MyCourses() {
         console.log(data);
         return data;
       })
-      .then(data => setData(data.highSchoolCourses))
+      .then((data) => setData(data.highSchoolCourses))
       .catch((error) => console.log(error));
   }, []);
-
 
   const [showSidebar, setShowSidebar] = useState(false);
   const { classes } = useStyles();
 
   return (
     <div>
-      <div
-        style={{ position: "absolute", width: "100%" }}
-      >
-        <TopNav />
-      </div>
-      <ScheduleButton clickHandler={() => setShowSidebar(!showSidebar)} />
-      {showSidebar && <ClassNavBar />}
-      <Container>
-        <Title
-          sx={{ textAlign: "center" }}
-          mt={80}
-          mb={30}
-          className={classes.title}
-        >
-          {" "}
-          MyCourses{" "}
-        </Title>
-        <Title mb={20} sx={{ textAlign: "center" }} className={classes.header}>
-          {" "}
-          Your Current Schedule - Fall 2022!
-        </Title>
-        <CourseStatsCombined data={currentCourseData} />
-        {/* <CoursesCurrent/> */}
-        <Title
-          mt={70}
-          mb={20}
-          sx={{ textAlign: "center" }}
-          className={classes.header}
-        >
-          {" "}
-          Our Recommeded Schedule - Spring 2023!
-        </Title>
-        <CourseStatsCombined data={futureCourseData} />
-        <Title
-          mt={70}
-          mb={20}
-          sx={{ textAlign: "center" }}
-          className={classes.header}
-        >
-          {" "}
-          Additional Course Recommendations!
-        </Title>
-        <TableSelection data={data} />
-      </Container>
+      {/* <section
+        id="section1"
+        style={{ position: "relative", width: "100%", height: "100vh" }}
+      > */}
+        {/* <div
+          style={{
+            position: "absolute",
+            width: 700,
+            borderRadius: "30% 0% 0% 50%",
+            height: 300,
+            top: -100,
+            right: -2,
+            backgroundColor: "#b5e48c",
+            zIndex: -1,
+          }}
+        ></div> */}
+        {/* <div
+          style={{
+            position: "absolute",
+            width: 500,
+            zIndex: -1,
+            borderRadius: "50% 80% 80% 30%",
+            top: 215,
+            right: 1200,
+            height: 500,
+            rotate: "90deg",
+            backgroundColor: "#1e6091",
+          }}
+        ></div> */}
+        {/* <div
+          style={{
+            position: "relative",
+            width: 450,
+            zIndex: -1,
+            top: 145,
+            right: 100,
+            height: 330,
+            backgroundColor: "#b5e48c",
+          }}
+        ></div> */}
+        <div style={{ position: "absolute", width: "100%" }}>
+          <TopNav />
+        </div>
+        <ScheduleButton clickHandler={() => setShowSidebar(!showSidebar)} />
+        {showSidebar && <ClassNavBar />}
+        <Container>
+          <Title
+            sx={{ textAlign: "center" }}
+            mt={80}
+            mb={30}
+            className={classes.title}
+          >
+            {" "}
+            MyCourses{" "}
+          </Title>
+          <Title
+            mb={20}
+            sx={{ textAlign: "center" }}
+            className={classes.header}
+          >
+            {" "}
+            Your Current Schedule - Fall 2022!
+          </Title>
+          <CourseStatsCombined data={currentCourseData} />
+          {/* <CoursesCurrent/> */}
+          <Title
+            mt={70}
+            mb={20}
+            sx={{ textAlign: "center" }}
+            className={classes.header}
+          >
+            {" "}
+            Our Recommeded Schedule - Spring 2023!
+          </Title>
+          <CourseStatsCombined data={futureCourseData} />
+          <Title
+            mt={70}
+            mb={20}
+            sx={{ textAlign: "center" }}
+            className={classes.header}
+          >
+            {" "}
+            Additional Course Recommendations!
+          </Title>
+          <TableSelection data={data} />
+        </Container>
+      {/* </section> */}
     </div>
   );
 }
