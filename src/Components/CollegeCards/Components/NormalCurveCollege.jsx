@@ -1,7 +1,7 @@
 import { CartesianGrid, Legend, LineChart, XAxis, YAxis, Line, Tooltip } from "recharts";
 import { Paper } from "@mantine/core";
 
-function NormalCurve(props) {
+function NormalCurveCollege(props) {
 
 
     const data = [
@@ -11,7 +11,7 @@ function NormalCurve(props) {
         },
     
         {
-            "name": "10th percentile",
+            "name": "25th percentile",
             "uv": 0.2282 * props.median
         },
     
@@ -22,7 +22,7 @@ function NormalCurve(props) {
         },
     
         {
-            "name": "90th percentile",
+            "name": "75th percentile",
             "uv":  0.2282 * props.median
         },
     
@@ -36,12 +36,12 @@ function NormalCurve(props) {
     ];
 
     const findRealSalary = (label) => {
-        if (label == "10th percentile") {
-            return props.tenth
+        if (label == "25th percentile") {
+            return props.twentyFifth
         } else if (label == "median") {
             return props.median
-        } else if (label == "90th percentile") {
-            return props.ninetyith
+        } else if (label == "75th percentile") {
+            return props.seventyFifth
         } else {
             return null;
         }
@@ -57,7 +57,7 @@ function NormalCurve(props) {
           return (
             <Paper>
             <div className="custom-tooltip">
-              <p className="label">{`${label} salary: ${sal}`}</p>
+              <p className="label">{`${label} score: ${sal}`}</p>
             </div>
             </Paper>
           );
@@ -80,4 +80,4 @@ function NormalCurve(props) {
     );
 };
 
-export default NormalCurve;
+export default NormalCurveCollege;
