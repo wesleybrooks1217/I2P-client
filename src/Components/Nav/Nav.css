@@ -24,11 +24,26 @@
 
 
 .top-nav {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    width: 400px;
+    left: 30%;
+    width: 600px;
+    height: 10vh;
+    border: 1px solid black;
+    border-radius: 10px 10px 50px 50px;
+   
+   
+}
+
+.bottom-nav {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 35%;
+    width: 450px;
     height: 10vh;
     border: 1px solid black;
     border-radius: 10px 10px 50px 50px;
@@ -40,5 +55,13 @@
 
 .top-nav > h3 {
     margin: 0;
+}
+
+.bottom-nav > a {
+    margin: 14px 3px 10px 3px;
+}
+
+.bottom-nav > h3 {
+    margin: 0
 }
   

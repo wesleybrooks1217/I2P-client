@@ -8,6 +8,10 @@ import {
   SimpleGrid,
 } from "@mantine/core";
 import {
+  UserPlus,
+  Discount2,
+  Receipt2,
+  Coin,
   ArrowUpRight,
   ArrowDownRight,
 } from "tabler-icons-react";
@@ -22,9 +26,13 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function StatsGridIcons(props) {
+interface StatsGridIconsProps {
+  data: { title: string; value: string; diff: number }[];
+}
+
+export function StatsGridIcons({ data }: StatsGridIconsProps) {
   const { classes } = useStyles();
-  const stats = props.data.map((stat) => {
+  const stats = data.map((stat) => {
     const DiffIcon = stat.diff > 0 ? ArrowUpRight : ArrowDownRight;
 
     return (
