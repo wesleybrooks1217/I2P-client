@@ -10,6 +10,9 @@
     width: 100%;
     height: 100vh;
     border: 1px solid black;
+    background-image: url('./background/about1.png');
+    background-size: cover;
+    background-position: 5%;
 }
 
 .about-s2 {
@@ -17,6 +20,9 @@
     width: 100%;
     height: 100vh;
     border: 1px solid black;
+    background-image: url('./background/about2.png');
+    background-size: cover;
+    background-position: 10%;
 }
 
 .about-s3 {
@@ -24,6 +30,18 @@
     width: 100%;
     height: 100vh;
     border: 1px solid black;
+    background-image: url('./background/about3.png');
+    background-size: cover;
+    background-position: 5%;
+}
+
+.about-s4 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    border: 1px solid black;
+    background-image: url('./background/about4.png');
+    background-size: cover;
 }
 
 /* elements */
