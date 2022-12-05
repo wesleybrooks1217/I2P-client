@@ -1,0 +1,12 @@
+dec 4 checklist 
+    p0 (misc)
+        -transfer all .tsx to .jsx files @done 12:29pm
+    p1 (clean up / optimization)
+        -delete unneeded component pages @done 10:24am
+        -remove unused import statements @done 10:48am
+        -remove unused shells from files @done 11:12am
+    p2 (page generation)
+        -create new about us and product @done 9:18pm
+            -fill in five sections still
+        -school system and student pages
+        -develop static site 4 dashboard
