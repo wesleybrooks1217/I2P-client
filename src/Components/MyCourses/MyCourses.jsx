@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-import {
-  Container,
-  createStyles,
-  Title,
+import React, { useState, useEffect } from "react";
+import { Container, createStyles, Title } from "@mantine/core";
 
-} from "@mantine/core";
-
-import './MyCourses.css'
+import "./MyCourses.css";
 import { TableSelection } from "./SVGs/CourseSchedule";
-import  ClassNavBar  from "./SVGs/ClassNavBar";
+import ClassNavBar from "./SVGs/ClassNavBar";
 import ScheduleButton from "./Helpers/ScheduleButton";
-import {CourseStatsCombined} from "./CourseStatsCombined";
+import { CourseStatsCombined } from "./CourseStatsCombined";
+import TopNav from "../Nav/components/TopNav";
+import {API, init_api} from "../../API";
+
 const scheduleData = [
   {
     id: "1",
@@ -49,43 +47,43 @@ const futureCourseData = [
     id: 0,
     course: "AP Computer Science A",
     courseType: "Computer Science",
-    difficulty: 8.9
-  },  
+    difficulty: 8.9,
+  },
   {
     id: 1,
     course: "Honors Biology",
     courseType: "Science",
-    difficulty: 8
+    difficulty: 8,
   },
   {
     id: 2,
     course: "Honors World History",
     courseType: "Social Studies",
-    difficulty: 7.5
+    difficulty: 7.5,
   },
   {
     id: 3,
     course: "Weight Training",
     courseType: "Wellness",
-    difficulty: 4.9
+    difficulty: 4.9,
   },
   {
     id: 4,
     course: "Physics",
     courseType: "Science",
-    difficulty: 8.5
+    difficulty: 8.5,
   },
   {
     id: 5,
     course: "Algebra II",
     courseType: "Math",
-    difficulty: 9
+    difficulty: 9,
   },
   {
     id: 6,
     course: "Forensic Science",
     courseType: "Science",
-    difficulty: 6.7
+    difficulty: 6.7,
   },
 ];
 
@@ -94,49 +92,48 @@ const currentCourseData = [
     id: 0,
     course: "General Health",
     courseType: "Wellness",
-    difficulty: 4.5
-  },  
+    difficulty: 4.5,
+  },
   {
     id: 1,
     course: "AP Chemistry",
     courseType: "Science",
-    difficulty: 8.5
+    difficulty: 8.5,
   },
   {
     id: 2,
     course: "Algebra 1",
     courseType: "Math",
-    difficulty: 7.5
+    difficulty: 7.5,
   },
   {
     id: 3,
     course: "Geometry",
     courseType: "Math",
-    difficulty: 7.3
+    difficulty: 7.3,
   },
   {
     id: 4,
     course: "Physical Education",
     courseType: "Wellness",
-    difficulty: 5.5
+    difficulty: 5.5,
   },
   {
     id: 5,
     course: "AP Biology",
     courseType: "Science",
-    difficulty: 8.7
+    difficulty: 8.7,
   },
   {
     id: 6,
     course: "Honors English",
     courseType: "English",
-    difficulty: 6.8
+    difficulty: 6.8,
   },
 ];
 
 const useStyles = createStyles((theme) => ({
   navbar: {
-
     paddingBottom: 0,
   },
 
@@ -145,7 +142,6 @@ const useStyles = createStyles((theme) => ({
     paddingTop: 0,
     marginLeft: -theme.spacing.md,
     marginRight: -theme.spacing.md,
-
   },
 
   title: {
@@ -224,34 +220,37 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function MyCourses() {
-  // const [realData, setRealData] = useState();
-  // useEffect(() => {
-  //   fetch("http://127.0.0.1:8000/api")
-  //     .then((response) => {
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //       return data;
-  //     })
-  //     .then(data => setRealData(data.highSchoolCourses))
-  //     .catch((error) => console.log(error));
-  // }, []);
+  const [data, setData] = useState(scheduleData);
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/api")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        return data;
+      })
+      .then(data => setData(data.highSchoolCourses))
+      .catch((error) => console.log(error));
+  }, []);
 
 
   const [showSidebar, setShowSidebar] = useState(false);
   const { classes } = useStyles();
 
-
-
   return (
     <div>
+      <div
+        style={{ position: "absolute", width: "100%" }}
+      >
+        <TopNav />
+      </div>
       <ScheduleButton clickHandler={() => setShowSidebar(!showSidebar)} />
       {showSidebar && <ClassNavBar />}
       <Container>
         <Title
           sx={{ textAlign: "center" }}
-          mt={60}
+          mt={80}
           mb={30}
           className={classes.title}
         >
@@ -262,7 +261,7 @@ export default function MyCourses() {
           {" "}
           Your Current Schedule - Fall 2022!
         </Title>
-        <CourseStatsCombined data={currentCourseData}/>
+        <CourseStatsCombined data={currentCourseData} />
         {/* <CoursesCurrent/> */}
         <Title
           mt={70}
@@ -273,7 +272,7 @@ export default function MyCourses() {
           {" "}
           Our Recommeded Schedule - Spring 2023!
         </Title>
-        <CourseStatsCombined data={futureCourseData}/>
+        <CourseStatsCombined data={futureCourseData} />
         <Title
           mt={70}
           mb={20}
@@ -283,9 +282,8 @@ export default function MyCourses() {
           {" "}
           Additional Course Recommendations!
         </Title>
-        {/* <TableSelection data={realData} /> */}
-        <TableSelection data={scheduleData} />
+        <TableSelection data={data} />
       </Container>
-  </div>
+    </div>
   );
 }
