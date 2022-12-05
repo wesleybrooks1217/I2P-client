@@ -33,8 +33,12 @@ function About() {
                 </div>
             </section>
             <section className='about-s3'>
-            <h2 id='about-s2-header'> Accelerating the college counseling process for all. </h2>
-                <p id='about-s2-desc'> We want to gape the gap between counselors and their students by doing the grunt work for them. </p>
+            <h2 id='about-s3-header'> Accelerating the college counseling process for all. </h2>
+                <p id='about-s3-desc'> We want to gape the gap between counselors and their students by doing the grunt work for them. </p>
+            </section>
+            <section className='about-s4'>
+                <h2 id='about-s4-header'> Increase overall oppourtunity for every individual. </h2>
+                <p id='about-s4-desc'> It's important that everyone has their chance to become a star, and we're here to ensure this. </p>
             </section>
             <Footer />
         </div>

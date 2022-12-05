@@ -16,6 +16,7 @@ import CollegeCard from "../Components/CollegeCards/CollegeCard";
 import Login from "./LogIn/Login";
 import Careers from "./Careers/Careers";
 import Products from "../Components/Products/Products";
+import Students from "../Components/Students/Students";
 
 /*
 Testing push request
@@ -32,7 +33,7 @@ function App() {
             <Route path="/SchoolSystems" element={<SchoolSystems />} />
             <Route path="/Products" element={<Products />} />
             <Route path="/CollegeCard" element={<CollegeCard />} />
-          
+            <Route path="/Students" element={<Students />} />
             <Route path="/Privacy" element={<Privacy />} />
             <Route path="/MyCareer" element={<MyCareer />} />
             <Route path="/Dashboard" element={<Dashboard />} />

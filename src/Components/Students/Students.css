@@ -3,23 +3,10 @@
     box-sizing: border-box;
 }
 
+
 /* sections */
 
-.about-s1 {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    border: 1px solid black;
-}
-
-.about-s2 {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    border: 1px solid black;
-}
-
-.about-s3 {
+section {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -29,28 +16,28 @@
 /* elements */
 
 
-#about-title {
+#students-title {
     position: relative;
     top: 80%;
     font-size: 36px;
     margin-left: 108px;
 }
 
-#about-desc {
+#students-desc {
     position: relative;
     top: 81%;
     font-size: 17.3px;
     margin-left: 108px;
 }
 
-#about-s2-header, #about-s3-header, #about-s4-header {
+#students-s2-header {
     position: relative;
     top: 10%;
     font-size: 36px;
     margin-left: 108px;
 }
 
-#about-s2-desc, #about-s3-desc, #about-s4-desc {
+#students-s2-desc {
     position: relative;
     top: 11%;
     font-size: 17.3px;
@@ -58,81 +45,69 @@
     margin-bottom: 20px;
 }
 
-#about-mm-container {
+#students-s3-header, #students-s4-header {
     position: relative;
-
-    width: 600px;
-    height: 64vh;
-    top: 15%;
+    top: 10%;
+    font-size: 36px;
     margin-left: 108px;
-
 }
 
-#about-info-icon {
+#students-s3-desc, #students-s4-desc {
+    position: relative;
+    top: 11%;
+    font-size: 17.3px;
+    margin-left: 108px;
+    margin-bottom: 20px;
+}
+
+#students-info-icon {
     width: 30px;
     position: relative;
     top: 45%;
     display: none;
 }
-
-#about-s2-big-box {
-    position: relative;
-    margin-top: 20px;
-    width: 1000px;
-    left: 45%;
-    bottom: 50%;
-    height: 64vh;
-    border: 1px solid black;
-   
-}
-
-#about-nametag {
+#students-nametag {
     position: absolute;
     font-weight: 800;
     font-size: 16px;
     top: 4.5%;
     left: 5%;
 }
-/* screen sizing */ 
-
 @media only screen and (max-width: 1440px) {
-    #about-title {
+    #students-title {
         width: 700px;
         text-align: center;
         top: 45%;
         margin: 0 auto;
     }
-    #about-desc {
+    #students-desc {
         width: 700px;
         text-align: center;
         top: 46%;
         margin: 0 auto;
     }
-    .tri-cards-container {
-        display: none;
-    }
-    #about-mm-container {
+    #students-mm-container {
         margin: 0 auto;
     }
-    #about-s2-header, #about-s3-header, #about-s4-header {
+    #students-s2-header, #students-s3-header, #students-s4-header {
         text-align: center;
         margin: 0;
     }
-    #about-s2-desc, #about-s3-desc, #about-s4-desc {
+    #students-s2-desc, #students-s3-desc, #students-s4-desc {
         text-align: center;
         margin: 0;
     }
-    #about-s2-big-box {
+    #students-s2-big-box {
         display: none;
     }
-    #about-info-icon {
+    #students-info-icon {
         margin: 0 auto;
         display:block;
     }
 }
 
 @media only screen and (max-width: 1100px) {
-    #about-title {
+    #students-title {
         width: 700px;
         font-size: 24px;
        
@@ -140,30 +115,17 @@
 }
 
 @media only screen and (max-width: 800px) {
-    #about-title {
+    #students-title {
         width: 500px;
         text-align: center;
         font-size:24px;
         left: 0%;  
     }
-    #about-desc {
+    #students-desc {
         width: 500px;
         text-align: center;
         top: 46%;
         font-size:16px;
         margin: 0 auto;
     }
-}
-
-/* component css */
-
-.tri-cards-container {
-    position: relative;
-    width: 30vw;
-    height: 70vh;
-    margin: 75px 80px 0 auto;
-}
-
-.tri-cards-container > * {
-
 }
