@@ -17,6 +17,13 @@ function CollegeCard() {
   let topNav = useRef(null);
   const [lightMode, setLightMode] = useState([true]);
   const [data, setData] = useState({});
+  const [ranks, setRanks] = useState([]);
+  const [ACT, setACT] = useState({});
+  const [SAT, setSAT] = useState({});
+  const [similarColleges, setSimilarColleges] = useState([]);
+  const [aid, setAid] = useState({});
+  const [price, setPrice]= useState({});
+  const [classes, setClasses] = useState({});
 
   useEffect(() => {
     
@@ -33,122 +40,189 @@ function CollegeCard() {
 
     fetchCollegeData();
 
-  }, [])
-/*
-  const ranks = [
-    {
-      "name": data.rankingsBestCollegeAcademics.name,
-      "value": data.rankingsBestCollegeAcademics.value
-    },
 
-    {
-      "name": data.rankingsBestCollegeAthletics.name,
-      "value": data.rankingsBestCollegeAthletics.value
-    },
+    
 
-    {
-      "name": data.rankingsBestCollegeCampuses.name,
-      "value": data.rankingsBestCollegeCampuses.value
-    },
+    
 
-    {
-      "name": data.rankingsBestCollegeFood.name,
-      "value": data.rankingsBestCollegeFood.value
-    },
+    
 
-    {
-      "name": data.rankingsBestCollegeProfessors.name,
-      "value": data.rankingsBestCollegeProfessors.value
-    },
+  }, []);
 
-    {
-      "name": data.rankingsBestColleges.name,
-      "value": data.rankingsBestColleges.value
-    },
+  useEffect(() => {
 
-    {
-      "name": data.rankingsBestCollegesForArt.name,
-      "value": data.rankingsBestCollegesForArt.value
-    },
+    if(Object.keys(data).length != 0) {
 
-    {
-      "name": data.rankingsBestCollegesForBiology.name,
-      "value": data.rankingsBestCollegesForBiology.value
-    },
+      const ranks_temp = [
+        {
+          "name": data.rankingsBestCollegeAcademics.name,
+          "value": data.rankingsBestCollegeAcademics.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegeAthletics.name,
+          "value": data.rankingsBestCollegeAthletics.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegeCampuses.name,
+          "value": data.rankingsBestCollegeCampuses.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegeFood.name,
+          "value": data.rankingsBestCollegeFood.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegeProfessors.name,
+          "value": data.rankingsBestCollegeProfessors.value
+        },
+    
+        {
+          "name": data.rankingsBestColleges.name,
+          "value": data.rankingsBestColleges.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegesForArt.name,
+          "value": data.rankingsBestCollegesForArt.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegesForBiology.name,
+          "value": data.rankingsBestCollegesForBiology.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegesForBusiness.name,
+          "value": data.rankingsBestCollegesForBusiness.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegesForChemistry.name,
+          "value": data.rankingsBestCollegesForChemistry.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegesForCommunications.name,
+          "value": data.rankingsBestCollegesForCommunications.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegesForComputerScience.name,
+          "value": data.rankingsBestCollegesForComputerScience.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegesForDesign.name,
+          "value": data.rankingsBestCollegesForDesign.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegesForEconomics.name,
+          "value": data.rankingsBestCollegesForEconomics.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegesForEngineering.name,
+          "value": data.rankingsBestCollegesForEngineering.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegesForNursing.name,
+          "value": data.rankingsBestCollegesForNursing.value
+        },
+    
+        {
+          "name": data.rankingsBestCollegesForPhysics.name,
+          "value": data.rankingsBestCollegesForPhysics.value
+        },
+    
+        {
+          "name": data.rankingsBestGreekLifeColleges.name,
+          "value": data.rankingsBestGreekLifeColleges.value
+        },
+    
+        {
+          "name": data.rankingsBestStudentLife.name,
+          "value": data.rankingsBestStudentLife.value
+        },
+    
+        {
+          "name": data.rankingsBestValueColleges.name,
+          "value": data.rankingsBestValueColleges.value
+        },
+    
+        {
+          "name": data.rankingsHardestToGetIn.name,
+          "value": data.rankingsHardestToGetIn.value
+        }
+      ];
 
-    {
-      "name": data.rankingsBestCollegesForBusiness.name,
-      "value": data.rankingsBestCollegesForBusiness.value
-    },
+      setRanks(ranks_temp);
 
-    {
-      "name": data.rankingsBestCollegesForChemistry.name,
-      "value": data.rankingsBestCollegesForChemistry.value
-    },
+      const similarColleges_temp = [
+        data.similarColleges[0].name,
+        data.similarColleges[1].name,
+        data.similarColleges[2].name
+    ];
+    
+  
+    setSimilarColleges(similarColleges_temp);
 
-    {
-      "name": data.rankingsBestCollegesForCommunications.name,
-      "value": data.rankingsBestCollegesForCommunications.value
-    },
+    const ACT_temp = {
+      "twentyFifth": data.actCumulativePercentile25,
+      "median": data.actCumulativeMidpoint,
+      "seventyFifth": data.actCumulativePercentile75
+    };
+  
+    const SAT_temp = {
+      "twentyFifth": data.satCompositePercentile25,
+      "median": data.satCompositeMidpoint,
+      "seventyFifth": data.satCompositePercentile75
+    };
 
-    {
-      "name": data.rankingsBestCollegesForComputerScience.name,
-      "value": data.rankingsBestCollegesForComputerScience.value
-    },
+    setSAT(SAT_temp);
+    setACT(ACT_temp);
 
-    {
-      "name": data.rankingsBestCollegesForDesign.name,
-      "value": data.rankingsBestCollegesForDesign.value
-    },
+    const aid_temp = {
+      "low": data.averageAidAwardedLowIncome,
+      "low_mid": data.averageAidAwardedLowerMiddleIncome,
+      "mid": data.averageAidAwardedMiddleIncome,
+      "up_mid": data.averageAidAwardedUpperMiddleIncome,
+      "up": data.averageAidAwardedHighIncome
+    };
 
-    {
-      "name": data.rankingsBestCollegesForEconomics.name,
-      "value": data.rankingsBestCollegesForEconomics.value
-    },
+    setAid(aid_temp);
 
-    {
-      "name": data.rankingsBestCollegesForEngineering.name,
-      "value": data.rankingsBestCollegesForEngineering.value
-    },
+    const price_temp = {
+      "thirty": data.netPriceByIncomeLevel0To3000,
+      "forty": data.netPriceByIncomeLevel30001To48000,
+      "seventy": data.netPriceByIncomeLevel48001To75000,
+      "hundred": data.netPriceByIncomeLevel75001To110000
+    };
 
-    {
-      "name": data.rankingsBestCollegesForNursing.name,
-      "value": data.rankingsBestCollegesForNursing.value
-    },
+    setPrice(price_temp);
 
-    {
-      "name": data.rankingsBestCollegesForPhysics.name,
-      "value": data.rankingsBestCollegesForPhysics.value
-    },
+    const classes_temp = {
+      "two": data.classSizeRange2To9,
+      "ten": data.classSizeRange10To19,
+      "twenty": data.classSizeRange20To29,
+      "thirty": data.classSizeRange30To39,
+      "forty": data.classSizeRange40To49,
+      "fifty": data.classSizeRange50To99,
+      "hundred": data.classSizeRangeOver100
+    };
 
-    {
-      "name": data.rankingsBestGreekLifeColleges.name,
-      "value": data.rankingsBestGreekLifeColleges.value
-    },
-
-    {
-      "name": data.rankingsBestStudentLife.name,
-      "value": data.rankingsBestStudentLife.value
-    },
-
-    {
-      "name": data.rankingsBestValueColleges.name,
-      "value": data.rankingsBestValueColleges.value
-    },
-
-    {
-      "name": data.rankingsHardestToGetIn.name,
-      "value": data.rankingsHardestToGetIn.value
-    }
-  ];
+    setClasses(classes_temp);
+      
+  }
+  }, [data]);
 
   
-  const similarColleges = [
-      data.similarColleges[0].name,
-      data.similarColleges[1].name,
-      data.similarColleges[2].name
-  ];
-  */
+  
+  
 
   const similarDescriptions = [
     "Description 1",
@@ -157,17 +231,7 @@ function CollegeCard() {
   ];
 
   
-  const ACT = {
-    "twentyFifth": data.actCumulativePercentile25,
-    "median": data.actCumulativeMidpoint,
-    "seventyFifth": data.actCumulativePercentile75
-  };
-
-  const SAT = {
-    "twentyFifth": data.satCompositePercentile25,
-    "median": data.satCompositeMidpoint,
-    "seventyFifth": data.satCompositePercentile75
-  }
+  
 
   function switchModes() {
     setLightMode((prevState) => !prevState)
@@ -181,7 +245,7 @@ function CollegeCard() {
   return (
     <div style = {{marginTop: 200, marginLeft: 390}}>
         
-      <Nav />
+    <Nav /> 
 
       <div>
           <h1>{data.name}</h1>
@@ -199,7 +263,7 @@ function CollegeCard() {
       <div style = {{marginTop: 150}}>
         <Admission 
         acceptance_rate = {data.acceptanceRate}
-        num_apps = {data.totalEnrolled}
+        num_apps = {data.totalApplicants}
         ACT = {ACT}
         SAT = {SAT}
         admin = {data.admissionsWebsite}
@@ -209,24 +273,38 @@ function CollegeCard() {
       <div style = {{
         marginTop: 150
       }}>
-        <Cost />
+        <Cost 
+        six_year = {data.typical6YearEarnings}
+        ten_year = {data.typical10YearEarnings}
+        in_state = {data.inStateTuition}
+        out_state = {data.outOfStateTuition}
+        fin_aid = {data.averageFinancialAid}
+        cost = {data.avgCostOfAttendance}
+        aid = {aid}
+        price = {price}/>
       </div>
 
       <div style = {{
         marginTop: 150
       }}>
-        <CampusLife />
+        <CampusLife 
+        frat = {data.fraternitiesPercentParticipation}
+        soror = {data.sororitiesPercentParticipation}
+        num_women = {data.enrolledWomen}
+        num_men = {data.enrolledMen} 
+        class = {classes}/>
       </div>
 
-      {/*<div style = {{
+      <div style = {{
         marginTop: 150
       }}>
         
         <Rankings 
         ranks = {ranks}/>
-    </div>*/}
+    </div>
+    
 
-{/*
+
       <div style = {{
         marginTop: 150
       }}>
@@ -240,9 +318,9 @@ function CollegeCard() {
         names = {similarColleges}
         descriptions = {similarDescriptions}/>
       </div>
+       
 
-
-      */}
+      
 
 
 

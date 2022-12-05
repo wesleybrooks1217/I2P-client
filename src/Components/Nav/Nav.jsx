@@ -15,9 +15,11 @@ function Nav() {
 
     return (
 
-        <section style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh' }}>
+        // <section style={{ position: 'absolute', top: 0, left: 0, width: '100%' }}>
+
+        <div style = {{position: 'absolute', top: 0, left: 0, width: '100%'}}>
     
-    <div style={{position: 'absolute', top: '30%', left: '1%'}} ref={el => sideNav = el}>
+    <div style={{position: 'absolute', top: 150, left: '1%'}} ref={el => sideNav = el}>
     
         <SideBar switchStates={switchModes} lightMode={lightMode} />
     </div>
@@ -26,9 +28,11 @@ function Nav() {
         <TopNav />
     </div>
 
+    </div>
 
 
-</section>
+
+// </section>
     );
 };
 

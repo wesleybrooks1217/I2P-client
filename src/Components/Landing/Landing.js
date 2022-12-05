@@ -78,7 +78,7 @@ export default function Landing() {
     return (
         <div className='landing-container'>
 
-            <section ref={el => three = el}id='section1' style={{position: 'relative', width: '100%', height: '100vh'}}>
+           
               <div style={{position: 'absolute', width: 700, borderRadius: '30% 0% 0% 50%', height: 300, top: -100,  right: -2, backgroundColor: '#1e6091'}}></div>
               <div style={{position:'relative',width: 500, zIndex: -1, borderRadius: '50% 0 0 0', top: 215, right: 100, height: 400, rotate: '90deg', backgroundColor: '#b5e48c'}}></div>
               <div style={{position:'relative',width: 450, zIndex: -1, top: 145, right: 100, height: 330, backgroundColor: '#b5e48c'}}></div>
@@ -133,7 +133,7 @@ export default function Landing() {
               <button style={{position: 'absolute', left: '16.8%', top: '51.3%', fontFamily: 'inherit', border: 'none', padding: '15px 45px', borderRadius: '10px 10px 10px 10px', cursor: 'pointer', backgroundColor: '#99d98c'}}> Start now. </button>
               <button style={{position: 'absolute', left: '28.8%', top: '51.3%', fontFamily: 'inherit', border: 'none', padding: '15px 45px', color: '#FFFFFF', borderRadius: '10px 10px 10px 10px', cursor: 'pointer', backgroundColor: '#1e6091'}}> Learn more. </button>
 
-          </section>
+          
         
         
     

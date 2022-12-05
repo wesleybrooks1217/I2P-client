@@ -4,57 +4,57 @@ CartesianGrid, XAxis, YAxis, Legend, Bar} from 'recharts';
 import {useState} from 'react';
 import {CurrencyDollar} from 'tabler-icons-react';
 
-function Cost() {
+function Cost(props) {
 
     const [active, setActive] = useState(0);
-    const [salary, setSalary] = useState(59600);
+    const [salary, setSalary] = useState(props.six_year);
 
     const averageAidAwarded = [
         {
             "name": "Average aid for low income students",
-            "value": 19323
+            "value": props.aid.low
         },
 
         {
             "name": "Average aid for lower middle income students",
-            "value": 10206
+            "value": props.aid.low_mid
         },
 
         {
             "name": "Average aid for middle income students", 
-            "value": 16673
+            "value": props.aid.mid
         },
 
         {
             "name": "Average aid for upper middle income students",
-            "value":13332
+            "value":props.aid.up_mid
         },
 
         {
             "name": "Average aid for high income students",
-            "value":10926
+            "value":props.aid.up
         }
     ];
 
     const averageNetPrice = [
         {
             "name": "30,000",
-            "value": 6293
+            "value": props.price.thirty
         },
 
         {
             "name": "48,000",
-            "value": 8943
+            "value": props.price.forty
         },
 
         {
             "name": "75,000",
-            "value": 12284
+            "value": props.price.seventy
         },
 
         {
             "name": "110,000",
-            "value": 14690
+            "value": props.price.hundred
         }
 
     ];
@@ -63,10 +63,10 @@ function Cost() {
 
         if (num === 0) {
             setActive(0);
-            setSalary(59600);
+            setSalary(props.six_year);
         } else if (num === 1) {
             setActive(1);
-            setSalary(74500);
+            setSalary(props.ten_year);
         }
     }
 
@@ -120,7 +120,7 @@ function Cost() {
                     </HoverCard.Target>
                     <HoverCard.Dropdown>
                         <Text size = "sm">
-                            15,000
+                            {props.in_state}
                         </Text>
                     </HoverCard.Dropdown>
                 </HoverCard>
@@ -133,7 +133,7 @@ function Cost() {
                     </HoverCard.Target>
                     <HoverCard.Dropdown>
                         <Text size = "sm">
-                            45,000
+                            {props.out_state}
                         </Text>
                     </HoverCard.Dropdown>
                 </HoverCard>
@@ -146,7 +146,7 @@ function Cost() {
                     </HoverCard.Target>
                     <HoverCard.Dropdown>
                         <Text size = "sm">
-                            9,583
+                            {props.fin_aid}
                         </Text>
                     </HoverCard.Dropdown>
                 </HoverCard>
@@ -159,7 +159,7 @@ function Cost() {
                     </HoverCard.Target>
                     <HoverCard.Dropdown>
                         <Text size = "sm">
-                            23,216
+                            {props.cost}
                         </Text>
                     </HoverCard.Dropdown>
                 </HoverCard>
