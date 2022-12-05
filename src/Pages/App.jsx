@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Landing from "../Components/Landing/Landing";
 import SchoolSystems from "../Components/SchoolSystems/SchoolSystems";
 import Privacy from "../Components/Privacy/Privacy";
-import Courses from "../Components/MyCourses/Courses";
+import MyCourses from "../Components/MyCourses/MyCourses";
 import Dashboard from "../Components/Dashboard/Dashboard";
 import MyCareer from "./MyCareer/MyCareer";
 import About from "../Components/About/About";
@@ -28,7 +28,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/About" element={<About />} />
-            <Route path="/Courses" element={<Courses />} />
+            <Route path="/MyCourses" element={<MyCourses />} />
             <Route path="/SchoolSystems" element={<SchoolSystems />} />
             <Route path="/Products" element={<Products />} />
             <Route path="/CollegeCard" element={<CollegeCard />} />

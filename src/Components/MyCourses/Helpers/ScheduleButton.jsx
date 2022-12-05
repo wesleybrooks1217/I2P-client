@@ -1,10 +1,10 @@
 import React from "react";
-import { ActionIcon, useMantineColorScheme } from "@mantine/core";
+import { ActionIcon  } from "@mantine/core";
 
 import { CalendarStats } from "tabler-icons-react";
 
 function ScheduleButton(props) {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();  
+ 
  
   return (
     <div className="App">
