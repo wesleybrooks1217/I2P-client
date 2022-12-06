@@ -34,18 +34,7 @@ function SectionTwo() {
           <Avatar color='orange' radius='md'>
                   <Flask2 style={{color: '#212529'}} width={40} />
                   </Avatar>
-          <Avatar color='cyan' radius='md'>
-                  <CircleSquare style={{color: '#212529'}} width={40} />
-                  </Avatar>
-                  <Avatar color='orange' radius='md'>
-                  <MathFunction style={{color: '#212529'}} width={40} />
-                  </Avatar>
-                  <Avatar color='yellow' radius='md'>
-                  <Cell style={{color: '#212529'}} width={40} />
-                  </Avatar>
-                  <Avatar color='blue' radius='md'>
-                  <Butterfly style={{color: '#212529'}} width={40} />
-                  </Avatar>
+        
              
                   <Avatar color='indigo' radius='md'>
                   <Beach style={{color: '#212529'}} width={40} />
@@ -119,6 +108,18 @@ function SectionTwo() {
                   <div className='core-cards-carousel'   style={{position: 'relative', display: 'flex',justifyContent: 'center', alignItems: 'center',  marginTop: 10}}> 
                   <Avatar color='orange' radius='md'>
                   <Flask2 style={{color: '#212529'}} width={40} />
+                  </Avatar>
+                  <Avatar color='cyan' radius='md'>
+                  <CircleSquare style={{color: '#212529'}} width={40} />
+                  </Avatar>
+                  <Avatar color='orange' radius='md'>
+                  <MathFunction style={{color: '#212529'}} width={40} />
+                  </Avatar>
+                  <Avatar color='yellow' radius='md'>
+                  <Cell style={{color: '#212529'}} width={40} />
+                  </Avatar>
+                  <Avatar color='blue' radius='md'>
+                  <Butterfly style={{color: '#212529'}} width={40} />
                   </Avatar>
                   <Avatar color='orange' radius='md'>
                   <MathFunction style={{color: '#212529'}} width={40} />

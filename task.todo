@@ -10,4 +10,19 @@ dec 4 checklist
             -fill in five sections still
         -school system and student pages @done 1:58am
             -fill in five sections still
-        -develop static site 4 dashboard
+        -develop static site 4 dashboard @done 4:07am
+
+dec 5 checklist 
+    p0 (misc)
+        -landing v3.1 edits for tomorrow 
+        -new nav bar with routes working @done 7:50pm
+    p1 (page generation p2)
+        -complete colored background all @done 1:44am
+            -course college & career not
+        -course college and course check
+        -develop dynamic site: dashboard
+    p2 (site sync)
+        -connect all buttons on site pgs
+        -add animations on event handles
+        -ensure sign up and sign in work
+        

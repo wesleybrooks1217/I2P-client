@@ -133,7 +133,7 @@ html {
       left: 0;
       right: 0;
       height: 10px;
-      background-color: red;
+      background-color: #80ed99;
       transform-origin: 0%;
     }
     
@@ -178,23 +178,28 @@ html {
 #btn-1 {
   width: 265px;
   position: relative;
-  background-color: '#99d98c';
+  border: none;
+  background-color: #99d98c;
   bottom: 15%;
   border-radius: 10px;
   cursor: pointer;
-  padding: 20px 40px;
+  padding: 25px 40px;
   left: 10%;
+  font-weight: 700;
 }
 
 #btn-2 {
   width: 265px;
   position: relative;
-  background-color: '#1e6091';
+  border: none;
+  background-color: #1e6091;
   bottom: 15%;
   left: 11%;
   border-radius: 10px;
   cursor: pointer;
-  padding: 20px 40px;
+  padding: 25px 40px;
+  color: white;
+  font-weight: 700;
 }
 
 .landing-box {
@@ -252,6 +257,18 @@ html {
     margin: 20px 0 0 30px; 
     width: 200px;
     height: 80px;
+  }
+  #btn-1 {
+    margin: 0 auto;
+    position: relative;
+    top:54%;
+    left: 24%;
+  }
+  #btn-2 {
+    margin: 0 auto;
+    position: relative;
+    top:54%;
+    left: 26%;
   }
   
 }
