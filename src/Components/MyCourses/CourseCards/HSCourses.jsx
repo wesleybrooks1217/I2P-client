@@ -1,13 +1,9 @@
-
 import React from "react";
 
-import {
-  Paper,
-  createStyles,
-  Title,
-} from "@mantine/core";
+import { Paper, createStyles, Title, Stack } from "@mantine/core";
 
 import CourseDescriptionPop from "../Helpers/CourseDescriptionPop";
+import CourseCard from "../../Cards/CourseCard";
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -17,25 +13,19 @@ const useStyles = createStyles((theme) => ({
 
   content: {
     maxWidth: 550,
-  
   },
 
   title: {
-
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontSize: 44,
     lineHeight: 1.2,
     fontWeight: 900,
   },
 
-  control: {
-
-  },
+  control: {},
 
   image: {
     flex: 1,
-
-
   },
 
   highlight: {
@@ -46,28 +36,25 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function HSCourses(props) {
-
   const { classes } = useStyles();
   return (
-              <div>
-                <div className="title-box">
-                  <Title sx={{ textAlign: "center" }} className={classes.title}>
-                    {props.title}
-                  </Title>
+    <div>
+      <div className="title-box">
+          <Title sx={{ textAlign: "center" }} className={classes.title}>
+            {props.title}
+            <img className="logo-img" src="logo192.png"/>
+          </Title>
+      </div>
 
-                  <img className="logo-img" src="logo192.png" />
-                </div>
-
-                <Paper>
-                  <div className="main-container-Careers">
-                    <CourseDescriptionPop
-                      courseTitle={props.title}
-                      description={props.description}
-                    />
-                  </div>
-                </Paper>
-              </div>
-        
-    
+      <Paper>
+        <div className="main-container-Careers">
+          <CourseDescriptionPop
+            courseTitle={props.title}
+            description={props.description}
+          />
+        </div>
+      </Paper>
+      
+    </div>
   );
 }

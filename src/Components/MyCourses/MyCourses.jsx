@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, createStyles, Title } from "@mantine/core";
+import {useSelector, useDispatch} from 'react-redux';
+import { Container, createStyles, Title, List } from "@mantine/core";
 
 import "./MyCourses.css";
 import { TableSelection } from "./SVGs/CourseSchedule";
@@ -7,7 +8,9 @@ import ClassNavBar from "./SVGs/ClassNavBar";
 import ScheduleButton from "./Helpers/ScheduleButton";
 import { CourseStatsCombined } from "./CourseStatsCombined";
 import TopNav from "../Nav/components/TopNav";
+import Nav from "../Nav/Nav";
 import { API, init_api } from "../../API";
+import { changeMainCareer } from "../../redux/careers/careerActions";
 
 const scheduleData = [
   {
@@ -220,19 +223,68 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function MyCourses() {
+  const listCourses = useSelector(state => state.highSchoolCourses);
   const [data, setData] = useState(scheduleData);
+  const [courseNums, setCourseNums] = useState([]);
+  const [courseItems, setCourseItems] = useState([]);
+  const [test, setTest] = useState(0);
+  const dispatch = useDispatch();
+  console.log(listCourses);
+
+  const changeMainCareerListElement = (id) => {
+        
+    console.log(id);
+    setTest(id);
+};
+
+  const ListItem = (props) => {
+    return (
+      <li onMouseDown={() => changeMainCareerListElement(props.val_id)}>
+        {" "}
+        {props.value}{" "}
+      </li>
+    );
+  };
+
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        return data;
-      })
-      .then((data) => setData(data.highSchoolCourses))
-      .catch((error) => console.log(error));
-  }, []);
+    const fetchCourseList = async () => {
+      init_api();
+      var tempData = [];
+      for (var i = 0; i < listCourses.length; i++) {
+        await API.get(`/api/career/${listCourses[i]}/`).then((response) => {
+          tempData.push(response.data);
+        });
+      }
+
+      setCourseNums(tempData);
+      const tempItems = courseNums.map((data) => {
+        return <ListItem key={data.id} val_id={data.id} value={data.name} />;
+      });
+
+      setCourseItems(tempItems);
+    };
+
+    fetchCourseList();
+  });
+
+  useEffect(() => {
+    console.log("Main career effect");
+
+    dispatch(changeMainCareer(test));
+  }, [test]);
+
+  // useEffect(() => {
+  //   fetch("http://127.0.0.1:8000/api")
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       console.log(data);
+  //       return data;
+  //     })
+  //     .then((data) => setData(data.highSchoolCourses))
+  //     .catch((error) => console.log(error));
+  // }, []);
 
   const [showSidebar, setShowSidebar] = useState(false);
   const { classes } = useStyles();
@@ -243,7 +295,7 @@ export default function MyCourses() {
         id="section1"
         style={{ position: "relative", width: "100%", height: "100vh" }}
       > */}
-        {/* <div
+      {/* <div
           style={{
             position: "absolute",
             width: 700,
@@ -255,7 +307,7 @@ export default function MyCourses() {
             zIndex: -1,
           }}
         ></div> */}
-        {/* <div
+      {/* <div
           style={{
             position: "absolute",
             width: 500,
@@ -268,7 +320,7 @@ export default function MyCourses() {
             backgroundColor: "#1e6091",
           }}
         ></div> */}
-        {/* <div
+      {/* <div
           style={{
             position: "relative",
             width: 450,
@@ -279,52 +331,49 @@ export default function MyCourses() {
             backgroundColor: "#b5e48c",
           }}
         ></div> */}
-        <div style={{ position: "absolute", width: "100%" }}>
-          <TopNav />
-        </div>
-        <ScheduleButton clickHandler={() => setShowSidebar(!showSidebar)} />
-        {showSidebar && <ClassNavBar />}
-        <Container>
-          <Title
-            sx={{ textAlign: "center" }}
-            mt={80}
-            mb={30}
-            className={classes.title}
-          >
-            {" "}
-            MyCourses{" "}
-          </Title>
-          <Title
-            mb={20}
-            sx={{ textAlign: "center" }}
-            className={classes.header}
-          >
-            {" "}
-            Your Current Schedule - Fall 2022!
-          </Title>
-          <CourseStatsCombined data={currentCourseData} />
-          {/* <CoursesCurrent/> */}
-          <Title
-            mt={70}
-            mb={20}
-            sx={{ textAlign: "center" }}
-            className={classes.header}
-          >
-            {" "}
-            Our Recommeded Schedule - Spring 2023!
-          </Title>
-          <CourseStatsCombined data={futureCourseData} />
-          <Title
-            mt={70}
-            mb={20}
-            sx={{ textAlign: "center" }}
-            className={classes.header}
-          >
-            {" "}
-            Additional Course Recommendations!
-          </Title>
-          <TableSelection data={data} />
-        </Container>
+      
+        <Nav />
+      
+      {/* <ScheduleButton /> */}
+      {/* <ScheduleButton clickHandler={() => setShowSidebar(!showSidebar)} />
+      {showSidebar && <ClassNavBar />} */}
+      <Container>
+        <Title
+          sx={{ textAlign: "center" }}
+          mt={100}
+          mb={30}
+          className={classes.title}
+        >
+          {" "}
+          MyCourses{" "}
+        </Title>
+        <Title mb={20} sx={{ textAlign: "center" }} className={classes.header}>
+          {" "}
+          Your Current Schedule - Fall 2022!
+        </Title>
+        <CourseStatsCombined data={currentCourseData} />
+        {/* <CoursesCurrent/> */}
+        <Title
+          mt={60}
+          mb={20}
+          sx={{ textAlign: "center" }}
+          className={classes.header}
+        >
+          {" "}
+          Our Recommeded Schedule - Spring 2023!
+        </Title>
+        <CourseStatsCombined data={futureCourseData}/>
+        <Title
+          mt={60}
+          mb={20}
+          sx={{ textAlign: "center" }}
+          className={classes.header}
+        >
+          {" "}
+          {/* Additional Course Recommendations! */}
+        </Title>
+        {/* <TableSelection data={data} />  */}
+      </Container>
       {/* </section> */}
     </div>
   );

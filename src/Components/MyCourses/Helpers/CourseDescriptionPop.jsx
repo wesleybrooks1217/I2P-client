@@ -1,5 +1,4 @@
-import React from 'react';
-import { createStyles, Text, Title, Spoiler } from '@mantine/core';
+import { createStyles, Text, Title, TextInput, Button, Spoiler } from '@mantine/core';
 import SidePicker from '../../../Pages/Careers/Components/SidePicker';
 
 const useStyles = createStyles((theme) => ({
@@ -8,8 +7,10 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'center',
     padding: theme.spacing.xl * 2,
     borderRadius: theme.radius.md,
-
-
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
+    border: `1px solid ${
+      theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[3]
+    }`,
 
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
       flexDirection: 'column-reverse',
@@ -35,6 +36,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   title: {
+    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     lineHeight: 1,
     marginBottom: theme.spacing.md,
@@ -84,11 +86,12 @@ function CourseDescriptionPop(props) {
         maxHeight={24}
         showLabel = "Show More"
         hideLabel = "Show less"
+        className={classes.spoiler_pop}
         >
             {props.description}
         </Spoiler>
 
-        <div
+        <div className={classes.picker_pop}
       >
             <SidePicker/>
         </div>
