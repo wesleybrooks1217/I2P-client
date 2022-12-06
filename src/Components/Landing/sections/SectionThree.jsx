@@ -178,12 +178,7 @@ function SectionThree() {
 
           
       
-          
-          
-          <div style={{position: 'relative', bottom: 110, marginTop: '25px', border: '1px solid black', width: '52vw', height: '220px'}}> 
-            <h4> Welseys modal </h4>
-            </div>
-          
+      
               
               </div>
         

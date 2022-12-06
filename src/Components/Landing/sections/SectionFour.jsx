@@ -1,5 +1,6 @@
-import {Beach, Search, Book, Plus, Book2,Stars, Scale, Target, BrandInstagram, BrandLinkedin, BrandTiktok, BrandTwitter, User, Car, ChartBar, ViewFinder,  Activity, Butterfly, BallBowling, Clipboard, Cookie, Database, Diamond, Flower, Chess,HandFinger, Home2, Leaf, ArrowUpRightCircle, Backpack,Atom, Star, School, StarHalf, ArrowBigRight, ChartCircles, MoodUnamused, CameraRotate ,Numbers, MathIntegrals, Globe,ArrowDown, BoxMultiple1, Certificate, BoxMultiple2, BoxMultiple3, CircleSquare,  Books,  MathFunction, Flask2, Cell, Bong, Microscope, Language, MathMin, Anchor, Backhoe, Apple, Aperture, MathXPlusY, Plant2, Bug, ChefHat, DeviceDesktop, FileCode, Gavel, AlertTriangle} from 'tabler-icons-react'
+import {Beach, Search, Book, Plus, Book2,Stars, Scale, Target, BrandInstagram, BrandLinkedin, BrandTiktok, BrandTwitter, User, Car, ChartBar, ViewFinder,  Activity, Butterfly, BallBowling, Clipboard, Cookie, Database, Diamond, Flower, Chess,HandFinger, Home2, Leaf, ArrowUpRightCircle, Backpack,Atom, Star, School, StarHalf, ArrowBigRight, ChartCircles, MoodUnamused, CameraRotate ,Numbers, MathIntegrals, Globe,ArrowDown, BoxMultiple1, Certificate, BoxMultiple2, BoxMultiple3, CircleSquare,  Books,  MathFunction, Flask2, Cell, Bong, Microscope, Language, MathMin, Anchor, Backhoe, Apple, Aperture, MathXPlusY, Plant2, Bug, ChefHat, DeviceDesktop, FileCode, Gavel, AlertTriangle, MoodSmile, ArrowUpCircle} from 'tabler-icons-react'
 import { Avatar, Paper, Image, Card, Badge} from '@mantine/core';
+import DashboardDummy from './DashboardDemo.png';
 
 function SectionFour() {
     return (
@@ -171,14 +172,41 @@ function SectionFour() {
               </Paper> 
     
         </div>
-        <div style={{display: 'flex', justifyContent: 'space-around', marginTop: 80, marginLeft: 'auto', marginRight: 'auto', width: '80%', height: 400, border: '1px solid black'}}>
-          <div style={{width: 300,  border: '1px solid black'}}>
-            Dashboard Description
+        <h4 style={{position: 'relative', marginTop: 60, marginBottom: 0, textAlign: 'center', fontSize: '20px'}}> Student Dashboard </h4>
+        <Paper shadow='lg' sx={{height: '450px', width: '80%', margin: '0 auto'}}>
+        <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', marginTop: 50, marginLeft: 'auto', marginRight: 'auto', width: '80%', height: 400}}>
+       
+          <div style={{fontWeight: 500, textAlign: 'center', marginBottom: 10, width: 300, marginRight: '30px'}}>
+            <h4 > Students gain access to their personalized dashboard upon registery. </h4>
+            <div style={{display: 'flex', marginTop: 10, alignItems: 'center'}}>
+            <Avatar size={48} sx={{width: '10px'}}color='yellow'  radius='md'>
+                <MoodSmile size={28} />
+               </Avatar>
+                  <p style   ={{fontSize: '14px', marginLeft: 10}}>Missions to enhance the experience.</p>
+
             </div>
-            <div style={{width: 300,  border: '1px solid black'}}>
-              Dashboard
+            <div style={{marginTop: 15, display: 'flex', alignItems: 'center'}}>
+            <Avatar size={48} sx={{width: '10px'}}color='green'  radius='md'>
+                <Book2 size={28} />
+               </Avatar>
+                  <p style   ={{fontSize: '14px', marginLeft: 10}}>Access your top picks automatically. </p>
+
+            </div>
+            <div style={{marginTop: 15, display: 'flex', alignItems: 'center'}}>
+            <Avatar size={48} sx={{width: '10px'}}color='blue'  radius='md'>
+                <ArrowUpCircle size={28} />
+               </Avatar>
+                  <p style   ={{fontSize: '14px', marginLeft: 10}}>Gain XP with time spent on the site.</p>
+
+            </div>
+            </div>
+            <div style={{width: '45vw', margin: 'auto 0' }}>
+              <Image src={DashboardDummy} width='45vw' />
               </div>
+           
           </div>
+          </Paper>
+       
     </section>
     )
 }

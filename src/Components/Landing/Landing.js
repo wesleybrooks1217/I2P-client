@@ -99,10 +99,21 @@ import Library from "./components/corefour/Library";
 import Personalized from "./components/corefour/Personalized";
 import Equity from "./components/corefour/Equity";
 import SmallerDemo from "../Demo/SmallerDemo";
-
+import { useNavigate } from "react-router-dom";
 export default function Landing() {
   const cardContainer = useRef(null);
-
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/signin`;
+    navigate(path);
+  }
+  const handleScroll = (ref) => {
+    window.scrollTo({
+      top: ref.offsetTop,
+      left: 0,
+      behavior: 'smooth',
+    })
+  }
   return (
     <div className="landing-container">
       <section
@@ -148,8 +159,8 @@ export default function Landing() {
           counselors and students alike.{" "}
         </p>
         <div id='landing-btn-container'>
-          <button id="btn-1"> Start now. </button>
-          <button id="btn-2"> Learn more. </button>
+          <button id="btn-1" onClick={routeChange}> Start now. </button>
+          <button id="btn-2" onClick={() => handleScroll(cardContainer.current)} > Learn more. </button>
         </div>
 
         <h4 id="title-text-1small">Access any academic resource</h4>

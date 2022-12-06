@@ -8,7 +8,7 @@ function ProfileContainer() {
     
         <div id='dash-main-profcont' style={{padding: 10}}>
             <div id='dash-main-pfp'>
-            <h4 style={{margin: 0, position: 'relative', width: '160px'}}> Academic Assassin</h4>
+            <h4 style={{margin: 0, position: 'relative', width: '160px'}}> Superb Student II</h4>
             <Avatar color="green" radius="md" style={{height: '50px', width: '50px', marginRight: '6px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <School style={{width: '35px', height: '35px'}} />
           </Avatar>
