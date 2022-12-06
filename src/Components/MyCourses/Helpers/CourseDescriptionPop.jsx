@@ -1,4 +1,4 @@
-import { createStyles, Text, Title, TextInput, Button, Spoiler } from '@mantine/core';
+import { createStyles, Text, Title, TextInput, Button, Spoiler, Progress } from '@mantine/core';
 import SidePicker from '../../../Pages/Careers/Components/SidePicker';
 
 const useStyles = createStyles((theme) => ({
@@ -94,6 +94,27 @@ function CourseDescriptionPop(props) {
         <div className={classes.picker_pop}
       >
             <SidePicker/>
+        </div>
+
+        <div style = {{
+          marginTop: 25
+        }}>
+          <p style = {{
+            fontSize: 18
+          }}>Course difficulty</p>
+          <Progress 
+          radius={"xl"}
+          size={"xl"}
+          value = {50}
+          style = {{
+            position: 'relative',
+            top: 5
+          }}/>
+          <p style = {{
+            fontSize: 14,
+            position: 'relative',
+            top: 10
+          }}>Difficulty ranking: 50 out of 100</p>
         </div>
         
 
