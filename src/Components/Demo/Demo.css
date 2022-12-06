@@ -24,6 +24,18 @@
 
 }
 
+#demo-landing-table {
+    position: relative;
+    width: 90%;
+    margin-top: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
 #demo-nav-table > li {
     top: 10%;
     margin-top: 20px;

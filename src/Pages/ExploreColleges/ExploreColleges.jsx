@@ -67,7 +67,7 @@ function ExploreColleges() {
                 marginLeft: 675
             }}>
 
-                <h1>Explore Careers</h1>
+                <h1>Explore Colleges</h1>
                 <div style = {{
                     position: 'relative',
                     right: 175,

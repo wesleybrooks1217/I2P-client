@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import { Avatar } from "@mantine/core";
+import { Avatar, Group } from "@mantine/core";
 import {
   Beach,
   PencilMinus,
@@ -98,6 +98,7 @@ import Affordable from "./components/corefour/Affordable";
 import Library from "./components/corefour/Library";
 import Personalized from "./components/corefour/Personalized";
 import Equity from "./components/corefour/Equity";
+import SmallerDemo from "../Demo/SmallerDemo";
 
 export default function Landing() {
   const cardContainer = useRef(null);
@@ -108,7 +109,7 @@ export default function Landing() {
         id="section1"
         style={{ position: "relative", width: "100%", height: "100vh" }}
       >
-      
+
         <div style={{ position: "absolute", width: "100%" }}>
           <TopNav />
         </div>
@@ -131,13 +132,14 @@ export default function Landing() {
             infiniteLoop="True"
             emulateTouch="True"
           >
+            <SmallerDemo />
             <Affordable />
             <Library />
             <Personalized />
             <Equity />
           </Carousel>
-        </div>
 
+        </div>
         <h4 id="title-text-1">Access any academic resource</h4>
         <h4 id="title-text-2">automatically and affordably. </h4>
         <p id="desc-text-1">
@@ -146,8 +148,8 @@ export default function Landing() {
           counselors and students alike.{" "}
         </p>
         <div id='landing-btn-container'>
-        <button id="btn-1"> Start now. </button>
-        <button id="btn-2"> Learn more. </button>
+          <button id="btn-1"> Start now. </button>
+          <button id="btn-2"> Learn more. </button>
         </div>
 
         <h4 id="title-text-1small">Access any academic resource</h4>
