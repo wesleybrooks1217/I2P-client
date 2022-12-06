@@ -4,7 +4,6 @@ import { Avatar } from '@mantine/core';
 import CollegeCard from '../components/CollegeCard';
 import CareerCard from '../components/CareerCard';
 import CourseCard from '../components/CourseCard';
-import backgroundBlob from '../backgroundBlob.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader  
 import { Carousel } from 'react-responsive-carousel';  
    
@@ -22,7 +21,7 @@ function SectionTwo() {
     
         <h2 style={{position: 'relative', textAlign: 'center', fontWeight: 400, fontSize: '22px'}}> Explore an <i>endless</i> amount of resources. </h2>
        
-        <p style={{position: 'relative',marginTop: 10, marginBottom: 10, textAlign: 'center', fontWeight: 400, fontSize: '14px', color: 'gray'}}> Check any course, college, or career information in an instant.  </p>
+        <p style={{position: 'relative',marginTop: 10, marginBottom: 20, textAlign: 'center', fontWeight: 400, fontSize: '14px', color: 'gray'}}> Check any course, college, or career information in an instant.  </p>
         <div style={{position: 'relative', marginTop: 0,  width: '90vw', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
       
 

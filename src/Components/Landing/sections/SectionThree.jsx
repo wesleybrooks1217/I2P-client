@@ -1,11 +1,11 @@
 import react from 'react'
 import { Avatar, Paper} from '@mantine/core';
-
+import '../Landing.css'
 import {Beach, Search, Book, Plus, Book2,Stars, Scale, Target, BrandInstagram, BrandLinkedin, BrandTiktok, BrandTwitter, User, Car, ChartBar, ViewFinder,  Activity, Butterfly, BallBowling, Clipboard, Cookie, Database, Diamond, Flower, Chess,HandFinger, Home2, Leaf, ArrowUpRightCircle, Backpack,Atom, Star, School, StarHalf, ArrowBigRight, ChartCircles, MoodUnamused, CameraRotate ,Numbers, MathIntegrals, Globe,ArrowDown, BoxMultiple1, Certificate, BoxMultiple2, BoxMultiple3, CircleSquare, MoodSmileBeam, Books,  MathFunction, Flask2, Cell, Bong, Microscope, Language, MathMin, Anchor, Backhoe, Apple, Aperture, MathXPlusY, Plant2, Bug, ChefHat, DeviceDesktop, FileCode, Gavel, AlertTriangle, HandClick, MoodSadDizzy, MathSymbols, Ghost, Planet} from 'tabler-icons-react'
 
 function SectionThree() {
     return (
-        <section style={{ width: 'inherit', height: '800px', marginBottom: '20px'}}  id='section-3' className='section3'>
+        <section style={{ width: 'inherit', marginBottom: '20px'}}  id='section-3' >
                  
                  <h3 style={{fontSize: '25px', marginLeft: '50px', marginTop: '40px'}}> Detailed descriptions on any subject. </h3>
         <p style={{ fontSize: '14px',marginLeft: '50px', marginTop: '10px', marginBottom: '30px', color: 'gray'}}> Find the best fit for you with insightful information on any academic card. </p>

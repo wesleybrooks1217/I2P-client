@@ -8,11 +8,12 @@ import Footer from "../Landing/Footer";
 function Products() {
     return (
         <div>
+          
+            <section className='products-s1'>
             <div style={{position: 'absolute', width: '100%'}}>
                 <TopNav />
                
             </div>
-            <section className='products-s1'>
             <div id='products-info-icon'>
                     <BuildingStore size={48}  />
                 </div>
@@ -25,6 +26,7 @@ function Products() {
                 <TriProducts />
             </section>
             <Footer />
+            
         </div>
     )
 }

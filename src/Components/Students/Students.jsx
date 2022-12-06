@@ -7,11 +7,12 @@ import { Users } from 'tabler-icons-react';
 function Students() {
     return (
         <div>
+       
+        <section className='students-s1'>
         <div style={{position: 'absolute', width: '100%'}}>
             <TopNav />
            
         </div>
-        <section className='students-s1'>
             <div id='students-info-icon'>
                 <Users size={48} />
             </div>

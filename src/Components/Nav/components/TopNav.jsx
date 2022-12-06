@@ -5,6 +5,7 @@ import ReactDOM from "react-dom/client";
 import { Outlet, Link, Route, Routes, BrowserRouter} from "react-router-dom";
 import Products from '../../Products/Products';
 import About from '../../About/About';
+import {useSelector} from 'react-redux';
 
 function TopNav() {
 
@@ -12,22 +13,24 @@ function TopNav() {
     
 
     return (
-      <div>
+   
         <div className='top-nav'>
     <li id='link-products'>
-      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}}to="/products">Products</Link>
+      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}}to="/Products">Products</Link>
     </li>
     <li id='link-students'>
-      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}} to="/students">Students</Link>
+      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}} to="/Students">Students</Link>
     </li>
     <li id='link-home' >
+      <Link to='/'>
         <img src={next4Logo} id='logo-home' />
+        </Link>
     </li>
     <li id='link-schools'>
-      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}} to="/schools">Schools</Link>
+      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}} to="/SchoolSystems">Schools</Link>
     </li>
     <li id='link-about'>
-      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}} to="/about">About Us</Link>
+      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}} to="/About">About Us</Link>
     </li>
   </div>
        

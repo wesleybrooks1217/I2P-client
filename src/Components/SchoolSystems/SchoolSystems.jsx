@@ -45,11 +45,12 @@ import "./SchoolSystems.css"
 function SchoolSystems() {
     return (
         <div>
+           
+            <section className='schools-s1'>
             <div style={{position: 'absolute', width: '100%'}}>
                 <TopNav />
                
             </div>
-            <section className='schools-s1'>
                 <div id='schools-info-icon'>
                   <School size={48} />
                 </div>
@@ -71,6 +72,7 @@ function SchoolSystems() {
                 <p id='schools-s4-desc'> We ensure that every student is connected to the courses, colleges, and careers that fit for them. </p>    
             </section>
             <Footer />
+            
         </div>
     )
 }

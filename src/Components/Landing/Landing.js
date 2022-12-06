@@ -78,7 +78,14 @@ export default function Landing() {
     return (
         <div className='landing-container'>
 
-            <section ref={el => three = el}id='section1' style={{position: 'relative', width: '100%', height: '100vh'}}>
+            <section ref={el => three = el}id='section1' style={{position: 'relative', width: '100%', height: '100vh' }}>
+            <div style={{position: 'absolute', top: '30%', left: '1%'}} ref={el => sideNav = el}>
+      
+      <SideBar switchStates={switchModes} lightMode={lightMode} />
+      </div>
+      <div style={{position: 'absolute', width: '100%'}} ref={el => topNav = el}>
+      <TopNav />
+      </div>
            <div id='carousel-container-landing' style={{position: 'relative', margin: '0 auto 0 auto', left: '70%', top: '20%'}}>
             <Carousel width='24vw' showThumbs='False' showIndicators='False' axis='vertical' autoPlay='True' dynamicHeight='True' infiniteLoop='True' emulateTouch='True'>
          <Affordable />
@@ -165,13 +172,7 @@ export default function Landing() {
      
     <section style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none', width: '100%', height: '100vh' }}>
     
-    <div style={{position: 'absolute', top: '30%', left: '1%'}} ref={el => sideNav = el}>
-      
-      <SideBar switchStates={switchModes} lightMode={lightMode} />
-      </div>
-      <div style={{position: 'absolute', width: '100%'}} ref={el => topNav = el}>
-      <TopNav />
-      </div>
+    
      
 
    

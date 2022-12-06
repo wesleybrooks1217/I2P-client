@@ -21,6 +21,43 @@ html {
     margin: 10px;
 }
 
+
+
+#section-2 {
+  position: relative;
+  width: 100%;
+  height: 115vh;
+  border: 1px solid black;
+  background-image: url('../Universal/BlobBackgrounds/1.png');
+  background-size: cover;
+}
+
+#section-3 {
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  border: 1px solid black;
+  background-image: url('../Universal/BlobBackgrounds/2.png');
+  background-size: auto;
+}
+
+#section-4 {
+  position: relative;
+  width: 100%;
+  height: 120vh;
+  border: 1px solid black;
+  background-image: url('../Universal/BlobBackgrounds/3.png');
+  background-size:auto;
+}
+
+#section-5 {
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  border: 1px solid black;
+  background-image: url('../Universal/BlobBackgrounds/2.png');
+  background-size:auto;
+}
 .scroll-down {
   height: 50px;
   width: 30px;
@@ -31,6 +68,26 @@ html {
   border-radius: 50px;
   cursor: pointer;
 
+}
+
+.section6 {
+  border: none;
+}
+
+#survey-q-one {
+  position: absolute;
+  margin: 20px 0 0 30px; 
+  width: 300px;
+  left: 15%;
+  height: 80px;
+}
+
+#survey-q-two {
+  position: absolute;
+  margin: 80px 0 0 60px;
+  width: 300px;
+  left: 15%;
+  height: 80px;
 }
 
 
@@ -184,6 +241,19 @@ html {
   #course-attributes {
     display: none;
   }
+  #survey-q-one {
+    position: absolute;
+    margin: 20px 0 0 30px; 
+    width: 200px;
+    height: 80px;
+  }
+  #survey-q-two {
+    position: absolute;
+    margin: 20px 0 0 30px; 
+    width: 200px;
+    height: 80px;
+  }
+  
 }
 
 @media only screen and (max-width: 1100px) {

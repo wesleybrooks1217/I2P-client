@@ -4,7 +4,7 @@ import { Avatar, Paper, Image, Card, Badge} from '@mantine/core';
 
 function SectionFive() {
     return (
-        <section className='section5' id='section-5' style={{ height: '700px', width: '100%'}}>
+        <section id='section-5' style={{ width: '100%'}}>
         <h3 style={{marginLeft: '50px', marginTop: '40px'}}> Missions made to excite your experience. </h3>
         <p style={{ fontSize: '14px',marginLeft: '50px', marginTop: '10px', marginBottom: '10px', color: 'gray'}}> Add course, college, and career challenges to excite your experience with us. </p>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'absolute', width: '350px', height: '450px', margin: '50px 0 0 50px'}}>

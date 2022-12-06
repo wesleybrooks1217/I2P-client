@@ -10,11 +10,12 @@ import Footer from "../Landing/Footer";
 function About() {
     return (
         <div>
+            
+            <section className='about-s1'>
             <div style={{position: 'absolute', width: '100%'}}>
                 <TopNav />
                
             </div>
-            <section className='about-s1'>
                 <div id='about-info-icon'>
                     <InfoCircle size={48}  />
                 </div>

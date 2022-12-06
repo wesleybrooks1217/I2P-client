@@ -11,8 +11,27 @@ section {
     width: 100%;
     height: 100vh;
     border: 1px solid black;
+   
 }
 
+.students-s1 {
+    background-image: url('../Universal/BlobBackgrounds/8.png');
+    background-size: auto;
+}
+
+.students-s2 {
+    background-image: url('../Universal/BlobBackgrounds/4.png');
+    background-size: auto;
+}
+
+.students-s3 {
+    background-image: url('../Universal/BlobBackgrounds/6.png');
+    background-size: auto;
+}
+.students-s4 {
+    background-image: url('../Universal/BlobBackgrounds/1.png');
+    background-size: auto;
+}
 /* elements */
 
 
@@ -21,6 +40,7 @@ section {
     top: 80%;
     font-size: 36px;
     margin-left: 108px;
+    
 }
 
 #students-desc {
