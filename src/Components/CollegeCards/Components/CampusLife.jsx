@@ -1,60 +1,60 @@
 import {PieChart, Pie, Tooltip, FunnelChart,Funnel,LabelList} from 'recharts';
 
-function CampusLife() {
+function CampusLife(props) {
 
     const genderBreakdown = [
         {
             "name": "Enrolled Women",
-            "value": 1190
+            "value": props.num_women
         },
 
         {
             "name": "Enrolled Men",
-            "value": 1687
+            "value": props.num_men
         }
     ];
 
     const classSizeBreakdown = [
         {
             "name": "2 to 9 students",
-            "value": 19,
+            "value": props.class.two,
             "fill": "#8884d8"
         },
 
         {
             "name": "10 to 19 students",
-            "value": 19,
+            "value": props.class.ten,
             "fill": "#83a6ed"
         },
 
         {
             "name": "20 to 29 students",
-            "value":17,
+            "value": props.class.twenty,
             "fill": "#8dd1e1"
         },
 
         {
             "name": "30 to 39 students",
-            "value": 10,
+            "value": props.class.thirty,
             "fill": "#82ca9d"
         },
 
         {
             "name": "40 to 49 students",
-            "value": 9,
+            "value": props.class.forty,
             "fill": "#a4de6c"
 
         },
 
         {
             "name": "50 to 99 students",
-            "value": 19,
+            "value": props.class.fifty,
             "fill": "#a423cc"
         },
 
         {
             "name": "100 students or more",
-            "value": 7,
+            "value": props.class.hundred,
             "fill": "#bb6371"
         }
     ];
@@ -93,10 +93,10 @@ function CampusLife() {
                     <p style = {{
                         fontSize: 16,
                         marginTop: 50
-                    }}>Fraternities: 23%</p>
+                    }}>Fraternities: {props.frat}%</p>
                     <p style = {{
                         fontSize: 16
-                    }}>Sororities: 31%</p>
+                    }}>Sororities: {props.soror}%</p>
                 </div>
 
                 <div style = {{

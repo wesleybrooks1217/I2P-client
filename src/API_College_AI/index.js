@@ -2,8 +2,12 @@ import axios from "axios";
 
 export let API_College_AI;
 
-export function init_API_College_AI(id) {
-    const apiOptions = {
+export function init_API_College_AI(id, type) {
+    let apiOptions;
+    if (type === "info") {
+
+    
+    apiOptions = {
         baseURL: "https://api.collegeai.com/v1/api/college/info",
         params: {
             api_key: '0c08b0e6a7a1cf9e539e330ca7',
@@ -53,6 +57,18 @@ export function init_API_College_AI(id) {
         timeout: 30000,
         mode: 'cors'
     };
+
+} else if (type === "list") {
+    apiOptions = {
+        baseURL: "https://api.collegeai.com/v1/api/college-list",
+        params: {
+            api_key: '0c08b0e6a7a1cf9e539e330ca7',
+            info_ids: ['short_description']
+        },
+        timeout: 30000,
+        mode: 'cors'
+    };
+}
 
     API_College_AI = axios.create(apiOptions);
 };

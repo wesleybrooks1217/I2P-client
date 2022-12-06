@@ -10,6 +10,7 @@ import Cost from "./Components/Cost";
 import CampusLife from "./Components/CampusLife";
 import Rankings from "./Components/Rankings";
 import CourseCardList from "../CardList/CourseCardList";
+import {useParams} from 'react-router-dom';
 
 //https://ui.mantine.dev/category/stats
 function CollegeCard() {
@@ -24,17 +25,36 @@ function CollegeCard() {
   const [aid, setAid] = useState({});
   const [price, setPrice]= useState({});
   const [classes, setClasses] = useState({});
+  const [name, setName] = useState("");
+  const [acceptance_rate, setAcceptanceRate] = useState(0);
+  const [num_apps, setNumApps] = useState(0);
+  const [admin, setAdmin] = useState("");
+  const [app, setApp] = useState("");
+  const [six_year, setSixYear] = useState(0);
+  const [ten_year, setTenYear] = useState(0);
+  const [in_state, setInState] = useState(0);
+  const [out_state, setOutState] = useState(0);
+  const [fin_aid, setFinAid] = useState(0);
+  const [cost, setCost] = useState(0);
+  const [frat, setFrat] = useState(0);
+  const [soror, setSor] = useState(0);
+  const [num_women, setNumWomen] = useState(0);
+  const [num_men, setNumMen] = useState(0);
+  const params = useParams();
+
 
   useEffect(() => {
     
     const fetchCollegeData = async () => {
-      init_API_College_AI(139755);
+      init_API_College_AI(params.id, "info");
       await API_College_AI.get()
       .then((response) => {
         setData(response.data.colleges[0]);
       });
 
     };
+
+    
 
     
 
@@ -52,113 +72,239 @@ function CollegeCard() {
   useEffect(() => {
 
     if(Object.keys(data).length != 0) {
-
-      const ranks_temp = [
-        {
+      const ranks_temp = [];
+      try {
+        
+        ranks_temp.push(
+          {
           "name": data.rankingsBestCollegeAcademics.name,
           "value": data.rankingsBestCollegeAcademics.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegeAthletics.name,
-          "value": data.rankingsBestCollegeAthletics.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegeCampuses.name,
-          "value": data.rankingsBestCollegeCampuses.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegeFood.name,
-          "value": data.rankingsBestCollegeFood.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegeProfessors.name,
-          "value": data.rankingsBestCollegeProfessors.value
-        },
-    
-        {
-          "name": data.rankingsBestColleges.name,
-          "value": data.rankingsBestColleges.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegesForArt.name,
-          "value": data.rankingsBestCollegesForArt.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegesForBiology.name,
-          "value": data.rankingsBestCollegesForBiology.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegesForBusiness.name,
-          "value": data.rankingsBestCollegesForBusiness.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegesForChemistry.name,
-          "value": data.rankingsBestCollegesForChemistry.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegesForCommunications.name,
-          "value": data.rankingsBestCollegesForCommunications.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegesForComputerScience.name,
-          "value": data.rankingsBestCollegesForComputerScience.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegesForDesign.name,
-          "value": data.rankingsBestCollegesForDesign.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegesForEconomics.name,
-          "value": data.rankingsBestCollegesForEconomics.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegesForEngineering.name,
-          "value": data.rankingsBestCollegesForEngineering.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegesForNursing.name,
-          "value": data.rankingsBestCollegesForNursing.value
-        },
-    
-        {
-          "name": data.rankingsBestCollegesForPhysics.name,
-          "value": data.rankingsBestCollegesForPhysics.value
-        },
-    
-        {
-          "name": data.rankingsBestGreekLifeColleges.name,
-          "value": data.rankingsBestGreekLifeColleges.value
-        },
-    
-        {
-          "name": data.rankingsBestStudentLife.name,
-          "value": data.rankingsBestStudentLife.value
-        },
-    
-        {
-          "name": data.rankingsBestValueColleges.name,
-          "value": data.rankingsBestValueColleges.value
-        },
-    
-        {
-          "name": data.rankingsHardestToGetIn.name,
-          "value": data.rankingsHardestToGetIn.value
-        }
-      ];
+          }
+        );
+      } catch(error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegeAthletics.name,
+            "value": data.rankingsBestCollegeAthletics.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegeCampuses.name,
+            "value": data.rankingsBestCollegeCampuses.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegeFood.name,
+            "value": data.rankingsBestCollegeFood.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegeProfessors.name,
+            "value": data.rankingsBestCollegeProfessors.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestColleges.name,
+            "value": data.rankingsBestColleges.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegesForArt.name,
+            "value": data.rankingsBestCollegesForArt.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegesForBiology.name,
+            "value": data.rankingsBestCollegesForBiology.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegesForBusiness.name,
+            "value": data.rankingsBestCollegesForBusiness.value
+          }
+        );
+      } catch (error) {
+        var x = 1; 
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegesForChemistry.name,
+            "value": data.rankingsBestCollegesForChemistry.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegesForCommunications.name,
+            "value": data.rankingsBestCollegesForCommunications.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegesForComputerScience.name,
+            "value": data.rankingsBestCollegesForComputerScience.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegesForDesign.name,
+            "value": data.rankingsBestCollegesForDesign.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegesForEconomics.name,
+            "value": data.rankingsBestCollegesForEconomics.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegesForEngineering.name,
+            "value": data.rankingsBestCollegesForEngineering.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegesForNursing.name,
+            "value": data.rankingsBestCollegesForNursing.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestCollegesForPhysics.name,
+            "value": data.rankingsBestCollegesForPhysics.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestGreekLifeColleges.name,
+            "value": data.rankingsBestGreekLifeColleges.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestStudentLife.name,
+            "value": data.rankingsBestStudentLife.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsBestValueColleges.name,
+            "value": data.rankingsBestValueColleges.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
+      try {
+        ranks_temp.push(
+          {
+            "name": data.rankingsHardestToGetIn.name,
+            "value": data.rankingsHardestToGetIn.value
+          }
+        );
+      } catch (error) {
+        var x = 1;
+      }
+
 
       setRanks(ranks_temp);
 
@@ -216,6 +362,24 @@ function CollegeCard() {
     };
 
     setClasses(classes_temp);
+
+    setName(data.name);
+
+    setAcceptanceRate(data.acceptanceRate);
+    setNumApps(data.totalApplicants);
+    setAdmin(data.admissionsWebsite);
+    setApp(data.applicationWebsite);
+    setSixYear(data.typical6YearEarnings);
+    setTenYear(data.typical10YearEarnings);
+    setInState(data.inStateTuition);
+    setOutState(data.outOfStateTuition);
+    setFinAid(data.averageFinancialAid);
+    setCost(data.avgCostOfAttendance);
+    setFrat(data.fraternitiesPercentParticipation);
+    setSor(data.sororitiesPercentParticipation);
+    setNumWomen(data.enrolledWomen);
+    setNumMen(data.enrolledMen);
+
       
   }
   }, [data]);
@@ -237,9 +401,7 @@ function CollegeCard() {
     setLightMode((prevState) => !prevState)
   };
 
-  function test() {
-    console.log(data);
-  }
+  
 
 
   return (
@@ -248,8 +410,8 @@ function CollegeCard() {
     <Nav /> 
 
       <div>
-          <h1>{data.name}</h1>
-          <Button onClick={test}>Test</Button>
+          <h1>{name}</h1>
+          
       </div>
 
       
@@ -262,24 +424,24 @@ function CollegeCard() {
 
       <div style = {{marginTop: 150}}>
         <Admission 
-        acceptance_rate = {data.acceptanceRate}
-        num_apps = {data.totalApplicants}
+        acceptance_rate = {acceptance_rate}
+        num_apps = {num_apps}
         ACT = {ACT}
         SAT = {SAT}
-        admin = {data.admissionsWebsite}
-        app = {data.applicationWebsite}/>
+        admin = {admin}
+        app = {app}/>
       </div>
 
       <div style = {{
         marginTop: 150
       }}>
         <Cost 
-        six_year = {data.typical6YearEarnings}
-        ten_year = {data.typical10YearEarnings}
-        in_state = {data.inStateTuition}
-        out_state = {data.outOfStateTuition}
-        fin_aid = {data.averageFinancialAid}
-        cost = {data.avgCostOfAttendance}
+        six_year = {six_year}
+        ten_year = {ten_year}
+        in_state = {in_state}
+        out_state = {out_state}
+        fin_aid = {fin_aid}
+        cost = {cost}
         aid = {aid}
         price = {price}/>
       </div>
@@ -288,10 +450,10 @@ function CollegeCard() {
         marginTop: 150
       }}>
         <CampusLife 
-        frat = {data.fraternitiesPercentParticipation}
-        soror = {data.sororitiesPercentParticipation}
-        num_women = {data.enrolledWomen}
-        num_men = {data.enrolledMen} 
+        frat = {frat}
+        soror = {soror}
+        num_women = {num_women}
+        num_men = {num_men} 
         class = {classes}/>
       </div>
 
@@ -314,9 +476,12 @@ function CollegeCard() {
           marginBottom: 50
         }}>Similar Colleges</p>
         <CourseCardList 
-        type = "college"
-        names = {similarColleges}
-        descriptions = {similarDescriptions}/>
+        data = {{
+          "type": "college",
+          "names": similarColleges,
+          "descriptions": similarDescriptions,
+          "ids": [0,0,0]
+        }}/>
       </div>
        
 

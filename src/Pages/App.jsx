@@ -31,7 +31,7 @@ import WeightTraining from "../Components/MyCourses/CourseCards/WeightTraining";
 import Physics from "../Components/MyCourses/CourseCards/Physics";
 import AlgebraII from "../Components/MyCourses/CourseCards/AlgebraII";
 import ForensicScience from "../Components/MyCourses/CourseCards/ForensicScience";
-
+import ExploreColleges from "./ExploreColleges/ExploreColleges";
 /*
 Testing push request
 */
@@ -46,7 +46,7 @@ function App() {
             <Route path="/MyCourses" element={<MyCourses />} />
             <Route path="/SchoolSystems" element={<SchoolSystems />} />
             <Route path="/Products" element={<Products />} />
-            <Route path="/CollegeCard" element={<CollegeCard />} />
+            <Route path="/Colleges/:id" element={<CollegeCard />} />
             <Route path="/Students" element={<Students />} />
             <Route path="/Privacy" element={<Privacy />} />
             <Route path="/MyCareer" element={<MyCareer />} />
@@ -72,6 +72,7 @@ function App() {
             <Route path="/test" element={<Test />} />
             <Route path = "/login" element={<Login />} />
             <Route path = "/Careers" element = {<Careers />} />
+            <Route path = "/ExploreColleges" element = {<ExploreColleges />} />
           </Routes>
         </React.Fragment>
       </Provider>
