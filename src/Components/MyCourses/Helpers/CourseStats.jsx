@@ -38,10 +38,10 @@ import {
 
     return (
       <Paper radius="md" withBorder className={classes.card} mt={ICON_SIZE / 3}>
-        <ThemeIcon className={classes.icon} size={ICON_SIZE} radius={ICON_SIZE} mt={3}>
-          {/* <Swimming></Swimming> */}
-          {/* {props.pic} */}
-        </ThemeIcon>
+        {/* <ThemeIcon className={classes.icon} size={ICON_SIZE} radius={ICON_SIZE} mt={3}>
+          <Swimming></Swimming>
+          {props.pic}
+        </ThemeIcon> */}
   
         <Text align="center" weight={700} className={classes.title} mt={5}>
           {props.course}

@@ -23,6 +23,7 @@
     "react-router": "^6.4.4",
     "react-router-dom": "^6.4.4",
     "react-scripts": "5.0.1",
+    "recharts": "^2.1.16",
     "redux-devtools-extension": "^2.13.9",
     "redux-logger": "^3.0.6",
     "tabler-icons-react": "^1.55.0",

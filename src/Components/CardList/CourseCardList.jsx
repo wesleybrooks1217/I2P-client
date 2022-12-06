@@ -8,37 +8,43 @@ function CourseCardList(props) {
     const[image, setImage] = useState("Stem.jpeg");
 
     useEffect(() => {
-        if (props.type === "course") {
+        if (props.data.type === "course") {
             setImage("Stem.jpeg");
-        } else if (props.type === "college") {
-            setImage("CollegePic.jpeg");
-        } else if (props.type === "career") {
+        } else if (props.data.type === "college") {
+            setImage("https://research.collegeboard.org/media/2022-02/iStock_000021255451_Large-780x585.jpg");
+        } else if (props.data.type === "career") {
             setImage("Workers.jpeg")
         }
-    }, [props.type]);
+    }, [props.data.type]);
 
     return (
         <div className="course_list_container">
 
             <div className="card_container">
                 <CourseCard 
-                name = {props.names[0]}
-                description = {props.descriptions[0]}
-                img = {image}/>
+                name = {props.data.names[0]}
+                description = {props.data.descriptions[0]}
+                img = {image}
+                type = {props.data.type}
+                id = {props.data.ids[0]}/>
             </div>
 
             <div className="card_container">
                 <CourseCard 
-                name = {props.names[1]}
-                description = {props.descriptions[1]}
-                img = {image}/>
+                name = {props.data.names[1]}
+                description = {props.data.descriptions[1]}
+                img = {image}
+                type = {props.data.type}
+                id = {props.data.ids[1]}/>
             </div>
 
             <div className="card_container">
                 <CourseCard 
-                name = {props.names[2]}
-                description = {props.descriptions[2]}
-                img = {image}/>
+                name = {props.data.names[2]}
+                description = {props.data.descriptions[2]}
+                img = {image}
+                type = {props.data.type}
+                id = {props.data.ids[2]}/>
             </div>
             
         </div>

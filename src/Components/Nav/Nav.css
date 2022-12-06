@@ -10,7 +10,7 @@
     flex-direction: column;
     height: 18em;
     border: 1px solid black;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 20px 20px 20px 20px; 
    
 }
 
@@ -19,11 +19,12 @@
     justify-content: center;
     align-items: center;
     width: 2.6em;
-    height: 8em;
+    height: 8em; 
     }
 
 
 .top-nav {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;

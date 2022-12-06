@@ -10,7 +10,7 @@ import { Carousel } from 'react-responsive-carousel';
    
 function SectionTwo() {
         return (
-        <section style={{ width: 'inherit', height: '960px', marginBottom: '20px'}}  id='section-2' className='section2'>
+        <section id='section-2' >
                 
         <h3 style={{fontSize: '25px', marginLeft: '50px', marginTop: '40px'}}> Add academic cards to your collection. </h3>
         <p style={{ fontSize: '14px',marginLeft: '50px', marginTop: '10px', marginBottom: '30px', color: 'gray'}}> Access any academic resource in an instant with our next-gen navigation. </p>

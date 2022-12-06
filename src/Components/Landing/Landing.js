@@ -88,6 +88,12 @@ export default function Landing() {
          </Carousel>
          </div>
          {/*
+
+           
+              <div style={{position: 'absolute', width: 700, borderRadius: '30% 0% 0% 50%', height: 300, top: -100,  right: -2, backgroundColor: '#1e6091'}}></div>
+              <div style={{position:'relative',width: 500, zIndex: -1, borderRadius: '50% 0 0 0', top: 215, right: 100, height: 400, rotate: '90deg', backgroundColor: '#b5e48c'}}></div>
+              <div style={{position:'relative',width: 450, zIndex: -1, top: 145, right: 100, height: 330, backgroundColor: '#b5e48c'}}></div>
+         
             <Paper shadow='lg' sx={{borderRadius: 10,position: 'absolute', width: '400px', height: '230px', top: '19%', right: '5%'}}> 
             
             <Card sx={{margin: 0, padding: 0, width: '400px', height: '480px'}} radius="md" >

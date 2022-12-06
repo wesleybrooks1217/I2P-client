@@ -7,7 +7,12 @@ import Products from '../../Products/Products';
 import About from '../../About/About';
 
 function TopNav() {
+
+    const auth = useSelector(state => state.user.isAuthenticated);
+    
+
     return (
+      <div>
         <div className='top-nav'>
     <li id='link-products'>
       <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}}to="/products">Products</Link>
