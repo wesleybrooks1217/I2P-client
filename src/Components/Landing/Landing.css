@@ -21,7 +21,10 @@ html {
     margin: 10px;
 }
 
-
+#section1 {
+  background-size: cover;
+  background-image: url('https://media4.giphy.com/media/SpYbzArPT1ykRvvcXX/giphy.gif?cid=ecf05e47q72aht3zlqwg325e7b5ag8sxi4rdakhrpdz263y3&rid=giphy.gif&ct=g');
+}
 
 #section-2 {
   position: relative;
@@ -154,6 +157,7 @@ html {
   font-weight: 500;
   bottom: 20%;
   left: 10%;
+  color: white;
 }
 
 #title-text-2 {
@@ -162,6 +166,7 @@ html {
   font-weight: 800;
   bottom: 21%;
   left: 10%;
+  color: white;
 
 }
 
@@ -172,6 +177,7 @@ html {
   font-weight: 500;
   bottom: 20%;
   left: 10%;
+  color: white;
 
 }
 
@@ -180,7 +186,7 @@ html {
   position: relative;
   border: none;
   background-color: #99d98c;
-  bottom: 15%;
+  margin-right: 10px;
   border-radius: 10px;
   cursor: pointer;
   padding: 25px 40px;
@@ -193,7 +199,7 @@ html {
   position: relative;
   border: none;
   background-color: #1e6091;
-  bottom: 15%;
+ 
   left: 11%;
   border-radius: 10px;
   cursor: pointer;
@@ -211,6 +217,7 @@ html {
 
 #desc-text-small {
   display: none;
+  color: white;
 }
 
 #course-critique-container {
@@ -226,6 +233,14 @@ html {
   height: 180px;
 }
 
+#landing-btn-container {
+  width: 550px;
+  display: flex;
+  left: 7%;
+  bottom: 16%;
+  position: relative;
+
+}
 #course-similar {
   position: relative;
   bottom: 340px;
@@ -236,6 +251,8 @@ html {
 
 }
 
+
+
 @media only screen and (max-width: 1700px) {
   #course-similar {
     display: none;
@@ -245,6 +262,12 @@ html {
 @media only screen and (max-width: 1450px) {
   #course-attributes {
     display: none;
+  }
+  #landing-btn-container {
+    top: 50%;
+    margin: 0 auto;
+    left: -5%;
+    
   }
   #survey-q-one {
     position: absolute;
@@ -257,18 +280,17 @@ html {
     margin: 20px 0 0 30px; 
     width: 200px;
     height: 80px;
+
   }
   #btn-1 {
     margin: 0 auto;
     position: relative;
-    top:54%;
-    left: 24%;
+    top: 50%;
   }
   #btn-2 {
     margin: 0 auto;
     position: relative;
-    top:54%;
-    left: 26%;
+    top: 40%;
   }
   
 }
@@ -296,9 +318,11 @@ html {
   }
   #title-text-1small {
     font-weight: 400;
+    color: white;
   }
   #title-text-2small {
     font-weight: 800;
+    color: white;
   }
   #title-text-1small, #title-text-2small {
     position: relative;

@@ -147,8 +147,10 @@ export default function Landing() {
           Complement the college process with game changing component tools for
           counselors and students alike.{" "}
         </p>
+        <div id='landing-btn-container'>
         <button id="btn-1"> Start now. </button>
         <button id="btn-2"> Learn more. </button>
+        </div>
 
         <h4 id="title-text-1small">Access any academic resource</h4>
         <h4 id="title-text-2small">automatically and affordably. </h4>

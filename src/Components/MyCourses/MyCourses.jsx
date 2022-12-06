@@ -290,7 +290,7 @@ export default function MyCourses() {
   const { classes } = useStyles();
 
   return (
-    <div>
+    <div className='mycourses-container'>
       {/* <section
         id="section1"
         style={{ position: "relative", width: "100%", height: "100vh" }}
@@ -337,7 +337,7 @@ export default function MyCourses() {
       {/* <ScheduleButton /> */}
       {/* <ScheduleButton clickHandler={() => setShowSidebar(!showSidebar)} />
       {showSidebar && <ClassNavBar />} */}
-      <Container>
+      <Container >
         <Title
           sx={{ textAlign: "center" }}
           mt={150}
