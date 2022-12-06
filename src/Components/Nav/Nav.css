@@ -83,6 +83,18 @@
 
 }
 
+#link-signin {
+    position: absolute;
+    font-size: 18px;
+    left: 90%;
+}
+
+
+#link-demo {
+    position: absolute;
+    font-size: 18px;
+    right: 90%;
+}
 #logo-home {
     width: 84px;
     border: 1px solid white;
@@ -96,6 +108,12 @@
 @media only screen and (max-width: 1440px) {
     #logo-home {
     width: 64px;
+    }
+    #link-demo {
+        display: none;
+    }
+    #link-signin {
+        display: none;
     }
     .top-nav > li {
         width: 14vw;

@@ -15,6 +15,9 @@ function TopNav() {
     return (
    
         <div className='top-nav'>
+          <li id='link-demo'>
+          <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}}to="/Demo">Demo</Link>
+          </li>
     <li id='link-products'>
       <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}}to="/Products">Products</Link>
     </li>
@@ -31,6 +34,9 @@ function TopNav() {
     </li>
     <li id='link-about'>
       <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}} to="/About">About Us</Link>
+    </li>
+    <li id='link-signin'>
+      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 900}} to="/SignIn">Sign In</Link>
     </li>
   </div>
        

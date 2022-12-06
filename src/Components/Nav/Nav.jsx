@@ -21,7 +21,7 @@ function Nav() {
     
     <div style={{position: 'absolute', top: 150, left: '1%'}} ref={el => sideNav = el}>
     
-        <SideBar switchStates={switchModes} lightMode={lightMode} />
+     
     </div>
 
     <div style={{position: 'absolute', width: '100%'}} ref={el => topNav = el}>

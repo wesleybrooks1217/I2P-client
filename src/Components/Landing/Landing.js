@@ -108,9 +108,7 @@ export default function Landing() {
         id="section1"
         style={{ position: "relative", width: "100%", height: "100vh" }}
       >
-        <div style={{ position: "absolute", top: "30%", left: "1%" }}>
-          <SideBar />
-        </div>
+      
         <div style={{ position: "absolute", width: "100%" }}>
           <TopNav />
         </div>

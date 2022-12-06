@@ -19,6 +19,7 @@ import Products from "../Components/Products/Products";
 import Students from "../Components/Students/Students";
 import ExploreColleges from "./ExploreColleges/ExploreColleges";
 import Courses from "./Courses/Courses";
+import Demo from "../Components/Demo/Demo";
 /*
 Testing push request
 */
@@ -40,7 +41,7 @@ function App() {
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/MyCareer" element={<MyCareer />} />
             <Route path="/MyColleges" element={<MyColleges />} />
-
+            <Route path='/Demo' element={<Demo /> } />
 
   
       

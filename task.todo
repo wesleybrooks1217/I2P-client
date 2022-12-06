@@ -14,14 +14,14 @@ dec 4 checklist
 
 dec 5 checklist 
     p0 (misc)
-        -landing v3.1 edits for tomorrow 
+        -landing v3.1 edits for tomorrow @done 2:03am
         -new nav bar with routes working @done 7:50pm
     p1 (page generation p2)
         -complete colored background all @done 1:44am
-            -course college & career not
-        -course college and course check
-        -develop dynamic site: dashboard
-    p2 (site sync)
+            -course college & career not @done 4:01am
+        -course college and course check @done 3:27am
+        -develop dynamic site: dashboard 
+    p2 (site sync) *** moved to tomorrow
         -connect all buttons on site pgs
         -add animations on event handles
         -ensure sign up and sign in work
