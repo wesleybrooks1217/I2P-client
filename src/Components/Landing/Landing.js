@@ -6,6 +6,9 @@ import TopNav from '../Nav/components/TopNav';
 import landingImage from './titleImage.png'
 import { gsap } from "gsap"
 import {TweenMax, Power3, TimelineLite} from 'gsap'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader  
+import { Carousel } from 'react-responsive-carousel';  
+   
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import SectionThree from './sections/SectionThree'
 import './Landing.css';
@@ -17,8 +20,13 @@ import SectionTwo from './sections/SectionTwo'
 import SectionFour from './sections/SectionFour'
 import SectionFive from './sections/SectionFive'
 import Footer from './Footer'
+import Affordable from './components/corefour/Affordable';
+import Library from './components/corefour/Library';
+import Personalized from './components/corefour/Personalized';
+import Equity from './components/corefour/Equity';
 
 gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin()
 export default function Landing() {
     const [lightMode, setLightMode] = useState([true])
     const cardContainer = useRef(null);
@@ -33,14 +41,6 @@ export default function Landing() {
     let tl = new TimelineLite()
   
     const { scrollYProgress } = useScroll();
-    useEffect(() => {
-      TweenMax.to(app, 3.0, {css: {visibility: 'visible'}})
-      tl.from(sideNav, 2.0, {opacity: 0, y: 200, ease: Power3.easeOut})
-        .from(topNav, 2.0, {opacity: 0, y: 200, ease: Power3.easeOut}, "<")
-      
-      tl.from(mainPage, 1.2, {opacity: 0, y: 200, ease: Power3.easeOut}, "<2")
-        .from(iLabel, 1.2, {opacity: 0, y: 200, ease: Power3.easeOut}, "<")
-    }, [tl])
     
     let block1 = document.getElementById('block-1');
     let block2 = document.getElementById('block-2');
@@ -79,10 +79,15 @@ export default function Landing() {
         <div className='landing-container'>
 
             <section ref={el => three = el}id='section1' style={{position: 'relative', width: '100%', height: '100vh'}}>
-              <div style={{position: 'absolute', width: 700, borderRadius: '30% 0% 0% 50%', height: 300, top: -100,  right: -2, backgroundColor: '#1e6091'}}></div>
-              <div style={{position:'relative',width: 500, zIndex: -1, borderRadius: '50% 0 0 0', top: 215, right: 100, height: 400, rotate: '90deg', backgroundColor: '#b5e48c'}}></div>
-              <div style={{position:'relative',width: 450, zIndex: -1, top: 145, right: 100, height: 330, backgroundColor: '#b5e48c'}}></div>
-         
+           <div id='carousel-container-landing' style={{position: 'relative', margin: '0 auto 0 auto', left: '70%', top: '20%'}}>
+            <Carousel width='24vw' showThumbs='False' showIndicators='False' axis='vertical' autoPlay='True' dynamicHeight='True' infiniteLoop='True' emulateTouch='True'>
+         <Affordable />
+         <Library />
+         <Personalized />
+      <Equity />
+         </Carousel>
+         </div>
+         {/*
             <Paper shadow='lg' sx={{borderRadius: 10,position: 'absolute', width: '400px', height: '230px', top: '19%', right: '5%'}}> 
             
             <Card sx={{margin: 0, padding: 0, width: '400px', height: '480px'}} radius="md" >
@@ -127,12 +132,17 @@ export default function Landing() {
         </Card.Section>
         </Card>
             </Paper>
-              <img src={landingImage} style={{position: 'absolute', left: '58%', top: '65%', width: 220}} />
-              <h4 style={{fontSize: '28px',  fontWeight: 400, position: 'absolute', left: '15%', top: '40%'}}>Access any academic resource</h4>
-              <h4 style={{fontSize: '28px',  position: 'absolute', left: '15.8%', top: '44.5%', fontFamily: 800}}>automatically and affordably. </h4> 
-              <button style={{position: 'absolute', left: '16.8%', top: '51.3%', fontFamily: 'inherit', border: 'none', padding: '15px 45px', borderRadius: '10px 10px 10px 10px', cursor: 'pointer', backgroundColor: '#99d98c'}}> Start now. </button>
-              <button style={{position: 'absolute', left: '28.8%', top: '51.3%', fontFamily: 'inherit', border: 'none', padding: '15px 45px', color: '#FFFFFF', borderRadius: '10px 10px 10px 10px', cursor: 'pointer', backgroundColor: '#1e6091'}}> Learn more. </button>
-
+    */}
+       
+              <h4 id='title-text-1'>Access any academic resource</h4>
+              <h4 id='title-text-2'>automatically and affordably. </h4>
+              <p id='desc-text-1'> Complement the college process with game changing component tools for counselors and students alike. </p>  
+              <button id='btn-1'> Start now. </button>
+              <button id='btn-2'> Learn more. </button>
+          
+              <h4 id='title-text-1small'>Access any academic resource</h4>
+              <h4 id='title-text-2small'>automatically and affordably. </h4>
+              <p id='desc-text-small'> It's all one click away. </p>
           </section>
         
         

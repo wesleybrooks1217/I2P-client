@@ -16,7 +16,7 @@ function SectionFour() {
         
             <h4 style={{marginTop: '20px', marginLeft: '10px'}}> Complete quick surveys </h4>
             </div>
-            <Paper p='md' shadow='md' sx={{position: 'absolute', margin: '20px 0 0 60px', width: '220px', height: '80px'}}>
+            <Paper p='md' shadow='md' sx={{position: 'absolute', margin: '20px 0 0 30px', width: '200px', height: '80px'}}>
               <h4 style={{marginBottom: 6, fontSize: '11px'}}> How long does your homework take to complete? </h4>
               <div style={{display: 'flex', justifyContent:'space-between'}}>
                 <div style={{marginRight: '2px', width: '50px', height: '20px', border: '1px solid black', borderRadius: '10%'}}> <p>  1 hour </p> </div>
@@ -30,7 +30,7 @@ function SectionFour() {
              
     
               </Paper>
-              <Paper p='md' shadow='md' sx={{position: 'absolute', margin: '80px 0 0 100px', width: '220px', height: '80px'}}>
+              <Paper p='md' shadow='md' sx={{position: 'absolute', margin: '80px 0 0 60px', width: '200px', height: '80px'}}>
               <h4 style={{marginBottom: 6, fontSize: '11px'}}> What subject excites you the most? </h4>
               <div style={{display: 'flex', justifyContent:'space-between'}}>
                 <div style={{marginRight: '2px', width: '50px', height: '20px', border: '1px solid black', borderRadius: '10%'}}> <p>  Art </p> </div>

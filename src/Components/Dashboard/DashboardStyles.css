@@ -11,17 +11,17 @@
 
 #dash-top-title {
     position: relative;
-    top: 20%;
+    top: 15%;
     font-size: 32px;
     left: 10%;
 }
 
 #dash-main-container {
     position: relative;
-    top: 25%;
+    top: 20%;
     left: 10%;
     width: 80vw;
-    height: 60vh;
+    height: 70vh;
     border: 1px solid black;
     padding: 20px;
    
