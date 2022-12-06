@@ -43,7 +43,7 @@ export const CourseStatsCombined = (props) => {
   return (
     <div>
       <ScrollArea
-        style={{ height: 500 }}
+        style={{ height: 800 }}
         offsetScrollbars
         scrollbarSize={2}
         classNames={{
