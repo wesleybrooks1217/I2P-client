@@ -21,6 +21,10 @@ export const careersSlice = createSlice({
 
         CHANGE_MAIN_CAREER(state, action) {
             state.mainCareer = action.payload;
+        },
+
+        ADD_CAREER(state, action) {
+            state.careerList.push(action.payload);
         }
     }
 });

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-    courseList: []
+    courseList: [2,3,4,5,6,7,8]
 };
 
 
@@ -11,7 +11,7 @@ export const coursesSlice = createSlice({
     initialState,
     reducers: {
         ADD_COURSE(state,action) {
-            state.courseList.append(action.paylod);
+            state.courseList.push(action.paylod);
         }
     }
 });

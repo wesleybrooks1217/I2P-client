@@ -92,7 +92,9 @@ export function DescriptionPop(props) {
 
         <div
         className={classes.picker_pop}>
-            <SidePicker/>
+            <SidePicker
+            id = {props.id}
+            type = {props.type}/>
         </div>
         
 

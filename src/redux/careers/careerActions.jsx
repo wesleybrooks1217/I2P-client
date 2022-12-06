@@ -50,4 +50,8 @@ export const changeMainCareer = (careerID) => dispatch => {
     dispatch(careersActions.CHANGE_MAIN_CAREER(careerID));
 };
 
+export const addCareer = (careerID) => dispatch => {
+    dispatch(careersActions.ADD_CAREER(careerID));
+}
+
 

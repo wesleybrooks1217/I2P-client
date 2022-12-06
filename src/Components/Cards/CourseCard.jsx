@@ -4,17 +4,36 @@ import {Navigate} from 'react-router';
 
 function CourseCard(props) {
 
-    const [leave, setLeave] = useState(false);
+    const [leaveCollege, setLeaveCollege] = useState(false);
+    const [leaveCourse, setLeaveCourse] = useState(false);
+    const [leaveCareer, setLeaveCareer] = useState(false);
 
     const leavePage = () => {
-        setLeave(true);
+        if (props.type === "college"){
+            setLeaveCollege(true);
+        } else if (props.type === "course"){
+            setLeaveCourse(true);
+        } else if (props.type === "career") {  
+            setLeaveCareer(true);
+        }
     }
     
     return (
         
             <div>
-                {leave && 
+                {leaveCollege && 
                     <Navigate to={`/Colleges/${props.id}`} />
+                }
+
+                {leaveCourse &&
+                    <Navigate to = {`/Courses/${props.id}`} />
+
+                }
+
+                {leaveCareer &&
+
+                    <Navigate to = {`/Careers/${props.id}/`} />
+
                 }
             
                 <Card shadow="sm" p="lg" radius="md" withBorder>

@@ -13,7 +13,7 @@ function CourseCardList(props) {
         } else if (props.data.type === "college") {
             setImage("https://research.collegeboard.org/media/2022-02/iStock_000021255451_Large-780x585.jpg");
         } else if (props.data.type === "career") {
-            setImage("Workers.jpeg")
+            setImage("https://www.bls.gov/careeroutlook/2017/images/outdoors_construction.jpg")
         }
     }, [props.data.type]);
 

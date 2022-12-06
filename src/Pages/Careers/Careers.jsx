@@ -222,7 +222,9 @@ function Careers() {
 
                                 <DescriptionPop 
                                 name = {data.name}
-                                description = {data.what_they_do}/>
+                                description = {data.what_they_do}
+                                id = {id.id}
+                                type = {"career"}/>
                                 
 
                             </div>

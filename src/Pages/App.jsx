@@ -20,6 +20,8 @@ import Students from "../Components/Students/Students";
 import ExploreColleges from "./ExploreColleges/ExploreColleges";
 import Courses from "./Courses/Courses";
 import Demo from "../Components/Demo/Demo";
+import ExploreCourses from "./ExploreCourses/ExploreCourses";
+import ExploreCareers from "./ExploreCareers/ExploreCareers";
 /*
 Testing push request
 */
@@ -46,10 +48,12 @@ function App() {
   
       
             <Route path="/test" element={<Test />} />
-            <Route path = "/login" element={<Login />} />
+            <Route path = "/SignIn" element={<Login />} />
             <Route path = "/Careers/:id" element = {<Careers />} />
             <Route path = "/ExploreColleges" element = {<ExploreColleges />} />
             <Route path = "/Courses/:id" element = {<Courses />} />
+            <Route path = "/ExploreCourses" element = {<ExploreCourses />} />
+            <Route path = "/ExploreCareers" element = {<ExploreCareers />} />
           </Routes>
         </React.Fragment>
       </Provider>

@@ -4,8 +4,34 @@ import { Avatar, Image, Paper } from "@mantine/core";
 
 import TopNav from "../Nav/components/TopNav";
 import { Planet, Trophy, Calculator, User, ArrowRight } from "tabler-icons-react";
+import {init_API_College_AI, API_College_AI} from '../../API_College_AI';
+import { useState } from "react";
+import { useEffect } from "react";
 
 function MyColleges() {
+
+  const [data, setData] = useState({});
+  const [selectedID, setSelectedID] = useState(139755);
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+
+    const getCollegeData = async() => {
+      init_API_College_AI(selectedID, "info");
+      await API_College_AI.get()
+      .then((response) => {
+        setData(response.data.colleges[0]);
+      });
+    };
+
+    getCollegeData();
+  }, [selectedID]);
+
+  useEffect(() => {
+    setName(data.name);
+
+  }, [data])
+
   return (
     <div id="mycolleges-container">
       <div style={{ width: "100%", position: "absolute", top: 0 }}>
@@ -49,16 +75,16 @@ function MyColleges() {
                   margin: "15px 10px 5px 10px",
                 }}
               >
-                <Avatar
+               <Avatar
                   style={{ marginLeft: 15, marginRight: 15 }}
                   color="yellow"
                   radius="md"
                 >
-                  <p style={{ fontSize: "20px" }}> V</p>
+                  <p style={{ fontSize: "20px" }}> D</p>
                 </Avatar>
                 <h4 style={{ color: "white", marginLeft: 10, margin: 0 }}>
                   {" "}
-                  Vanderbilt{" "}
+                  Duke{" "}
                 </h4>
               </div>
               <div
@@ -76,11 +102,11 @@ function MyColleges() {
                   color="violet"
                   radius="md"
                 >
-                  <p style={{ fontSize: "20px" }}> F</p>
+                  <p style={{ fontSize: "20px" }}> NW</p>
                 </Avatar>
                 <h4 style={{ marginLeft: 10, margin: 0, color: "white" }}>
                   {" "}
-                  Furman{" "}
+                  Northwester{" "}
                 </h4>
               </div>
               <div
@@ -143,9 +169,9 @@ function MyColleges() {
                   color="blue"
                   radius="md"
                 >
-                  <p style={{ fontSize: "20px" }}> BJ</p>
+                  <p style={{ fontSize: "20px" }}> S</p>
                 </Avatar>
-                <h4 style={{ marginLeft: 10, margin: 0 }}> Bob Jones </h4>
+                <h4 style={{ marginLeft: 10, margin: 0 }}> Stanford </h4>
               </div>
               <div
                 style={{
@@ -162,13 +188,13 @@ function MyColleges() {
                   color="orange"
                   radius="md"
                 >
-                  <p style={{ fontSize: "20px" }}> A</p>
+                  <p style={{ fontSize: "20px" }}> V</p>
                 </Avatar>
                 <h4 style={{ marginLeft: 10, margin: 0, color: "white" }}>
                   {" "}
-                  Auburn{" "}
-                </h4>
-              </div>
+              Vanderbilt{" "}
+              </h4>  
+              </div> 
             </div>
           </Paper>
         </div>
