@@ -1,6 +1,6 @@
 
 
-function Resources() {
+function Resources(props) {
 
     return (
         <div>
@@ -16,7 +16,7 @@ function Resources() {
                     <img src = "https://www.teachervision.com/sites/default/files/inline-images/Icebreakers.jpg"
                     width={250}
                     height={250}/>
-                    <p style = {{marginTop: 25, fontSize: 18}}>Kahn Academy</p>
+                    <a href = {props.links[0]} style = {{marginTop: 25, fontSize: 18}}>{props.names[0]}</a>
                 </div>
 
                 <div style = {{
@@ -25,7 +25,7 @@ function Resources() {
                     <img src = "https://olc-wordpress-assets.s3.amazonaws.com/uploads/2018/07/IMPLEMENTING-OPEN-EDUCATIONAL-RESOURCES.jpg" 
                     width={250}
                     height={250}/>
-                    <p style = {{marginTop: 25, fontSize: 18}}>Boezman Science</p>
+                    <a href = {props.links[1]} style = {{marginTop: 25, fontSize: 18}}>{props.names[1]}</a>
                 </div>
 
                 <div style = {{
@@ -35,7 +35,7 @@ function Resources() {
                     width={250}
                     height={250}/>
 
-                    <p style = {{marginTop: 25, fontSize: 18}}>Libre Texts</p>
+                    <a href = {props.links[2]} style = {{marginTop: 25, fontSize: 18}}>{props.names[2]}</a>
                 </div>
             </div>
         </div>

@@ -1,6 +1,4 @@
 import React, { Component, useState, useEffect } from "react";
-import ColorShell from "../ColorShell";
-import Next4Shell from "../Next4Shell";
 import { StatsCard } from "./CollegeList";
 import {
   createStyles,

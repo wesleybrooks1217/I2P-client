@@ -7,6 +7,7 @@ import {
   Badge,
   Paper,
   Button,
+  
 } from "@mantine/core";
 import { Swimming } from "tabler-icons-react";
 
@@ -32,17 +33,8 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface StatsCardProps {
-  title: string;
-  population: string;
-  progress: number;
-  cost: string;
-  color?: string;
-  href: string;
-  pic?: string;
-}
 
-export function StatsCard(props: StatsCardProps) {
+export function StatsCard(props) {
   const { classes } = useStyles();
 
   return (

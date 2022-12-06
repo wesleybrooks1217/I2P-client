@@ -105,7 +105,7 @@ function CourseDescriptionPop(props) {
           <Progress 
           radius={"xl"}
           size={"xl"}
-          value = {50}
+          value = {props.score}
           style = {{
             position: 'relative',
             top: 5
@@ -114,7 +114,7 @@ function CourseDescriptionPop(props) {
             fontSize: 14,
             position: 'relative',
             top: 10
-          }}>Difficulty ranking: 50 out of 100</p>
+          }}>Difficulty ranking: {props.score} out of 100</p>
         </div>
         
 

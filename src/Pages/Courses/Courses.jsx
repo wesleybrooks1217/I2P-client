@@ -4,8 +4,74 @@ import CourseDescriptionPop from "../../Components/MyCourses/Helpers/CourseDescr
 import TypicalUnits from "./Components/TypicalUnits";
 import Resources from "./Components/Resources";
 import CourseCardList from "../../Components/CardList/CourseCardList";
+import {useParams} from 'react-router';
+import { useEffect, useState } from "react";
+import {init_api, API} from '../../API';
 
 function Courses() {
+
+    const params = useParams();
+    const [data, setData] = useState({});
+    const [unitNames, setUnitNames] = useState([]);
+    const [unitDescriptions, setUnitDescriptions] = useState([]);
+    const [resourceName, setResourceName] = useState([]);
+    const [resourceLink, setResourceLink] = useState([]);
+
+    useEffect(() => {
+
+        const getCourseData = async () => {
+            init_api();
+            await API.get(`/api/courses/${params.id}/`)
+            .then((response) => {
+                setData(response.data);
+            });
+        };
+
+        
+
+        getCourseData();
+        
+    }, []);
+
+    useEffect(() => {
+        const getUnitData = async() => {
+            init_api();
+            
+            var tempUnitNames = [];
+            var tempUnitDescriptions = [];
+            for (var i = 0; i < data.units.length; i++) {
+                await API.get(`/api/Unit/${data.units[i]}/`)
+                .then((response) => {
+                    tempUnitNames.push(response.data.name);
+                    tempUnitDescriptions.push(response.data.description);
+                });
+            }
+            setUnitNames(tempUnitNames);
+            setUnitDescriptions(tempUnitDescriptions);
+        };
+
+        const getResourceData = async() => {
+            init_api();
+            var resourceNamesTemp = [];
+            var resourceLinkTemp = [];
+            for (var i = 0; i < data.resources.length; i++) {
+                await API.get(`/api/Resources/${data.resources[i]}/`)
+                .then((response) => {
+                    resourceNamesTemp.push(response.data.name);
+                    resourceLinkTemp.push(response.data.link);
+                });
+            }
+
+            setResourceName(resourceNamesTemp);
+            setResourceLink(resourceLinkTemp);
+        }
+
+        getUnitData();
+        getResourceData();
+    }, [data]);
+
+   
+
 
     return (
         <div>
@@ -17,14 +83,17 @@ function Courses() {
             }}>
                 <h1 style = {{
                     fontSize: 48
-                }}>AP Chemistry</h1>
-
+                }}>{data.name}</h1>
+                
                 <div style = {{
                     position: 'relative',
                     right: 350,
                     marginTop: 100
                 }}>
-                    <CourseDescriptionPop />
+                    <CourseDescriptionPop 
+                    courseTitle = {data.name}
+                    description = {data.description}
+                    score = {data.difficulty}/>
                 </div>
 
                 <div style = {{
@@ -32,7 +101,10 @@ function Courses() {
                     position: 'relative',
                     right: 170
                 }}>
-                    <BasicInfo />
+                    <BasicInfo 
+                    ap = {data.ap}
+                    honors = {data.honors}
+                    duelEnrollment = {data.duelEnrollment}/>
                 </div>
 
                 <div style = {{
@@ -40,7 +112,9 @@ function Courses() {
                     position: 'relative',
                     right: 340
                 }}>
-                    <TypicalUnits />
+                    <TypicalUnits 
+                    unitNames = {unitNames}
+                    unitDescriptions = {unitDescriptions}/>
                 </div>
 
                 <div style = {{
@@ -48,7 +122,9 @@ function Courses() {
                     position: 'relative',
                     right: 340
                 }}>
-                    <Resources />
+                    <Resources 
+                    names = {resourceName}
+                    links = {resourceLink}/>
                 </div>
 
                 <div style = {{

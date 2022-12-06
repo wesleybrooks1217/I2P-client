@@ -1,6 +1,6 @@
 import {CircleCheck, CircleX} from 'tabler-icons-react';
 
-function BasicInfo() {
+function BasicInfo(props) {
 
     return (
         <div style = {{
@@ -24,6 +24,7 @@ function BasicInfo() {
                         fontSize: 18
                     }}>Is this an AP course?</p>
 
+                    {props.ap && 
                     <CircleCheck 
                     size = {60}
                     strokeWidth = {2}
@@ -32,7 +33,20 @@ function BasicInfo() {
                         position: 'relative',
                         left: 35,
                         top: 25
-                    }}/>
+                    }}/>}
+
+                    {!props.ap &&
+                        <CircleX 
+                        size = {60}
+                        strokeWidth = {2}
+                        color = "red"
+                        style = {{
+                            position: "relative",
+                            left: 35,
+                            top: 25
+                        }}/>
+
+                    }
                 </div>
 
                 <div style={{
@@ -42,6 +56,17 @@ function BasicInfo() {
                         fontSize: 18
                     }}>Is this an honors course?</p>
 
+                {props.honors && 
+                    <CircleCheck
+                    size = {60}
+                    strokeWidth = {2}
+                    color = "green"
+                    style = {{
+                        position: 'relative',
+                        left: 60,
+                        top: 25
+                    }}/>}
+                    {!props.honors && 
                     <CircleX 
                     size = {60}
                     strokeWidth = {2}
@@ -50,7 +75,7 @@ function BasicInfo() {
                         position: 'relative',
                         left: 60,
                         top: 25
-                    }}/>
+                    }}/>}
                 </div>
 
                 <div style = {{
@@ -60,6 +85,17 @@ function BasicInfo() {
                         fontSize: 18
                     }}>Is this a duel enrollment course?</p>
 
+                {props.duelEnrollment &&
+                    <CircleCheck
+                    size={60}
+                    strokeWidth = {2}
+                    color = "green"
+                    style = {{
+                        position: 'relative',
+                        left: 80,
+                        top: 25
+                    }}/>}
+                    {!props.duelEnrollment &&
                     <CircleX 
                     size={60}
                     strokeWidth = {2}
@@ -68,7 +104,7 @@ function BasicInfo() {
                         position: 'relative',
                         left: 80,
                         top: 25
-                    }}/>
+                    }}/>}
                 </div>
             </div>
         </div>
