@@ -5,6 +5,7 @@ import ReactDOM from "react-dom/client";
 import { Outlet, Link, Route, Routes, BrowserRouter} from "react-router-dom";
 import Products from '../../Products/Products';
 import About from '../../About/About';
+import {useSelector} from 'react-redux';
 
 function TopNav() {
 
@@ -12,7 +13,7 @@ function TopNav() {
     
 
     return (
-      <div>
+      
         <div className='top-nav'>
     <li id='link-products'>
       <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}}to="/products">Products</Link>
