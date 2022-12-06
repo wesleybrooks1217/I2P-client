@@ -101,9 +101,12 @@ function CareerEducation() {
 
             <div className='career_education_cards'>
                 <CourseCardList 
-                names = {names}
-                descriptions = {descriptions}
-                type = {type}/>
+                data = {{
+                    "names": names,
+                    "descriptions": descriptions,
+                    "type": type,
+                    "ids": [0,0,0]
+                }}/>
             </div>
         </div>
     );

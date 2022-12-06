@@ -51,7 +51,7 @@ export function init_API_College_AI(id, type) {
 'sat_composite_percentile75', 'similar_colleges', 'sororities_percent_participation',
 'student_avg_family_income', 'student_faculty_ratio', 
 'total_applicants', 'total_enrolled', 'typical10_year_earnings',
-'typical6_year_earnings', 'typical_room_and_board', 'typical_misc_expenses',
+'typical6_year_earnings', 'typical_room_and_board', 'typical_misc_expenses', 'short_description'
 ]
         },
         timeout: 30000,

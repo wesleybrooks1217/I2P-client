@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import {login} from '../../redux/users/userActions';
 import store from '../../redux/store';
 import {Navigate} from 'react-router-dom';
+import Nav from "../../Components/Nav/Nav";
 
 function Login({login}) {
 
@@ -29,6 +30,7 @@ function Login({login}) {
     return (
    
                     <div className="root-login">
+                        <Nav />
                         {auth &&
                         <Navigate to = "/MyCareer" />}
                         <h1>

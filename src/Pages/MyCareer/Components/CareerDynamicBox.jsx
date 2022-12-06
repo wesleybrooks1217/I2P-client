@@ -7,11 +7,13 @@ import {
     from 'tabler-icons-react';
 
 import {List} from '@mantine/core';
-import {Progress} from '@mantine/core';
+import {Progress, Spoiler} from '@mantine/core';
 import RefreshCardSection from '../../../Components/CollegeCard';
 import { useEffect, useState } from 'react';
 import { API, init_api } from '../../../API';
 import {useSelector} from 'react-redux';
+import {Pie, PieChart, Tooltip} from 'recharts';
+import {Link} from 'react-router-dom';
 /*
 @returns:
 @Value: root div-> the root div holding the entire component. Styled
@@ -32,11 +34,13 @@ function CareerDynamicBox() {
     //const [res, setRes] = useState(null);
     let res;
     const [name, setName] = useState("");
-    const [bullet_1, setBullet_1] = useState("");
-    const [bullet_2, setBullet_2] = useState("");
-    const [bullet_3, setBullet_3] = useState("");
-    const [bullet_4, setBullet_4] = useState("");
-    const [bullet_5, setBullet_5] = useState("");
+    const [description, setDescription] = useState("");
+    const [annualSalary, setAnnualSalary] = useState(0);
+    const [hourlySalary, setHourlySalary] = useState(0);
+    const [degree, setDegree] = useState("");
+    const [techSkill1, setTechSkill1] = useState("");
+    const [techSkill2, setTechSkill2] = useState("");
+    const [industry, setIndustry] = useState([]);
 
     
     useEffect(() => {
@@ -48,11 +52,27 @@ function CareerDynamicBox() {
                 //setRes(response.data);
                 res = response.data;
                 setName(res.name);
-                setBullet_1(res.bullet_1);
-                setBullet_2(res.bullet_2);
-                setBullet_3(res.bullet_3);
-                setBullet_4(res.bullet_4);
-                setBullet_5(res.bullet_5);
+                setDescription(res.what_they_do);
+                setAnnualSalary(res.annual_median);
+                setHourlySalary(res.hourly_median);
+                setDegree(res.avg_degree);
+                setTechSkill1(res.tech_1);
+                setTechSkill2(res.tech_2);
+                setIndustry([
+                    {
+                        "name": res.industry_1_name,
+                        "value": res.industry_1_percent
+                    },
+                    {
+                        "name": res.industry_2_name,
+                        "value": res.industry_2_percent
+                    },
+                    {
+                        "name": res.industry_3_name,
+                        "value": res.industry_3_percent
+                    }
+                ])
+                
             });
         };
 
@@ -69,12 +89,32 @@ function CareerDynamicBox() {
     }
     
     //const name = res.name;
+
+    const industries = [
+        {
+            "name": "Professional, Science, and Technical",
+            "value": 54
+        },
+        {
+            "name": "Government",
+            "value": 25
+        },
+
+        {
+            "name": "Construction",
+            "value": 12
+        }
+    ]
     
     return (
         <div className='root'> 
             
             <div className="title">
-                <h1 data-testid = "CDB-Title"> {name} </h1>
+                <Link to = {`/Careers/${careerID}`}
+                style = {{
+                    fontSize: 42,
+                    fontWeight: 'bold'
+                }}>{name}</Link>
                     <CloudComputing 
                     size={48}
                     strokeWidth={2}
@@ -93,41 +133,111 @@ function CareerDynamicBox() {
                 <p data-testid = "CBD-InterestScore"> 50% Interest Match! </p>
             </div>
 
-            <div className="mainList">
-                <List 
-                size={"xl"}
-                icon = {
-                    <ShieldCheck 
-                    size={48}
-                    strokeWidth={2}
-                    color={'green'}/>
-                }
-                data-testid = "CDB-List">
-                    <List.Item> {bullet_1} </List.Item>
-                    <List.Item> {bullet_2} </List.Item>
-                    <List.Item> {bullet_3} </List.Item>
-                    <List.Item icon ={
-                        <ShieldX 
-                        size={48}
-                        strokeWidth={2}
-                        color={'red'}/>
-                        
-                    }> {bullet_4} </List.Item>
-                    <List.Item icon = {
-                        <ShieldX 
-                        size = {48}
-                        strokeWidth = {2}
-                        color = {'red'}/>
-                    }> {bullet_5} </List.Item>
-                </List>
+            <div>
+                <p style = {{
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }}>Description</p>
+                <Spoiler
+                maxHeight={24}
+                showLabel={"Show more"}
+                hideLabel={"Show less"}
+                style = {{
+                    marginTop: 10
+                }}>
+                    {description}
+                </Spoiler>
+            </div>
+
+            <div style = {{
+                marginTop: 35,
+                display: "flex",
+                flexDirection: "row"
+            }}>
+
+                <div>
+                    <p style = {{
+                        fontSize: 18,
+                        fontWeight: 'bold'
+                    }}>Average Annual Salary</p>
+                    <p style={{
+                        fontSize: 16,
+                        marginTop:5
+                    }}>{annualSalary}</p>
+                </div>
+
+                <div style = {{
+                    marginLeft: 50
+                }}>
+                    <p style = {{
+                        fontSize: 18,
+                        fontWeight: 'bold'
+                    }}>Average Hourly Salary</p>
+                    <p style = {{
+                        fontSize: 16,
+                        marginTop: 5
+                    }}>{hourlySalary}</p>
+                </div>
+
+                
+
+            </div>
+        
+        <div style = {{
+            display: "flex",
+            flexDirection: "row"
+        }}>
+        <div>
+            <div style = {{
+                marginTop: 35
+            }}>
+                    <p style = {{
+                        fontSize: 18,
+                        fontWeight: 'bold'
+                    }}>Average degree earned</p>
+
+                    <p style = {{
+                        fontSize: 16,
+                        marginTop: 5
+                    }}>{degree}</p>
+                </div>
+
+                <div style = {{
+                    marginTop: 50
+                }}>
+                    <p style = {{
+                        fontSize: 18,
+                        fontWeight: 'bold'
+                    }}>Technology Skills</p>
+                    <ul style = {{
+                        marginTop: 5
+                    }}>
+                        <li>{techSkill1}</li>
+                        <li>{techSkill2}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style = {{
+                marginLeft: 150,
+                marginTop: 35
+            }}>
+                <p style = {{
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }}>Industry Breakdown</p>
+                <PieChart width = {150} height = {150}>
+                    <Tooltip />
+                    <Pie data = {industry} dataKey={"value"} nameKey={"name"} fill={"#8884d8"}/>
+                </PieChart>
+            </div>
             </div>
 
 
             <div className="refreshCollegeCards"> 
 
-                    <h3 data-testid = "CDB-SideHead"> Our Personalized Picks: </h3>
             
-                    <RefreshCardSection />
+                    
 
             </div>
 
