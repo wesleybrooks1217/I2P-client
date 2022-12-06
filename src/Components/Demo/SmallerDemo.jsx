@@ -13,8 +13,7 @@ function SmallerDemo() {
         padding: 0,
         width: "24vw",
         height: "36em",
-        backgroundImage:
-          "url('https://media.istockphoto.com/id/1208738316/photo/abstract-geometric-network-polygon-globe-graphic-background.jpg?b=1&s=170667a&w=0&k=20&c=Ewa2JDeA8E9k9ch3IYWkSYdEkTEhyaMNfNLkClag-j4=')",
+        backgroundColor: 'lightgreen',
         backgroundSize: "cover",
       }}
       withBorder
@@ -73,6 +72,9 @@ function SmallerDemo() {
                     textDecoration: "none",
                     color: "black",
                     fontWeight: 600,
+                    border: '1px solid black',
+                    borderRadius: '10px 10px 10px 10px',
+                    margin: 5
                   }}
                   to="/MyCourses"
                 >
@@ -85,6 +87,9 @@ function SmallerDemo() {
                     textDecoration: "none",
                     color: "black",
                     fontWeight: 600,
+                    border: '1px solid black',
+                    borderRadius: '10px 10px 10px 10px',
+                    margin: 5
                   }}
                   to="/MyColleges"
                 >
@@ -97,6 +102,9 @@ function SmallerDemo() {
                     textDecoration: "none",
                     color: "black",
                     fontWeight: 600,
+                    border: '1px solid black',
+                    borderRadius: '10px 10px 10px 10px',
+                    margin: 5
                   }}
                   to="/MyCareer"
                 >
@@ -113,6 +121,9 @@ function SmallerDemo() {
                     textDecoration: "none",
                     color: "black",
                     fontWeight: 600,
+                    border: '1px solid black',
+                    borderRadius: '10px 10px 10px 10px',
+                    margin: 5
                   }}
                   to="/ExploreCourses"
                 >
@@ -125,6 +136,9 @@ function SmallerDemo() {
                     textDecoration: "none",
                     color: "black",
                     fontWeight: 600,
+                    border: '1px solid black',
+                    borderRadius: '10px 10px 10px 10px',
+                    margin: 5
                   }}
                   to="/ExploreColleges"
                 >
@@ -137,6 +151,9 @@ function SmallerDemo() {
                     textDecoration: "none",
                     color: "black",
                     fontWeight: 600,
+                    border: '1px solid black',
+                    borderRadius: '10px 10px 10px 10px',
+                    margin: 5
                   }}
                   to="/ExploreCareers"
                 >

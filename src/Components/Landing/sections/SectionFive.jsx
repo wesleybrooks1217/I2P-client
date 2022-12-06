@@ -149,7 +149,7 @@ function SectionFive() {
                       </Avatar> 
             <h4 style={{position: 'absolute', marginTop: 30, right: 435}}> John </h4>
             <h4 style={{position: 'absolute', marginTop: 50, right: 435}}> <i>MyMissions</i> </h4>
-        <div id='block-3' style={{margin: '95px auto 0 34.2%', backgroundColor: '#b5e48c', width: '535px', height: '50px'}}> </div>
+        <div id='block-3' style={{margin: '95px auto 0 34.2%', backgroundColor: '#b5e48c', width: '955px', height: '50px'}}> </div>
         <Paper shadow='md' sx={{width: '400px'}}>
             <h4 style={{position: 'absolute', marginTop: 30, left: 525}}> Hometown Hero</h4>
             <Avatar size={24} sx={{position: 'absolute', marginTop: 29, right: 760,width: '10px'}} color=''  radius='md'>
@@ -158,7 +158,7 @@ function SectionFive() {
             <p style={{color: 'gray',position: 'absolute', marginTop: 60, left: 525}}> Add five colleges from your hometown to your liked list.</p>
             <h4 style={{fontSize: '12px', position: 'absolute', marginTop: 80, left: 525}}> 4/5 Collected </h4>
               </Paper>
-        <div id='block-7' style={{ margin: '140px auto 0 34.5%',top: 275, left: 400,  backgroundColor: '#52b69a', width: '43.1%', height: '50px'}}> </div>
+        <div id='block-7' style={{ margin: '140px auto 0 34.5%',top: 275, left: 400,  backgroundColor: '#52b69a', width: '48.4%', height: '50px'}}> </div>
         <Paper shadow='md' sx={{width: '400px'}}>
             <h4 style={{position: 'absolute', marginTop: 30, left: 925}}> Super Studious  </h4>
             <Avatar size={24} sx={{position: 'absolute', marginTop: 28, right: 360,width: '10px'}} color='red'  radius='md'>

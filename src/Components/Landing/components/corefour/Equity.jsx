@@ -7,16 +7,19 @@ function Equity() {
     return (
       
             
-        <Card sx={{margin: '0 8em 0 auto',top: '20%', padding: 0, width: '24vw', height: '36em', backgroundImage: "url('https://images.unsplash.com/photo-1625425325558-d83335f635d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8ODF8MTM5NDczMnx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60')", backgroundSize: 'cover'}} withBorder shadow='lg' radius="md" >   
+        <Card sx={{margin: '0 8em 0 auto',top: '20%', padding: 0, width: '24vw', height: '36em', backgroundSize: 'cover'}} withBorder shadow='lg' radius="md" >   
 
   <div style={{marginTop: '0%', position: 'relative', display: 'flex', flexDirection: 'column',  alignItems: 'center', justifyContent: 'center'}}>
   <Avatar mt={0} color="indigo" style={{width: '100%', height: '14vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             <Users size={64} width={64} />
   </Avatar>
-  <Paper shadow='md' style={{padding: '0 5px', marginTop: 10, width: '100%', height: '8.5vh', backgroundColor: 'white'}}>
+  <Paper shadow='md' style={{padding: '0 5px', marginTop: 40, width: '100%', height: '11.5vh', backgroundColor: 'white'}}>
   <h4 style={{ fontSize: '20px', textAlign: 'center', marginTop: 10, fontWeight: 400}}> Promoting equal oppourtunity for the entire <span style={{fontWeight: 800}} > student population </span>.</h4>
+  <p style={{fontSize: '10px', color: 'gray', textAlign: 'center', marginTop: '5px', marginBottom: '5px'}}> We have a mission to make all students have access to the material, information, and top tips that ensures their success.</p>
   </Paper>
- 
+  <Paper shadow='md' style={{padding: '0 5px', marginTop: 20, width: '100%', height: '11.5vh', backgroundColor: 'white'}}>
+    <Image sx={{borderRadius: '3px'}} height="210px"width="100%" src="https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dW5pdmVyc2l0eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />
+    </Paper> 
   </div>
  
  

@@ -143,7 +143,7 @@ export default function Landing() {
             infiniteLoop="True"
             emulateTouch="True"
           >
-            <SmallerDemo />
+          
             <Affordable />
             <Library />
             <Personalized />
