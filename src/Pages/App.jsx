@@ -32,6 +32,7 @@ import Physics from "../Components/MyCourses/CourseCards/Physics";
 import AlgebraII from "../Components/MyCourses/CourseCards/AlgebraII";
 import ForensicScience from "../Components/MyCourses/CourseCards/ForensicScience";
 import ExploreColleges from "./ExploreColleges/ExploreColleges";
+import Courses from "./Courses/Courses";
 /*
 Testing push request
 */
@@ -73,6 +74,7 @@ function App() {
             <Route path = "/login" element={<Login />} />
             <Route path = "/Careers" element = {<Careers />} />
             <Route path = "/ExploreColleges" element = {<ExploreColleges />} />
+            <Route path = "/Courses/:id" element = {<Courses />} />
           </Routes>
         </React.Fragment>
       </Provider>

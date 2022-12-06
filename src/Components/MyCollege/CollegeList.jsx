@@ -1,4 +1,3 @@
-import React from "react";
 import {
   createStyles,
   ThemeIcon,
@@ -8,6 +7,7 @@ import {
   Badge,
   Paper,
   Button,
+  
 } from "@mantine/core";
 import { Swimming } from "tabler-icons-react";
 
@@ -34,21 +34,26 @@ const useStyles = createStyles((theme) => ({
 }));
 
 
-export default function StatsCard(props) {
+export function StatsCard(props) {
   const { classes } = useStyles();
 
   return (
     <Paper radius="md" withBorder className={classes.card} mt={ICON_SIZE / 3}>
-      <ThemeIcon className={classes.icon} size={ICON_SIZE} radius={ICON_SIZE} mt={6}>
-        <Swimming></Swimming>
-        {/* {props.pic} */}
-      </ThemeIcon>
+      {/* <ThemeIcon
+        className={classes.icon}
+        size={ICON_SIZE}
+        radius={ICON_SIZE}
+        mt={6}
+      > */}
+      {/* <Swimming></Swimming> */}
+      {/* {props.pic} */}
+      {/* </ThemeIcon> */}
 
-      <Text align="center" weight={700} className={classes.title} mt={12}>
-        {props.title}
+      <Text align="center" weight={700} className={props.title} mt={12}>
+        {String(props.title)}
       </Text>
       <Text color="dimmed" align="center" size="sm">
-        {props.population}
+        {"Population: " + String(props.population)}
       </Text>
 
       <Group position="apart" mt="xs">
@@ -56,14 +61,24 @@ export default function StatsCard(props) {
           Acceptance Percentage
         </Text>
         <Text size="sm" color={props.color}>
-          {props.progress}
+          {String(Math.trunc(props.progress * 100)) + "%"}
         </Text>
       </Group>
 
-      <Progress value={props.progress} mt={5} color={`#${props.color}`} />
+      <Progress
+        value={Math.trunc(props.progress * 100)}
+        mt={5}
+        color={props.color}
+      />
 
       <Group position="apart" mt="md">
-        <Text size="sm">{props.cost}</Text>
+        <Text size="sm">
+          {parseInt(props.cost).toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+            minimumFractionDigits: 0,
+          })}
+        </Text>
         <Button size="sm" component="a" href={props.href} variant="outline">
           More
         </Button>
@@ -71,3 +86,4 @@ export default function StatsCard(props) {
     </Paper>
   );
 }
+export default StatsCard;
