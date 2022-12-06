@@ -205,17 +205,19 @@ function Careers() {
     return (
         
                     <div style = {{
-                        marginLeft: 75
+                        marginLeft: 75,
+                        marginTop: 275
                     }}>
                         <Nav />
-                        <div className="title-box">
-                            <h1> {data.name} </h1>
-                            
-                        </div>
+                        
 
                         <Paper>
+                             
 
-                        
+                            <h1 style = {{
+                                paddingBottom: 80,
+                                marginLeft: 625
+                            }}>{data.name}</h1>
                             <div className="main-container-Careers">
 
                                 <DescriptionPop 

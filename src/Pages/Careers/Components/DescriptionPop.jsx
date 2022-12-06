@@ -73,25 +73,21 @@ const useStyles = createStyles((theme) => ({
   }
 }));
 
-export function DescriptionPop() {
+export function DescriptionPop(props) {
   const { classes } = useStyles();
   return (
     <div className={classes.wrapper}>
       <div className={classes.body}>
         <Title className={classes.title}>Wait a minute...</Title>
         <Text weight={500} size="lg" mb={5}>
-          What does a Electrical Engineer do?
+          What does a {props.name} do?
         </Text>
         <Spoiler
         maxHeight={24}
         showLabel = "Show More"
         hideLabel = "Show less"
         className={classes.spoiler_pop}>
-            Perform engineering duties in planning, designing, 
-            and overseeing construction and maintenance of building 
-            structures and facilities, such as roads, railroads, 
-            airports, bridges, harbors, channels, dams, irrigation 
-            projects, pipelines, power plants, and water and sewage systems.
+            {props.description}
         </Spoiler>
 
         <div
