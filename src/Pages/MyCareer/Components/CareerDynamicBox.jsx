@@ -46,6 +46,7 @@ function CareerDynamicBox() {
     useEffect(() => {
         
         const fetchCareerData = async() => {
+            
             init_api();
             const promise = API.get(`/api/career/${careerID}/`)
             promise.then((response) => {

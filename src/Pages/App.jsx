@@ -54,6 +54,7 @@ function App() {
             <Route path = "/Courses/:id" element = {<Courses />} />
             <Route path = "/ExploreCourses" element = {<ExploreCourses />} />
             <Route path = "/ExploreCareers" element = {<ExploreCareers />} />
+            <Route path = "/MyColleges/Colleges/:id" element = {<CollegeCard />} />
           </Routes>
         </React.Fragment>
       </Provider>
