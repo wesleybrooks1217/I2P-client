@@ -207,7 +207,7 @@ function Careers() {
                     <div style = {{
                         marginLeft: 75,
                         marginTop: 275
-                    }}>
+                    }} className = "careers_container">
                         <Nav />
                         
 

@@ -2,6 +2,7 @@ import Nav from "../../Components/Nav/Nav";
 import {init_API_College_AI, API_College_AI} from '../../API_College_AI';
 import {useEffect, useState} from 'react';
 import CourseCardList from "../../Components/CardList/CourseCardList";
+import './ExploreColleges.css'
 
 function ExploreColleges() {
     const [data, setData] = useState([]);
@@ -60,7 +61,7 @@ function ExploreColleges() {
         console.log(data);
     }
     return (
-        <div>
+        <div className="explore_colleges-container">
             <Nav />
             <div style = {{
                 marginTop: 200,

@@ -12,7 +12,7 @@ function Personalized() {
   </Avatar>
   <Paper shadow='md' style={{padding: '0 5px', marginTop: 40, width: '100%', height: '11.5vh', backgroundColor: 'white'}}>
   <h4 style={{ fontSize: '20px', textAlign: 'center', marginTop: 10, fontWeight: 400}}> Personalized picks to supplement student success.</h4>
-  <p style={{fontSize: '10px', color: 'gray', textAlign: 'center', marginTop: '5px', marginBottom: '5px'}}> Complete casual surveys and allow us to find the right fits for you. It takes less than ten minutes to begin. </p>
+  <p style={{fontSize: '10px', color: 'gray', textAlign: 'center', marginTop: '5px', marginBottom: '15px'}}> Complete casual surveys and allow us to find the right fits for you. It takes less than ten minutes to begin. </p>
   </Paper>
   <Paper shadow='md' style={{padding: '0 5px', marginTop: 20, width: '100%', height: '11.5vh', backgroundColor: 'white'}}>
     <Image sx={{borderRadius: '3px'}}height="210px"width="100%" src="https://images.unsplash.com/photo-1491308056676-205b7c9a7dc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8c3R1ZGVudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />

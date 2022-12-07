@@ -11,7 +11,7 @@ import CampusLife from "./Components/CampusLife";
 import Rankings from "./Components/Rankings";
 import CourseCardList from "../CardList/CourseCardList";
 import {useParams} from 'react-router-dom';
-
+import "./CollegeCard.css";
 //https://ui.mantine.dev/category/stats
 function CollegeCard() {
   let sideNav = useRef(null);
@@ -405,7 +405,7 @@ function CollegeCard() {
 
 
   return (
-    <div style = {{marginTop: 200, marginLeft: 390}}>
+    <div style = {{marginTop: 200, marginLeft: 390}} className="college_card_container">
         
     <Nav /> 
 

@@ -7,6 +7,7 @@ import CourseCardList from "../../Components/CardList/CourseCardList";
 import {useParams} from 'react-router';
 import { useEffect, useState } from "react";
 import {init_api, API} from '../../API';
+import './Courses.css';
 
 function Courses() {
 
@@ -74,7 +75,7 @@ function Courses() {
 
 
     return (
-        <div>
+        <div className="courses_container">
             <Nav />
 
             <div style = {{

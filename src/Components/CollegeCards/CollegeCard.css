@@ -74,3 +74,8 @@
   stroke: green;
   stroke-width: 5px;
 }
+.college_card_container {
+  background-image: url('../Universal/BlobBackgrounds/10.png');
+    background-size: auto;
+
+}

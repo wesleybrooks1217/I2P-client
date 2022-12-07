@@ -15,7 +15,7 @@ function Affordable() {
   </Avatar>
   <Paper shadow='md' style={{padding: '0 5px', marginTop: 40, width: '100%', height: '11.5vh', backgroundColor: 'white'}}>
   <h4 style={{ fontSize: '20px', textAlign: 'center', marginTop: 10, fontWeight: 400}}> Affordable rates for <span style={{fontWeight: 800}} > spectacular</span>  resources. </h4>
-  <p style={{fontSize: '10px', color: 'gray', textAlign: 'center', marginTop: '5px', marginBottom: '5px'}}> Explore and receive recommended resources all for a flat rate per month. For school systems, please can contact us if interested. </p>
+  <p style={{fontSize: '10px', color: 'gray', textAlign: 'center', marginTop: '5px', marginBottom: '15px'}}> Explore and receive recommended resources all for a flat rate per month. For school systems, please can contact us if interested. </p>
   </Paper>
  <Paper shadow='md' style={{padding: '0 5px', marginTop: 20, width: '100%', height: '11.5vh', backgroundColor: 'white'}}>
     <Image sx={{borderRadius: '3px'}} height="210px" width="100%" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c2Nob29sfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" />

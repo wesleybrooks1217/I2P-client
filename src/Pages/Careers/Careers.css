@@ -205,3 +205,8 @@
     font-size: 24px;
     font-weight: bold;
 }
+.careers_container {
+    background-image: url('../../Components/Universal/BlobBackgrounds/4.png');
+    background-size: auto;
+
+}

@@ -15,7 +15,7 @@ function Library() {
   </Avatar>
   <Paper shadow='md' style={{padding: '0 5px', marginTop: 40, width: '100%', height: '11.5vh', backgroundColor: 'white'}}>
   <h4 style={{ fontSize: '20px', textAlign: 'center', marginTop: 10, marginBottom: 0, fontWeight: 400}}> Explore over 2000+ academic cards <span style={{fontWeight: 800}} > free </span>.</h4>
-  <p style={{fontSize: '10px', color: 'gray', textAlign: 'center', marginTop: '5px', marginBottom: '5px'}}> Access any academic resource you require at anytime. Search simply with our filter feature and other options.</p>
+  <p style={{fontSize: '10px', color: 'gray', textAlign: 'center', marginTop: '5px', marginBottom: '15px'}}> Access any academic resource you require at anytime. Search simply with our filter feature and other options.</p>
   </Paper>
   <Paper shadow='md' style={{padding: '0 5px', marginTop: 20, width: '100%', height: '10.5vh', backgroundColor: 'white'}}>
     <Image sx={{borderRadius: '3px'}} height="210px" width="100%"  src="https://images.unsplash.com/photo-1477281765962-ef34e8bb0967?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dW5pdmVyc2l0eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" />

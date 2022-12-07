@@ -3,6 +3,7 @@ import { useState } from 'react';
 import {init_api, API} from '../../API';
 import CourseCardList from '../../Components/CardList/CourseCardList';
 import Nav from '../../Components/Nav/Nav';
+import './ExploreCourses.css';
 
 function ExploreCourses() {
 
@@ -61,7 +62,7 @@ function ExploreCourses() {
     } , []);
 
     return (
-        <div>
+        <div className='explore_courses_container'>
             <Nav />
             <div style = {{
                 marginTop: 200,
