@@ -172,3 +172,41 @@
 .education_careers {
     margin-top: 50px;
 }
+
+.salary_charts_career {
+    margin-top: 175px;
+}
+
+.industry_chart_career > p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.industries_career {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.outlook_careers {
+    margin-left: 400px;
+}
+
+.outlook_careers > p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.explore_more {
+    margin-top: 125px;
+}
+
+.explore_more > p {
+    font-size: 24px;
+    font-weight: bold;
+}
+.careers_container {
+    background-image: url('../../Components/Universal/BlobBackgrounds/4.png');
+    background-size: auto;
+
+}

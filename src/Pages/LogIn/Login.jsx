@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import {login} from '../../redux/users/userActions';
 import store from '../../redux/store';
 import {Navigate} from 'react-router-dom';
+import Nav from "../../Components/Nav/Nav";
 
 function Login({login}) {
 
@@ -29,6 +30,7 @@ function Login({login}) {
     return (
    
                     <div className="root-login">
+                        <Nav />
                         {auth &&
                         <Navigate to = "/MyCareer" />}
                         <h1>
@@ -44,6 +46,9 @@ function Login({login}) {
                             value={email}
                             onChange={(event) => {
                                 setEmail(event.currentTarget.value)
+                            }}
+                            style={{
+                                marginLeft: 100
                             }}/>
                     
                         </div>
@@ -56,22 +61,22 @@ function Login({login}) {
                             value = {password}
                             onChange = {(event) => {
                                 setPassword(event.currentTarget.value)
-                            }}/>
+                            }}
+                            style = {{marginLeft: 100}}/>
 
                         </div>
 
                         <div className="login-button">
                             <Button
                             variant="light"
-                            onClick={loginPressed}>
+                            onClick={loginPressed}
+                            style = {{
+                                marginRight: 90
+                            }}>
                                 Sign In
                             </Button>
 
-                            <Button
-                            variant="light"
-                            onClick = {test}>
-                                Test
-                            </Button>
+                            
                         </div>
 
 

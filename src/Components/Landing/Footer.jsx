@@ -1,18 +1,13 @@
-
-
-import {Image} from '@mantine/core'
 import {BrandInstagram, BrandLinkedin, BrandTiktok, BrandTwitter} from 'tabler-icons-react';
 import next4Logo from './icon.png'
 function Footer() {
     return (
-
-
   <section className='section6' id='section-6' style={{marginTop: '20px', height: '200px', width: '100%'}}>
   
   <h3 style={{marginLeft: '50px', marginTop: '40px'}}> Complement the college counseling process. </h3>
   <div style={{marginTop: '20px', marginLeft: '50px'}}>
-    <button style={{marginRight: 8, padding: '20px 40px', fontFamily: 'Balsamiq Sans', border: 'none', padding: '15px 45px', borderRadius: '10px 10px 10px 10px', cursor: 'pointer', backgroundColor: '#99d98c'}}> Get started </button>
-    <button style={{padding: '20px 20px', width: '220px', fontFamily: 'Balsamiq Sans',top: '51.3%', border: 'none', padding: '15px 45px', color: '#FFFFFF', borderRadius: '10px 10px 10px 10px', cursor: 'pointer', backgroundColor: '#1e6091'}}> Contact us </button> 
+    <button style={{marginRight: 8, padding: '20px 40px', fontFamily: 'DM Sans', border: 'none', padding: '15px 45px', borderRadius: '10px 10px 10px 10px', cursor: 'pointer', backgroundColor: '#99d98c'}}> Get started </button>
+    <button style={{padding: '20px 20px', width: '220px', fontFamily: 'DM Sans',top: '51.3%', border: 'none', padding: '15px 45px', color: '#FFFFFF', borderRadius: '10px 10px 10px 10px', cursor: 'pointer', backgroundColor: '#1e6091'}}> Contact us </button> 
   </div>
   
   <div style={{display: 'flex'}}>

@@ -17,7 +17,6 @@ function CareerList () {
     const [test, setTest] = useState(0);
     const dispatch = useDispatch();
 
-
     
     const changeMainCareerListElement = (id) => {
         
@@ -83,7 +82,6 @@ function CareerList () {
     
 
     return (
-
         <div className='container'>
             <h1 data-testid = "CL-Title"> Career List </h1>
             <ul>

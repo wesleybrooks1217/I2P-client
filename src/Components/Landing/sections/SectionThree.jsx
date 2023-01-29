@@ -1,13 +1,14 @@
 import react from 'react'
 import { Avatar, Paper} from '@mantine/core';
-
-import {Beach, Search, Book, Plus, Book2,Stars, Scale, Target, BrandInstagram, BrandLinkedin, BrandTiktok, BrandTwitter, User, Car, ChartBar, ViewFinder,  Activity, Butterfly, BallBowling, Clipboard, Cookie, Database, Diamond, Flower, Chess,HandFinger, Home2, Leaf, ArrowUpRightCircle, Backpack,Atom, Star, School, StarHalf, ArrowBigRight, ChartCircles, MoodUnamused, CameraRotate ,Numbers, MathIntegrals, Globe,ArrowDown, BoxMultiple1, Certificate, BoxMultiple2, BoxMultiple3, CircleSquare, MoodSmileBeam, Books,  MathFunction, Flask2, Cell, Bong, Microscope, Language, MathMin, Anchor, Backhoe, Apple, Aperture, MathXPlusY, Plant2, Bug, ChefHat, DeviceDesktop, FileCode, Gavel, AlertTriangle} from 'tabler-icons-react'
+import '../Landing.css'
+import {Beach, Search, Book, Plus, Book2,Stars, Scale, Target, BrandInstagram, BrandLinkedin, BrandTiktok, BrandTwitter, User, Car, ChartBar, ViewFinder,  Activity, Butterfly, BallBowling, Clipboard, Cookie, Database, Diamond, Flower, Chess,HandFinger, Home2, Leaf, ArrowUpRightCircle, Backpack,Atom, Star, School, StarHalf, ArrowBigRight, ChartCircles, MoodUnamused, CameraRotate ,Numbers, MathIntegrals, Globe,ArrowDown, BoxMultiple1, Certificate, BoxMultiple2, BoxMultiple3, CircleSquare, MoodSmileBeam, Books,  MathFunction, Flask2, Cell, Bong, Microscope, Language, MathMin, Anchor, Backhoe, Apple, Aperture, MathXPlusY, Plant2, Bug, ChefHat, DeviceDesktop, FileCode, Gavel, AlertTriangle, HandClick, MoodSadDizzy, MathSymbols, Ghost, Planet} from 'tabler-icons-react'
 
 function SectionThree() {
     return (
-        <section style={{ width: 'inherit', height: '800px', marginBottom: '20px'}}  id='section-3' className='section3'>
-        <h3 style={{marginLeft: '50px', marginTop: '40px'}}> Detailed descriptions on any subject. </h3>
-        <p style={{ fontSize: '14px', marginLeft: '50px', marginTop: '10px', marginBottom: '10px', color: 'gray'}}> Find the best fit for you with insightful information on any academic card.  </p>
+        <section style={{ width: 'inherit', marginBottom: '20px'}}  id='section-3' >
+                 
+                 <h3 style={{fontSize: '25px', marginLeft: '50px', marginTop: '40px'}}> Detailed descriptions on any subject. </h3>
+        <p style={{ fontSize: '14px',marginLeft: '50px', marginTop: '10px', marginBottom: '30px', color: 'gray'}}> Find the best fit for you with insightful information on any academic card. </p>
         <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
           <Paper shadow='md' radius='md' sx={{ width: '25vw', height: '550px' , marginTop: '50px'}}>
             <div style={{marginTop: '20px', width: 'inherit'}}>
@@ -58,22 +59,20 @@ function SectionThree() {
             <div style={{ marginBottom: 20,  display: 'flex', alignItems: 'center', height: '75px', margin: '15px 10px'}}>
         
             <h4 style={{fontSize: '24px', marginLeft: 22, marginBottom: 0}}> Chemistry </h4>
-    <Avatar size={60}style={{marginLeft: 25, marginRight: 15}}color='green' radius='md'>
+    <Avatar size={60}style={{marginLeft: 25, marginRight: 10}}color='green' radius='md'>
             <Flask2 style={{color: '#212529'}} width={50} />
             </Avatar>
           
-          <div style={{marginRight: '1px', marginLeft: 'auto', display: 'flex', alignItems: 'center'}}>
-            <Avatar size={60} style={{marginLeft: 15, marginRight: 10}} color='red' radius='md'>
-            <Atom style={{color: '#212529'}} width={70} />
-            </Avatar>
-            <Avatar size={60} style={{marginLeft: 15, marginRight: 15}} color='blue' radius='md'>
-            <ChartCircles style={{color: '#212529'}} width={70} />
+          <div style={{marginRight: '1px', display: 'flex', alignItems: 'center'}}>
+            <Avatar size={60} style={{marginLeft: 15, marginRight: 15}} color='green' radius='md'>
+            <p style={{fontSize: '24px'}}>7.2</p>
             </Avatar>
             <Avatar size={60} style={{marginLeft: 10, marginRight: 15}} color='orange' radius='md'>
-            <MoodUnamused style={{color: '#212529'}} width={70} />
+            <p style={{fontSize: '24px'}}>84</p>
             </Avatar>
-            <ArrowUpRightCircle style={{marginLeft: 10, marginRight: 15}} />
+          
             </div>
+            <ArrowUpRightCircle size={36} style={{marginLeft: 'auto', marginRight: 15}} />
         
            
           
@@ -87,55 +86,99 @@ function SectionThree() {
         </div>
         <div style={{marginBottom: 20, display: 'flex', alignItems: 'center'}}>
           <h4 style={{margin: 0,  marginRight: 5}}> <i> Course difficulty: </i> </h4>
-          <Star style={{color: '#ffbe0b'}} />
-          <Star  style={{color: '#ffbe0b'}}/>
-          <Star style={{color: '#ffbe0b'}} />
-          <StarHalf  style={{color: '#ffbe0b'}}/>
+          <p style={{fontSize: '20px'}}>⭐⭐⭐</p>
           </div>
           <div style={{marginBottom: 20, display: 'flex', alignItems: 'center'}}>
           <h4 style={{margin: 0,  marginRight: 5}}> <i>Course workload:</i> </h4>
-          <Star  style={{color: '#ffbe0b'}}/>
-          <Star  style={{color: '#ffbe0b'}} />
-          <Star  style={{color: '#ffbe0b'}}/>
+          <p style={{fontSize: '20px'}}>⭐⭐⭐</p>
           </div>
           <div style={{display: 'flex', alignItems: 'center'}}>
           <h4 style={{margin: 0, marginRight: 5}}><i> Course concepts:</i> </h4>
-          <Star  style={{color: '#ffbe0b'}}/>
-          <Star  style={{color: '#ffbe0b'}}/>
-          <Star  style={{color: '#ffbe0b'}}/>
-          <Star  style={{color: '#ffbe0b'}}/> 
-          <StarHalf  style={{color: '#ffbe0b'}}/>
+          <p style={{fontSize: '20px'}}>⭐⭐⭐⭐</p>
           </div>
           </div>
       
-          <div style={{position: 'relative', bottom: 150, left: '285px', width: '330px', marginRight: 0, height: '120px'}}> 
-          <h4 style={{marginBottom: 0, marginRight: 10,fontWeight: 700}}> <b> Course Critique </b> </h4>
+          <div style={{position: 'relative', bottom: 160, left: '285px', width: '330px', marginRight: 0, height: '120px'}}> 
+          <h4 style={{marginBottom: 0, marginBottom: 20, marginRight: 10,fontWeight: 700}}> <b> Course Critique </b> </h4>
           <div style={{display: 'flex', marginBottom: 0, alignItems: 'center'}}>
        
           <p style={{color: 'gray'}}> <i>from ChemChosen13</i></p>
           <Star style={{marginBottom:3, marginLeft: 5}}size={14} />
           </div>
+          <div id='course-critique-container'>
           <p style={{marginBottom: 8,fontSize: '12px', color: 'gray'}}> Chemestry is a challenge course for almost all students. The content is rigourous and asks for an exceptional amount of work from the student.
             It's important to continue to complete coursework and stay on top with the material, as later units build on beginning concepts. Good luck to all who accept the challenge of high school chemistry. </p>
             <p style={{cursor: 'clicker'}}> <i> More comments </i> </p>
             </div>
-          
-            <div style={{position: 'relative'}}>
-              
-            <Avatar  style={{width: '60px', height: '40px', position: 'absolute', right: 60, bottom: 230,marginLeft: 10, marginRight: 15}} color='red' radius='md'>
-            AP
+            <div id='course-attributes'> 
+          <h4 style={{marginBottom: 0, marginBottom: 10,textAlign: 'center',  marginRight: 10,fontWeight: 700}}> <b> Academic Attributes </b> </h4>
+            <div style={{display: 'flex', justifyContent:'center', alignItems: 'center'}}>
+              <div >
+              <div style={{display: 'block'}}>
+            <Avatar size={60} style={{marginLeft: 5, marginRight: 5}} color='red' radius='md'>
+            <MoodSadDizzy />
             </Avatar>
-            <Avatar  style={{width: '60px', height: '40px', position: 'absolute', right: 60 , bottom: 130, marginLeft: 10, marginRight: 15}} color='green' radius='md'>
-            7.2
-            </Avatar>
-            <Avatar  style={{width: '60px', height: '40px', position: 'absolute', right: 60, bottom: 180, marginLeft: 10, marginRight: 15}} color='blue' radius='md'>
-            <Plus size={24} />
-            </Avatar>
-          </div>
-          <div style={{position: 'relative', bottom: 110, marginTop: '25px', border: '1px solid black', width: '52vw', height: '220px'}}> 
-            <h4> Welseys modal </h4>
+            <p style={{textAlign: 'center'}}>Challenging </p>
             </div>
+            <div style={{display: 'block'}}>
+            <Avatar size={60} style={{marginLeft: 5, marginRight: 5, marginTop: 10}} color='green' radius='md'>
+            <MathSymbols />
+            </Avatar>
+            <p style={{textAlign: 'center'}}> STEM </p>
+            </div>
+            </div>
+            <div>
+            <div style={{display: 'block'}}>
+            <Avatar size={60} style={{marginLeft: 5, marginRight: 5}} color='yellow' radius='md'>
+            <HandClick />
+            </Avatar>
+            <p style={{textAlign: 'center'}}> Hands On</p>
+            </div>
+
+            <div style={{display: 'block'}}>
+            <Avatar size={60} style={{marginLeft: 5, marginRight: 5,  marginTop: 10}} color='orange' radius='md'>
+            <Ghost />
+            </Avatar>
+            <p style={{textAlign: 'center'}}> Conceptual</p>
+            </div></div></div>
+          </div>
+
+          <div id='course-similar'> 
+          <h4 style={{marginBottom: 0, marginBottom: 10, textAlign: 'center', marginRight: 10,fontWeight: 700}}> <b> Similar Courses </b> </h4>
+            <div style={{display: 'flex', justifyContent:'center', alignItems: 'center'}}>
+              <div >
+              <div style={{display: 'block'}}>
+            <Avatar size={60} style={{marginLeft: 5, marginRight: 5}} color='green' radius='md'>
+            <Bong />
+            </Avatar>
+            <p style={{textAlign: 'center'}}>AP Chemistry </p>
+            </div>
+            <div style={{display: 'block'}}>
+            <Avatar size={60} style={{marginLeft: 5, marginRight: 5, marginTop: 10}} color='green' radius='md'>
+            <Activity />
+            </Avatar>
+            <p style={{textAlign: 'center'}}> Biology </p>
+            </div>
+            </div>
+            <div>
+            <div style={{display: 'block'}}>
+            <Avatar size={60} style={{marginLeft: 5, marginRight: 5}} color='blue' radius='md'>
+            <Planet />
+            </Avatar>
+            <p style={{textAlign: 'center'}}> Physics </p>
+            </div>
+
+            <div style={{display: 'block'}}>
+            <Avatar size={60} style={{marginLeft: 5, marginRight: 5,  marginTop: 10}} color='indigo' radius='md'>
+            <Planet />
+            </Avatar>
+            <p style={{textAlign: 'center'}}> Physics II</p>
+            </div></div></div>
+          </div></div>
+
           
+      
+      
               
               </div>
         

@@ -1,9 +1,11 @@
 import React from 'react';
-import '../Nav.css';
-import next4Logo from '../icon.png';
+import '../Nav.css'
+import next4Logo from '../icon.png'
+import ReactDOM from "react-dom/client";
+import { Outlet, Link, Route, Routes, BrowserRouter} from "react-router-dom";
+import Products from '../../Products/Products';
+import About from '../../About/About';
 import {useSelector} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {useState} from 'react';
 
 function TopNav() {
 
@@ -11,36 +13,34 @@ function TopNav() {
     
 
     return (
-      <div>
+   
         <div className='top-nav'>
-          
-              <a href='/'> Products </a>
-              <a style={{}}href='/'> Students </a>
-              <a style={{color: 'black'}}href='/'> School Systems </a>
-              <a style = {{color: 'black'}} href = '/'>About us</a>
-              <img style={{width: 45}}src={next4Logo} />
-              <a style = {{color: 'black'}} href = '/'>Careers</a>
-              <a style = {{color: 'black'}} href = '/'>Colleges</a>
-              <a style = {{color: 'black'}} href = '/'>Courses</a>
-              
-            
-          
-          
-        
-            </div>
-
-            {
-              auth &&
-              <div className='bottom-nav' style={{marginTop: 100}}>
-              <Link to = {"/Dashboard"}>MyDashboard</Link>
-              <Link to={"/MyCareer"}>MyCareer</Link>
-              <Link to={"/MyCourses"}>MyCourses</Link>
-              <Link to = {"/MyColleges2"}>MyColleges</Link>
-            </div>}
-
-            
-          </div>
-    );
+          <li id='link-demo'>
+          <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}}to="/Demo">Demo</Link>
+          </li>
+    <li id='link-products'>
+      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}}to="/Products">Products</Link>
+    </li>
+    <li id='link-students'>
+      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}} to="/Students">Students</Link>
+    </li>
+    <li id='link-home' >
+      <Link to='/'>
+        <img src={next4Logo} id='logo-home' />
+        </Link>
+    </li>
+    <li id='link-schools'>
+      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}} to="/SchoolSystems">Schools</Link>
+    </li>
+    <li id='link-about'>
+      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 600}} to="/About">About Us</Link>
+    </li>
+    <li id='link-signin'>
+      <Link style={{textDecoration: 'none', color: 'white', fontWeight: 900}} to="/SignIn">Sign In</Link>
+    </li>
+  </div>
+       
+    )
 }
 
 export default TopNav;

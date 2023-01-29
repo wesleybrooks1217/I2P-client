@@ -10,8 +10,8 @@
     width: 100%;
     height: 100vh;
     border: 1px solid black;
-    background-image: url("1.png");
-    background-size: cover;
+    background-image: url('../Universal/BlobBackgrounds/6.png');
+    background-size: auto;
 }
 
 .products-s2 {
@@ -19,6 +19,8 @@
     width: 100%;
     height: 100vh;
     border: 1px solid black;
+    background-image: url('../Universal/BlobBackgrounds/10.png');
+    background-size: auto;
 }
 
 .products-s3 {
@@ -26,6 +28,8 @@
     width: 100%;
     height: 100vh;
     border: 1px solid black;
+    background-image: url('../Universal/BlobBackgrounds/2.png');
+    background-size: auto;
 }
 
 

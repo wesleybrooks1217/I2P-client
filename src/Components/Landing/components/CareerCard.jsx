@@ -14,7 +14,7 @@ function CareerCard() {
         <Avatar color="green" radius="md" style={{position: 'absolute', left: '75%', marginTop: 8, marginRight: '6px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <Cash style={{width: '36px'}} />
             </Avatar>
-            <p style={{position: 'absolute', left: '72%', top: '35.1%'}}> High Salary </p>
+            <p style={{ position: 'absolute', left: '72%', top: '35.1%'}}> High Salary </p>
             <div style={{marginTop: 42,  marginBottom: 10, display: 'flex', alignItems: 'center'}}>
             <h3 style={{ marginBottom: 0, marginRight: 44, fontSize: '16px'}}> Electrical Engineer </h3>
            
