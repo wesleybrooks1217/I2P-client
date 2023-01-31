@@ -1,24 +1,106 @@
-import { useRef, useEffect, useState } from 'react'
-import { Avatar } from '@mantine/core'
-import {Beach, PencilMinus, Cash, FileCertificate, ArrowDownCircle, Search, Book, Plus, Book2,Stars, Scale, Target, BrandInstagram, BrandLinkedin, BrandTiktok, BrandTwitter, User, Car, ChartBar, ViewFinder,  Activity, Butterfly, BallBowling, Clipboard, Cookie, Database, Diamond, Flower, Chess,HandFinger, Home2, Leaf, ArrowUpRightCircle, Backpack,Atom, Star, School, StarHalf, ArrowBigRight, ChartCircles, MoodUnamused, CameraRotate ,Numbers, MathIntegrals, Globe,ArrowDown, BoxMultiple1, Certificate, BoxMultiple2, BoxMultiple3, CircleSquare, MoodSmileBeam, Books,  MathFunction, Flask2, Cell, Bong, Microscope, Language, MathMin, Anchor, Backhoe, Apple, Aperture, MathXPlusY, Plant2, Bug, ChefHat, DeviceDesktop, FileCode, Gavel, AlertTriangle, Apps} from 'tabler-icons-react'
-import SideBar from '../Nav/components/SideBar';
-import TopNav from '../Nav/components/TopNav';
-import landingImage from './titleImage.png'
-import { gsap } from "gsap"
-import {TweenMax, Power3, TimelineLite} from 'gsap'
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import SectionThree from './sections/SectionThree'
-import './Landing.css';
-import { Paper, Text, Card, Image , Badge} from '@mantine/core';
-import { motion, AnimatePresence, useScroll } from 'framer-motion';
-import CSSRulePlugin from 'gsap/CSSRulePlugin';
-import next4Logo from './icon.png';
-import SectionTwo from './sections/SectionTwo'
-import SectionFour from './sections/SectionFour'
-import SectionFive from './sections/SectionFive'
-import Footer from './Footer'
+import { useRef, useEffect, useState } from "react";
+import { Avatar, Group } from "@mantine/core";
+import {
+  Beach,
+  PencilMinus,
+  Cash,
+  FileCertificate,
+  ArrowDownCircle,
+  Search,
+  Book,
+  Plus,
+  Book2,
+  Stars,
+  Scale,
+  Target,
+  BrandInstagram,
+  BrandLinkedin,
+  BrandTiktok,
+  BrandTwitter,
+  User,
+  Car,
+  ChartBar,
+  ViewFinder,
+  Activity,
+  Butterfly,
+  BallBowling,
+  Clipboard,
+  Cookie,
+  Database,
+  Diamond,
+  Flower,
+  Chess,
+  HandFinger,
+  Home2,
+  Leaf,
+  ArrowUpRightCircle,
+  Backpack,
+  Atom,
+  Star,
+  School,
+  StarHalf,
+  ArrowBigRight,
+  ChartCircles,
+  MoodUnamused,
+  CameraRotate,
+  Numbers,
+  MathIntegrals,
+  Globe,
+  ArrowDown,
+  BoxMultiple1,
+  Certificate,
+  BoxMultiple2,
+  BoxMultiple3,
+  CircleSquare,
+  MoodSmileBeam,
+  Books,
+  MathFunction,
+  Flask2,
+  Cell,
+  Bong,
+  Microscope,
+  Language,
+  MathMin,
+  Anchor,
+  Backhoe,
+  Apple,
+  Aperture,
+  MathXPlusY,
+  Plant2,
+  Bug,
+  ChefHat,
+  DeviceDesktop,
+  FileCode,
+  Gavel,
+  AlertTriangle,
+  Apps,
+} from "tabler-icons-react";
+ 
+import SideBar from "../Nav/components/SideBar";
+import TopNav from "../Nav/components/TopNav";
+import landingImage from "./titleImage.png";
+import { gsap } from "gsap";
+import { TweenMax, Power3, TimelineLite } from "gsap";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
-gsap.registerPlugin(ScrollTrigger)
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SectionThree from "./sections/SectionThree";
+import "./Landing.css";
+import { Paper, Text, Card, Image, Badge } from "@mantine/core";
+import { motion, AnimatePresence, useScroll } from "framer-motion";
+import CSSRulePlugin from "gsap/CSSRulePlugin";
+import next4Logo from "./icon.png";
+import SectionTwo from "./sections/SectionTwo";
+import SectionFour from "./sections/SectionFour";
+import SectionFive from "./sections/SectionFive";
+import Footer from "./Footer";
+import Affordable from "./components/corefour/Affordable";
+import Library from "./components/corefour/Library";
+import Personalized from "./components/corefour/Personalized";
+import Equity from "./components/corefour/Equity";
+import SmallerDemo from "../Demo/SmallerDemo";
+import { useNavigate } from "react-router-dom";
 export default function Landing() {
   const cardContainer = useRef(null);
   let navigate = useNavigate();
@@ -90,31 +172,13 @@ export default function Landing() {
       <a href="#section-2">
         <div className="scroll-down"></div>
       </a>
-   <div ref={cardContainer}>
-   <SectionTwo />
-   </div>
- 
-    <motion.div className='progress-bar' style={{ scaleX: scrollYProgress}} />
-     
-    <section style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none', width: '100%', height: '100vh' }}>
-    
-    <div style={{position: 'absolute', top: '30%', left: '1%'}} ref={el => sideNav = el}>
-      
-      <SideBar switchStates={switchModes} lightMode={lightMode} />
+      <div ref={cardContainer}>
+        <SectionTwo />
       </div>
-      <div style={{position: 'absolute', width: '100%'}} ref={el => topNav = el}>
-      <TopNav />
-      </div>
-     
-
-   
-    </section>
-    <SectionThree />
-<SectionFour />
-    <SectionFive />
-
-<Footer />
-
+      <SectionThree />
+      <SectionFour />
+      <SectionFive />
+      <Footer />
     </div>
   );
 }
