@@ -4,6 +4,7 @@ import {init_api, API} from '../../API';
 import CourseCardList from '../../Components/CardList/CourseCardList';
 import Nav from '../../Components/Nav/Nav';
 import "./ExploreCareers.css"
+import { init_api_onet, API_ONET } from '../../API_ONET';
 
 function ExploreCareers() {
 
@@ -11,9 +12,20 @@ function ExploreCareers() {
 
     const courseIDs = [1,2,3,4,5,6];
 
+    const  test = async() => {
+        init_api();
+        await API.get('/api/career/')
+        .then((response) => {
+            console.log(response.data);
+        })
+        
+    }
+
     useEffect(() => {
 
         const getCourseInfo = async() => {
+            
+            /*
             init_api();
             var namesTemp = [];
             var descriptionsTemp = [];
@@ -54,6 +66,7 @@ function ExploreCareers() {
             });
 
             setData(tempData);
+            */
 
 
         }
@@ -82,6 +95,8 @@ function ExploreCareers() {
 
 
             </div>
+
+            <button onClick={test}>Test button</button>
         </div>
     );
 };
