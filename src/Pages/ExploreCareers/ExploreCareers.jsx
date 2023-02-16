@@ -13,66 +13,16 @@ function ExploreCareers() {
     const courseIDs = [1,2,3,4,5,6];
 
     const  test = async() => {
+        
         init_api();
-        await API.get('/api/career/')
+        await API.get("/api/career/13-2023.00/")
         .then((response) => {
-            console.log(response.data);
+            console.log(response.data.career.on_the_job.task[0]);
         })
         
     }
 
-    useEffect(() => {
-
-        const getCourseInfo = async() => {
-            
-            /*
-            init_api();
-            var namesTemp = [];
-            var descriptionsTemp = [];
-            var ids = [];
-            var mapped = [];
-            for (var i = 0; i < courseIDs.length; i++) {
-                await API.get(`/api/career/${courseIDs[i]}/`)
-                .then((response) => {
-                    console.log(response.data);
-                    namesTemp.push(response.data.name);
-                    descriptionsTemp.push(response.data.description);
-                    ids.push(courseIDs[i]);
-                });
-
-                if (namesTemp.length === 3) {
-                    mapped.push({
-                        "names": namesTemp,
-                        "descriptions": descriptionsTemp,
-                        "ids": ids
-                    });
-
-                    namesTemp = [];
-                    descriptionsTemp = [];
-                    ids = [];
-                }
-            }
-
-            const tempData = mapped.map((courseList) => {
-                return (
-                    <CourseCardList 
-                    data = {{
-                        "type": "career",
-                        "names": courseList.names,
-                        "descriptions": courseList.descriptions,
-                        "ids": courseList.ids
-                    }}/>
-                );
-            });
-
-            setData(tempData);
-            */
-
-
-        }
-
-        getCourseInfo();
-    } , []);
+    
 
     return (
         <div className='explore_careers_container'>

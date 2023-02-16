@@ -80,7 +80,7 @@ export function DescriptionPop(props) {
       <div className={classes.body}>
         <Title className={classes.title}>Wait a minute...</Title>
         <Text weight={500} size="lg" mb={5}>
-          What does a {props.name} do?
+          What do {props.name} do?
         </Text>
         <Spoiler
         maxHeight={24}
