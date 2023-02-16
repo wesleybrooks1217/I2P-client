@@ -1,0 +1,55 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[3].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[3].oneOf[13].use[3]!./src/app/starter.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+ 
+  }
+  
+  .box {
+    width: 20%;
+    height: 20%;
+    margin-right: 10px;
+  }
+  
+  .center-box {
+    width: 30%;
+    height: 30%;
+    display: inline-block;
+    transition: all 0.5s ease;
+    margin-right: 10px;
+  }
+  
+  .blue {
+    background-color: blue;
+  }
+  
+  .gray {
+    background-color: gray;
+  }
+  
+  .purple {
+    background-color: purple;
+  }
+
+
+.active {
+    background-color: lightblue;
+    opacity: 1;
+
+  }
+  
+  
+  .center-box.blue {
+    width: 85%;
+    height: 85%;
+    background-color: blue;
+    
+  }

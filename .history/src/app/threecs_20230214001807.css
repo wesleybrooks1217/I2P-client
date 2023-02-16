@@ -1,0 +1,77 @@
+collegedata {
+    display: flex;
+    height: 100%;
+    margin: 5%;
+  }
+  
+  .mycolleges {
+    width: 40%;
+    height: 100%;
+    margin-right: 10%;
+    background-color: #eee;
+    overflow-y: auto;
+  }
+  
+  .mycolleges-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+  }
+  
+  .mycolleges-header-text {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .mycolleges-header-filter {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .mycolleges-header-filter i {
+    color: #333;
+  }
+  
+  .mycolleges-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mycolleges-list-item {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+  }
+  
+  .mycolleges-list-item:hover {
+    background-color: #ddd;
+  }
+  
+  .mycolleges-list-item-selected {
+    background-color: #ddd;
+  }
+  
+  .collegecomputer {
+    width: 40%;
+    height: 100%;
+    margin-left: 10%;
+    background-color: #eee;
+    overflow-y: auto;
+  }
+  
+  .collegecomputer-header {
+    padding: 10px;
+    font-size: 20px;
+    color: #333;
+    border-bottom: 1px solid #333;
+  }
+  

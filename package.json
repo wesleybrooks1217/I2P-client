@@ -1,8 +1,13 @@
 {
+<<<<<<< Updated upstream
   "name": "next4-client",
+=======
+  "name": "frontend",
+>>>>>>> Stashed changes
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< Updated upstream
     "@emotion/react": "^11.10.5",
     "@mantine/core": "^5.9.0",
     "@mantine/hooks": "^5.9.0",
@@ -57,5 +62,14 @@
     "@babel/cli": "^7.19.3",
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2"
+=======
+    "@next/font": "13.1.6",
+    "axios": "^1.3.3",
+    "eslint": "8.34.0",
+    "eslint-config-next": "13.1.6",
+    "next": "^13.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+>>>>>>> Stashed changes
   }
 }

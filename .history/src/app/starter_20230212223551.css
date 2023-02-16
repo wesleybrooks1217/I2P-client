@@ -1,0 +1,36 @@
+.container {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+  }
+  
+  .box {
+    width: 20%;
+    height: 20%;
+    margin-right: 10px;
+  }
+  
+  .center-box {
+    width: 30%;
+    height: 30%;
+    margin-right: 10px;
+  }
+  
+  .blue {
+    background-color: blue;
+  }
+  
+  .gray {
+    background-color: gray;
+  }
+  
+  .purple {
+    background-color: purple;
+  }
+
+
+.active {
+    background-color: lightblue;
+  }
