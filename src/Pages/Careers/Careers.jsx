@@ -66,6 +66,7 @@ function Careers() {
                 
                 getBaseInfo(response);
                 getSalary(response);
+                console.log(response.data);
                 
                 
 

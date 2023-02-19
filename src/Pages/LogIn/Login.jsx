@@ -6,19 +6,36 @@ import {useState} from 'react';
 import {connect} from 'react-redux';
 import {login} from '../../redux/users/userActions';
 import store from '../../redux/store';
-import {Navigate} from 'react-router-dom';
+import {Navigate, useLocation} from 'react-router-dom';
 import Nav from "../../Components/Nav/Nav";
-
+import { init_api, API } from "../../API";
 function Login({login}) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [auth, setAuth] = useState(false); 
+    const [userID, setUserID] = useState({});
 
     const loginPressed = async() => {
         await login(email, password);
 
         if(store.getState().user.isAuthenticated) {
+            //setAuth(true);
+            // setUserID(store.getState().user.id); 
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `JWT ${localStorage.getItem('access')}`,
+                    'Accept': 'application/json'
+                }
+            };
+
+            init_api();
+            await API.get('/auth/users/me/', config)
+            .then((response) => {
+                setUserID(response.data.id);
+            });
+            //console.log(store.getState().user.id);
             setAuth(true);
         }
     }
@@ -32,7 +49,7 @@ function Login({login}) {
                     <div className="root-login">
                         <Nav />
                         {auth &&
-                        <Navigate to = "/MyCareer" />}
+                        <Navigate to = {`/MyCareer/${userID}`} />}
                         <h1>
                             Log in
                         </h1>

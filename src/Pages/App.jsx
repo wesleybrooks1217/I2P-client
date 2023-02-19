@@ -22,6 +22,7 @@ import Courses from "./Courses/Courses";
 import Demo from "../Components/Demo/Demo";
 import ExploreCourses from "./ExploreCourses/ExploreCourses";
 import ExploreCareers from "./ExploreCareers/ExploreCareers";
+import CareerDataPage from "./MyCareer/MyCareer";
 /*
 Testing push request
 */
@@ -41,7 +42,7 @@ function App() {
             <Route path="/Privacy" element={<Privacy />} />
             <Route path="/MyCareer" element={<MyCareer />} />
             <Route path="/Dashboard" element={<Dashboard />} />
-            <Route path="/MyCareer" element={<MyCareer />} />
+            <Route path="/MyCareer/:userID" element={<CareerDataPage />} />
             <Route path="/MyColleges" element={<MyColleges />} />
             <Route path='/Demo' element={<Demo /> } />
 
