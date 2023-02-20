@@ -22,21 +22,25 @@ function Login({login}) {
         
             //setAuth(true);
             // setUserID(store.getState().user.id); 
-
+            
             init_api();
         const res = await API.post("/auth/jwt/create", {
             email: email,
             password: password
         });
+        
+
+        
 
             const config = {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `JWT ${localStorage.getItem('access')}`,
+                    'Authorization': `JWT ${res.data.access}`,
                     'Accept': 'application/json'
                 }
             };
-
+            
+            
             init_api();
             await API.get('/auth/users/me/', config)
             .then((response) => {
@@ -44,6 +48,7 @@ function Login({login}) {
             });
             //console.log(store.getState().user.id);
             setAuth(true);
+            
         
     }
 
