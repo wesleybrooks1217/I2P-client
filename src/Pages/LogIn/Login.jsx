@@ -31,7 +31,7 @@ function Login({login}) {
         
 
         
-
+            
             const config = {
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,6 +48,8 @@ function Login({login}) {
             });
             //console.log(store.getState().user.id);
             setAuth(true);
+
+            
             
         
     }

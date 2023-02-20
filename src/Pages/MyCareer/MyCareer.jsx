@@ -201,15 +201,18 @@ const CareerDataPage = (props) => {
   
   const addCollege = (college) => {
     setCareerLikedList([...careerLikedList, college]);
-    const csrf = getCookie('csrftoken');
-    var headers = {'X-CSRFToken': csrf}
+    //const csrf = getCookie('csrftoken');
+    //console.log(csrf);
+    
+    //var headers = {'X-CSRFToken': csrf}
 
-    init_api(headers);
-    API.post('/api/users/careerList/add', {
-      'career_name': college.career_name,
-      'user_id': userID,
-      'score': 4.5
+    init_api();
+    API.post('/api/users/careerlist/add/', {
+      career_name: college.career_name,
+      user_id: userID,
+      score: 4.5
     });
+    
   };
 
   const deleteCollege = (index) => {
