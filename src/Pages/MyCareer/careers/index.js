@@ -50,6 +50,9 @@ export const MediumCareer = (props) => {
             <button className="delete-button" onClick={() => props.onDelete(college)}>
             X
           </button>
+          <button onClick={() => props.onAdd(college)}>
+            +
+          </button>
         </div>
     ) : null;
 };

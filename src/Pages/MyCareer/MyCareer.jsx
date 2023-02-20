@@ -200,9 +200,16 @@ const CareerDataPage = (props) => {
   }, []);
   
   const addCollege = (college) => {
-    if (selectedColleges.length < 4) {
-        setSelectedColleges([...selectedColleges, college]);
-    }
+    setCareerLikedList([...careerLikedList, college]);
+    const csrf = getCookie('csrftoken');
+    var headers = {'X-CSRFToken': csrf}
+
+    init_api(headers);
+    API.post('/api/users/careerList/add', {
+      'career_name': college.career_name,
+      'user_id': userID,
+      'score': 4.5
+    });
   };
 
   const deleteCollege = (index) => {
@@ -219,6 +226,26 @@ const CareerDataPage = (props) => {
         setSelectedColleges([...selectedColleges, college]);
     }
   };
+
+  function getCookie(name) {
+    let cookieValue = null;
+
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+
+                break;
+            }
+        }
+    }
+
+    return cookieValue;
+}
 
   const test = async() => {
     /*
@@ -258,6 +285,7 @@ const CareerDataPage = (props) => {
                             key={index}
                             college={college}
                             onDelete={() => deleteCollege(index)}
+                            onAdd = {() => addCollege(college)}
                             />
                     ))}
                 </div>

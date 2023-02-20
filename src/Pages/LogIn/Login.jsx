@@ -17,11 +17,18 @@ function Login({login}) {
     const [userID, setUserID] = useState({});
 
     const loginPressed = async() => {
-        await login(email, password);
+        
 
-        if(store.getState().user.isAuthenticated) {
+        
             //setAuth(true);
             // setUserID(store.getState().user.id); 
+
+            init_api();
+        const res = await API.post("/auth/jwt/create", {
+            email: email,
+            password: password
+        });
+
             const config = {
                 headers: {
                     'Content-Type': 'application/json',
@@ -37,7 +44,7 @@ function Login({login}) {
             });
             //console.log(store.getState().user.id);
             setAuth(true);
-        }
+        
     }
 
     const test = () => {
