@@ -10,6 +10,7 @@ import {
   Anchor,
 } from "@mantine/core";
 import "./Login.css";
+
 import { useState } from "react";
 import { connect } from "react-redux";
 import { login } from "../../redux/users/userActions";
@@ -59,11 +60,34 @@ function Login({ login }) {
   const [auth, setAuth] = useState(false);
 
   const loginPressed = async () => {
-    await login(email, password);
+            //setAuth(true);
+            // setUserID(store.getState().user.id); 
+            
+            init_api();
+            const res = await API.post("/auth/jwt/create", {
+            email: email,
+            password: password
+        });
+        
 
-    if (store.getState().user.isAuthenticated) {
-      setAuth(true);
-    }
+        
+            
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `JWT ${res.data.access}`,
+                    'Accept': 'application/json'
+                }
+            };
+            
+            
+            init_api();
+            await API.get('/auth/users/me/', config)
+            .then((response) => {
+                setUserID(response.data.id);
+            });
+            //console.log(store.getState().user.id);
+            setAuth(true);
   };
 
   const test = () => {
@@ -108,7 +132,7 @@ function Login({ login }) {
       </div>
       <div className="root-login">
         <Nav />
-        {auth && <Navigate to="/MyCareer" />}
+        {auth && <Navigate to={`/MyCareer/${userID}`} />}
       </div>
     </div>
   );
