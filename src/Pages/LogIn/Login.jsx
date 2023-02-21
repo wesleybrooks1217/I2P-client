@@ -1,88 +1,117 @@
-
-import { Paper } from "@mantine/core";
+import {
+  Paper,
+  createStyles,
+  TextInput,
+  PasswordInput,
+  Checkbox,
+  Button,
+  Title,
+  Text,
+  Anchor,
+} from "@mantine/core";
 import "./Login.css";
-import {TextInput, Button} from '@mantine/core';
-import {useState} from 'react';
-import {connect} from 'react-redux';
-import {login} from '../../redux/users/userActions';
-import store from '../../redux/store';
-import {Navigate} from 'react-router-dom';
+import { useState } from "react";
+import { connect } from "react-redux";
+import { login } from "../../redux/users/userActions";
+import store from "../../redux/store";
+import { Navigate } from "react-router-dom";
 import Nav from "../../Components/Nav/Nav";
 
-function Login({login}) {
+const useStyles = createStyles((theme) => ({
+  wrapper: {
+    minHeight: 900,
+    backgroundSize: "cover",
+    backgroundImage:
+      "url(https://images.unsplash.com/photo-1446329360995-b4642a139973?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGhpZ2glMjByZXNvbHV0aW9uJTIwc2Nob29sfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60)",
+  },
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [auth, setAuth] = useState(false); 
+  form: {
+    borderRight: `1px solid ${
+      theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.colors.gray[3]
+    }`,
+    minHeight: 900,
+    maxWidth: 450,
+    paddingTop: 80,
 
-    const loginPressed = async() => {
-        await login(email, password);
+    [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+      maxWidth: "100%",
+    },
+  },
 
-        if(store.getState().user.isAuthenticated) {
-            setAuth(true);
-        }
+  title: {
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+  },
+
+  logo: {
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
+    width: 120,
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+}));
+
+function Login({ login }) {
+  const { classes } = useStyles();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [auth, setAuth] = useState(false);
+
+  const loginPressed = async () => {
+    await login(email, password);
+
+    if (store.getState().user.isAuthenticated) {
+      setAuth(true);
     }
+  };
 
-    const test = () => {
-        console.log(store.getState().user.isAuthenticated);
-    }
+  const test = () => {
+    console.log(store.getState().user.isAuthenticated);
+  };
+  return (
+    <div>
+      <div className={classes.wrapper}>
+        <Paper className={classes.form} radius={0} p={30}>
+          <Title
+            order={2}
+            className={classes.title}
+            align="center"
+            mt={100}
+            mb={40}
+          >
+            Welcome back to MyNext4!
+          </Title>
 
-    return (
-   
-                    <div className="root-login">
-                        <Nav />
-                        {auth &&
-                        <Navigate to = "/MyCareer" />}
-                        <h1>
-                            Log in
-                        </h1>
+          <TextInput
+            label="Email address"
+            size="md"
+            value={email}
+            onChange={(event) => {
+              setEmail(event.currentTarget.value);
+            }}
+          />
+          <PasswordInput
+            label="Password"
+            mt="md"
+            size="md"
+            value={password}
+            onChange={(event) => {
+              setPassword(event.currentTarget.value);
+            }}
+          />
+          <Checkbox label="Keep me logged in" mt="xl" size="md" />
+          <Button fullWidth mt="xl" size="md" onClick={loginPressed}>
+            Login
+          </Button>
+        </Paper>
+      </div>
+      <div className="root-login">
+        <Nav />
+        {auth && <Navigate to="/MyCareer" />}
+      </div>
+    </div>
+  );
+}
 
-                        <div className="login-input-email">
-
-                        
-                            <TextInput
-                            placeholder="email"
-                            radius="lg"
-                            value={email}
-                            onChange={(event) => {
-                                setEmail(event.currentTarget.value)
-                            }}
-                            style={{
-                                marginLeft: 100
-                            }}/>
-                    
-                        </div>
-
-                        <div className="login-input-password">
-
-                            <TextInput
-                            placeholder="password"
-                            radius="lg"
-                            value = {password}
-                            onChange = {(event) => {
-                                setPassword(event.currentTarget.value)
-                            }}
-                            style = {{marginLeft: 100}}/>
-
-                        </div>
-
-                        <div className="login-button">
-                            <Button
-                            variant="light"
-                            onClick={loginPressed}
-                            style = {{
-                                marginRight: 90
-                            }}>
-                                Sign In
-                            </Button>
-
-                            
-                        </div>
-
-
-                    </div>
-                
-    );
-};
-
-export default connect(null, {login})(Login);
+export default connect(null, { login })(Login);
