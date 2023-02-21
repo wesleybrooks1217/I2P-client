@@ -1,10 +1,19 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { API, init_api } from "../API";
 
 function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
-  function handleSearch() {
-    alert(`You searched for: ${searchTerm}`);
+  async function handleSearch() {
+    try {
+      init_api();
+      const response = await API.get(`/api/search/career/${searchTerm}`);
+      setSearchResults(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
@@ -16,8 +25,11 @@ function SearchBar() {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       <button style={styles.button} onClick={handleSearch}>
-        Go
+        Search
       </button>
+      {searchResults.map((result) => (
+        <div key={result.id}>{result.title}</div>
+      ))}
     </div>
   );
 }
@@ -28,7 +40,6 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     height: "50px",
-    border: "solid",
   },
   input: {
     padding: "10px",
@@ -49,6 +60,5 @@ const styles = {
     cursor: "pointer",
   },
 };
-//#4285f4
 
 export default SearchBar;
