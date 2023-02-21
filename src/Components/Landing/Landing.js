@@ -75,6 +75,7 @@ import {
   AlertTriangle,
   Apps,
 } from "tabler-icons-react";
+ 
 import SideBar from "../Nav/components/SideBar";
 import TopNav from "../Nav/components/TopNav";
 import landingImage from "./titleImage.png";
@@ -177,7 +178,6 @@ export default function Landing() {
       <SectionThree />
       <SectionFour />
       <SectionFive />
-
       <Footer />
     </div>
   );

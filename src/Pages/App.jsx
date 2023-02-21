@@ -22,6 +22,7 @@ import Courses from "./Courses/Courses";
 import Demo from "../Components/Demo/Demo";
 import ExploreCourses from "./ExploreCourses/ExploreCourses";
 import ExploreCareers from "./ExploreCareers/ExploreCareers";
+import SurveyDemo from "../Components/SurveyDemo";
 import CareerDataPage from "./MyCareer/MyCareer";
 /*
 Testing push request
@@ -45,7 +46,7 @@ function App() {
             <Route path="/MyCareer/:userID" element={<CareerDataPage />} />
             <Route path="/MyColleges" element={<MyColleges />} />
             <Route path='/Demo' element={<Demo /> } />
-
+            <Route path='/Survey' element={<SurveyDemo />} />
   
       
             <Route path="/test" element={<Test />} />
