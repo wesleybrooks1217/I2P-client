@@ -1,0 +1,205 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.user-info {
+    width: 24vw;
+    background-color: cornflowerblue;
+    margin-left: 5%;
+    padding: 10px;
+}
+
+.user-name {
+    width: 55%;
+    font-size: 36px;
+    font-weight: 800;
+    margin-right: 5%;
+    margin-bottom: 5px;
+}
+
+.user-icon {
+    width: 25%;
+    background-color: aquamarine;
+    margin-bottom: 5px;
+}
+
+.user-title {
+    background-color: lightgreen;
+    height: 25px;
+}
+.top-tab {
+    display: flex;
+}
+
+.btm-tab {
+    display: flex;
+    
+}
+
+.experience-bar {
+  width: 55%;
+  height: 1.3rem;
+  background-color: #DDD;
+  margin-bottom: 1rem;
+  margin-right: 5%;
+}
+
+.experience-progress {
+  height: 100%;
+  background-color: #0074D9;
+}
+
+.middle {
+    width: 48vw;
+    background-color:cyan  ;
+    margin-left: 4em;
+}
+.my-merits {
+    width: 24vw;
+    margin-top: 2rem;
+    height: 600px;
+    margin-left: 5% ;
+    background-color: #0074D9;
+  }
+  
+  .my-merits-header {
+    font-size: large;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  
+  .my-merits-dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .medal-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .my-merits-selected {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-height: 15.6rem; /* adjust this to fit three medals */
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+  }
+  
+  .my-merits-button {
+    margin-top: 1rem;
+    align-self: center;
+    color: #FFF;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .my-merits-dropdown.open .my-merits-selected {
+    max-height: 100rem;
+  }
+  
+
+  .user-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+  
+  .user-course,
+  .user-college,
+  .user-career {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-course h2,
+  .user-college h2,
+  .user-career h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .user-course-carousel,
+  .user-college-carousel,
+  .user-career-carousel {
+    flex: 1;
+  }
+  
+  .user-course-carousel,
+  .user-college-carousel,
+  .user-career-carousel {
+    overflow-y: auto;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
