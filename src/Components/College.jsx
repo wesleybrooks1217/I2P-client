@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./MyColleges/MyColleges.css";
 import { Spacer, Tab, Tabs, Icon} from "tabler-react";
 import { Col, Row} from "react-bootstrap"
@@ -6,7 +6,7 @@ import { Divider, Image } from "@mantine/core";
 import { Star, StarFilled, HomeDot, Book2,  Eraser, ThumbUp, ArrowsMaximize, BallFootball, Award, Building, Meat, Confetti, Cardboards, ThumbDown, MoodWrrr, MoodUnamused, MoodAnnoyed2, MoodSmileBeam, MoodSmile } from "tabler-icons-react";
 import StarImage from "../star.png"
 import {motion, AnimatePresence} from 'framer-motion'
-import { Paper, Progress, Tooltip } from "@mantine/core";
+import { Paper, Progress, Tooltip, Slider } from "@mantine/core";
 // Small College Component - C1(X)
 
 const CollegeScore = ({ showSAT, satCompositeMidpoint, satCompositePercentile25, satCompositePercentile75, actCumulativeMidpoint, actCumulativePercentile25, actCumulativePercentile75 }) => {
@@ -58,8 +58,10 @@ export const AcceptanceRate = ({ acceptanceRate }) => {
   }, [acceptanceRate])
 
   return (
-    <div>
+    <div className="acceptance-rate-container">
+    
       {icon}
+      {acceptanceRate}
     </div>
   )
 }
@@ -89,19 +91,23 @@ function StarIcon() {
   );
 }
 
-export const SmallCollege = ({college, onClick }) => {
-  const [star, setStar] = useState(false);
-  let collegeName = college[0].name;
+export const SmallCollege = ({college, onClick, onFavoriteToggle }) => {
+  const collegeName = exemptWords(college[0].name);
+  const [isFavorited, setIsFavorited] = useState(college[0].isFavorited);
+  
+  const handleFavoriteClick = () => {
+    const newIsFavorited = !isFavorited;
+    setIsFavorited(newIsFavorited);
+    console.log(college[0])
+    onFavoriteToggle(college[0].collegeUnitId, newIsFavorited)
+  }
+  
+
   function exemptWords(text) {
       let newText = text.replace("University", "");
       newText = newText.replace("of", "");
       return newText.slice(0, 30) 
     }
-    
-
-  function handleClick() {
-    setStar(!star);
-  }  
 
   window.onload = function() {
     let starAnim = document.querySelector('.small-college-star');
@@ -111,12 +117,14 @@ export const SmallCollege = ({college, onClick }) => {
   });
 }
 
-  collegeName = exemptWords(collegeName);
+  
     return (
 
         <div className="small-college" onClick={onClick}>
             <div className="small-college-name">{collegeName}</div>
-            <StarIcon />
+            <div onClick={handleFavoriteClick}>
+            {isFavorited ? <Star style={{color: 'green'}} /> : <Star /> }
+            </div>
         </div>
     );
 };
@@ -189,59 +197,150 @@ const MedallionAward = ({ endpoint, name, Icon, handleClick}) => {
 };
 
 
-export const MediumCollege = ({college}) => {
-    const [activeTab, setActiveTab] = useState("money");
-    const [showSAT, setShowSAT] = useState(false);
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+  },
+  tap: {
+    scale: 0.9,
+    transition: { duration: 0.2 },
+  },
+};
 
-    const endpoints = [
-        college[0].rankingsBestCollegeAcademics,
-        college[0].rankingsBestCollegeAthletics,
-        college[0].rankingsBestValueColleges,
-        college[0].rankingsBestCollegeCampuses,
-        college[0].rankingsBestCollegeFood,
-        college[0].rankingsBestGreekLifeColleges,
-    ];
-    
-    const updatedEndpoints = endpoints.map(endpoint => { 
-      return {
+const useButtonHandler = (handler) => {
+  return useCallback(() => {
+    handler();
+  }, [handler]);
+};
+const DeleteButton = ({ children, onClick }) => {
+  const handleDelete = useButtonHandler(onClick)
+  return (
+    <motion.button
+      onClick={handleDelete}
+      variants={buttonVariants}
+      whileHover="hover"
+      whileTap="tap"
+      className="button"
+    >
+      {children}
+    </motion.button>
+  );
+};
+
+const LikeButton = ({ children, onClick, college }) => {
+  const handleLiked = useButtonHandler(onClick)
+  return (
+    <motion.button
+      onClick={handleLiked}
+      variants={buttonVariants}
+      whileHover="hover"
+      whileTap="tap"
+      className="button"
+    >
+      {children}
+    </motion.button>
+  );
+};
+const MaxButton = ({ children, onClick, college }) => {
+  const onLargeClick = useButtonHandler(onClick);
+  return (
+    <motion.button
+      onClick={onLargeClick}
+      variants={buttonVariants}
+      whileHover="hover"
+      whileTap="tap"
+      className="button"
+    >
+      {children}
+    </motion.button>
+  );
+};
+
+function College({college, onUpdateEndpoints, size}) {
+  
+  if (!college) {
+    return null;
+  }
+  
+  const endpoints = [
+    college[0].rankingsBestCollegeAcademics,
+    college[0].rankingsBestCollegeAthletics,
+    college[0].rankingsBestValueColleges,
+    college[0].rankingsBestCollegeCampuses,
+    college[0].rankingsBestCollegeFood,
+    college[0].rankingsBestGreekLifeColleges,
+];
+
+  const updatedEndpoints = endpoints.map(endpoint => { 
+    return {
       ...endpoint,
       name: endpoint.name
         .replace('Best ', '')
         .replace('College ', '')
-        .replace('Colleges', '')
-      }
-    })
+  .     replace('Colleges', '')
+}
+});
 
-    const icons = [
-      Book2,
-      BallFootball,
-      Award,
-      Building,
-      Meat,
-      Confetti,
-    ]
+return (
+  <div shadow="lg" className={size == "medium" ? 'college-medium-medallions' : 'college-large-medallions'}>
+      {updatedEndpoints.map((endpoint, index) => (
+         <MedallionAward endpoint={endpoint.value} 
+         name={endpoint.name} key={index} Icon={icons[index]} />
+         ))}
+
+  </div>
+);
+
+}
+export const icons = [
+Book2,
+BallFootball,
+Award,
+Building,
+Meat,
+Confetti,
+]
+
+export const MediumCollege = ({college, onDelete, handleLiked, onLargeClick, setView, setSelectedCollege}) => {
+    const [activeTab, setActiveTab] = useState("money");
+    const [showSAT, setShowSAT] = useState(false);
+    const [endpoints, setEndpoints] = useState([]);
+
+    const handleUpdateEndpoints = (newEndpoints) => {
+      setEndpoints(newEndpoints);
+    };
+  
 
     function handleClick() {
       setShowSAT(!showSAT);
       console.log("Click == " + showSAT)
     }
+    
+    
 
+    function handleDelete() {
+      onDelete()
+    }
+  
+  
+  
       return (
         <div className="college-medium-container">
           <div className="college-medium-top-shelf"> 
             <div className="college-medium-name"> {college[0].name} </div>
             <div className="college-medium-icons" >
-              <div> <Eraser /> </div>
-              <div> <ThumbUp /> </div>
-              <div> <ArrowsMaximize /></div>
+              <DeleteButton onClick={onDelete}> <Eraser /> </DeleteButton>
+              <LikeButton onClick={handleLiked}>  <ThumbUp /> </LikeButton>
+              <MaxButton onClick={onLargeClick}> <ArrowsMaximize /></MaxButton>
             </div>
           </div>  
           <Divider />
           <div shadow="lg" className="college-medium-medallions">
-                {updatedEndpoints.map((endpoint, index) => (
-        <MedallionAward endpoint={endpoint.value} 
-      name={endpoint.name} key={index} Icon={icons[index]} />
-      ))}
+          <College college={college} size={'medium'} onUpdateEndpoints={handleUpdateEndpoints} />
+            
+    
+    
+    
 
           </div>
           <Divider style={{marginTop: 20 }}/>
@@ -259,53 +358,31 @@ export const MediumCollege = ({college}) => {
       );
     }
       
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-
-
-
-
-
-
-
-
-
-
-   
-   
-      
-      
-
-
-
     
 
 
 //Large College Component - C1(Z)
 
-export const LargeCollege = ({ college }) => {
+export const LargeCollege = ({ college, onDelete, handleLiked}) => {
+  const [endpoints, setEndpoints] = useState([]);
+
+  const handleUpdateEndpoints = (newEndpoints) => {
+    setEndpoints(newEndpoints);
+  };
+
     return college ? (
-        <div className="largecollege">
-            <div className="largecollege-name">{college.name}</div>
-            <div className="largecollege-description">{college.description}</div>
-            <div className="largecollege-details">{college.details}</div>
+        <div className="large-college">
+          <div className="large-college-top-container">
+          {college[0].name}
+          <div className="icon-area">
+          <DeleteButton onClick={onDelete}> <Eraser /> </DeleteButton>
+          <LikeButton onClick={handleLiked}>  <ThumbUp /> </LikeButton>
+          </div>
+        </div>
+
+        
+        <hr />
+        <College college={college} onUpdateEndpoints={handleUpdateEndpoints} />
         </div>
     ) : null;
 };
