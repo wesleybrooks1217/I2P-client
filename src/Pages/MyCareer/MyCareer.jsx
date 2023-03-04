@@ -5,6 +5,7 @@ import { API, init_api } from '../../API';
 import Nav from '../../Components/Nav/Nav';
 import { useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router";
+import { ArrowDown } from "tabler-icons-react";
 
 const MyCareers = ({ onSelectCollege, colleges}) => {
   //const [colleges, setColleges] = useState([]);
@@ -35,90 +36,121 @@ const MyCareers = ({ onSelectCollege, colleges}) => {
   );
 };
 
-const CareerComputer = ({onSelectCollege}) => {
+const CareerComputer = ({onSelectCollege, userID}) => {
 
+  
+  const [view, setView] = useState('Filter');
   const [careerFilteredList, setCareerFilteredList] = useState([]);
-  const [businessList, setBusinessList] = useState([]);
-  const [agricultureList, setAgricultureList] = useState([]);
-  const [engineeringList, setEngineeringList] = useState([]);
-  const [healthList, setHealthList] = useState([]);
-  const [manufacturingList, setManufacturingList] = useState([]);
-  const [hrList, setHRList] = useState([]);
-  const [thirtyList, setThirtyList] = useState([]);
-  const [fiftyList, setFiftyList] = useState([]);
-  const [seventyFiveList, setSeventyFiveList] = useState([]);
-  const [hundredList, setHundredList] = useState([]);
-  const [hundredTwentyFiveList, setHundredTwentyFiveList] = useState([]);
-  const [highSchoolList, setHighSchoolList] = useState([]);
-  const [bachelorsList, setBachelorsList] = useState([]);
-  const [mastersList, setMastersList] = useState([]);
-  const [doctorateList, setDoctorateList] = useState([]);
+  const [filterVal, setFilterVal] = useState('Search');
+  const [prevSearchLength, setPrevSearchLength] = useState(0);
 
   useEffect(() => {
 
-    const getFiltered = async() => {
-      init_api();
-      API.get('/api/explore/career/')
-      .then((response) => {
-        setBusinessList(response.data.business);
-        setAgricultureList(response.data.agriculture);
-        setManufacturingList(response.data.manufacturing);
-        setEngineeringList(response.data.engineering);
-        setHealthList(response.data.health);
-        setHRList(response.data.human_resources);
-        setThirtyList(response.data.thirty_thousand);
-        setFiftyList(response.data.fifty_thousand);
-        setSeventyFiveList(response.data.seventyfive_thousand);
-        setHundredList(response.data.onehundred_thousand);
-        setHundredTwentyFiveList(response.data.onehundredtwentyfive_thousand);
-        setHighSchoolList(response.data.high_school);
-        setBachelorsList(response.data.bachelors);
-        setMastersList(response.data.masters);
-        setDoctorateList(response.data.doctorate);
-      });
-    };
+    const getList = async() => {
+      if (filterVal == "Business" 
+      || filterVal == "Agriculture"
+      || filterVal == "Engineering"
+      || filterVal == "Health"
+      || filterVal == "Manufacturing"
+      || filterVal == "Human Resources") {
 
-    getFiltered();
+        init_api();
+        await API.get(`api/explore/career/industry/${filterVal}/`)
+        .then((response) => {
+          console.log(response.data);
+          
+          setCareerFilteredList(response.data.careers);
+        });
+      } else if (filterVal == "50000"
+                || filterVal == "75000"
+                || filterVal == "100000"
+                || filterVal == "125000") {
 
-  }, [])
-  const filter = () => {
-    var drop = document.getElementById("collegecomputer-filter-select");
-    var value = drop.value;
-    if (value == 1) {
-      setCareerFilteredList(businessList);
-    } else if (value == 2) {
-      setCareerFilteredList(agricultureList);
-    } else if (value == 3) {
-      setCareerFilteredList(engineeringList);
-    } else if (value == 4) {
-      setCareerFilteredList(healthList);
-    } else if (value == 5) {
-      setCareerFilteredList(manufacturingList);
-    } else if (value == 6) {
-      setCareerFilteredList(hrList);
-    } else if (value == 7) {
-      setCareerFilteredList(thirtyList);
-    } else if (value == 8) {
-      setCareerFilteredList(fiftyList);
-    } else if (value == 9) {
-      setCareerFilteredList(seventyFiveList);
-    } else if (value == 10) {
-      setCareerFilteredList(hundredList);
-    } else if (value == 11) {
-      setCareerFilteredList(hundredTwentyFiveList);
-    } else if (value == 12) {
-      setCareerFilteredList(highSchoolList);
-    } else if (value == 13) {
-      setCareerFilteredList(bachelorsList);
-    } else if (value == 14) {
-      setCareerFilteredList(mastersList);
-    } else if (value == 15) {
-      setCareerFilteredList(doctorateList);
-    } else {
+        init_api();
+        await API.get(`api/explore/career/salary/${filterVal}/`)
+        .then((response) => {
+          setCareerFilteredList(response.data.careers);
+        });
+      } else if (filterVal == "HighSchool"
+                || filterVal == "Bachelors"
+                || filterVal == "Masters"
+                || filterVal == "Doctorate") {
+
+                  init_api();
+                  await API.get(`api/explore/career/education/${filterVal}/`)
+                  .then((response) => {
+                    setCareerFilteredList(response.data.careers);
+                  });
+                } else {
+                  setCareerFilteredList([]);
+                }
+    }
+    
+    getList();
+  }, [filterVal]);
+
+  
+  const filter = (e) => {
+    setFilterVal(e.target.value);
+    
+  }
+
+
+   
+
+
+  
+
+
+  const downClick = () =>{
+    console.log("Click");
+  }
+
+  const changeView = () => {
+    if (view == "Filter") {
+      setView("Reccomendatinons");
       setCareerFilteredList([]);
+    } else {
+      setView("Filter");
+      setFilterVal([]);
+      setFilterVal("Search");
     }
   }
 
+  const getRecommendations = async() => {
+    
+    console.log("Recs");
+    /*
+    if (careerFilteredList.length == 0) {
+      init_api();
+      await API.get(`/api/career/recommendations/${userID}/`)
+      .then((response) => {
+        console.log(response.data);
+      });
+    }
+    */
+  }
+
+  const search = async(e) => {
+    var searchVal = e.target.value;
+
+    if (searchVal.length < prevSearchLength) {
+      setCareerFilteredList([]);
+      
+    } else if (searchVal.length > 1) {
+      
+      if (searchVal.length % 2 == 0) {
+        init_api();
+        await API.get(`/api/search/career/${searchVal}/`)
+        .then((response) => {
+          console.log(response.data);
+          setCareerFilteredList(response.data.careers);
+          
+        });
+      }
+    }
+    setPrevSearchLength(searchVal.length);
+  }
 
   
   return (
@@ -129,36 +161,55 @@ const CareerComputer = ({onSelectCollege}) => {
         College Computer
         <div className="collegecomputer-filter">
           
-          <select id="collegecomputer-filter-select" onChange={filter}>
-            <option value = "0">Filter</option>
+         { view == "Filter" ? (<select id="collegecomputer-filter-select" onChange={filter}>
+            <option value = "Search">Filter</option>
             <optgroup label="Industries">
-                <option value = "1">Business</option>
-                <option value = "2">Agriculture</option>
-                <option value = "3">Engineering</option>
-                <option value = "4">Health</option>
-                <option value = "5">Manufacturing</option>
-                <option value = "6">Human Resources</option>
+                <option value = "Business">Business</option>
+                <option value = "Agriculture">Agriculture</option>
+                <option value = "Engineering">Engineering</option>
+                <option value = "Health">Health</option>
+                <option value = "Manufacturing">Manufacturing</option>
+                <option value = "Human Resources">Human Resources</option>
             </optgroup>
 
             <optgroup label="Salary">
-              <option value = "7"> 30,000</option>
-              <option value = "8"> 50,000</option>
-              <option value = "9"> 75,000</option>
-              <option value = "10"> 100,000</option>
-              <option value = "11"> 125,000</option>
+              
+              <option value = "50000"> 50,000</option>
+              <option value = "75000"> 75,000</option>
+              <option value = "100000"> 100,000</option>
+              <option value = "125000"> 125,000</option>
             </optgroup>
 
             <optgroup label = "Education">
-              <option value = "12">High School Diploma</option>
-              <option value = "13">Bachelor's Degree</option>
-              <option value = "14">Masters Degree</option>
-              <option value = "15">Doctorate Degree</option>
+              <option value = "HighSchool">High School Diploma</option>
+              <option value = "Bachelors">Bachelor's Degree</option>
+              <option value = "Masters">Masters Degree</option>
+              <option value = "Doctorate">Doctorate Degree</option>
             </optgroup>
           </select>
+          ) : (
+            <div>
+              <button
+              className="collegecomputer-button"
+              onClick={getRecommendations}>
+              Get Recommendations
+              </button>
+            </div>
+          ) }
+          <button
+          className="collegecomputer-button"
+          onClick={changeView}>
+          {view == "Filter" ? "Reccomendation" : "Filter"}
+        </button>
         </div>
+
+        
       </div>
       
-      <ul className="mycolleges-list">
+     {view == "Filter" && filterVal != "Search" &&
+      
+     <ul className="mycolleges-list">
+      
         {careerFilteredList.map((name, id) => (
           <li
             key={id}
@@ -167,8 +218,62 @@ const CareerComputer = ({onSelectCollege}) => {
           >
             <SmallCareer college={name} />
           </li>
+          
         ))}
-      </ul>
+     
+      </ul> }
+      {view != "Filter" &&
+        <ul 
+        className="mycolleges-list">
+          <li 
+          key = "Header">
+            MyRecommendations
+          </li>
+
+          {careerFilteredList.map((name, id) => (
+          <li
+            key={id}
+            className="mycolleges-list-item"
+            onClick={() => onSelectCollege(name)}
+          >
+            <SmallCareer college={name} />
+          </li>
+          
+        ))}
+        </ul> }
+
+        {view == "Filter" && filterVal == "Search" &&
+        <ul 
+        className="mycolleges-list">
+          <li 
+          key = "Header">
+            Career Search
+          </li>
+          <li
+          key = "SearchBar">
+            <input onChange={search}/>
+          </li>
+
+          {careerFilteredList.map((name, id) => (
+          <li
+            key={id}
+            className="mycolleges-list-item"
+            onClick={() => onSelectCollege(name)}
+          >
+            <SmallCareer college={name} />
+          </li>
+          
+        ))}
+
+        </ul>
+
+        }
+      
+
+      
+      
+    
+      
     </div>
   );
 };
@@ -188,7 +293,7 @@ const CareerDataPage = (props) => {
     const getLikedList = async () => {
         
         init_api();
-        API.get(`/api/users/careerlist/${userID}/`)
+        await API.get(`/api/users/careerlist/${userID}/`)
         .then((response) => {
             
             console.log(response.data.liked_list);
@@ -294,7 +399,14 @@ const CareerDataPage = (props) => {
                 </div>
             )}
             </div>
-      <CareerComputer onSelectCollege={selectCollege}/>
+      
+      
+      <CareerComputer onSelectCollege={selectCollege}
+      userID = {userID}/>
+      
+      
+      
+
       </div>
       );
 };

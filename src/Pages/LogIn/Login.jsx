@@ -17,6 +17,7 @@ import { login } from "../../redux/users/userActions";
 import store from "../../redux/store";
 import { Navigate } from "react-router-dom";
 import Nav from "../../Components/Nav/Nav";
+import { init_api, API } from "../../API";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -58,6 +59,7 @@ function Login({ login }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [auth, setAuth] = useState(false);
+  const [userID, setUserID] = useState(0);
 
   const loginPressed = async () => {
             //setAuth(true);
@@ -124,7 +126,6 @@ function Login({ login }) {
               setPassword(event.currentTarget.value);
             }}
           />
-          <Checkbox label="Keep me logged in" mt="xl" size="md" />
           <Button fullWidth mt="xl" size="md" onClick={loginPressed}>
             Login
           </Button>

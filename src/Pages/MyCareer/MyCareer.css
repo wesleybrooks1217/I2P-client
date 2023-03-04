@@ -88,7 +88,10 @@
     padding: 0;
   }
   
-
+  
+  .collegecomputer-button {
+    min-width: 160px;
+  }
 
 .collegedata-main {
     width: 70%;
