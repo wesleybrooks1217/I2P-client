@@ -25,6 +25,7 @@ export const load_user = () => async dispatch => {
 
             dispatch(fetchUserCareerInfo(res.data.id));
             dispatch(userActions.USER_LOADED_SUCCESS(res.data));
+            
         } catch (err) {
             dispatch(userActions.USER_LOADED_FAIL());
         }
