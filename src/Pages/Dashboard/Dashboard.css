@@ -1,148 +1,317 @@
 html, body {
     margin: 0;
     padding: 0;
+    box-sizing:border-box;
+    font-family: 'Phudu', cursive;
 }
 
-.container {
-    display: flex;
-    width: 100%;
-    border: 1px solid black;
-    padding: 10px;
+.dashboard-container {
+  display: flex;
+  padding: 50px;
+  width: 100%;
+  height: 100vh;
+  margin-top: 110px;
 }
 
-.user-info {
-    width: 24vw;
-    background-color: cornflowerblue;
-    margin-left: 5%;
-    padding: 10px;
+.dashboard-left-scn {
+  height: 80vh;
+  width: 25vw;
+  margin-left: 2%;
+
+  display: flex;
+  flex-direction: column;
 }
 
-.user-name {
-    width: 55%;
-    font-size: 36px;
-    font-weight: 800;
-    margin-right: 5%;
-    margin-bottom: 5px;
+.h4Tag {
+  font-family: 'Phudu';
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 5rem;
+  color: #fff;
+  
+  
+}
+.dashboard-profile {
+  height: 120px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 4px;
+  padding: 24px;
 }
 
-.user-icon {
-    width: 25%;
-    background-color: aquamarine;
-    margin-bottom: 5px;
+.dashboard-play {
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  
+}
+.dashboard-achievments {
+  margin-top: 18px;
+  height: 480px;
+  position: relative;
+  background-color: #fffee1;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
 }
 
-.user-title {
-    background-color: lightgreen;
-    height: 25px;
-}
-.top-tab {
-    display: flex;
-}
+.dashboard-achievments-see {
+  background-color: #f72585;
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+  height: 80px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
-.btm-tab {
-    display: flex;
-    
 }
 
-.experience-bar {
-  width: 55%;
-  height: 1.3rem;
-  background-color: #DDD;
-  margin-bottom: 1rem;
-  margin-right: 5%;
+.dashboard-courses {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 4px;
+  padding: 24px;
+  max-width: 240px;
+  height: 95%;
+  margin: 18px;
 }
 
-.experience-progress {
-  height: 100%;
-  background-color: #0074D9;
+.dashboard-colleges {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 4px;
+  padding: 24px;
+  max-width: 240px;
+  margin: 18px;
+  height: 95%;
+
 }
 
-.middle {
-    width: 48vw;
-    background-color:cyan  ;
-    margin-left: 4em;
+.dashboard-careers {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 4px;
+  padding: 24px;
+  max-width: 240px;
+  margin: 18px;
+  height: 95%;
 }
-.my-merits {
-    width: 24vw;
-    margin-top: 2rem;
-    height: 600px;
-    margin-left: 5% ;
-    background-color: #0074D9;
-  }
-  
-  .my-merits-header {
-    font-size: large;
-    font-weight: 800;
-    margin-bottom: 1rem;
-  }
-  
-  .my-merits-dropdown {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .medal-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+.dashboard-main-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25px;
+  height: 70vh;
+}
 
-  .my-merits-selected {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    max-height: 15.6rem; /* adjust this to fit three medals */
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-  }
-  
-  .my-merits-button {
-    margin-top: 1rem;
-    align-self: center;
-    color: #FFF;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .my-merits-dropdown.open .my-merits-selected {
-    max-height: 100rem;
-  }
-  
+.dashboard-right {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  margin-left: 30px;
+  height: 70vh;
 
-  .user-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
+}
+.dashboard-miss-container {
+  background-color: #efc6a6;
+  background-size: cover;
+  background-position: center center -130px;
+}
+
+.dashboard-missions {
+  text-align: center;
+  padding: 20px;
+  height: 58.75vh;
+  width: inherit;
+  background: url('../../grand_map.png') center center / cover no-repeat;
+  background-position: center 110px;
+  margin-bottom: 21px;
+  box-shadow: 0 3px 5px pink, 0 3px 5px lightpink ;
+  animation: glow 4s infinite;
+}
+
+.dashboard-missions-see {
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+  height: 80px;
+  height:80px;
+  margin-top: 18px;
+  width: inherit;
+  background-color: #4361ee;
+  box-shadow: 0 1px 3px blue, 0 1px 2px darkblue;
+}
+ 
+/* Profile Section */
+ 
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-picture {
+  width: 60px;
+  height: 60px;
+  background-color: lightgreen;
+  object-fit: cover;
+}
+
+.profile-click-in {
+  width: 60px;
+  height: 60px;
+  background-color:aqua;
+  object-fit: cover;
+}
+
+.profile-school {
+  width: 60px;
+  height: 60px;
+  background-color: lightcoral;
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.profile-info p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: normal;
+  color: gray;
+
+}
+
+/* animations */
+
+.animated-gradient-text {
+  background: -webkit-linear-gradient(-70deg, #ff00cc, #333399, #ffcc33, #00ccff);
+  -webkit-background-clip: text;
+  background-size: 200%;
+  -webkit-text-fill-color: transparent;
+  animation: animated-gradient 5s ease-in-out infinite;
+}
+
+@keyframes animated-gradient {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .user-course,
-  .user-college,
-  .user-career {
-    display: flex;
-    flex-direction: column;
+  50% {
+    background-position: 100% 50%;
   }
-  
-  .user-course h2,
-  .user-college h2,
-  .user-career h2 {
-    margin-bottom: 1rem;
+  100% {
+    background-position: 0% 50%;
   }
-  
-  .user-course-carousel,
-  .user-college-carousel,
-  .user-career-carousel {
-    flex: 1;
+}
+
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
   }
-  
-  .user-course-carousel,
-  .user-college-carousel,
-  .user-career-carousel {
-    overflow-y: auto;
+  50% {
+    box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.1);
   }
-  
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
+  }
+}
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
 

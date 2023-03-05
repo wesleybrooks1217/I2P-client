@@ -2,172 +2,457 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Phudu', cursive;
 }
 
-
-#mycolleges-showcollege-title {
-    position: relative;
-    top: 2.5%;
-    left: 2.5%;
-    font-size: 28px;
-    font-weight: 900;
+body {
+  background-color: #fff;
+  background-image: linear-gradient(to right, transparent 1px, lightgray 1px), linear-gradient(to bottom, transparent 1px, lightgray 1px);
+  background-size: 20px 20px;
+  
 }
 
-#mycolleges-showcollege-attrs {
-    width: 180px;
-    display: flex;
-    position: relative;
-    margin-left: auto;
-    margin-right: 8px;
-    bottom: 4%;
+/* OVR Container */
 
-
+.collegedata {
+  border-radius: 10px; /* Set border radius to create a rounded corner effect */
+  padding: 20px;
+  display: flex;
+  height: 85vh;
+  margin: 5% 3% 2% 3%;
 }
 
-#mycolleges-showcollege-img {
-    position: absolute;
-    width: 450px;
-    height: 200px;
-    right: 37.5%;
-    bottom: 55%;
-    border: 1px solid black;
+.collegedata-main-header {
+  padding: 10px;
+  font-size: 20px;
+  color: #333;
+  border-bottom: 1px solid #333;
 }
 
-#mycolleges-showcollege-genstats {
-    position: absolute;
-    width: 500px;
-    height: 200px;
-    right: 22.5%;
-    bottom: 55%;
-    border: 1px solid black;
+.collegedata-main-placeholder {
+  padding: 10px;
+  font-size: 20px;
+  color: #333;
+  text-align: center;
 }
+  
+/* MyColleges Container + Component CSS */
 
-#mycolleges-showcollege-rankings {
-    position: absolute;
-    width: 40vw;
-    left: 42%;
-    bottom: 36%;
-    height: 120px;
-    border: 1px solid black;
-}
-
-#mycollege-showcollege-topmajors {
-    position: absolute;
-    width: 20vw;
-    left: 42%;
-    top: 65%;
-    height: 200px;
-    border: 1px solid black;
-}
-
-#mycollege-showcollege-recclasses {
-    position: absolute;
-    width: 20vw;
-    left: 63%;
-    top: 65%;
-    height: 200px;
-    border: 1px solid black;
-}
-
-#arrow-icon {
-    position: relative;
-    width: 60px;
-    left: 90%;
-    top: 180%;
-    height: 60px;
-}
-@media only screen and (max-width: 1540px) {
-    #mycolleges-list-container {
-        width: 25vw;
-    }
-    #mycolleges-list-container-paper {
-        width: 25vw;
-    }
-    #mycolleges-showcollege-img {
-        display: none;
-    }
-    #mycolleges-showcollege-genstat ds {
-        width: 40vw;
-        right: 12%;
-        margin: 0 auto;
-    }
-    #mycolleges-showcollege-rankings {
-        width: 40vw;
-        right: 6%;
-        margin: 0 auto;
-    }
-}
-
-/* Start to new College work */
 
 .college-container {
-  transform: scale(1);
-  transition: transform 0.5s ease-in-out;
+  height: 100%;
+  width: 30%;
+  margin: 0 2.5% 0 0;
 }
 
 .my-college-list {
   padding: 20px;
   margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(8, auto);
+  grid-gap: 1em;
+}
+
+.mycolleges-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.mycolleges-header-text {
+  font-size: 20px;
+  color: #333;
+}
+
+.mycolleges-header-filter {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mycolleges-header-filter i {
+  color: #333;
+}
+
+.mycolleges-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mycolleges-list-item {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+}
+
+.mycolleges-list-item:hover {
+  background-color: #ddd;
+}
+
+.mycolleges-list-item-selected {
+  background-color: #ddd;
+}
+
+.mycolleges-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 20px;
+  color: #333;
+  border-bottom: 1px solid #333;
+}
+  
+.mycolleges-header-text {
+  flex-grow: 1;
+}
+  
+.mycolleges-header-filter {
+  padding-left: 10px;
+  cursor: pointer;
+}
+  
+.mycolleges-list-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+  
+.mycolleges-list-item:hover {
+  background-color: #ddd;
+}
+  
+/* College Computer Container + Component CSS */
+
+.collegecomputer {
+  width: 30%;
+  height: 100%;
+  margin-left: 2.5%;
+  margin-right: 0;
+  overflow-y: auto;
+}
+
+ 
+.collegecomputer-header {
+  padding: 18px;
+  font-size: 20px;
+  color: #333;
+  border-bottom: 1px solid #333;
+}
+
+/* College Components - LG - MD - SM  */
+
+.large-college {
+  margin-top: 25px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 3px;
+  height: 85%;
+}
+
+.large-college-top-container {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between  ;
+}
+
+
+.largecollege-name {
+  padding: 10px;
+  font-size: 20px;
+  color: #333;
+  border-bottom: 1px solid #333;
+}
+
+.largecollege-description {
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.largecollege-details {
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.college-medium-top-shelf {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.college-medium-name {  
+  width: 90%;
+  font-size: 18px;
+  margin: 10px auto 15px auto;
+}
+
+.college-medium-icons {
+  display: flex;
+  margin: 3px;
+}
+
+.college-medium-icons > Button {
   border: 1px solid black;
+  padding: 3px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 5px;
+  align-items: center;
+}
+
+.college-medium-container {
+  margin: 5px;
+  padding: 10px;
+  position: relative;
+  border: .2px solid #dee2e6;
+  border-radius: 3px;
+  width: 24vw;
+  animation: swing 2s ease-in-out infinite alternate;
+}
+
+.college-medium-container::before {
+  content: "";
+  position: absolute; /* Set position to absolute to position thumbtack */
+  top: -15px; /* Position thumbtack 15 pixels above top of card */
+  left: 50%; /* Position thumbtack in the middle of the card */
+  transform: translateX(-50%) rotate(-45deg); /* Rotate thumbtack and center it on the card */
+  width: 30px; /* Set width of thumbtack */
+  height: 30px; /* Set height of thumbtack */
+  background-color: red; /* Set thumbtack color to red */
+  border: 1.3px solid lightgray;
+  border-radius: 20px 20px 20px 20px; /* Set border radius to create curved corners */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Add a slight drop shadow to the thumbtack */
+  animation: swingThumbtack 2s ease-in-out infinite alternate;
+}
+
+.collegeMiddle {
+  position: relative;
+  background-size: cover;
+  margin: 10px 0 0 0;
+  padding: 15px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  border-radius: 10px; 
+  width: 55%;
+  height: 98%;
+  background-color: #fff;
+}
+
+.collegeMiddle-button {
+  position: absolute;
+  right: 10%;
+}
+  
+.collegeMiddleHeader {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background-color: #fff;
+}
+  
+.collegeMiddleHeaderText {
+  text-align: center;
+  padding: 3px;
+  border-bottom: 1px solid #333;
+  font-size: 20px;
+  color: #333;
+}
+
+.mediumcollege-name {
+  width: 350px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 40ch;
+  padding: 10px;
+  font-size: 20px;
+  color: #333;
+  border-bottom: 1px solid #333;
+}
+
+.medium-main {
+  display: flex;
+  
+}
+.medium-college-top-title {
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+}
+.medium-college-img {
+  height: 60px;
+  
+}
+.mediumCollege-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mediumCollege-bottom > * {
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  background-color:lightgray;
+  border-radius: 50%;
+  margin: 18px;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight drop shadow to the container */
+  cursor: pointer;
+}
+  
+.mediumcollege-description {
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+}
+.mediumcollege-delete {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+  
+
+.medium-college-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px 0 20px;
+  align-items: center;
+}
+
+.mediumColleges {
+  margin-left: 15px;
+  padding: 15px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, auto);
-  grid-gap: 1em;
-  height: 65vh;
+  grid-template-rows: repeat(2, calc(50% - 10px));
+  grid-gap: 5px;
+  height: 95%;
 }
 
 .small-college {
   position: relative;
   display: flex;
-  width: inherit;
-  border: 1px solid black;
-  align-items: center;
-  max-height: 15vh;
+  border: 1.2px solid lightgray;
+  border-radius: 3px;
+  height: 80px;
 }
   
 .small-college-name {
-  max-width: 80px;
+  max-width: 300px;
   position: absolute;
   bottom: 0;
   margin-bottom: 10px;
   margin-left: 10px;
   left: 5;
-  font-weight: 500;  
-  animation: floating-text 1s ease-in-out infinite alternate;
-}
-
-@keyframes floating-text {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-5px);
-  }
+  max-height: 20px;
+  font-weight: 500; 
+  font-size: 16px; 
 }
 
 .small-college-star {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 10px;
-  margin-top: 10px;
+  margin-left: 8px;
+  margin-top: 13px;
+  margin-right: auto;
+
 }
 
-.small-college-star.active {
-  animation: confetti 0.5s ease-in-out forwards;
-  transform: translateY(-10px);
+/* Medallion and accessories */
+
+.medallion-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 
-@keyframes confetti {
-  0% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
+.college-large-medallions {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80px;
+  display:grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap:0px;
+  grid-template-rows: repeat(1, calc(50% - 5px));
+}
+
+.college-medium-medallions {
+  padding: 8px;
+  margin-top: 0px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 45%;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0px;
+  grid-template-rows: repeat(3, calc(50% + 15px));
+}
+
+.medallion-award {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+}
+.medallion-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medallion-award.green {
+  background-color: #7DD181;
+  color: #fff;
+  box-shadow: 0 0 20px#7DD181;
+  border: 3px solid #fff;
+  animation: pulse 1s infinite;
+}
+
+.medallion-award.gold {
+  background-color: #ffd700;
+  color: #fff;
+  box-shadow: 0 0 20px #ffd700;
+ 
+}
+
+.medallion-award.silver {
+  background-color: #c0c0c0;
+  color: #fff;
+  box-shadow: 0 0 20px #c0c0c0;
+}
+
+.medallion-award.bronze {
+  background-color: #cd7f32;
+  color: #fff;
+  box-shadow: 0 0 20px #cd7f32;
+}
+
+.rainbow-text {
+  font-size: 4rem;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #ff2c55, #ff7f50, #ffd700, #7fff00, #00ffff, #8a2be2, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .star-icon {
@@ -181,83 +466,35 @@
   margin-top: 0.5em;
 }
 
-.star-icon__star {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(0deg) scale(1);
-  transition: transform 0.3s linear;
+/* Large college additional CSS */
+
+.college-attribute-title {
+  font-size: 12px;
 }
 
-.star-icon__image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(0deg) scale(0);
-  width: 24px;
-  height: 24px;
-}
-
-.star-icon.clicked .star-icon__star {
-  transform: translate(-50%, -50%) rotate(90deg) scale(1.5);
-}
-
-.star-icon.clicked .star-icon__image {
-  animation: rotate-scale 0.3s linear forwards;
-}
-
-@keyframes rotate-scale {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg) scale(0);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(90deg) scale(1);
-  }
-}
-
-/* Medium College */
-
-.college-medium-container {
-  border: 1px solid black;
-  width: 18vw;
-}
-
-.college-medium-top-shelf {
-  position: relative;
-  width: 100%;
+.college-attributes-container {
   display: flex;
   align-items: center;
-  justify-content:space-between;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.college-medium-name {
-  margin-left: 10px;
-}
-
-.college-medium-icons {
+.college-attributes {
+  position: absolute;
+  bottom: 5%;
+  text-align: center;
+  padding: 15px;
+  width: 80%;
+  height: 15%;
   display: flex;
-  margin: 3px;
-}
-
-.college-medium-icons > div {
-  border: 1px solid black;
-  padding: 3px;
-  border-radius: 45%;
-  margin: 5px;
+  justify-content: space-evenly;
   align-items: center;
 }
 
-.college-medium-medallions {
-  margin-top: 25px;
-  width: 16vw;
-  padding: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 18vh;
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, calc(50% - 5px));
-  
+.acceptance-rate-container {
+  justify-content: center;
+  text-align: center;
 }
 
 .test-score-section {
@@ -274,366 +511,107 @@
   width: 100%;
 }
 
-.medium-college-bottom-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .rate-container {
   width: 40px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .yellow {
   background-color: gold;
 }
-
-
-
-
-.college-container:hover {
-  transform: scale(1.05);
-}
-
-.collegedata {
+  
+  gender-visual {
     display: flex;
-    height: 80vh;
-    margin: 5%;
-  }
-  
-  
-  
-  .mycolleges-header {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #333;
-  }
-  
-  .mycolleges-header-text {
-    font-size: 20px;
-    color: #333;
-  }
-  
-  .mycolleges-header-filter {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #fff;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    cursor: pointer;
+    height: 50px;
   }
   
-  .mycolleges-header-filter i {
-    color: #333;
+  .gender-visual .icon {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
   }
   
-  .mycolleges-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .gender-women {
+    color: pink;
+    box-shadow: 1.5px 0 3px 0 salmon;
+    margin: 10px;
   }
-
-  .mycolleges-list-item {
-    padding: 10px;
-    border-bottom: 1px solid #333;
-    cursor: pointer;
-  }
-  
-  .mycolleges-list-item:hover {
-    background-color: #ddd;
-  }
-  
-  .mycolleges-list-item-selected {
-    background-color: #ddd;
-  }
-  
-  .collegecomputer {
-    width: 30%;
-    height: 100%;
-    margin-left: 5%;
-    background-color: #eee;
-    overflow-y: auto;
-  }
-  
-  .collegecomputer-header {
-    padding: 10px;
-    font-size: 20px;
-    color: #333;
-    border-bottom: 1px solid #333;
-  }
-  
-
-
-.collegedata-main {
-    width: 70%;
-    height: 100%;
-    background-color: #f000ff;
-    overflow-y: auto;
-  }
-  
-  .collegedata-main-header {
-    padding: 10px;
-    font-size: 20px;
-    color: #333;
-    border-bottom: 1px solid #333;
-  }
-  
-  .collegedata-main-placeholder {
-    padding: 10px;
-    font-size: 20px;
-    color: #333;
-    text-align: center;
+   
+  .gender-men {
+    color: blue;
+    box-shadow: 1.5px 0 3px 0 lightskyblue;
+    margin: 10px;
   }
 
-  .mycolleges {
-    width: 30%;
-    height: 100%;
-    margin-right: 10%;
-    background-color: #eee;
-    overflow-y: auto;
-  }
-  
-  .mycolleges-header {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    font-size: 20px;
-    color: #333;
-    border-bottom: 1px solid #333;
-  }
-  
-  .mycolleges-header-text {
-    flex-grow: 1;
-  }
-  
-  .mycolleges-header-filter {
-    padding-left: 10px;
-    cursor: pointer;
-  }
-  
-  
-  
-  
-  
-  .mycolleges-list-item {
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .mycolleges-list-item:hover {
-    background-color: #ddd;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  .collegecomputer {
-    width: 30%;
-    height: 100%;
-    margin-left: 10%;
-    background-color: #eee;
-    overflow-y: auto;
-  }
-  
-  .collegecomputer-header {
-    padding: 10px;
-    font-size: 20px;
-    color: #333;
-    border-bottom: 1px solid #333;
-  }
-  
-  .mediumcollege {
-    width: 100%;
-    height: 100%;
-    background-color: lightblue;
-    overflow-y: auto;
-  }
-  
-  .mediumcollege-name {
-    width: 350px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    max-width: 40ch;
-    padding: 10px;
-    font-size: 20px;
-    color: #333;
-    border-bottom: 1px solid #333;
-  }
-  
-  .mediumcollege-description {
-    padding: 10px;
-    font-size: 16px;
-    color: #333;
-  }
-
-  .mediumcollege-delete {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    cursor: pointer;
-  }
-  
-  /* container holding individual mediumcollege styled components */
-
-  .mediumColleges {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, calc(50% - 5px));
-    grid-gap: 10px;
-    height: 90%;
-  }
-  
-  .collegeMiddleHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #fff;
-  }
-  
-  .collegeMiddleHeaderText {
-    font-size: 20px;
-    color: #333;
-  }
-/*
-  <h2 className="mediumcollege-name">{college[0].name}</h2>
-  <button onClick={handleClick}>O</button>
-  <div className='medium-main'>
-    <div className='medium-left'>
-    <div className='medium-admin'> {cost} </div>
-    <div className='medium-tests'> XXX </div>
-    </div>
-    <div className='medium-ratings'>
-*/
-  .medium-main {
-    display: flex;
-
+  .accept-true {
+    color: greenyellow;
+    margin: 10px;
+    box-shadow: 1.5px 0 3px 0 #7DD181;
     
   }
 
-
-  .medium-left {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    background-color:cornflowerblue;
+  .accept-false {
+    color: red;
+    box-shadow: 1.5px 0 3px 0 darkred;
+    margin: 10px;
   }
   
-  /* applies to each mediumcollege component to help control layout and appearance */
-
-  .collegeMiddle {
-    width: 50%;
-    height: 100%;
-    background-color: #fff;
-  }
-  
-  .largecollege {
-    width: 100%;
-    height: 100%;
-    background-color: lightcoral;
-    overflow-y: auto;
-  }
-  
-  .largecollege-name {
-    padding: 10px;
-    font-size: 20px;
-    color: #333;
-    border-bottom: 1px solid #333;
-  }
-  
-  .largecollege-description {
-    padding: 10px;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .largecollege-details {
-    padding: 10px;
-    font-size: 16px;
-    color: #333;
+  .non-greek-life {
+    color: black;
+    margin: 10px;
+    box-shadow: 1.5px 0 3px 0 lightgray ;  
   }
 
-  .medallion-award {
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
+  .greek-life {
+    margin: 10px;
+    box-shadow: 2px 0 3px 0 lightgray;  
+    color: white;
+    animation: party 1s infinite;
+ 
   }
+ 
+  /* Keyframes and animations */
 
-  .medallion-count {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-  }
-  
-  .medallion-award.green {
-    background-color: #7DD181;
-    color: #fff;
-    box-shadow: 0 0 20px#7DD181;
-    border: 3px solid #fff;
-  }
-  
-  .medallion-award.gold {
-    background-color: #ffd700;
-    color: #fff;
-    box-shadow: 0 0 20px #ffd700;
-    animation: pulse 1s infinite;
-  }
-  
-  .medallion-award.silver {
-    background-color: #c0c0c0;
-    color: #fff;
-    box-shadow: 0 0 20px #c0c0c0;
-  }
-  
-  .medallion-award.bronze {
-    background-color: #cd7f32;
-    color: #fff;
-    box-shadow: 0 0 20px #cd7f32;
+  @keyframes party {
+    0% {
+      background-color: #f44336;
+    }
+    10% {
+      background-color: #e91e63;
+    }
+    20% {
+      background-color: #9c27b0;
+    }
+    30% {
+      background-color: #673ab7;
+    }
+    40% {
+      background-color: #3f51b5;
+    }
+    50% {
+      background-color: #2196f3;
+    }
+    60% {
+      background-color: #00bcd4;
+    }
+    70% {
+      background-color: #4caf50;
+    }
+    80% {
+      background-color: #ffeb3b;
+    }
+    90% {
+      background-color: #ff9800;
+    }
+    100% {
+      background-color: #f44336;
+    }
   }
   
   @keyframes pulse {
     0% {
-      box-shadow: 0 0 0 0 #ffd700;
+      box-shadow: 0 0 0 0 #7DD181;
     }
     70% {
       box-shadow: 0 0 0 20px rgba(255, 215, 0, 0);
@@ -643,14 +621,54 @@
     }
   }
   
-
-  .medium-college-top-title {
-    max-width: 400px;
-    display: flex;
-    align-items: center;
+  
+  @keyframes fly-fade {
+    0% {
+      opacity: 0;
+      transform: translateY(0) rotate(0);
+    }
+    25% {
+      opacity: 1;
+      transform: translateY(-50px) rotate(90deg);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-100px) rotate(180deg);
+    }
+    75% {
+      opacity: 1;
+      transform: translateY(-50px) rotate(270deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(0) rotate(360deg);
+    }
   }
-
-  .medium-college-img {
-    height: 60px;
-    
+  
+  @keyframes swing {
+    from { transform: rotate(-1deg); } /* Rotate component slightly to the left */
+    to { transform: rotate(1deg); } /* Rotate component slightly to the right */
   }
+  
+  @keyframes swingThumbtack {
+    from { transform: rotate(-45deg); } /* Rotate thumbtack slightly to the left */
+    to { transform: rotate(-35deg); } /* Rotate thumbtack slightly to the right */
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

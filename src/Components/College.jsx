@@ -1,13 +1,16 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./MyColleges/MyColleges.css";
-import { Spacer, Tab, Tabs, Icon} from "tabler-react";
-import { Col, Row} from "react-bootstrap"
-import { Divider, Image } from "@mantine/core";
-import { Star, StarFilled, HomeDot, Book2,  Eraser, ThumbUp, ArrowsMaximize, BallFootball, Award, Building, Meat, Confetti, Cardboards, ThumbDown, MoodWrrr, MoodUnamused, MoodAnnoyed2, MoodSmileBeam, MoodSmile } from "tabler-icons-react";
+import { Divider, Progress } from "@mantine/core";
+import { Star, User, Book2,  Eraser, ThumbUp, ArrowsMaximize, BallFootball, Award, Building, Meat, Confetti,  MoodWrrr, MoodUnamused, MoodAnnoyed2, MoodSmileBeam, Trash } from "tabler-icons-react";
 import StarImage from "../star.png"
-import {motion, AnimatePresence} from 'framer-motion'
-import { Paper, Progress, Tooltip, Slider } from "@mantine/core";
-// Small College Component - C1(X)
+import { motion } from 'framer-motion'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import {shuffle} from "lodash"
+import MyCollegeCards from '../Components/MyColleges/MyCollegeCards';
+import { gsap } from "gsap";
+
+// SAT & ACT
 
 const CollegeScore = ({ showSAT, satCompositeMidpoint, satCompositePercentile25, satCompositePercentile75, actCumulativeMidpoint, actCumulativePercentile25, actCumulativePercentile75 }) => {
   const [hovered, setHovered] = useState(-1);
@@ -32,6 +35,8 @@ const CollegeScore = ({ showSAT, satCompositeMidpoint, satCompositePercentile25,
   </div>
   );
 };
+
+// % Rate 
 
 export const AcceptanceRate = ({ acceptanceRate }) => {
   const [icon, setIcon] = useState(null);
@@ -66,30 +71,7 @@ export const AcceptanceRate = ({ acceptanceRate }) => {
   )
 }
 
-function StarIcon() {
-  const [clicked, setClicked] = useState(false);
-
-  const handleClick = () => {
-    setClicked(!clicked);
-  };
-
-  return (
-    <div
-      className={`star-icon${clicked ? ' clicked' : ''}`}
-      onClick={handleClick}
-    >
-      {clicked ? (
-        <img
-          src={StarImage}
-          alt="Star"
-          className="star-icon__image"
-        />
-      ) : (
-        <Star size={24} strokeWidth={2} color="black" />
-      )}
-    </div>
-  );
-}
+// Small 
 
 export const SmallCollege = ({college, onClick, onFavoriteToggle }) => {
   const collegeName = exemptWords(college[0].name);
@@ -116,41 +98,44 @@ export const SmallCollege = ({college, onClick, onFavoriteToggle }) => {
       starAnim.classList.add('active');
   });
 }
-
-  
     return (
 
         <div className="small-college" onClick={onClick}>
             <div className="small-college-name">{collegeName}</div>
-            <div onClick={handleFavoriteClick}>
-            {isFavorited ? <Star style={{color: 'green'}} /> : <Star /> }
+            <div className="small-college-star" onClick={handleFavoriteClick}>
+            {isFavorited ? <Star size={24} style={{color: 'gold'}} /> : <Star size={24}/> }
             </div>
         </div>
     );
 };
 
-//Medium College Component - C1(Y)
+// Medallion
 
-const MedallionAward = ({ endpoint, name, Icon, handleClick}) => {
+const MedallionAward = ({ endpoint, name, handleClick}) => {
     const [displayRank, setDisplayRank] = useState(false);
+    const [grade, setGrade] = useState("");
     const [color, setColor] = useState("");
-    const [title, setTitle] = useState("");
     useEffect(() => {
         const count = Number(endpoint);
         switch (true) {
             case count  <= 25:
+                setGrade("S");
                 setColor("green");
                 break;
             case count <= 75:
+              setGrade("A");
               setColor("gold");
               break;
             case count <= 150:
+              setGrade("B")
               setColor("silver");
               break;
             case count <= 300:
+              setGrade("C");
               setColor("bronze");
               break;
             default:
+              setGrade("D");
               setColor("");
           }
     }, [endpoint]);
@@ -162,7 +147,9 @@ const MedallionAward = ({ endpoint, name, Icon, handleClick}) => {
     };
 
       return (
+        <div className='medallion-container'>
         <div className="medallion-award" onClick={handleClick}>
+      
       {displayRank ? <motion.div
         className={`icon medallion-award ${color}`}
         whileHover={{ scale: 1.2, rotate: 90 }}
@@ -173,7 +160,7 @@ const MedallionAward = ({ endpoint, name, Icon, handleClick}) => {
         }}
        
       >
-        <Icon />
+        {endpoint}
       </motion.div>
       :
       <motion.div
@@ -186,16 +173,60 @@ const MedallionAward = ({ endpoint, name, Icon, handleClick}) => {
         borderRadius: "100%"
       }}
       >
-        {endpoint}
+       <div> <b>{grade}</b></div> 
       </motion.div>
 }
-      
-    </div>
-       
 
+    </div>
+    <div style={{fontSize:"13px", fontWeight: 300}}>{name} </div>
+    </div>
       );
 };
 
+function College({college, onUpdateEndpoints, size}) {
+  if (!college) {
+    return null;
+  }
+  
+  const endpoints = [
+    college[0].rankingsBestCollegeAcademics,
+    college[0].rankingsBestCollegeAthletics,
+    college[0].rankingsBestValueColleges,
+    college[0].rankingsBestCollegeCampuses,
+    college[0].rankingsBestCollegeFood,
+    college[0].rankingsBestGreekLifeColleges,
+    ...(size === "large"
+      ? [
+          college[0].rankingsBestCollegeProfessors,
+          college[0].rankingsBestColleges,
+        ]
+      : []),
+];
+
+const updatedEndpoints = endpoints
+.filter((endpoint) => endpoint && endpoint.value)
+.map((endpoint) => {
+  return {
+    ...endpoint,
+    name: endpoint.name
+      .replace("Best ", "")
+      .replace("College ", "")
+      .replace("Colleges", ""),
+  };
+});
+
+return (
+  <div shadow="lg" className={size == "medium" ? 'college-medium-medallions' : 'college-large-medallions'}>
+      {updatedEndpoints.map((endpoint, index) => (
+         <MedallionAward endpoint={endpoint.value} 
+         name={endpoint.name} key={index} Icon={icons[index]} />
+         ))}
+
+  </div>
+);
+      };
+
+// Buttons
 
 const buttonVariants = {
   hover: {
@@ -212,6 +243,7 @@ const useButtonHandler = (handler) => {
     handler();
   }, [handler]);
 };
+
 const DeleteButton = ({ children, onClick }) => {
   const handleDelete = useButtonHandler(onClick)
   return (
@@ -241,6 +273,7 @@ const LikeButton = ({ children, onClick, college }) => {
     </motion.button>
   );
 };
+
 const MaxButton = ({ children, onClick, college }) => {
   const onLargeClick = useButtonHandler(onClick);
   return (
@@ -256,42 +289,6 @@ const MaxButton = ({ children, onClick, college }) => {
   );
 };
 
-function College({college, onUpdateEndpoints, size}) {
-  
-  if (!college) {
-    return null;
-  }
-  
-  const endpoints = [
-    college[0].rankingsBestCollegeAcademics,
-    college[0].rankingsBestCollegeAthletics,
-    college[0].rankingsBestValueColleges,
-    college[0].rankingsBestCollegeCampuses,
-    college[0].rankingsBestCollegeFood,
-    college[0].rankingsBestGreekLifeColleges,
-];
-
-  const updatedEndpoints = endpoints.map(endpoint => { 
-    return {
-      ...endpoint,
-      name: endpoint.name
-        .replace('Best ', '')
-        .replace('College ', '')
-  .     replace('Colleges', '')
-}
-});
-
-return (
-  <div shadow="lg" className={size == "medium" ? 'college-medium-medallions' : 'college-large-medallions'}>
-      {updatedEndpoints.map((endpoint, index) => (
-         <MedallionAward endpoint={endpoint.value} 
-         name={endpoint.name} key={index} Icon={icons[index]} />
-         ))}
-
-  </div>
-);
-
-}
 export const icons = [
 Book2,
 BallFootball,
@@ -301,49 +298,70 @@ Meat,
 Confetti,
 ]
 
-export const MediumCollege = ({college, onDelete, handleLiked, onLargeClick, setView, setSelectedCollege}) => {
-    const [activeTab, setActiveTab] = useState("money");
+// Medium 
+export const MediumCollege = ({college, onDelete, onLargeClick, setView, setSelectedCollege}) => {
+  function animate() {
+    gsap.to(".college-medium-container", { x: 200, scale: 0, duration: 0.5, ease: "expo.out" });
+    onDelete();
+  }
+  const [activeTab, setActiveTab] = useState("money");
     const [showSAT, setShowSAT] = useState(false);
     const [endpoints, setEndpoints] = useState([]);
 
     const handleUpdateEndpoints = (newEndpoints) => {
       setEndpoints(newEndpoints);
     };
-  
 
-    function handleClick() {
-      setShowSAT(!showSAT);
-      console.log("Click == " + showSAT)
+    const handleMaximize = () => {
+      onLargeClick();
+      setView('large');
+      setSelectedCollege(college);
+    };
+
+    const criteria = [];
+    if (college[0].rankingsBestCollegeAcademics && college[0].rankingsBestCollegeAcademics.value <= 25) {
+        criteria.push('Smart School')
+    } 
+    if (college[0].rankingsBestCollegeForPhysics && college[0].rankingsBestCollegeForPhysics.value <= 10) {
+        criteria.push("Wesley's Theorum")
     }
-    
-    
-
-    function handleDelete() {
-      onDelete()
+    if (college[0].acceptanceRate && college[0].acceptanceRate < .10) {
+        criteria.push("Exclusive Entry")
     }
-  
-  
-  
-      return (
-        <div className="college-medium-container">
-          <div className="college-medium-top-shelf"> 
-            <div className="college-medium-name"> {college[0].name} </div>
-            <div className="college-medium-icons" >
-              <DeleteButton onClick={onDelete}> <Eraser /> </DeleteButton>
-              <LikeButton onClick={handleLiked}>  <ThumbUp /> </LikeButton>
-              <MaxButton onClick={onLargeClick}> <ArrowsMaximize /></MaxButton>
-            </div>
-          </div>  
-          <Divider />
-          <div shadow="lg" className="college-medium-medallions">
-          <College college={college} size={'medium'} onUpdateEndpoints={handleUpdateEndpoints} />
-            
-    
-    
-    
+    if (college[0].rankingsBestCollegeAthletics && college[0].rankingsBestCollegeAthletics.value <= 25) {
+        criteria.push("Sport School")
+    }
+    if (college[0].totalApplicants && college[0].totalApplicants > 49999) {
+        criteria.push("Fan Favorite")
+    }
+    const matchingCards = MyCollegeCards.filter((card) => criteria.includes(card.title));
+const selectedCards = shuffle(matchingCards).slice(0, 3).map((card) => ({
+  title: card.title,
+  description: card.description,
+  icon: <card.icon />,
+}));
 
-          </div>
-          <Divider style={{marginTop: 20 }}/>
+while (selectedCards.length < 3) {
+  selectedCards.push({ title: '', description: '', icon: null });
+}
+function handleDelete() {
+  animate();
+};
+return (
+<div className="college-medium-container" >
+  <div className="college-medium-top-shelf"> 
+  <div className="college-medium-name"> <b>{college[0].name} </b></div>
+  </div>
+  <Divider style={{marginBottom: 5}} />
+  <div style={{textAlign: 'center', fontSize: '13px', marginTop: 8, marginBottom: 0}}>Report Card</div>
+  <College college={college} size={'medium'} onUpdateEndpoints={handleUpdateEndpoints}/>
+  <Divider style={{marginTop: 30 }}/>
+  <div className="mediumCollege-bottom">
+    <Trash onClick={handleDelete} size={32}  />
+    <ThumbUp size={32} />
+    <ArrowsMaximize onClick={handleMaximize}size={32} />
+    </div>
+          {/* SAVE 
           <button onClick={handleClick} className="scores-btn"> {showSAT ? 'ACT' : 'SAT'}</button>
           <div className='medium-college-bottom-container'>
          
@@ -353,15 +371,92 @@ export const MediumCollege = ({college, onDelete, handleLiked, onLargeClick, set
           <div className="rate-container">
           <AcceptanceRate acceptanceRate={college[0].acceptanceRate} />
           </div>
+          */}
           </div>
-        </div>
+
       );
-    }
-      
+    };
     
+ // Large pre-reqs
 
+const GenderVisual = ({college}) => {
+  const enrolledMen = college[0].enrolledMen;
+  const enrolledWomen = college[0].enrolledWomen;
+  const totalEnrolled = college[0].totalEnrolled;
 
-//Large College Component - C1(Z)
+  const menPercentage = (enrolledMen / totalEnrolled) * 100;
+  const menCount = Math.round((menPercentage / 100) * 10);
+  console.log(menCount)
+  const maleIcons = Array(menCount).fill(
+    <User size={42} name="male" className="gender-men" />
+  );
+  const femaleIcons = Array(10 - menCount).fill(
+    <User size={42} name="female" className="gender-women" />
+  ); 
+
+  return (
+    <div className="gender-visual">
+      <div className="">
+      {maleIcons}
+      {femaleIcons}
+      </div>
+      <div style={{fontWeight: 600, fontSize: '16px', marginTop: 5}}>{totalEnrolled} enrolled students </div>
+    </div>
+  )
+  
+  };
+
+const AcceptanceVisual = ({college}) => {
+  const acceptanceRate = college[0].acceptanceRate;
+  console.log(acceptanceRate)
+  const acceptCount = Math.round((acceptanceRate * 10));
+  console.log(acceptCount);
+  const acceptIcons = Array(acceptCount).fill(
+    <User size={42} name="accepted" className="accept-true" />
+  );
+  const deniedIcons = Array(10 - acceptCount).fill(
+    <User size={42} name="denied" className="accept-false" />
+  ); 
+
+  return (
+    <div className="acceptance-visual">
+      <div className="">
+      {acceptIcons}
+      {deniedIcons}
+      </div>
+      <div style={{fontWeight: 600, fontSize: '16px', marginTop: 5}}>{acceptanceRate * 100}% accepted</div>
+    </div>
+  )
+};
+
+const GreekLifeVisual = ({ college }) => {
+  let greekCount = 0;
+  let greekIcons = [];
+  let nonGreekIcons = [];
+
+  if (college[0].fraternitiesPercentParticipation && college[0].sororitiesPercentParticipation) {
+    const greekLife = (college[0].fraternitiesPercentParticipation + college[0].sororitiesPercentParticipation) / 2;
+    greekCount = Math.round(greekLife / 10);
+    greekIcons = Array(greekCount).fill(
+      <User size={42} name="accepted" style={{ }} className="greek-life" />
+    );
+    nonGreekIcons = Array(10 - greekCount).fill(
+      <User size={42} name="denied" className="non-greek-life" />
+    );
+  }
+
+  return (
+    <div className="">
+      <div className="">
+        {greekIcons}
+        {nonGreekIcons}
+      </div>
+      <div style={{fontWeight: 600, fontSize: '16px', marginTop: 5}}>{greekCount ? `${greekCount * 10}% participate in Greek Life` : "Data unavailable"}</div>
+    </div>
+  );
+};
+
+// Large 
 
 export const LargeCollege = ({ college, onDelete, handleLiked}) => {
   const [endpoints, setEndpoints] = useState([]);
@@ -372,17 +467,39 @@ export const LargeCollege = ({ college, onDelete, handleLiked}) => {
 
     return college ? (
         <div className="large-college">
-          <div className="large-college-top-container">
-          {college[0].name}
+          <div style={{fontWeight: 500}} className="large-college-top-container">
+            {college[0].name}
           <div className="icon-area">
           <DeleteButton onClick={onDelete}> <Eraser /> </DeleteButton>
           <LikeButton onClick={handleLiked}>  <ThumbUp /> </LikeButton>
           </div>
         </div>
-
-        
         <hr />
-        <College college={college} onUpdateEndpoints={handleUpdateEndpoints} />
+        <div style={{textAlign: 'center', fontSize: '14px', fontWeight: 400, marginTop: 15, marginBottom: 25}}>
+          <div style={{fontWeight: 400, fontSize: '13px', marginBottom: 8, color: 'gray'}}> Description </div>
+          {college[0].shortDescription}
+        </div>
+        <hr />
+        <div style={{textAlign: 'center', fontSize: '14px', fontWeight: 400, marginTop: 15, marginBottom: 10}}>
+        <div style={{fontWeight: 400, marginTop: 0, fontSize: '13px', marginBottom: 3, color: 'gray'}}> Report Card </div>
+        </div>
+        <College college={college} onUpdateEndpoints={handleUpdateEndpoints} size="large" />
+        <hr style={{marginTop: '10px', marginBottom: '18px'}} />
+        <div style={{textAlign: 'center', fontSize: '14px', fontWeight: 400, marginTop: 15, marginBottom: 15}}>
+    <div style={{fontWeight: 400, marginTop: 0, fontSize: '13px', marginBottom: 3, color: 'gray'}}> Population </div>
+    </div>
+        <Carousel showArrows={false} showIndicators={false} showStatus={false} infiniteLoop={true}  autoPlay={true} > 
+          <div>
+            <GenderVisual college={college} />
+
+          </div>
+          <div>
+            <AcceptanceVisual college={college} />
+          </div>
+          <div>
+   <GreekLifeVisual college={college} />
+ </div>
+        </Carousel>
         </div>
     ) : null;
 };
