@@ -59,7 +59,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .dashboard-achievments-see {
@@ -68,10 +68,12 @@ html, body {
   align-items: center;
   margin-top: 18px;
   height: 80px;
+  
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
 }
+
 
 .dashboard-courses {
   background-color: #fff;
@@ -79,7 +81,9 @@ html, body {
   border-radius: 4px;
   padding: 24px;
   max-width: 240px;
-  height: 95%;
+
+  height: 100%;
+
   margin: 18px;
 }
 
@@ -90,7 +94,7 @@ html, body {
   padding: 24px;
   max-width: 240px;
   margin: 18px;
-  height: 95%;
+  height: 100%;
 
 }
 
@@ -100,8 +104,8 @@ html, body {
   border-radius: 4px;
   padding: 24px;
   max-width: 240px;
-  margin: 18px;
-  height: 95%;
+margin: 18px;
+height: 100%;
 }
 .dashboard-main-area {
   display: flex;
@@ -109,11 +113,15 @@ html, body {
   justify-content: center;
   margin-left: 25px;
   height: 70vh;
+
+  
 }
+ 
 
 .dashboard-right {
   display: flex;
   flex-direction: column;
+
   width: 20vw;
   margin-left: 30px;
   height: 70vh;
@@ -128,6 +136,7 @@ html, body {
 .dashboard-missions {
   text-align: center;
   padding: 20px;
+  
   height: 58.75vh;
   width: inherit;
   background: url('../../grand_map.png') center center / cover no-repeat;
@@ -138,15 +147,16 @@ html, body {
 }
 
 .dashboard-missions-see {
-  display: flex;
-  align-items: center;
-  margin-top: 18px;
-  height: 80px;
+ 
+display: flex;
+align-items: center;
+margin-top: 18px;
+height: 80px;
   height:80px;
   margin-top: 18px;
   width: inherit;
   background-color: #4361ee;
-  box-shadow: 0 1px 3px blue, 0 1px 2px darkblue;
+box-shadow: 0 1px 3px blue, 0 1px 2px darkblue;
 }
  
 /* Profile Section */
