@@ -32,7 +32,10 @@
     width: 100%;
     height: 8vh;
     background-image: linear-gradient(90deg, #99d98c 0%, #76C893 20%, #34A0A4 40%, #1A759F 60%, #184E77 100%);     
+    animation: animated-gradient 5s ease-in-out infinite;
     
+    background-size: 200%;
+
 }
 
 .top-nav > li {
@@ -130,3 +133,16 @@
     
     }
 }
+
+
+@keyframes animated-gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }

@@ -1,13 +1,13 @@
 import "../Styles/App.css";
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "../Components/Landing/Landing";
 import SchoolSystems from "../Components/SchoolSystems/SchoolSystems";
 import Privacy from "../Components/Privacy/Privacy";
-import MyCourses from "../Components/MyCourses/MyCourses";
+import MyCourses from "../Components/MyCourses/MyCoursesContainer";
 import MyCareer from "./MyCareer/MyCareer";
 import About from "../Components/About/About";
-import MyColleges from "../Components/MyColleges/MyColleges";
+import MyColleges from "../Components/MyColleges/MyCollegesContainer";
 import { Provider } from "react-redux";
 import store from "../redux/store";
 import Test from "./Test";
@@ -21,8 +21,10 @@ import Courses from "./Courses/Courses";
 import Demo from "../Components/Demo/Demo";
 import ExploreCourses from "./ExploreCourses/ExploreCourses";
 import ExploreCareers from "./ExploreCareers/ExploreCareers";
-import SurveyDemo from "../Components/SurveyDemo";
+import CareerSurveyOne from "../Components/CareerSurveyOne";
 import Dashboard from "./Dashboard/Dashboard";
+import MyMissions from "../MyMissions/MyMissions";
+import Tutorial from "../Tutorial";
 /*
 Testing push request
 */
@@ -35,6 +37,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/About" element={<About />} />
+            <Route path="/Tutorial" element={<Tutorial /> } />
+            <Route path="/MyMissions" element={<MyMissions />} />
             <Route path="/MyCourses" element={<MyCourses />} />
             <Route path="/SchoolSystems" element={<SchoolSystems />} />
             <Route path="/Products" element={<Products />} />
@@ -46,7 +50,7 @@ function App() {
             <Route path="/MyCareer" element={<MyCareer />} />
             <Route path="/MyColleges" element={<MyColleges />} />
             <Route path='/Demo' element={<Demo /> } />
-            <Route path='/Survey' element={<SurveyDemo />} />
+            <Route path='/Survey' element={<CareerSurveyOne />} />
   
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/test" element={<Test />} />

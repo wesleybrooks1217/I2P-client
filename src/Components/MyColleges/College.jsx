@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useCallback } from "react";
-import "./MyColleges/MyColleges.css";
+import "./MyColleges.css";
 import { Divider, Progress } from "@mantine/core";
 import { Star, User, Book2,  Eraser, ThumbUp, ArrowsMaximize, BallFootball, Award, Building, Meat, Confetti,  MoodWrrr, MoodUnamused, MoodAnnoyed2, MoodSmileBeam, Trash } from "tabler-icons-react";
-import StarImage from "../star.png"
+
 import { motion } from 'framer-motion'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import {shuffle} from "lodash"
-import MyCollegeCards from '../Components/MyColleges/MyCollegeCards';
+import MyCollegeCards from './MyCollegeCards';
 import { gsap } from "gsap";
 
 // SAT & ACT

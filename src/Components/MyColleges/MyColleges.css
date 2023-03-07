@@ -19,7 +19,7 @@ body {
   padding: 20px;
   display: flex;
   height: 85vh;
-  margin: 5% 3% 2% 3%;
+  margin: 0 3% 2% 3%;
 }
 
 .collegedata-main-header {
@@ -42,7 +42,7 @@ body {
 .college-container {
   height: 100%;
   width: 30%;
-  margin: 0 2.5% 0 0;
+  margin: 6.8% 2.5% 0 0;
 }
 
 .my-college-list {
@@ -135,6 +135,7 @@ body {
   width: 30%;
   height: 100%;
   margin-left: 2.5%;
+  margin-top: 6.8%;
   margin-right: 0;
   overflow-y: auto;
 }
@@ -214,6 +215,7 @@ body {
 }
 
 .college-medium-container {
+
   margin: 5px;
   padding: 10px;
   position: relative;
@@ -241,7 +243,7 @@ body {
 .collegeMiddle {
   position: relative;
   background-size: cover;
-  margin: 10px 0 0 0;
+  margin: 7.5% 0 0 0;
   padding: 15px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   border-radius: 10px; 

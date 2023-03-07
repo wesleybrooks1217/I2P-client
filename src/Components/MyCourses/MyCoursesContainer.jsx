@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, createStyles, Title, List } from "@mantine/core";
 
-import "./MyCourses.css";
+import "./MyCoursesOLD.css";
 import { TableSelection } from "./SVGs/CourseSchedule";
 import ClassNavBar from "./SVGs/ClassNavBar";
 import ScheduleButton from "./Helpers/ScheduleButton";

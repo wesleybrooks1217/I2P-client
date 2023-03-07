@@ -6,7 +6,7 @@ import { nanoid } from '@reduxjs/toolkit';
 
 
 
-function SurveyDemo() {
+function CareerSurveyOne() {
     const [answer, setAnswer] = useState(null);
     const [currentQuestion, setCurrentQuestion] = useState();
     const [questions, setQuestions] = useState([]);
@@ -96,7 +96,7 @@ function SurveyDemo() {
     )
 }
 
-export default SurveyDemo;
+export default CareerSurveyOne;
 
 
 

@@ -1,9 +1,9 @@
 import React, { useState, useRef} from "react";
 import "./MyColleges.css";
-import { MediumCollege, LargeCollege } from "../College";
+import { MediumCollege, LargeCollege } from "./College";
 import { MyColleges } from "./components/MyColleges";
 import { CollegeComputer } from "./components/CollegeComputer";
-
+import TopNav from "../Nav/components/TopNav";
 // MyCollege Template
 
 const CollegeDataPage = ({setColleges, colleges}) => {
@@ -45,6 +45,9 @@ const CollegeDataPage = ({setColleges, colleges}) => {
 
   return (
     <div className="my-colleges-container">
+         <div style={{ marginTop: 0, position: "absolute", width: "100%" }}>
+   <TopNav />
+ </div>
       <div class="shape-container"></div>
     <div className="collegedata">
      

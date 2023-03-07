@@ -1,7 +1,7 @@
 import { init_API_College_AI, API_College_AI } from "../../../API_College_AI"
 import { Paper, Slider, MantineProvider} from '@mantine/core';
 import React, { useEffect, useState, useRef} from "react";
-import { SmallCollege, MediumCollege, LargeCollege, Button } from "../../College";
+import { SmallCollege, MediumCollege, LargeCollege, Button } from "../College";
 
 export const MyColleges = ({ onSelectCollege }) => {
     const [activeTab, setActiveTab] = useState('home');

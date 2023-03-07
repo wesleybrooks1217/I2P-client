@@ -1,28 +1,6 @@
 const dummyMissions = [
-    {
-      id: 1,
-      title: "Circular Chooser",
-      description: "Unlock an archive!",
-      icon: "language",
-      count: 10,
-      progress: 3,
-    },
-    {
-      id: 2,
-      title: "Exciting stores.",
-      description: "Enjoy Saturdays for 50%!",
-      icon: "book",
-      count: 5,
-      progress: 1,
-    },
-    {
-      id: 3,
-      title: "Surf for Schools",
-      description: "Explore eight other colleges.",
-      icon: "hiking",
-      count: 3,
-      progress: 0,
-    },
+   
+   
     {
       id: 4,
       title: "Simple starts.",
@@ -31,14 +9,10 @@ const dummyMissions = [
       count: 8,
       progress: 6,
     },
-    {
-      id: 5,
-      title: "Smooth Magician",
-      description: "Make an achievement vanish!",
-      icon: "dumbbell",
-      count: 20,
-      progress: 14,
-    },
+ 
+ 
+ 
+    
   ];
 
   export default dummyMissions;
