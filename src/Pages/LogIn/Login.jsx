@@ -133,7 +133,7 @@ function Login({ login }) {
       </div>
       <div className="root-login">
         <Nav />
-        {auth && <Navigate to={`/MyCareer/${userID}`} />}
+        {auth && <Navigate to={`/MyCareers/${userID}`} />}
       </div>
     </div>
   );

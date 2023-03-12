@@ -6,7 +6,7 @@ import SchoolSystems from "../Components/SchoolSystems/SchoolSystems";
 import Privacy from "../Components/Privacy/Privacy";
 import MyCourses from "../Components/MyCourses/MyCourses";
 import Dashboard from "../Components/Dashboard/Dashboard";
-import MyCareer from "./MyCareer/MyCareer";
+import MyCareers from "../Components/MyCareers/MyCareers";
 import About from "../Components/About/About";
 import MyColleges from "../Components/MyColleges/MyColleges";
 import { Provider } from "react-redux";
@@ -23,7 +23,7 @@ import Demo from "../Components/Demo/Demo";
 import ExploreCourses from "./ExploreCourses/ExploreCourses";
 import ExploreCareers from "./ExploreCareers/ExploreCareers";
 import SurveyDemo from "../Components/SurveyDemo";
-import CareerDataPage from "./MyCareer/MyCareer";
+import CareerDataPage from "../Components/MyCareers/MyCareers";
 /*
 Testing push request
 */
@@ -41,9 +41,8 @@ function App() {
             <Route path="/Colleges/:id" element={<CollegeCard />} />
             <Route path="/Students" element={<Students />} />
             <Route path="/Privacy" element={<Privacy />} />
-            <Route path="/MyCareer" element={<MyCareer />} />
             <Route path="/Dashboard" element={<Dashboard />} />
-            <Route path="/MyCareer/:userID" element={<CareerDataPage />} />
+            <Route path="/MyCareers/:userID" element={<CareerDataPage />} />
             <Route path="/MyColleges" element={<MyColleges />} />
             <Route path='/Demo' element={<Demo /> } />
             <Route path='/Survey' element={<SurveyDemo />} />
