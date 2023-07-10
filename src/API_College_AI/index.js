@@ -10,7 +10,6 @@ export function init_API_College_AI(id, type) {
     apiOptions = {
         baseURL: "https://api.collegeai.com/v1/api/college/info",
         params: {
-            api_key: '0c08b0e6a7a1cf9e539e330ca7',
             college_unit_ids: `${id}`,
             info_ids: [
         'acceptance_rate', 'act_cumulative_midpoint', 'act_cumulative_percentile25',
