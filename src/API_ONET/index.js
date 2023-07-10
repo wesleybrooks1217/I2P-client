@@ -11,7 +11,6 @@ export function init_api_onet(id) {
         headers: {
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
-            'Authorization': 'client=linkedin_company_myn',
             'Access-Control-Allow-Origin' : '*'
           }
     };
